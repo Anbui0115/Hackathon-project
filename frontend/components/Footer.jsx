@@ -1,9 +1,13 @@
+import Link from 'next/link';
 import React from 'react';
 
 const footerStyle = {
   backgroundColor: '#333',
   color: '#fff',
   padding: '2rem 0',
+  position: 'absolute',
+  bottom: 0,
+  width: '100%',
 };
 
 const columnStyle = {
@@ -30,7 +34,18 @@ const Footer = () => {
           <div className="col-md-4">
             <h3>Contact Us</h3>
             <p>If you have any questions or need assistance, please don't hesitate to reach out.</p>
-            <p>Email: contact@example.com</p>
+            <p>Address: Priyada Arts Studio, Newark </p>
+            <p>
+              <a href='https://m.facebook.com/priyankaraghuramandance'>Facebook</a>
+            </p>
+            
+            <p>
+              <a href='https://www.youtube.com/@PriyankaRaghuraman'>Youtube</a>
+            </p>
+            
+
+            <p>Instagram: @priyankaraghuramandance @priyadaartsofficial</p>
+            <p>Email: priyankaraghuramandance@gmail.com or priyadaarts@gmail.com</p>
             <p>Phone: (123) 456-7890</p>
           </div>
 
@@ -40,7 +55,6 @@ const Footer = () => {
               <li><a href="/">Home</a></li>
               <li><a href="/classes">Classes</a></li>
               <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
         </div>
