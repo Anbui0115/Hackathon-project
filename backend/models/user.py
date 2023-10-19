@@ -15,15 +15,17 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(40), nullable = False)
     address = db.Column(db.String(255), nullable = False)
     phone_number = db.Column(db.Integer, nullable = False)
-    free_user = db.Column(db.boolean, nullable = False)
+    free_user = db.Column(db.Boolean, default=True, nullable = False)
     payment_info = db.Column(db.String(255), nullable=True)
-    #relationship
-    general_appointments = db.relationship("General Appoinment", back_populates='user')
-    dance_class_appointments = db.relationship("Dance Class Appoinment", back_populates='user')
+
+    #relationships
+    general_appointments = db.relationship("General_Appointment", back_populates='user', cascade="all, delete-orphan")
+    dance_class_appointments = db.relationship("Dance_Class_Appointment", back_populates='user', cascade="all, delete-orphan")
+
     media = db.relationship("Media", back_populates='user')
     review = db.relationship("Review", back_populates='user')
     billing = db.relationship("Billing+", back_populates='user')
-    
+
     @property
     def password(self):
         return self.hashed_password
