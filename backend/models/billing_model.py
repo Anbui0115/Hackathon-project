@@ -22,7 +22,6 @@ class Billing(db.Model):
     charged = db.Column(db.Boolean, nullable=False, default=False)
 
     billing_date = db.Column(db.DateTime, nullable=False, unique=False)
-
     created_at = db.Column(db.DateTime, nullable=False,
                            unique=False, index=False, default=datetime.now())
 
@@ -44,3 +43,6 @@ class Billing(db.Model):
 
     def __repr__(self):
         return f'<Billings, id={self.id}, user_id={self.user_id},billing_date={self.billing_date}, billing_type={self.billing_type}, amount={self.amount}, created_at={self.created_at},charged={self.charged}'
+
+
+# ________________________________________________________________________________________________________
