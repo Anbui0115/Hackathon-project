@@ -5,3 +5,21 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 
 Base=declarative_base()
+
+
+class General_Appointment(db.Model):
+    __tablename__ = "general_appointments"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    first_name = db.Column(db.String(50), nullable=False)
+    last_name = db.Column(db.String(50), nullable=False)
+    phone_number = db.Column(db.String(20), nullable=False)
+    email_address = phone_number = db.Column(db.String(100), nullable=False)
+    objective = db.Column(db.TEXT, nullable=False)
+    age = db.Column(db.Integer, nullable=False)
+    experience = db.Column(db.TEXT, nullable=False)
+    location = db.Column(db.String(100), nullable=False)
+    notes = db.Column(db.TEXT, nullable=False)
+
+    user = db.relationship("User", back_populates="general_enquiries")
