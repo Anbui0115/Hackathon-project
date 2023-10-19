@@ -33,9 +33,50 @@ class Dance_Class_Appointment(db.Model):
             'accepted': self.accepted,
             'attendance': self.attendance,
             'created_at': self.created_at,
-            'notes': self.additional_notes
+            'notes': self.notes
 
         }
 
     def __repr__(self):
-        return f'<Dance_Class_Appointments, id={self.id}, user_id={self.user_id},level={self.level}, accepted={self.accepted}, attendance={self.attendance},notes={self.notes}'
+        return f'<Dance_Class_Appointments, id={self.id}, user_id={self.user_id},level={self.level}, accepted={self.accepted}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
+
+# ________________________________________________________________________________________________________
+
+
+class General_Appointment(db.Model):
+
+    __tablename__ = "general_appointments"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+
+    date = db.Column(db.DateTime, nullable=False, unique=False)
+    duration = db.Column(db.String(100), nullable=False)
+    location = db.Column(db.String(200), nullable=False)
+    type = db.Column(db.String(200), nullable=False)
+
+
+    created_at = db.Column(db.DateTime, nullable=False,
+                           unique=False, index=False, default=datetime.now())
+    accepted = db.Column(db.Boolean, nullable=False, default=False)
+    notes = db.Column(db.TEXT, nullable=False)
+
+    user = db.relationship("User", back_populates="general_appointments")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'user': self.user.to_dict() if self.user else None,
+            'date': self.date,
+            'duration': self.duration,
+            'location': self.location,
+            'type': self.type,
+            'accepted': self.accepted,
+            'created_at': self.created_at,
+            'notes': self.notes
+
+        }
+
+    def __repr__(self):
+        return f'<Dance_Class_Appointments, id={self.id}, user_id={self.user_id},date={self.date}, accepted={self.accepted}, location={self.location}, type={self.type},duration={self.duration},created_at={self.created_at},notes={self.notes}'
