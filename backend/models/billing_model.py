@@ -27,7 +27,7 @@ class Billing(db.Model):
                            unique=False, index=False, default=datetime.now())
 
 
-    user = db.relationship("User", back_populates="general_appointments")
+    user = db.relationship("User", back_populates="billings")
 
     def to_dict(self):
         return {

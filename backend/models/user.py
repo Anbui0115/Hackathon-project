@@ -24,7 +24,7 @@ class User(db.Model, UserMixin):
 
     media = db.relationship("Media", back_populates='user')
     review = db.relationship("Review", back_populates='user')
-    billing = db.relationship("Billing+", back_populates='user')
+    billing = db.relationship("Billing", back_populates='user', cascade="all, delete-orphan")
 
     @property
     def password(self):
@@ -50,3 +50,6 @@ class User(db.Model, UserMixin):
             'free_user': self.free_user,
             'payment_info': self.payment_info
         }
+
+    def __repr__(self):
+        return f'<User, id={self.id}, username={self.username},email={self.email}, authorization={self.authorization}, first_name={self.first_name}, last_name={self.last_name},address={self.address}, phone_number={self.phone_number}, free_user={self.free_user}, payment_info={self.payment_info}'
