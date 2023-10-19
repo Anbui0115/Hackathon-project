@@ -79,4 +79,4 @@ class General_Appointment(db.Model):
         }
 
     def __repr__(self):
-        return f'<Dance_Class_Appointments, id={self.id}, user_id={self.user_id},date={self.date}, accepted={self.accepted}, location={self.location}, type={self.type},duration={self.duration},created_at={self.created_at},notes={self.notes}'
+        return f'<General_Appointments, id={self.id}, user_id={self.user_id},date={self.date}, accepted={self.accepted}, location={self.location}, type={self.type},duration={self.duration},created_at={self.created_at},notes={self.notes}'
