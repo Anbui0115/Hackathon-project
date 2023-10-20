@@ -1,7 +1,6 @@
-from flask import Blueprint, session, request
+from flask import Blueprint, session, request, redirect
 from backend.models import User, db
-from backend.forms import LoginForm
-from backend.forms import SignUpForm
+from backend.forms import LoginForm, SignUpForm
 from flask_login import current_user, login_user, logout_user
 
 auth_routes = Blueprint('auth', __name__)
@@ -43,6 +42,11 @@ def login():
         login_user(user)
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+# Google Login
+# @auth_routes.route('/login/google')
+# def google_login():
+#     return redirect(url_for('auth.google_authorize'))
 
 
 @auth_routes.route('/logout')

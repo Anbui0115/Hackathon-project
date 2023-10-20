@@ -1,2 +1,2 @@
-from backend.forms import LoginForm
-from backend.forms import SignUpForm
+from .login_form import LoginForm
+from .signup_form import SignUpForm
