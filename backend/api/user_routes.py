@@ -1,7 +1,8 @@
 from flask_login import login_required
 from backend.models import db, User
+from flask import Blueprint
 
-from app.models import User
+from backend.models import User
 
 user_routes = Blueprint('users', __name__)
 
