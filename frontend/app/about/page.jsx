@@ -1,10 +1,10 @@
 import React from 'react';
-import './about_page.css';
+import './about.css';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 
 
-function AboutPage() {
+const About = () => {
     return (<>
         <div className='about-page'>
             <NavBar />
@@ -20,4 +20,4 @@ function AboutPage() {
     )
 }
 
-export default AboutPage;
+export default About;
