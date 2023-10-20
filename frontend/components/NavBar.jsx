@@ -6,6 +6,7 @@ import Image from "next/image";
 //TODO #1 - Add Profile Icon
 //TODO #2 - Add Logo
 //TODO #3 - Dropdown Menus 
+//TODO #4 - Active NavLink
 
 const NavBar = () => {
   return (
