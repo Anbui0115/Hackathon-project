@@ -13,7 +13,9 @@ const ChatBot = () => {
   const [input, setInput] = useState("")
 
   return (
-    <div></div>
+    <div>
+      
+    </div>
   )
 }
 
