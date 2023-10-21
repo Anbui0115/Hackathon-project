@@ -7,7 +7,7 @@ const footerStyle = {
   backgroundColor: '#333',
   color: '#fff',
   padding: '2rem 0',
-  position: 'absolute',
+  // position: 'absolute',
   bottom: 0,
   width: '100%',
 };
