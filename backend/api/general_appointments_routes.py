@@ -32,7 +32,7 @@ def all_general_appointments():
 
 # ____________________________________________________________________________________________________
 
-# CREATE A DANCE CLASS APPOINTMENT
+# CREATE A GENERAL APPOINTMENT
 
 @general_appointment_bp.route("/new/", methods=["POST"])
 @login_required
@@ -78,7 +78,7 @@ def create_general_apt():
 # __________________________________________________________________________________________________
 
 
-# DELETE A DANCE CLASS APPOINTMENT
+# DELETE A GENERAL APPOINTMENT
 
 
 @general_appointment_bp.route("/<int:general_apt_id_id>/", methods=["DELETE"])
