@@ -13,11 +13,11 @@ import ContactUs from "./ContactUs";
 const NavBar = () => {
   const [toggleAbout, setToggleAbout] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
-
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     
-    <div className="bg-orange-100 h-28 flex items-center justify-between px-8 ">
+    <div className={`bg-orange-100 h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
       {/* Logo / Dance Studio Title */}
       <div className="text-xl font-bold">Priyada Arts Dance Studio</div>
 
@@ -47,7 +47,7 @@ const NavBar = () => {
             toggleAbout && (
               <div 
                 onMouseLeave={() => setToggleAbout(false)}
-                className="absolute top-full mt-2 w-[240px] rounded-md shadow-lg bg-white"
+                className="absolute z-10 top-full  mt-2 w-[210px] rounded-md shadow-lg bg-white"
               >
                 <div className="px-6 py-4 rounded-md bg-white flex flex-col gap-2">
                   <Link 
@@ -79,13 +79,30 @@ const NavBar = () => {
               <ContactUs toggleModal={toggleModal} setToggleModal={setToggleModal} />
             )
           }
-
         </nav>
 
-
-        <nav className="text-lg font-semibold flex gap-2">
+        {/* Login / Sign Up */}
+        <nav onMouseEnter={() => setToggleMenu(true)} onClick={() => setToggleMenu(!toggleMenu)} className="text-lg font-semibold flex gap-2 cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          <Link href="/contact">Login / Sign Up</Link>{" "}
+          <span>Login / Sign Up</span>
+          
+          {/* Login / Sign Up Drop Down Menu */}
+          {
+            toggleMenu && (
+              <div 
+                onMouseLeave={() => setToggleMenu(false)}
+                className="absolute z-10 top-16 mt-2 w-[240px] rounded-md shadow-lg bg-white"
+              >
+                <div className="px-6 py-4 rounded-md bg-white flex flex-col gap-2">
+                  <Link href="/signup" className="hover:text-orange-500">Sign Up</Link>
+                  <Link href="/login" className="hover:text-orange-500">Login</Link>
+                </div>
+              </div>
+            )
+          }
+
+          {/* State Management if Logged In  */}
+
         </nav>
       </div>
 

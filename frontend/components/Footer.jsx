@@ -18,7 +18,7 @@ const columnStyle = {
 
 
 const pageStyle = {
-  minHeight: '100vh',  // Ensure the page height covers the viewport.
+  minHeight: 'auto',  // Ensure the page height covers the viewport.
   display: 'flex',
   flexDirection: 'column',
 };

@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 
 // TestimonialCard.js
 const TestimonialCard = ({testimony, alignment}) => {
