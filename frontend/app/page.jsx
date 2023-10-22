@@ -8,7 +8,10 @@ export default function Home() {
     <main className="">
       <NavBar />
       <Testimonial />
+      <div>
       <Footer/>
+      </div>
+      
     </main>
   )
 }
