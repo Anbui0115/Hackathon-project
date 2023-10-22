@@ -12,10 +12,8 @@ class CreateDanceClassAppointmentForm(FlaskForm):
 
     level = SelectField("Experience", choices=["Beginner: 0-5 years of experience", "Intermediate: 5-10 years of experience, Advanced: 10-20 years of experience, Senior: 20+ years of experience"]validators=[DataRequired()])
 
-    date = DateField('Choose the class you want to register for',
-                     validators=[DataRequired()])
+    date = DateField('Date',validators=[DataRequired()])
 
-    notes = TextAreaField(
-        "Share more details with us! ( How long have you been dancing? Do you practice any other styles? What do you hope to learn from these lessons?)", validators=[DataRequired()])
+    notes = TextAreaField("Notes", validators=[DataRequired()])
 
     submit = SubmitField("Register")
