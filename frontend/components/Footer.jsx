@@ -7,7 +7,7 @@ const footerStyle = {
   backgroundColor: '#333',
   color: '#fff',
   padding: '2rem 0',
-  position: 'absolute',
+  // position: 'absolute',
   bottom: 0,
   width: '100%',
 };
@@ -18,7 +18,7 @@ const columnStyle = {
 
 
 const pageStyle = {
-  minHeight: '100vh',  // Ensure the page height covers the viewport.
+  minHeight: 'auto',  // Ensure the page height covers the viewport.
   display: 'flex',
   flexDirection: 'column',
 };
