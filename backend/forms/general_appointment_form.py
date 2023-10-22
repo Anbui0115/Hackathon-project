@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from .models import db, User, Review, Coder, Skill
+from ..models import db, User, General_Appointment
 from wtforms import StringField, SelectMultipleField, SubmitField, IntegerField, FloatField, DateField, SelectField, TextAreaField
 from wtforms.validators import DataRequired, ValidationError
 from flask_login import current_user, login_user, logout_user, login_required
