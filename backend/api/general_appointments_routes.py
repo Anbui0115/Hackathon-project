@@ -42,19 +42,6 @@ def create_general_apt():
     create_general_apt_form['csrf_token'].data = request.cookies['csrf_token']
     # print("current user is: **********************************", current_user)
 
-    # id = db.Column(db.Integer, primary_key=True)
-    # user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-
-    # date = db.Column(db.DateTime, nullable=False, unique=False)
-    # duration = db.Column(db.String(100), nullable=False)
-    # location = db.Column(db.String(200), nullable=False)
-    # type = db.Column(db.String(200), nullable=False)
-
-    # created_at = db.Column(db.DateTime, nullable=False,
-    #                        unique=False, index=False, default=datetime.now())
-    # accepted = db.Column(db.Boolean, nullable=False, default=False)
-    # notes = db.Column(db.TEXT, nullable=False)
-
     if create_general_apt_form.validate_on_submit:
         data = create_general_apt_form.data
         new_general_apt = General_Appointment(
