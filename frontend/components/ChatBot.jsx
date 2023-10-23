@@ -8,6 +8,7 @@ import Image from "next/image";
 const ChatBot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [toggleChat, setToggleChat] = useState(false);
 
   return (
     <div className="bottom-16 right-16 z-20 fixed">
