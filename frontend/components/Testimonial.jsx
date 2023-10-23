@@ -68,11 +68,12 @@ const Testimonial = () => {
       <div className="text-3xl font-semibold my-8 uppercase underline">Testimonials</div>
 
       {/* Container for Testimonials Data */}
+      <div className="w-4/5 mx-auto">
       <Carousel
           centerMode 
           showThumbs={false} 
           showStatus={false} 
-          centerSlidePercentage={30} // Adjust this as needed
+          centerSlidePercentage={34} // Adjust this as needed
           autoPlay={true}
           infiniteLoop={true}
           interval={5000}
@@ -80,9 +81,12 @@ const Testimonial = () => {
       >
       
           {testimonies.map((testimony, index) => (
-            <TestimonialCard key={index} testimony={testimony} />
-          ))}
+            <div key={index} className="p-4">
+                <TestimonialCard testimony={testimony} />
+            </div>
+        ))}
       </Carousel>
+      </div>
 
     </div>
   );
