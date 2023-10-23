@@ -11,7 +11,7 @@ billing_bp = Blueprint(
 # ____________________________________________________________________________________________________________________
 
 
-# CREATE BILLING
+# CREATE BILLING SUBSCRIPTION
 
 @billing_bp.route("/new/", methods=["POST"])
 @login_required
@@ -37,3 +37,21 @@ def create_billing():
         new_billing_obj = new_billing.to_dict()
         return new_billing_obj, 201
     return {"Error": "Validation Error"}, 401
+
+
+# ____________________________________________________________________________________
+
+#  DELETE BILLING SUBSCRIPTION
+@billing_bp.routes("/<int:billing_id>/", methods=["DELETE"])
+# @login_required
+def delete_billing(billing_id):
+
+    curr_billing =BillingModel.query.get(billing_id)
+
+    if curr_billing:
+        db.session.delete(curr_billing)
+        db.session.commit()
+
+        return {"message" : "Billing succesfully deleted"}, 200
+
+    return {"Error": "404 like Not Found"}, 404
