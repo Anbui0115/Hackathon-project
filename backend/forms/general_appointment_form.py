@@ -10,18 +10,18 @@
 
 #     # Need to add email?
 
-#     # name = StringField("Name", validators=[DataRequired()])
+#     # name = StringField("name", validators=[DataRequired()])
 
-#     type = SelectField("Type", choices=["Makeup", "Emcee/Hosting", "Acting"], validators=[DataRequired()])
+#     type = SelectField("type", choices=["Makeup", "Emcee/Hosting", "Acting"], validators=[DataRequired()])
 
-#     date = DateField("Date", validators=[DataRequired()])
+#     date = DateField("date", validators=[DataRequired()])
 
-#     location = StringField("Location", validators=[DataRequired()])
+#     location = StringField("location", validators=[DataRequired()])
 
 #     #  Duration of requested services in hours
-#     duration = IntegerField("Duration", validators=[DataRequired()])
+#     duration = IntegerField("duration", validators=[DataRequired()])
 
 #     # Specific details of the event: What kind of event is it? How long do you require services for?
-#     notes = TextAreaField("Notes", validators=[DataRequired()])
+#     notes = TextAreaField("notes", validators=[DataRequired()])
 
-#     submit = SubmitField("Send Enquiry ")
+#     submit = SubmitField("Send Enquiry")

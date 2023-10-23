@@ -47,10 +47,9 @@
 # #         data = create_dance_apt_form.data
 # #         new_dance_apt = DanceClassAppointment(
 # #                 user_id=current_user.id,
-# #                 level=data["Experience"],
-# #                 date=data["Class"],
-# #                 level=data["Level"],
-# #                 notes=data["Notes"],
+# #                 level=data["level"],
+# #                 date=data["date"],
+# #                 notes=data["notes"],
 # #                 accepted=False,
 # #                 attendance=False,
 # #             )

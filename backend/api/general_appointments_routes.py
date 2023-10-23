@@ -47,11 +47,11 @@
 #         new_general_apt = General_Appointment(
 #             # name=data["name"],
 #             user_id=current_user.id,
-#             type=data["Type"],
-#             date=data["Class"],
-#             duration=data["Duration"],
-#             location=data["Location"],
-#             notes=data["Notes"],
+#             type=data["type"],
+#             date=data["class"],
+#             duration=data["duration"],
+#             location=data["location"],
+#             notes=data["notes"],
 #             accepted=False
 #         )
 

@@ -8,12 +8,12 @@
 
 # class CreateDanceClassAppointmentForm(FlaskForm):
 
-#     # name = StringField("Name", validators=[DataRequired()])
+#     # name = StringField("name", validators=[DataRequired()])
 
-#     level = SelectField("Experience", choices=["Beginner: 0-5 years of experience", "Intermediate: 5-10 years of experience, Advanced: 10-20 years of experience, Senior: 20+ years of experience"], validators=[DataRequired()])
+#     level = SelectField("level", choices=["Beginner: 0-5 years of experience", "Intermediate: 5-10 years of experience, Advanced: 10-20 years of experience, Senior: 20+ years of experience"], validators=[DataRequired()])
 
-#     date = DateField('Date',validators=[DataRequired()])
+#     date = DateField('date',validators=[DataRequired()])
 
-#     notes = TextAreaField("Notes", validators=[DataRequired()])
+#     notes = TextAreaField("notes", validators=[DataRequired()])
 
 #     submit = SubmitField("Register")
