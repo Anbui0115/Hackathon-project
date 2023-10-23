@@ -9,13 +9,13 @@ Base=declarative_base()
 
 
 
-class DanceVideo(db.Model):
+class Dance_Video(db.Model):
 
     __tablename__ = 'dance_videos'
 
-    id = db.Column(db.Interger, primary = True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key = True, autoincrement=True)
     video_url = db.Column(db.String(200), nullable=False)
-    dance_class_appintment_id = db.Column(db.Interger, db.ForeignKey("dance_class_appointments.id"), nullable=False)
+    dance_class_appintment_id = db.Column(db.Integer, db.ForeignKey("dance_class_appointments.id"), nullable=False)
     authorization = db.Column(db.String(255), nullable = False)
 
 
@@ -35,4 +35,3 @@ class DanceVideo(db.Model):
         return f'<DanceVideo, id={self.id}, video_url={self.video_url},dance_class_appintment_id={self.dance_class_appintment_id}, authorization={self.authorization}'
 
 # ________________________________________________________________________________________________________
-

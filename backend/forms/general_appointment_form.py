@@ -10,7 +10,7 @@ class CreateGeneralAppointmentForm(FlaskForm):
 
     # name = StringField("Name", validators=[DataRequired()])
 
-    type = SelectField("Type", choices=["Makeup", "Emcee/Hosting", "Acting"]validators=[DataRequired()])
+    type = SelectField("Type", choices=["Makeup", "Emcee/Hosting", "Acting"], validators=[DataRequired()])
 
     date = DateField("Date", validators=[DataRequired()])
 

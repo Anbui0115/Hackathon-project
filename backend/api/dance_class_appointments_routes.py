@@ -47,7 +47,7 @@ def create_dance_apt():
         new_dance_apt = Dance_Class_Appointment(
             # name=data["name"],
             user_id=current_user.id,
-            level=data["Experience"],
+            experience=data["Experience"],
             date=data["Class"],
             level=data["Level"],
             notes=data["Notes"],
