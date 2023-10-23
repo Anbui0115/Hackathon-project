@@ -33,4 +33,5 @@
 .faq-page-text p:nth-child(even) {
     margin-left: 20px;
     color: #666;
+    margin-bottom: 10px;
 }
