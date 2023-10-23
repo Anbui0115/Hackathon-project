@@ -8,6 +8,8 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 class CreateGeneralAppointmentForm(FlaskForm):
 
+    # Need to add email?
+
     # name = StringField("Name", validators=[DataRequired()])
 
     type = SelectField("Type", choices=["Makeup", "Emcee/Hosting", "Acting"]validators=[DataRequired()])
