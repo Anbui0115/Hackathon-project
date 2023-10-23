@@ -43,7 +43,7 @@
 # #     create_dance_apt_form['csrf_token'].data = request.cookies['csrf_token']
 # #     # print("current user is: **********************************", current_user)
 
-# #     if create_dance_apt_form.validate_on_submit:
+# #     if create_dance_apt_form.validate_on_submit():
 # #         data = create_dance_apt_form.data
 # #         new_dance_apt = DanceClassAppointment(
 # #                 user_id=current_user.id,
