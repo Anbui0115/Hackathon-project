@@ -1,0 +1,50 @@
+/* footer.css */
+
+#footer {
+  background-color: #333;
+  color: #fff;
+  /* padding: 10 0; */
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  display: flex; /* Use flex to vertically center content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+
+.container {
+  padding: 0 20px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  fill: #fff; /* Icon color */
+  padding: 10;
+  margin-right: 10px; /* Spacing between icons */
+}
+
+/* Add media query to adjust footer styles on smaller screens if needed */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* Add styles for your social media icons */
+.social-icon {
+  fill: #fff; /* Icon color */
+  margin-right: 10px; /* Spacing between icons */
+}
+
+.container {
+  padding: 0 20px;
+}
+
+/* Add media query to adjust footer styles on smaller screens if needed */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+}
