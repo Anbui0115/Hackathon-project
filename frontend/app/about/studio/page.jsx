@@ -1,5 +1,5 @@
 import React from 'react';
-import './about.css';
+import './studio.css';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 
