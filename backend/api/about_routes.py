@@ -7,7 +7,7 @@ from backend.models import User
 about_routes = Blueprint('about', __name__)
 
 
-about_routes.route('/artist')
+@about_routes.route('/artist')
 # @login_required ?
 def about_artist():
     artist_data = {
