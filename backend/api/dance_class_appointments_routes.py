@@ -19,6 +19,7 @@ dance_class_appointment_bp = Blueprint(
 def all_dance_class_appointments():
     dance_class_appointments = Dance_Class_Appointment.query.all()
     response = []
+
     if dance_class_appointments:
         for apt in dance_class_appointments:
             apt_obj = apt.to_dict()
@@ -44,6 +45,7 @@ def create_dance_apt():
 
     if create_dance_apt_form.validate_on_submit:
         data = create_dance_apt_form.data
+
         new_dance_apt = Dance_Class_Appointment(
             # name=data["name"],
             user_id=current_user.id,
@@ -79,7 +81,7 @@ def delete_dance_apt(dance_apt_id):
         db.session.commit()
         return "appointment was succesfully deleted"
 
-    return "404 review not found"
+    return "404 appointment not found"
 
 
 # function to convert datetime obj to integer value so we can compare
