@@ -91,7 +91,7 @@ const NavBar = () => {
             toggleMenu && (
               <div 
                 onMouseLeave={() => setToggleMenu(false)}
-                className="absolute z-10 top-16 mt-2 w-[240px] rounded-md shadow-lg bg-white"
+                className="absolute z-10 top-16 mt-2 w-[860px] rounded-md shadow-lg bg-white"
               >
                 <div className="px-6 py-4 rounded-md bg-white flex flex-col gap-2">
                   <Link href="/signup" className="hover:text-orange-500">Sign Up</Link>
