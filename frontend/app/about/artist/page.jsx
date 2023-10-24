@@ -7,8 +7,8 @@ import ChatBot from "@/components/ChatBot";
 const AboutArtist = () => {
     return (
         <div>
-            <NavBar/>
             <div className='artist-page'>
+                <NavBar/>
                 <div className='artist-page-content'>
                     <div className='artist-page-title'>
                         <div>About the Artist</div>

@@ -11,8 +11,8 @@ export default function Home() {
 
   return (
     <main>
-      <NavBar />
       <div className='home-page'>
+        <NavBar />
         <Testimonial />
         <ChatBot />
         <Footer/>

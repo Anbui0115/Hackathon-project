@@ -7,7 +7,7 @@ import ChatBot from '@/components/ChatBot';
 const FAQ = () => {
   return (
     <>
-      <NavBar className='navbar' />
+      <NavBar/>
       <div className='faq-page'>
         <div className='faq-page-content'>
           <h1 className='faq-page-title'>Frequently Asked Questions</h1>
