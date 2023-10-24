@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from ..models import db, User, GeneralAppointment
 from wtforms import StringField, SelectMultipleField, SubmitField, IntegerField, FloatField, DateField, SelectField, TextAreaField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms.validators import DataRequired, ValidationError, Email
 from flask_login import current_user, login_user, logout_user, login_required
 
 
@@ -13,7 +13,7 @@ class CreateGeneralAppointmentForm(FlaskForm):
 
     last_name = StringField("last_name", validators=[DataRequired()])
 
-    email = StringField("email", validators=[DataRequired()])
+    email = StringField("email",validators=[Email(required=True)])
 
     phone_number = IntegerField("phone_number", validators=[DataRequired()])
 
