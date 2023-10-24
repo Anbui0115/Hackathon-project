@@ -14,7 +14,11 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
   return (
     <div onClick={(e) => e.stopPropagation()} className="z-10 absolute left-[30%] top-[15%] h-[auto] bg-white w-[40%] p-10 border-2 rounded-md shadow-2xl">
       {/* Modal content */}
-      <button className="" onClick={handleCloseModal}>X</button>
+      {/* <button className="" onClick={handleCloseModal}>X</button> */}
+      <div className="flex justify-between items-center"> 
+        <h1 className="text-3xl font-bold">Leave a testimonial</h1>
+        <button className="" onClick={() => handleCloseModal()} >X</button>
+      </div>
      <form 
         className=""
         action=""
