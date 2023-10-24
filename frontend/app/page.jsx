@@ -16,15 +16,15 @@ export default function Home() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-
     <main className="">
       <NavBar />
       <MyButton onButtonClick={openModal} />
       <Testimonial />
       <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
-      <Footer/>
+      <Footer />
       <ChatBot />
-  )
+    </main>
+  );  
 }
 
 
