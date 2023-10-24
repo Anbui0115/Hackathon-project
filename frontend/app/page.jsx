@@ -17,13 +17,13 @@ export default function Home() {
 
   return (
 
-    <main className="home-page">
 
+    <main className="home-page">
       <NavBar />
       <Testimonial />
       <NewTstimonialButton onButtonClick={openModal} />
       <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
-      <Footer/>
+      <Footer />
       <ChatBot />
       </main>
   )
