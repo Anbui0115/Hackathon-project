@@ -12,22 +12,18 @@ export default function Home() {
   const [dark, setDark] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <main>
-      <div className='home-page'>
-        <NavBar />
-        <Testimonial />
-        <MyButton onButtonClick={openModal} />
-        <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
-         <ChatBot />
-        <Footer/>
-      </div>
-      
-    </main>
+
+    <main className="">
+      <NavBar />
+      <MyButton onButtonClick={openModal} />
+      <Testimonial />
+      <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
+      <Footer/>
+      <ChatBot />
   )
 }
 

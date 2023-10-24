@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 function MyButton({ onButtonClick }) {
   return (
     <button onClick={onButtonClick}>
-      CAN YOU SEE ME ????
+      This is a placeholder for "Leave your testimonial" button
     </button>
   );
 }
