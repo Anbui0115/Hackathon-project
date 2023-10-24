@@ -15,7 +15,7 @@ class Dance_Class_Appointment(db.Model):
     __tablename__ = "dance_class_appointments"
 
     id = db.Column(db.Integer, primary_key=True)
-    # user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     first_name=db.Column(db.String(100), nullable=False)
     last_name=db.Column(db.String(100), nullable=False)
     email=db.Column(db.String(100), nullable=False)
@@ -64,7 +64,7 @@ class General_Appointment(db.Model):
     __tablename__ = "general_appointments"
 
     id = db.Column(db.Integer, primary_key=True)
-    # user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     first_name=db.Column(db.String(100), nullable=False)
     last_name=db.Column(db.String(100), nullable=False)
     email=db.Column(db.String(100), nullable=False)
