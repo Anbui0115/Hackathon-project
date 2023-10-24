@@ -19,23 +19,13 @@ const NavBar = () => {
     
     <div className={`bg-orange-100 h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
       {/* Logo / Dance Studio Title */}
-      <div className="text-xl font-bold">Priyada Arts Dance Studio</div>
+      <div className="text-xl font-bold"><Link href="/">Priyada Arts Dance Studio</Link></div>
 
       {/* NavLinks */}
       <div className="flex space-x-8 items-center">
-        <nav className="text-lg font-semibold">
-          <Link href="/media-gallery">Additional Services</Link>
-        </nav>
-        <nav className="text-lg font-semibold">
-          <Link href="/media-gallery">Media Gallery</Link>
-        </nav>
-        <nav className="text-lg font-semibold">
-          <Link href="/faq">FAQ</Link>{" "}
-          {/* Duplicate Link. Ensure you update this */}
-        </nav>
 
         {/* About Navbar Link */}
-        <nav  
+        <nav
           className="text-lg font-semibold relative"
           onMouseEnter={() => setToggleAbout(true)}
           onClick={() => setToggleAbout(!toggleAbout)}
@@ -45,28 +35,42 @@ const NavBar = () => {
           {/* About Dropdown Menu */}
           {
             toggleAbout && (
-              <div 
+              <div
                 onMouseLeave={() => setToggleAbout(false)}
                 className="absolute z-10 top-full  mt-2 w-[210px] rounded-md shadow-lg bg-white"
               >
                 <div className="px-6 py-4 rounded-md bg-white flex flex-col gap-2">
-                  <Link 
-                    href="/about/artist"
-                    className="hover:text-orange-500"
-                    >
-                    About the Artist
-                  </Link>
-
-                  <Link 
+                  <Link
                     href="/about/studio"
                     className="hover:text-orange-500"
                   >
                     About the Studio
                   </Link>
+
+                  <Link
+                    href="/about/artist"
+                    className="hover:text-orange-500"
+                  >
+                    About the Artist
+                  </Link>
+
                 </div>
               </div>
             )
           }
+        </nav>
+
+        <nav className="text-lg font-semibold">
+          <Link href="/media-gallery">Media Gallery</Link>
+        </nav>
+        
+        <nav className="text-lg font-semibold">  
+          <Link href="/faq">FAQs</Link>{" "}
+          {/* Duplicate Link. Ensure you update this */}
+        </nav>
+
+        <nav className="text-lg font-semibold">
+          <Link href="/services">Services</Link>
         </nav>
 
         {/* Contact Us */}
@@ -91,7 +95,7 @@ const NavBar = () => {
             toggleMenu && (
               <div 
                 onMouseLeave={() => setToggleMenu(false)}
-                className="absolute z-10 top-16 mt-2 w-[240px] rounded-md shadow-lg bg-white"
+                className="absolute z-10 top-16 mt-2 w-[180px] rounded-md shadow-lg bg-white"
               >
                 <div className="px-6 py-4 rounded-md bg-white flex flex-col gap-2">
                   <Link href="/signup" className="hover:text-orange-500">Sign Up</Link>
