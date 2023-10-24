@@ -7,7 +7,7 @@ import Testimonial from '@/components/Testimonial'
 import ChatBot from '@/components/ChatBot'
 import CreateTestimonial from '@/components/CreateTestimonial'
 import MyButton from '@/components/MyButton'
-
+import './homepage.css'
 export default function Home() {
   const [dark, setDark] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,14 +17,15 @@ export default function Home() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <main className="">
-      <NavBar />
-      <Testimonial />
- 
-      <MyButton onButtonClick={openModal} />
-      <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
-      <Footer/>
-      <ChatBot />
+    <main>
+      <div className='home-page'>
+        <NavBar />
+        <Testimonial />
+        <MyButton onButtonClick={openModal} />
+        <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
+         <ChatBot />
+        <Footer/>
+      </div>
       
     </main>
   )
