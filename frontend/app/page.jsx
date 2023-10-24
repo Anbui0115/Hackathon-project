@@ -21,9 +21,9 @@ export default function Home() {
       <div className='home-page'>
         <NavBar />
         <Testimonial />
+        <MyButton onButtonClick={openModal} />
+        <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
          <ChatBot />
-      <MyButton onButtonClick={openModal} />
-      <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
         <Footer/>
       </div>
       
