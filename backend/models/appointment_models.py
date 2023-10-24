@@ -10,7 +10,7 @@ Base=declarative_base()
 # ________________________________________________________________________________________________________
 
 
-class DanceClassAppointment(db.Model):
+class Dance_Class_Appointment(db.Model):
 
     __tablename__ = "dance_class_appointments"
 
@@ -30,8 +30,9 @@ class DanceClassAppointment(db.Model):
     notes = db.Column(db.TEXT, nullable=False)
 
 
-    # user = db.relationship("User", back_populates="dance_class_appointments")
 
+    user = db.relationship("User", back_populates="dance_class_appointments")
+    dance_videos = db.relationship("Dance_Video", back_populates="dance_class_appointment")
 
     def to_dict(self):
         return {
@@ -52,12 +53,13 @@ class DanceClassAppointment(db.Model):
         }
 
     def __repr__(self):
-        return f'<DanceClassAppointments, id={self.id},level={self.level}, accepted={self.accepted}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
+
+        return f'<Dance_Class_Appointments, id={self.id}, user_id={self.user_id},level={self.level}, accepted={self.accepted}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
 
 # ________________________________________________________________________________________________________
 
 
-class GeneralAppointment(db.Model):
+class General_Appointment(db.Model):
 
     __tablename__ = "general_appointments"
 
@@ -67,6 +69,7 @@ class GeneralAppointment(db.Model):
     last_name=db.Column(db.String(100), nullable=False)
     email=db.Column(db.String(100), nullable=False)
     phone_number=db.Column(db.String(20), nullable=False)
+
 
     date = db.Column(db.DateTime, nullable=False, unique=False)
     start_time = db.Column(db.DateTime, nullable=False)
@@ -80,7 +83,9 @@ class GeneralAppointment(db.Model):
     accepted = db.Column(db.Boolean, nullable=False, default=False)
     notes = db.Column(db.TEXT, nullable=False)
 
-    # user = db.relationship("User", back_populates="general_appointments")
+
+    user = db.relationship("User", back_populates="general_appointments")
+    general_media = db.relationship("General_Media", back_populates="general_appointment")
 
     def to_dict(self):
         return {

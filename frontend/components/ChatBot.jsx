@@ -1,24 +1,137 @@
 "use client";
 
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Chat from '../public/chat.png';
 import Image from "next/image";
+import axios from "axios";
+import { PulseLoader } from "react-spinners";
+
+
+//TODO Loading 
 
 const ChatBot = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([{ type: 'chatbot', content: 'Hi there! How can I help you today? ' }]);
   const [input, setInput] = useState("");
-  const [toggleChat, setToggleChat] = useState(false);
+  const [toggleChat, setToggleChat] = useState(true);
+  const [loading, setLoading] = useState(false)
+  const [color, setColor] = useState("#7FFFD4");
+
+  const messagesEndRef = useRef(null);  // Create a ref
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(scrollToBottom, [messages]);
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+  
+    if (!input || input.trim() === "") {
+      console.log("Input is empty or undefined.");
+      return;
+    }
+  
+    setLoading(true);  // Set loading to true before sending the request
+  
+    try {
+      const response = await axios.post(
+        `/api/chatbot`,
+        { input: JSON.stringify(input) }
+      );
+  
+      if (response) {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { type: "user", content: input },
+          { type: "chatbot", content: response.data.message }
+        ]);
+        setInput("");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+    } finally {
+      setLoading(false);  // Set loading to false after receiving the response or if an error occurs
+    }
+  }
+  
 
   return (
-    <div className="bottom-16 right-16 z-20 fixed">
-      <Image 
-        src={Chat}
-        height={60}
-        width={60}
-      />
+    <div className="bottom-16 right-16 z-20 fixed flex items-end">
+      
+      {/* Chat Screen */}
+      {toggleChat && (
+        <div className="relative left-24 bottom-24 z-30 bg-white p-4 px-8 rounded-md shadow-lg border w-[600px] h-[700px] mx-2 overflow-y-auto">
+
+          {/* Chat Header */}
+          <div className="my-2 text-xl font-semibold">Chat with PriyadaGPT</div>
+          
+          <hr className="border-gray-300 mx-[-16px]" /> 
+
+          {/* ChatSubHeader Tips & Tricks */}
+          <div className="flex flex-col gap-2 mt-2">
+            <div className="text-lg font-semibold underline">Things I can do for you</div>
+            <div className="">Ask me about the studio or the teachers</div>
+            <div>Ask me about my current dance class bookings</div>
+            <div>Ask me any questions you might have about the dance studio</div>
+          </div>
+          
+          <hr className="border-gray-300 mx-[-16px] my-4" /> 
+
+          {/* Chat messages will go here */}
+          <div className="my-4 flex flex-col">
+            {messages.map((message, index) => (
+              <div 
+                key={index} 
+                className={`
+                  my-2 p-2 rounded 
+                  ${message.type === 'user' 
+                    ? 'bg-cyan-600 text-white self-end font-semibold' 
+                    : 'bg-stone-200 self-start font-semibold'}
+                  max-w-2/3
+                `}
+              >
+                {message.content}
+              </div>
+            ))}
+            {loading && (
+              <div className="self-center">
+                <PulseLoader color={color} />
+              </div>
+            )}
+            <div ref={messagesEndRef} /> 
+          </div>
+
+
+          
+         {/* Input area */}
+         <div className="mt-2">
+            <form onSubmit={sendMessage}>
+              <input 
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className="w-full p-2 border rounded"
+                placeholder="Type your message..."
+              />
+              <button type="submit" className="hidden">Send</button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Chat Icon */}
+      <div className="cursor-pointer" onClick={() => setToggleChat(!toggleChat)}>
+        <Image 
+          src={Chat}
+          height={60}
+          width={60}
+        />
+      </div>
+      
     </div>
   );
 }
 
 export default ChatBot;
+

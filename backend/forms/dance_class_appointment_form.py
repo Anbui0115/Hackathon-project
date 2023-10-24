@@ -1,7 +1,9 @@
 from flask_wtf import FlaskForm
-from ..models import db, User, DanceClassAppointment
+# from ..models import db, User, Review, DanceClassAppointment, Coder, Skill
+from ..models import db, User, Review, DanceClassAppointment
 from wtforms import StringField, SelectMultipleField, SubmitField, IntegerField, FloatField, DateField, SelectField, TextAreaField
 from wtforms.validators import DataRequired, ValidationError, Email
+
 from flask_login import current_user, login_user, logout_user, login_required
 
 
