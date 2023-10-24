@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, redirect
 from flask_cors import CORS
 from flask_migrate import Migrate
 from .models import db, User
@@ -9,6 +9,8 @@ from .api.auth_routes import auth_routes
 from .api.dance_class_appointments_routes import dance_class_appointment_bp
 from .api.general_appointments_routes import general_appointment_bp
 from flask_login import LoginManager
+from flask_wtf.csrf import CSRFProtect, generate_csrf
+import os
 
 app = Flask(__name__)
 
@@ -39,6 +41,26 @@ Migrate(app, db)
 
 # Application Security
 CORS(app)
+
+@app.before_request
+def https_redirect():
+    if os.environ.get('FLASK_ENV') == 'production':
+        if request.headers.get('X-Forwarded-Proto') == 'http':
+            url = request.url.replace('http://', 'https://', 1)
+            code = 301
+            return redirect(url, code=code)
+
+
+@app.after_request
+def inject_csrf_token(response):
+    response.set_cookie(
+        'csrf_token',
+        generate_csrf(),
+        secure=True if os.environ.get('FLASK_ENV') == 'production' else False,
+        samesite='Strict' if os.environ.get(
+            'FLASK_ENV') == 'production' else None,
+        httponly=True)
+    return response
 
 # Test Route
 @app.route('/test')

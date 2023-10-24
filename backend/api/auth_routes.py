@@ -43,11 +43,6 @@ def login():
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
-# Google Login
-# @auth_routes.route('/login/google')
-# def google_login():
-#     return redirect(url_for('auth.google_authorize'))
-
 
 @auth_routes.route('/logout')
 def logout():

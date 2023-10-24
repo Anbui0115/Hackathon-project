@@ -20,7 +20,7 @@ class Dance_Video(db.Model):
 
 
     #relationship
-    dance_class_appintment_id = db.relationship("Dance_Class_Appointment", back_populates="dance_videos")
+    dance_class_appointment = db.relationship("Dance_Class_Appointment", back_populates="dance_videos")
 
 
     def to_dict(self):

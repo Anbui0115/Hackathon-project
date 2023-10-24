@@ -21,7 +21,7 @@ class General_Media(db.Model):
 
 
     #relationship
-    general_appointment_id = db.relationship("General_Appointment", back_populates="general_media")
+    general_appointment = db.relationship("General_Appointment", back_populates="general_media")
 
 
     def to_dict(self):
