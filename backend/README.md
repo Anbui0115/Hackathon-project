@@ -16,7 +16,7 @@ You should be able to see the following output:
 }
 
 4. Initialize database
-flask --app backend init db
+flask --app backend db init
 
 5. Migrate database
 flask --app backend db migrate

@@ -1,5 +1,5 @@
 from .db import db, environment, SCHEMA
-from .appointment_models import General_Appointment
+from .appointment_models import GeneralAppointment
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
