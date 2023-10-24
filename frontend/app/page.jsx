@@ -5,17 +5,18 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Testimonial from '@/components/Testimonial'
 import ChatBot from '@/components/ChatBot'
-
+import './homepage.css'
 export default function Home() {
   const [dark, setDark] = useState(false);
 
   return (
-    <main className="">
+    <main>
       <NavBar />
-      <Testimonial />
-
-      <Footer/>
-      <ChatBot />
+      <div className='home-page'>
+        <Testimonial />
+        <ChatBot />
+        <Footer/>
+      </div>
       
     </main>
   )

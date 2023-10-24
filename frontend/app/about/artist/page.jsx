@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import "./artist.css";
+import ChatBot from "@/components/ChatBot";
 
 const AboutArtist = () => {
     return (
@@ -14,7 +15,7 @@ const AboutArtist = () => {
                     </div>
                         <div className="artist-page-text">
                             <p>
-                                Priyanka Raghuraman is a passionate and talented multidisciplinary artist who is constantly exploring new creative territories. She is the founder and artistic director of Priyada Arts, a vibrant community in the Bay Area that welcomes and nurtures aspiring Bharatanatyam dancers from all backgrounds. Priyanka is also known for her original works that merge contemporary themes with the traditional art form, creating a mirror of our times that is both insightful and thought-provoking. As a trailblazing performer, choreographer, and teacher, Priyanka has earned a reputation for her exceptional skills in both “Nirtta” (pure dance movements) and “Abhinaya” (facial expressions used in storytelling).
+                                Priyanka Raghuraman is a passionate and talented multidisciplinary artist who is constantly exploring new creative territories. She is the founder and artistic director of <strong>Priyada Arts</strong>, a vibrant community in the Bay Area that welcomes and nurtures aspiring Bharatanatyam dancers from all backgrounds. Priyanka is also known for her original works that merge contemporary themes with the traditional art form, creating a mirror of our times that is both insightful and thought-provoking. As a trailblazing performer, choreographer, and teacher, Priyanka has earned a reputation for her exceptional skills in both “Nirtta” (pure dance movements) and “Abhinaya” (facial expressions used in storytelling).
                             </p>
 
                             <p>
@@ -36,6 +37,7 @@ const AboutArtist = () => {
                     </div>
                 </div>
             <Footer/>
+            <ChatBot/>
         </div>
     )
 }
