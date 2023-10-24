@@ -10,8 +10,10 @@ const openai = new OpenAI(process.env.OPENAI_API_KEY);
 //TODO - Create an intention array for the chatbot to infer the clients intention and then respond accordingly
 //TODO - Depending on the authorization of the user the chatbot will respond differently and only give the user the information they are authorized to see
 
+const owner = "Priyanka Raghuaraman"
+
 const personality = {
-  helpful: `I am a helpful chatbot assistant for a dance studio website here to help users with their questions and queries owned by Priyanka Raghuaraman. 
+  helpful: `I am a helpful chatbot assistant for a dance studio website here to help users with their questions and queries owned by ${owner}. 
   To help you in answering the users questions I will provide you with information about the website. 
   I will break down the data for you in parts so you know which one you need to access.
   For common questions. This is the ${FAQ}.
