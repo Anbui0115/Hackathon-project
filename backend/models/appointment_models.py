@@ -10,7 +10,7 @@ Base=declarative_base()
 # ________________________________________________________________________________________________________
 
 
-class Dance_Class_Appointment(db.Model):
+class DanceClassAppointment(db.Model):
 
     __tablename__ = "dance_class_appointments"
 
@@ -59,7 +59,7 @@ class Dance_Class_Appointment(db.Model):
 # ________________________________________________________________________________________________________
 
 
-class General_Appointment(db.Model):
+class GeneralAppointment(db.Model):
 
     __tablename__ = "general_appointments"
 
