@@ -1,0 +1,37 @@
+/* faq.css */
+.faq-page {
+    background-color: #f9f9f9;
+}
+
+
+.faq-page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.faq-page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.faq-page-text {
+    font-size: 16px;
+}
+
+/* Style the FAQ questions (odd numbered paragraphs) */
+.faq-page-text p:nth-child(odd) {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style the FAQ answers (even numbered paragraphs) */
+.faq-page-text p:nth-child(even) {
+    margin-left: 20px;
+    color: #666;
+    margin-bottom: 10px;
+}

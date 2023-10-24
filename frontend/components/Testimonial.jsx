@@ -1,5 +1,8 @@
+"use client"
 import React from 'react'
 import TestimonialCard from './TestimonialCard'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 const testimonies = [
   {
@@ -8,7 +11,7 @@ const testimonies = [
     role: "Student at Priyada Arts"
   },
   {
-    content: "Working with Priyanka has been a transformative experience. She has a rare combination of technical brialliance and emotional depth that makes her performances truly uhnforgettable.",
+    content: "Working with Priyanka has been a transformative experience. She has a rare combination of technical brialliance and emotional depth that makes her performances truly unforgettable.",
     name: "Rohan B.",
     role: "Collaborator"
   },
@@ -61,15 +64,30 @@ const testimonies = [
 
 const Testimonial = () => {
   return (
-    <div className="flex flex-col items-center my-12  "> {/* Notice the added mb-20 */}
-      <div className="text-3xl font-semibold my-10 uppercase underline">Testimonials</div>
+    <div className="flex flex-col items-center my-4  "> {/* Notice the added mb-20 */}
+      <div className="text-3xl font-semibold my-8 uppercase underline">Testimonials</div>
 
       {/* Container for Testimonials Data */}
-      <div className="flex flex-wrap justify-center gap-10 mx-12 w-full">
-        {testimonies.map((testimony, index) => (
-          <TestimonialCard key={index} testimony={testimony} />
+      <div className="w-4/5 mx-auto">
+      <Carousel
+          centerMode 
+          showThumbs={false} 
+          showStatus={false} 
+          centerSlidePercentage={34} // Adjust this as needed
+          autoPlay={true}
+          infiniteLoop={true}
+          interval={5000}
+          transitionTime={1000}
+      >
+      
+          {testimonies.map((testimony, index) => (
+            <div key={index} className="p-4">
+                <TestimonialCard testimony={testimony} />
+            </div>
         ))}
+      </Carousel>
       </div>
+
     </div>
   );
 }
