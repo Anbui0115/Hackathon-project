@@ -1,30 +1,67 @@
 "use client";
 
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Chat from '../public/chat.png';
 import Image from "next/image";
+import axios from "axios";
+import { PulseLoader } from "react-spinners";
+
+
+//TODO Loading 
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([{ type: 'chatbot', content: 'Hi there! How can I help you today? ' }]);
   const [input, setInput] = useState("");
   const [toggleChat, setToggleChat] = useState(true);
+  const [loading, setLoading] = useState(false)
+  const [color, setColor] = useState("#7FFFD4");
 
-  const handleSendMessage = (e) => {
-    e.preventDefault()
+  const messagesEndRef = useRef(null);  // Create a ref
 
-    if (input.trim() !== "") {
-      setMessages([...messages, { type: 'user', content: input.trim() }]);
-      setInput("");
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(scrollToBottom, [messages]);
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+  
+    if (!input || input.trim() === "") {
+      console.log("Input is empty or undefined.");
+      return;
+    }
+  
+    setLoading(true);  // Set loading to true before sending the request
+  
+    try {
+      const response = await axios.post(
+        `/api/chatbot`,
+        { input: JSON.stringify(input) }
+      );
+  
+      if (response) {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { type: "user", content: input },
+          { type: "chatbot", content: response.data.message }
+        ]);
+        setInput("");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+    } finally {
+      setLoading(false);  // Set loading to false after receiving the response or if an error occurs
     }
   }
+  
 
   return (
     <div className="bottom-16 right-16 z-20 fixed flex items-end">
       
       {/* Chat Screen */}
       {toggleChat && (
-        <div className="relative left-24 bottom-24 z-30 bg-white p-4 rounded-md shadow-lg border w-[600px] h-[auto] mr-2 overflow-y-auto">
+        <div className="relative left-24 bottom-24 z-30 bg-white p-4 px-8 rounded-md shadow-lg border w-[600px] h-[700px] mx-2 overflow-y-auto">
 
           {/* Chat Header */}
           <div className="my-2 text-xl font-semibold">Chat with PriyadaGPT</div>
@@ -50,19 +87,26 @@ const ChatBot = () => {
                   my-2 p-2 rounded 
                   ${message.type === 'user' 
                     ? 'bg-cyan-600 text-white self-end font-semibold' 
-                    : 'bg-gray-200 self-start font-semibold'}
+                    : 'bg-stone-200 self-start font-semibold'}
                   max-w-2/3
                 `}
               >
                 {message.content}
               </div>
             ))}
+            {loading && (
+              <div className="self-center">
+                <PulseLoader color={color} />
+              </div>
+            )}
+            <div ref={messagesEndRef} /> 
           </div>
+
 
           
          {/* Input area */}
          <div className="mt-2">
-            <form onSubmit={handleSendMessage}>
+            <form onSubmit={sendMessage}>
               <input 
                 type="text"
                 value={input}
@@ -77,7 +121,7 @@ const ChatBot = () => {
       )}
 
       {/* Chat Icon */}
-      <div onClick={() => setToggleChat(!toggleChat)}>
+      <div className="cursor-pointer" onClick={() => setToggleChat(!toggleChat)}>
         <Image 
           src={Chat}
           height={60}
