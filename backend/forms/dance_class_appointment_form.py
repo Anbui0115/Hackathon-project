@@ -1,5 +1,4 @@
 from flask_wtf import FlaskForm
-# from ..models import db, User, Review, DanceClassAppointment, Coder, Skill
 from ..models import db, User, Review, DanceClassAppointment
 from wtforms import StringField, SelectMultipleField, SubmitField, IntegerField, FloatField, DateField, SelectField, TextAreaField
 from wtforms.validators import DataRequired, ValidationError, Email
@@ -14,7 +13,7 @@ class CreateDanceClassAppointmentForm(FlaskForm):
 
     last_name = StringField("last_name", validators=[DataRequired()])
 
-    email = StringField("email",validators=[Email(required=True)])
+    # email = StringField("email",validators=[Email(required=True)])
 
     age= IntegerField("age", validators=[DataRequired()])
 

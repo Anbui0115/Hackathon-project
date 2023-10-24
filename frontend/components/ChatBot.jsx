@@ -8,11 +8,12 @@ import { PulseLoader } from "react-spinners";
 
 
 //TODO Loading 
+//TODO Different chat bubble
 
 const ChatBot = () => {
   const [messages, setMessages] = useState([{ type: 'chatbot', content: 'Hi there! How can I help you today? ' }]);
   const [input, setInput] = useState("");
-  const [toggleChat, setToggleChat] = useState(true);
+  const [toggleChat, setToggleChat] = useState(false);
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#7FFFD4");
 

@@ -1,5 +1,5 @@
 /* studio.css */
-.about-page {
+.artist-page {
     background-color: black;
     display: flex;
     width: 100%;
@@ -9,13 +9,13 @@
     min-height: 90vh;
 }
 
-.about-page-content {
+.artist-page-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
-.about-page-title {
+.artist-page-title {
     font-size: 36px;
     font-weight: bold;
     margin-top: 40px;
@@ -23,23 +23,23 @@
     color: white;
 }
 
-.about-page-text {
+.artist-page-text {
     font-size: 18px;
     line-height: 1.5;
 }
 
-.about-page-text p {
+.artist-page-text p {
     color: white;
     margin-bottom: 30px;
     text-align: center;
 }
 
 @media (max-width: 767px) {
-.about-page-title {
+.artist-page-title {
     font-size: 28px;
 }
 
-.about-page-text {
+.artist-page-text {
     font-size: 16px;
 }
 }

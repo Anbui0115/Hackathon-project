@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, url_for, redirect, request, jsonify
-from ..models import GeneralAppointment, User, db
+# from ..models import GeneralAppointment, User, db
 from flask_login import current_user, login_user, logout_user, login_required
 from ..forms.general_appointment_form import CreateGeneralAppointmentForm
 
@@ -52,7 +52,7 @@ def create_general_apt():
             type=data["type"],
             date=data["class"],
             start_time=data["start_time"],
-            end_time=data["end_time"]
+            end_time=data["end_time"],
             location=data["location"],
             notes=data["notes"],
             accepted=False
