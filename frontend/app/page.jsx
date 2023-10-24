@@ -6,24 +6,26 @@ import Footer from '@/components/Footer'
 import Testimonial from '@/components/Testimonial'
 import ChatBot from '@/components/ChatBot'
 import CreateTestimonial from '@/components/CreateTestimonial'
-import MyButton from '@/components/MyButton'
+import NewTstimonialButton from '@/components/NewTestimonialButton'
 import './homepage.css'
 export default function Home() {
   const [dark, setDark] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
+  const openModal = () => setIsModalOpen(!isModalOpen);
   const closeModal = () => setIsModalOpen(false);
 
   return (
 
-    <main className="">
+    <main className="home-page">
+
       <NavBar />
-      <MyButton onButtonClick={openModal} />
       <Testimonial />
+      <NewTstimonialButton onButtonClick={openModal} />
       <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
       <Footer/>
       <ChatBot />
+      </main>
   )
 }
 
