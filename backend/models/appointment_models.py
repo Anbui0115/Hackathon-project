@@ -10,7 +10,7 @@ Base=declarative_base()
 # ________________________________________________________________________________________________________
 
 
-class DanceClassAppointment(db.Model):
+class Dance_Class_Appointment(db.Model):
 
     __tablename__ = "dance_class_appointments"
 
@@ -41,17 +41,18 @@ class DanceClassAppointment(db.Model):
         }
 
     def __repr__(self):
-        return f'<DanceClassAppointments, id={self.id}, user_id={self.user_id},level={self.level}, accepted={self.accepted}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
+        return f'<Dance_Class_Appointments, id={self.id}, user_id={self.user_id},level={self.level}, accepted={self.accepted}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
 
 # ________________________________________________________________________________________________________
 
 
-class GeneralAppointment(db.Model):
+class General_Appointment(db.Model):
 
     __tablename__ = "general_appointments"
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+
 
     date = db.Column(db.DateTime, nullable=False, unique=False)
     duration = db.Column(db.String(100), nullable=False)

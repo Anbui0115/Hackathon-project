@@ -11,7 +11,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 #     # name = StringField("Name", validators=[DataRequired()])
 
-    level = SelectField("Experience", choices=["Beginner: 0-5 years of experience", "Intermediate: 5-10 years of experience, Advanced: 10-20 years of experience, Senior: 20+ years of experience"], validators=[DataRequired()])
+#     level = SelectField("Experience", choices=["Beginner: 0-5 years of experience", "Intermediate: 5-10 years of experience, Advanced: 10-20 years of experience, Senior: 20+ years of experience"], validators=[DataRequired()])
 
 #     date = DateField('Date',validators=[DataRequired()])
 

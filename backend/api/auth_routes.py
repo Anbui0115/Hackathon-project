@@ -62,13 +62,14 @@ def sign_up():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         user = User(
-            user_name=form.data['user_name'],
+            username=form.data['username'],
             email=form.data['email'],
             first_name=form.data['first_name'],
             last_name=form.data['last_name'],
             address=form.data['address'],
             password=form.data['password'],
-            phone_number=form.data['phone_number']
+            phone_number=form.data['phone_number'],
+            authorization=form.data['authorization']
 
             # If we add free user and payment_info here
         )
