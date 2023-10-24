@@ -31,7 +31,6 @@ const NavBar = () => {
         </nav>
         <nav className="text-lg font-semibold">
           <Link href="/faq">FAQ</Link>{" "}
-          {/* Duplicate Link. Ensure you update this */}
         </nav>
 
         {/* About Navbar Link */}
