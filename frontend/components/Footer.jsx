@@ -41,7 +41,6 @@ const Footer = () => {
 
             <div>Address: Priyada Arts Studio, Newark </div>
 
-            <div>Phone: (123) 456-7890</div>
           </div>
         </div>
 
