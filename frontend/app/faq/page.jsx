@@ -2,7 +2,7 @@ import React from 'react';
 import './faq.css';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
-
+import ChatBot from '@/components/ChatBot';
 
 const FAQ = () => {
   return (
@@ -44,6 +44,7 @@ const FAQ = () => {
             <p>Our cancellation and refund policies may vary depending on the type of class. Please refer to our terms and conditions on our website or contact us for specific details.</p>
           </div>
         </div>
+        <ChatBot/>
         <Footer/>
       </div>
     </>

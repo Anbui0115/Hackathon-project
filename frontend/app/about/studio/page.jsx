@@ -2,7 +2,7 @@ import React from 'react';
 import './studio.css';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
-
+import ChatBot from '@/components/ChatBot';
 
 const About = () => {
     return (
@@ -16,6 +16,7 @@ const About = () => {
                 </div>
             </div>
             <Footer className='footer'/>
+            <ChatBot />
         </div>
     )
 }
