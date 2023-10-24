@@ -6,7 +6,7 @@
     height: 100%;
     position: relative;
     flex-direction: column;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 ::-webkit-scrollbar {
