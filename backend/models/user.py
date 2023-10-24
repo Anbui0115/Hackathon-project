@@ -19,8 +19,8 @@ class User(db.Model, UserMixin):
     payment_info = db.Column(db.String(255), nullable=True)
 
     #relationships
-    # general_appointments = db.relationship("General_Appointment", back_populates='user', cascade="all, delete-orphan")
-    # dance_class_appointments = db.relationship("Dance_Class_Appointment", back_populates='user', cascade="all, delete-orphan")
+    general_appointments = db.relationship("General_Appointment", back_populates='user', cascade="all, delete-orphan")
+    dance_class_appointments = db.relationship("Dance_Class_Appointment", back_populates='user', cascade="all, delete-orphan")
 
     media = db.relationship("Media", back_populates='user')
     reviews = db.relationship("Review", back_populates="user")

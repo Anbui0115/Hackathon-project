@@ -24,6 +24,16 @@ const NavBar = () => {
       {/* NavLinks */}
       <div className="flex space-x-8 items-center">
 
+        <nav className="text-lg font-semibold">
+          <Link href="/media-gallery">Additional Services</Link>
+        </nav>
+        <nav className="text-lg font-semibold">
+          <Link href="/media-gallery">Media Gallery</Link>
+        </nav>
+        <nav className="text-lg font-semibold">
+          <Link href="/faq">FAQ</Link>{" "}
+        </nav>
+
         {/* About Navbar Link */}
         <nav
           className="text-lg font-semibold relative"
