@@ -23,8 +23,8 @@ class User(db.Model, UserMixin):
     dance_class_appointments = db.relationship("Dance_Class_Appointment", back_populates='user', cascade="all, delete-orphan")
 
     media = db.relationship("Media", back_populates='user')
-    review = db.relationship("Review", back_populates='user')
-    billing = db.relationship("Billing", back_populates='user', cascade="all, delete-orphan")
+    reviews = db.relationship("Review", back_populates="user")
+    billings = db.relationship("Billing", back_populates='user', cascade="all, delete-orphan")
 
     @property
     def password(self):
