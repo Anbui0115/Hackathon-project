@@ -22,7 +22,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 # app.register_blueprint(chatbot_routes, url_prefix='/api/chatbot')
 # app.register_blueprint(general_appointment_bp, url_prefix='/api/generalappointments')
 # app.register_blueprint(dance_class_appointment_bp, url_prefix='/api/danceclassappointments')
-app.register_blueprint(billing_routes, url_prefix='/api/billing')
+app.register_blueprint(billing_bp, url_prefix='/api/billing')
 # Login Manager
 login = LoginManager(app)
 login.login_view = 'auth.unauthorized'

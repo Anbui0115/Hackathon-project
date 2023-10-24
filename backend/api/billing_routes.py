@@ -70,7 +70,7 @@ def edit_billing(billing_id):
 # ________________________________________________________________________________
 
 #  DELETE BILLING SUBSCRIPTION
-@billing_bp.routes("/<int:billing_id>/", methods=["DELETE"])
+@billing_bp.route("/<int:billing_id>/", methods=["DELETE"])
 # @login_required
 def delete_billing(billing_id):
 

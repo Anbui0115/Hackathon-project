@@ -15,7 +15,11 @@ class DanceClassAppointment(db.Model):
     __tablename__ = "dance_class_appointments"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    # user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    first_name=db.Column(db.String(100), nullable=False)
+    last_name=db.Column(db.String(100), nullable=False)
+    email=db.Column(db.String(100), nullable=False)
+    phone_number=db.Column(db.Integer(12), nullable=False)
     date = db.Column(db.DateTime, nullable=False, unique=False)
     level = db.Column(db.String(100), nullable=False)
     accepted = db.Column(db.Boolean, nullable=False)
@@ -24,14 +28,18 @@ class DanceClassAppointment(db.Model):
     notes = db.Column(db.TEXT, nullable=False)
 
 
-    user = db.relationship("User", back_populates="dance_class_appointments")
+    # user = db.relationship("User", back_populates="dance_class_appointments")
 
 
     def to_dict(self):
         return {
             'id': self.id,
-            'user_id': self.user_id,
-            'user': self.user.to_dict() if self.user else None,
+            # 'user_id': self.user_id,
+            # 'user': self.user.to_dict() if self.user else None,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'phone_number': self.phone_number,
+            'email':self.email,
             'level': self.level,
             'accepted': self.accepted,
             'attendance': self.attendance,
@@ -41,7 +49,7 @@ class DanceClassAppointment(db.Model):
         }
 
     def __repr__(self):
-        return f'<DanceClassAppointments, id={self.id}, user_id={self.user_id},level={self.level}, accepted={self.accepted}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
+        return f'<DanceClassAppointments, id={self.id},level={self.level}, accepted={self.accepted}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
 
 # ________________________________________________________________________________________________________
 
@@ -51,7 +59,11 @@ class GeneralAppointment(db.Model):
     __tablename__ = "general_appointments"
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    # user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    first_name=db.Column(db.String(100), nullable=False)
+    last_name=db.Column(db.String(100), nullable=False)
+    email=db.Column(db.String(100), nullable=False)
+    phone_number=db.Column(db.Integer(12), nullable=False)
 
     date = db.Column(db.DateTime, nullable=False, unique=False)
     duration = db.Column(db.String(100), nullable=False)
@@ -64,13 +76,17 @@ class GeneralAppointment(db.Model):
     accepted = db.Column(db.Boolean, nullable=False, default=False)
     notes = db.Column(db.TEXT, nullable=False)
 
-    user = db.relationship("User", back_populates="general_appointments")
+    # user = db.relationship("User", back_populates="general_appointments")
 
     def to_dict(self):
         return {
             'id': self.id,
-            'user_id': self.user_id,
-            'user': self.user.to_dict() if self.user else None,
+            # 'user_id': self.user_id,
+            # 'user': self.user.to_dict() if self.user else None,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'phone_number': self.phone_number,
+            'email':self.email,
             'date': self.date,
             'duration': self.duration,
             'location': self.location,
@@ -82,4 +98,4 @@ class GeneralAppointment(db.Model):
         }
 
     def __repr__(self):
-        return f'<General_Appointments, id={self.id}, user_id={self.user_id},date={self.date}, accepted={self.accepted}, location={self.location}, type={self.type},duration={self.duration},created_at={self.created_at},notes={self.notes}'
+        return f'<General_Appointments, id={self.id},date={self.date}, accepted={self.accepted}, location={self.location}, type={self.type},duration={self.duration},created_at={self.created_at},notes={self.notes}'
