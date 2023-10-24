@@ -21,7 +21,9 @@ class DanceClassAppointment(db.Model):
     email=db.Column(db.String(100), nullable=False)
     phone_number=db.Column(db.Integer(), nullable=False)
     date = db.Column(db.DateTime, nullable=False, unique=False)
+
     level = db.Column(db.String(100), nullable=False)
+    age= db.Column(db.Integer(), nullable=False)
     accepted = db.Column(db.Boolean, nullable=False)
     attendance = db.Column(db.Boolean, nullable=False, default=False)
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False,default=datetime.now())
@@ -41,6 +43,7 @@ class DanceClassAppointment(db.Model):
             'phone_number': self.phone_number,
             'email':self.email,
             'level': self.level,
+            'age':self.age,
             'accepted': self.accepted,
             'attendance': self.attendance,
             'created_at': self.created_at,
@@ -63,10 +66,11 @@ class GeneralAppointment(db.Model):
     first_name=db.Column(db.String(100), nullable=False)
     last_name=db.Column(db.String(100), nullable=False)
     email=db.Column(db.String(100), nullable=False)
-    phone_number=db.Column(db.Integer(), nullable=False)
+    phone_number=db.Column(db.String(20), nullable=False)
 
     date = db.Column(db.DateTime, nullable=False, unique=False)
-    duration = db.Column(db.String(100), nullable=False)
+    start_time = db.Column(db.DateTime, nullable=False)
+    end_time = db.Column(db.DateTime, nullable=False)
     location = db.Column(db.String(200), nullable=False)
     type = db.Column(db.String(200), nullable=False)
 
@@ -88,7 +92,8 @@ class GeneralAppointment(db.Model):
             'phone_number': self.phone_number,
             'email':self.email,
             'date': self.date,
-            'duration': self.duration,
+            'start_time': self.start_time,
+            'end_time': self.end_time,
             'location': self.location,
             'type': self.type,
             'accepted': self.accepted,
@@ -98,4 +103,4 @@ class GeneralAppointment(db.Model):
         }
 
     def __repr__(self):
-        return f'<General_Appointments, id={self.id},date={self.date}, accepted={self.accepted}, location={self.location}, type={self.type},duration={self.duration},created_at={self.created_at},notes={self.notes}'
+        return f'<General_Appointments, id={self.id},date={self.date}, accepted={self.accepted}, location={self.location}, type={self.type},start_time={self.start_time}, end_time={self.end_time},created_at={self.created_at},notes={self.notes}'

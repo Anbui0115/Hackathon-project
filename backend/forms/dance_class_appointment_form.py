@@ -14,6 +14,8 @@ class CreateDanceClassAppointmentForm(FlaskForm):
 
     email = StringField("email",validators=[Email(required=True)])
 
+    age= IntegerField("age", validators=[DataRequired()])
+
     phone_number = IntegerField("phone_number", validators=[DataRequired()])
 
     level = SelectField("level", choices=["Beginner: 0-3 years of experience", "Intermediate: 3-6 years of experience, Advanced: 6-10 years of experience, Senior: 10+ years of experience"], validators=[DataRequired()])

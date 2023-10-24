@@ -12,7 +12,7 @@ dance_class_appointment_bp = Blueprint(
 
 # ____________________________________________________________________________________________________________________
 
-# GET ALL DANCE CLASS APPOINTMENTS
+# GET ALL DANCE CLASS ENQUIRIES
 
 
 @dance_class_appointment_bp.route("/", methods=["GET"])
@@ -33,7 +33,7 @@ def all_dance_class_appointments():
 
 # ____________________________________________________________________________________________________
 
-# CREATE A DANCE CLASS APPOINTMENT
+# CREATE A DANCE CLASS ENQUIRY
 
 @dance_class_appointment_bp.route("/new/", methods=["POST"])
 @login_required
@@ -46,9 +46,13 @@ def create_dance_apt():
     if create_dance_apt_form.validate_on_submit():
         data = create_dance_apt_form.data
         new_dance_apt = DanceClassAppointment(
-                user_id=current_user.id,
+                first_name=data['first_name'],
+                last_name=data['last_name'],
+                phone_number=data['phone_number'],
+                email=data['email'],
                 level=data["level"],
                 date=data["date"],
+                age=data['age']
                 notes=data["notes"],
                 accepted=False,
                 attendance=False,
@@ -66,7 +70,7 @@ def create_dance_apt():
 
 
 
-# DELETE A DANCE CLASS APPOINTMENT
+# DELETE A DANCE CLASS ENQUIRY
 
 
 @dance_class_appointment_bp.route("/<int:dance_apt_id_id>/", methods=["DELETE"])
@@ -77,7 +81,7 @@ def delete_dance_apt(dance_apt_id):
     if current_dance_apt:
         db.session.delete(current_dance_apt)
         db.session.commit()
-        return "appointment was succesfully deleted"
+        return "enquiry was succesfully deleted"
 
     return "404 appointment not found"
 

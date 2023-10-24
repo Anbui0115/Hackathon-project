@@ -45,11 +45,14 @@ def create_general_apt():
     if create_general_apt_form.validate_on_submit():
         data = create_general_apt_form.data
         new_general_apt = GeneralAppointment(
-            # name=data["name"],
-            user_id=current_user.id,
+            first_name=data['first_name'],
+            last_name=data['last_name'],
+            phone_number=data['phone_number'],
+            email=data['email'],
             type=data["type"],
             date=data["class"],
-            duration=data["duration"],
+            start_time=data["start_time"],
+            end_time=data["end_time"]
             location=data["location"],
             notes=data["notes"],
             accepted=False
