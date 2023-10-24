@@ -52,7 +52,7 @@ def create_dance_apt():
                 email=data['email'],
                 level=data["level"],
                 date=data["date"],
-                age=data['age']
+                age=data['age'],
                 notes=data["notes"],
                 accepted=False,
                 attendance=False,
