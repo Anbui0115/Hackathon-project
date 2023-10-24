@@ -1,36 +1,21 @@
 "use client"
 
-import { useEffect } from "react";
 import React from 'react';
 
 const CreateTestimonial = ({ isOpen, onRequestClose }) => {
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (e.target === document.querySelector(".modal.open")) {
-        onRequestClose();
-      }
-    };
-  
-    document.addEventListener("click", handleOutsideClick);
-  
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [onRequestClose]);
+  if (!isOpen) {
+    return null; // Do not render the modal if isOpen is false
+  }
+
   const handleCloseModal = () => {
     onRequestClose();
   };
 
   return (
     <div onClick={(e) => e.stopPropagation()} className="z-10 absolute left-[30%] top-[15%] h-[auto] bg-white w-[40%] p-10 border-2 rounded-md shadow-2xl">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Leave your testimonial</h1>
-        <button className="" onClick={handleCloseModal}>
-          X
-        </button>
-      </div>
-      <hr className="mx-[-2.5rem] my-4" />
-      <form 
+      {/* Modal content */}
+      <button className="" onClick={handleCloseModal}>X</button>
+     <form 
         className=""
         action=""
       >
