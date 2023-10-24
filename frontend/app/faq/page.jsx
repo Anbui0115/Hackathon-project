@@ -12,36 +12,47 @@ const FAQ = () => {
         <div className='faq-page-content'>
           <h1 className='faq-page-title'>Frequently Asked Questions</h1>
           <div className='faq-page-text'>
-            <p>1. What is Priyada Dance School?</p>
-            <p>Priyada Dance School is a renowned dance academy that offers a wide range of dance classes, focusing on various dance styles and skill levels.</p>
-            <p>2. What dance styles do you offer classes in?</p>
-            <p>We offer classes in a variety of dance styles, including classical Indian dances like Bharatanatyam and Kathak, as well as contemporary and fusion dance forms.</p>
-            <p>3. Who can join Priyada Dance School?</p>
-            <p>Our classes are open to all ages and skill levels. We have classes for children, teenagers, and adults, making it accessible to anyone interested in dance.</p>
-            <p>4. How can I enroll in your dance classes?</p>
-            <p>To enroll in our classes, you can visit our website and fill out the registration form, or you can contact us directly for assistance with the registration process.</p>
-            <p>5. Are there any prerequisites for joining your dance classes?</p>
-            <p>Most of our classes are open to beginners, but some advanced classes may require prior dance experience. Please check the class descriptions for specific requirements.</p>
-            <p>6. What is the duration of each dance class?</p>
-            <p>The duration of each class varies depending on the dance style and level. Generally, classes range from 45 minutes to 1 hour.</p>
-            <p>7. Who are the instructors at Priyada Dance School?</p>
-            <p>Our instructors are highly skilled and experienced dancers who are dedicated to teaching and promoting the art of dance. You can learn more about our instructors on our website.</p>
-            <p>8. Do you offer performance opportunities for students?</p>
-            <p>Yes, we organize annual recitals and performances where students can showcase their talent. Participation in these events is encouraged but not mandatory.</p>
-            <p>9. What are the fees for your dance classes?</p>
-            <p>The fees for our classes vary based on the type of class, duration, and level. You can find detailed pricing information on our website or by contacting us directly.</p>
-            <p>10. What should I wear to dance classes?</p>
-            <p>It is recommended to wear comfortable clothing that allows for ease of movement. For specific dance styles, such as Bharatanatyam, traditional dance attire may be required.</p>
-            <p>11. Can I schedule a trial class before committing to regular classes?</p>
-            <p>Yes, we offer trial classes for many of our courses to give you a feel for our teaching style and the dance form. Please contact us to inquire about trial class availability.</p>
-            <p>12. What safety measures are in place at Priyada Dance School, especially considering the ongoing pandemic?</p>
-            <p>We prioritize the safety of our students and instructors. We follow local health guidelines and have implemented safety measures, such as social distancing, mask requirements, and sanitization protocols.</p>
-            <p>13. Can I hire dancers from Priyada Dance School for private events or performances?</p>
-            <p>Yes, we provide the option to hire our talented dancers for private events and performances. Contact us for more information on booking our dancers.</p>
-            <p>14. How can I stay updated on the latest news and events at Priyada Dance School?</p>
-            <p>You can subscribe to our newsletter or follow us on social media to stay informed about upcoming events, workshops, and news related to the school.</p>
-            <p>15. What is your cancellation and refund policy for classes?</p>
-            <p>Our cancellation and refund policies may vary depending on the type of class. Please refer to our terms and conditions on our website or contact us for specific details.</p>
+            <p>1. What is the recommended age to start Bharatanatyam classes?</p>
+            <p>4 years is generally a good age to begin training, but this can vary depending on the child’s interest, ability, and attention span.</p>
+
+            <p>2. Is there an upper age limit to join classes?</p>
+            <p>There is none. You can start learning the art form at any age. The expected outcome, though will be in accordance with any physical limitations that may exist. Complete training and support that can best address those needs will be provided at Priyada.</p>
+
+            <p>3. Are free trial classes offered?</p>
+            <p>Trial classes can be availed at a nominal fee.</p>
+
+            <p>4. What is the fee structure?</p>
+            <p>Fees are to be paid monthly by the 5th of each month. If any classes are canceled, a makeup/compensation class will be provided.</p>
+
+            <p>5. How many classes per month?</p>
+            <p>Two classes are conducted per week for each level of students.</p>
+
+            <p>6. What is the duration of the class?</p>
+            <p>Classes are approximately One hour long. This can vary during annual day programs, class events, summer camps, etc.</p>
+
+            <p>7. What is taught at Priyada Arts?</p>
+            <p>Traditional Bharatanatyam Training, Dance Fitness, Theory from the Natya Shastra (Ancient Texts of Indian Classical Dance and other core aspects of being a performing artist are taught at Priyada Arts. Additionally, one-on-one training, choreography sessions, and workshops are provided for those interested.</p>
+
+            <p>8. What is the Baani (Style of Bharatanatyam) taught here?</p>
+            <p>Priyada Arts was born from Anitha Guha’s Bharathanjali, the brainchild of Artistic Director, Anitha Guha (Priyanka’s Teacher). Guru Anitha’s training began under the illustrious Govindaraja Pillai Master and then later in the Kalakshetra style with Guru Ananda Shankar Jayant. Thus she amalgamated the intricacies and nuances of these varied styles to evolve a brand of her own. This evolved style is now being practiced and taught through Priyada Arts as well, with a carefully curated syllabus.</p>
+
+            <p>9. What are the levels of training offered and their duration?</p>
+            <p>Beginner, Intermediate, and Advanced level training is offered. The beginner level takes about 2-3 years. The intermediate level takes 2 years, and the Advanced level takes another 2-3 years.</p>
+
+            <p>10. When will Salangai Pooja and Arangetram be conducted?</p>
+            <p>Salangai Poojai is an initiation ceremony, through which the dancers gain the right to wear the bells on their feet and perform pieces after offering their respects to it. This is usually planned upon the completion of the Beginner Stage. Arangetram is the official stage debut of a dancer, where they are trained to perform a complete “Margam” (repertoire) in front of an audience. This takes 6+ years of rigorous training. This is also decided only upon careful consideration.</p>
+
+            <p>11. Will my kid get to perform on stage?</p>
+            <p>Bharatanatyam, just like any other traditional Indian art form, takes years of practice to become proficient in. Beginners require at least 2 years of strong foundational lessons to tackle performing on a stage. That said, if the dancers have the ability to progress at a faster pace, training, and opportunities will be provided accordingly at the teacher’s discretion.</p>
+
+            <p>12. What kind of programs are conducted at Priyada Arts?</p>
+            <p>Annual Student Showcase, Summer Showcase, and Summer Camps are conducted for all students. Advanced learners are trained for performances during Shivaratri, Navaratri, and other occasions. Additional workshops for fitness and advanced learning from reputed artists are also organized.</p>
+
+            <p>13. How do I contact Priyanka or book an appointment with her?</p>
+            <p>Please visit the Additional Services tab, create an account, and send an inquiry to contact her. Additionally, you can write to priyadaarts@gmail.com or priyankaraghuramandance@gmail.com</p>
+
+            <p>14. What additional services does Priyanka provide at Priyada Arts?</p>
+            <p>Priyanka does Nattuvangam, Artist Makeup, and Event Emceeing as Professional Services. You can reach out with inquiries for booking.</p>
           </div>
         </div>
         <ChatBot/>
