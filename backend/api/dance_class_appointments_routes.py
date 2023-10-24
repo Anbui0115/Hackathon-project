@@ -43,18 +43,17 @@
 # #     create_dance_apt_form['csrf_token'].data = request.cookies['csrf_token']
 # #     # print("current user is: **********************************", current_user)
 
-    if create_dance_apt_form.validate_on_submit:
-        data = create_dance_apt_form.data
-        new_dance_apt = Dance_Class_Appointment(
-            # name=data["name"],
-            user_id=current_user.id,
-            experience=data["Experience"],
-            date=data["Class"],
-            level=data["Level"],
-            notes=data["Notes"],
-            accepted=False,
-            attendance=False,
-        )
+# #     if create_dance_apt_form.validate_on_submit:
+# #         data = create_dance_apt_form.data
+# #         new_dance_apt = DanceClassAppointment(
+# #                 user_id=current_user.id,
+# #                 level=data["Experience"],
+# #                 date=data["Class"],
+# #                 level=data["Level"],
+# #                 notes=data["Notes"],
+# #                 accepted=False,
+# #                 attendance=False,
+# #             )
 
 # #         db.session.add(new_dance_apt)
 # #         db.session.commit()

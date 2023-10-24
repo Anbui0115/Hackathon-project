@@ -9,8 +9,8 @@ from .api.about_routes import about_routes
 # # from .api.chatbot_routes import chatbot_routes
 # from .api.dance_class_appointments_routes import dance_class_appointment_bp
 # from .api.general_appointments_routes import general_appointment_bp
-from .api.dance_class_appointments_routes import dance_class_appointment_bp
-from .api.general_appointments_routes import general_appointment_bp
+# from .api.dance_class_appointments_routes import dance_class_appointment_bp
+# from .api.general_appointments_routes import general_appointment_bp
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 import os
@@ -23,9 +23,9 @@ if __name__ == '__main__':
 # Blueprints
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
-# app.register_blueprint(chatbot_routes, url_prefix='/api/chatbot')
-app.register_blueprint(dance_class_appointment_bp, url_prefix='/api/dance_class_appointments')
-app.register_blueprint(general_appointment_bp, url_prefix='/api/general_appointments')
+#app.register_blueprint(chatbot_routes, url_prefix='/api/chatbot')
+#app.register_blueprint(dance_class_appointment_bp, url_prefix='/api/dance_class_appointments')
+#app.register_blueprint(general_appointment_bp, url_prefix='/api/general_appointments')
 app.register_blueprint(about_routes, url_prefix='/api/about')
 # app.register_blueprint(chatbot_routes, url_prefix='/api/chatbot')
 # app.register_blueprint(general_appointment_bp, url_prefix='/api/generalappointments')
