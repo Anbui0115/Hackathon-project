@@ -19,7 +19,7 @@ class DanceClassAppointment(db.Model):
     first_name=db.Column(db.String(100), nullable=False)
     last_name=db.Column(db.String(100), nullable=False)
     email=db.Column(db.String(100), nullable=False)
-    phone_number=db.Column(db.Integer(12), nullable=False)
+    phone_number=db.Column(db.Integer(), nullable=False)
     date = db.Column(db.DateTime, nullable=False, unique=False)
     level = db.Column(db.String(100), nullable=False)
     accepted = db.Column(db.Boolean, nullable=False)
@@ -63,7 +63,7 @@ class GeneralAppointment(db.Model):
     first_name=db.Column(db.String(100), nullable=False)
     last_name=db.Column(db.String(100), nullable=False)
     email=db.Column(db.String(100), nullable=False)
-    phone_number=db.Column(db.Integer(12), nullable=False)
+    phone_number=db.Column(db.Integer(), nullable=False)
 
     date = db.Column(db.DateTime, nullable=False, unique=False)
     duration = db.Column(db.String(100), nullable=False)
