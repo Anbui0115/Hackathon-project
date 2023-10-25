@@ -21,6 +21,9 @@ def create_testimonial():
         new_testimonial = Testimonial(
                 user_id= current_user.id,
                 content= data["content"],
+                first_name=data["first_name"],
+                last_name=data["last_name"],
+                role=data["role"]
             )
 
         db.session.add(new_testimonial)
