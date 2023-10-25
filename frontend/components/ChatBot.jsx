@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Chat from '../public/chat.png';
 import Image from "next/image";
-import axios from "axios";
-import { PulseLoader } from "react-spinners";
+// import axios from "axios";
+// import { PulseLoader } from "react-spinners";
 
 
 //TODO Loading 
