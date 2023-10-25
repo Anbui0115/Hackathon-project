@@ -46,6 +46,7 @@ def create_dance_apt():
     if create_dance_apt_form.validate_on_submit():
         data = create_dance_apt_form.data
         new_dance_apt = DanceClassAppointment(
+                user_id=current_user.id,
                 first_name=data['first_name'],
                 last_name=data['last_name'],
                 phone_number=data['phone_number'],
@@ -54,7 +55,7 @@ def create_dance_apt():
                 date=data["date"],
                 age=data['age'],
                 notes=data["notes"],
-                accepted=False,
+                isApproved=False,
                 attendance=False,
             )
 

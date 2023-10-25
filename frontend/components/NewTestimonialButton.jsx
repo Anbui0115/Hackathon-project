@@ -1,21 +1,21 @@
 // Button.js
 import React, { useState } from 'react';
 
-function NewTstimonialButton({ onButtonClick }) {
+function NewTestimonialButton({ onButtonClick }) {
   const containerStyle = {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center', 
+    alignItems: 'center',
     maxHeight: '200px'
   };
 
   const buttonStyle = {
-    backgroundColor: '#706f6d', 
-    color: 'white', 
-    padding: '10px 20px', 
-    border: 'none', 
-    borderRadius: '5px', 
-    cursor: 'pointer', 
+    backgroundColor: '#706f6d',
+    color: 'white',
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
     maxWidth: '300px',
     textAlign: 'center'
   };
@@ -28,4 +28,4 @@ function NewTstimonialButton({ onButtonClick }) {
   );
 }
 
-export default NewTstimonialButton;
+export default NewTestimonialButton;
