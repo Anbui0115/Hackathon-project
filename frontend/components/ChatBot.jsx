@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Chat from '../public/chat.png';
 import Image from "next/image";
-// import axios from "axios";
-// import { PulseLoader } from "react-spinners";
+import axios from "axios";
+import { PulseLoader } from "react-spinners";
 
 
 //TODO Loading 
@@ -62,7 +62,7 @@ const ChatBot = () => {
       
       {/* Chat Screen */}
       {toggleChat && (
-        <div className="relative left-24 bottom-24 z-30 bg-white p-4 px-8 rounded-md shadow-lg border w-[600px] h-[700px] mx-2 overflow-y-auto">
+        <div className="relative left-24 bottom-24 z-30 bg-lightcream p-4 px-8 rounded-md shadow-lg border w-[600px] h-[700px] mx-2 overflow-y-auto">
 
           {/* Chat Header */}
           <div className="my-2 text-xl font-semibold">Chat with PriyadaGPT</div>
