@@ -26,3 +26,5 @@ class CreateDanceClassAppointmentForm(FlaskForm):
     notes = TextAreaField("notes", validators=[DataRequired()])
 
     submit = SubmitField("Send Enquiry")
+
+#  isaccepted= BooleanField()
