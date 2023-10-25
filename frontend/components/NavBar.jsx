@@ -23,43 +23,6 @@ const NavBar = () => {
 
       {/* NavLinks */}
       <div className="flex space-x-8 items-center">
-
-        {/* About Navbar Link */}
-        <nav
-          className="text-2xl relative"
-          onMouseEnter={() => setToggleAbout(true)}
-          onClick={() => setToggleAbout(!toggleAbout)}
-        >
-          <span className="cursor-pointer">About</span>
-
-          {/* About Dropdown Menu */}
-          {
-            toggleAbout && (
-              <div
-                onMouseLeave={() => setToggleAbout(false)}
-                className="absolute text-lg z-10 top-full  mt-2 w-[210px] rounded-md shadow-lg "
-              >
-                <div className="px-6 py-4 rounded-md bg-teal-950 flex flex-col gap-2">
-                  <Link
-                    href="/about/studio"
-                    className="hover:text-orange-500"
-                  >
-                    About the Studio
-                  </Link>
-
-                  <Link
-                    href="/about/artist"
-                    className="hover:text-orange-500"
-                  >
-                    About the Artist
-                  </Link>
-
-                </div>
-              </div>
-            )
-          }
-        </nav>
-
         
         <nav className="text-2xl">
           <Link href="/classes">Classes</Link>

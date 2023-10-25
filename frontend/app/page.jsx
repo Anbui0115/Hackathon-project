@@ -7,6 +7,8 @@ import Testimonial from '@/components/Testimonial'
 import ChatBot from '@/components/ChatBot'
 import CreateTestimonial from '@/components/CreateTestimonial'
 import NewTstimonialButton from '@/components/NewTestimonialButton'
+import AboutArtist from '@/components/AboutArtist'
+import AboutStudio from '@/components/AboutStudio'
 import './homepage.css'
 export default function Home() {
   const [dark, setDark] = useState(false);
@@ -20,6 +22,9 @@ export default function Home() {
 
     <main className="bg-black flex w-full h-full relative min-h-screen flex-col justify-between">
       <NavBar />
+      <AboutArtist/>
+      <AboutStudio/>
+
       <Testimonial />
       <NewTstimonialButton onButtonClick={openModal} />
       <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
