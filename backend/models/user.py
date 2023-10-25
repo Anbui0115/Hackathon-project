@@ -23,7 +23,7 @@ class User(db.Model, UserMixin):
     # dance_class_appointments = db.relationship("DanceClassAppointment", back_populates='user', cascade="all, delete-orphan")
 
     media = db.relationship("Media", back_populates='user')
-    reviews = db.relationship("Review", back_populates="user")
+    testimonials = db.relationship("Testimonial", back_populates="user")
     billings = db.relationship("Billing", back_populates='user', cascade="all, delete-orphan")
 
     @property

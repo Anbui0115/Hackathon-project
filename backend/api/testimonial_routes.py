@@ -21,6 +21,9 @@ def create_testimonial():
         new_testimonial = Testimonial(
                 user_id= current_user.id,
                 content= data["content"],
+                first_name=data["first_name"],
+                last_name=data["last_name"],
+                role=data["role"]
             )
 
         db.session.add(new_testimonial)
@@ -29,3 +32,6 @@ def create_testimonial():
         new_testimonial_obj = new_testimonial.to_dict()
         return new_testimonial_obj, 201
     return {"Error": "Validation Error"}, 401
+
+
+#  DELETE TESTIMONIAL

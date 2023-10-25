@@ -22,7 +22,7 @@ const testimonies = [
   },
   {
     content: "Priyada Arts has been instrumental in my journey as an artist. Priyanka Akka's techniques and approach to Abhinaya and stage performance have been invaluable and inspiring and have helped me developed artistic abilities. She puts her heart and soul into each and every student, encouraging artistic freedom - something that is rare in the world of tradional arts! As a person, she is warm, loving, and genuine. I always leave class in high spirits! ",
-    name: "Keerthana Y",
+    name: "Keerthana Yellapragada",
     role: "Student at Priyada Arts"
   },
   {
@@ -70,16 +70,16 @@ const Testimonial = () => {
       {/* Container for Testimonials Data */}
       <div className="w-4/5 mx-auto">
       <Carousel
-          centerMode 
-          showThumbs={false} 
-          showStatus={false} 
+          centerMode
+          showThumbs={false}
+          showStatus={false}
           centerSlidePercentage={100} // Adjust this as needed
           autoPlay={true}
           infiniteLoop={true}
           interval={8000}
           transitionTime={1000}
       >
-      
+
           {testimonies.map((testimony, index) => (
             <div key={index} className="p-4">
                 <TestimonialCard testimony={testimony} />
