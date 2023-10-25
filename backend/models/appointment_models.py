@@ -86,7 +86,7 @@ class GeneralAppointment(db.Model):
 
     # user = db.relationship("User", back_populates="general_appointments")
     general_media = db.relationship("General_Media", back_populates="general_appointment")
-    
+
 
     def to_dict(self):
         return {

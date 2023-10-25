@@ -17,16 +17,16 @@ const NavBar = () => {
 
   return (
     
-    <div className={`bg-orange-100 h-20 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
+    <div className={`bg-black text-cream h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
       {/* Logo / Dance Studio Title */}
-      <div className="text-xl font-bold"><Link href="/">Priyada Arts Dance Studio</Link></div>
+      <div className="text-2xl"><Link href="/">Priyada Arts</Link></div>
 
       {/* NavLinks */}
       <div className="flex space-x-8 items-center">
 
         {/* About Navbar Link */}
         <nav
-          className="text-lg font-semibold relative"
+          className="text-2xl relative"
           onMouseEnter={() => setToggleAbout(true)}
           onClick={() => setToggleAbout(!toggleAbout)}
         >
@@ -37,9 +37,9 @@ const NavBar = () => {
             toggleAbout && (
               <div
                 onMouseLeave={() => setToggleAbout(false)}
-                className="absolute z-10 top-full  mt-2 w-[210px] rounded-md shadow-lg bg-white"
+                className="absolute text-lg z-10 top-full  mt-2 w-[210px] rounded-md shadow-lg "
               >
-                <div className="px-6 py-4 rounded-md bg-white flex flex-col gap-2">
+                <div className="px-6 py-4 rounded-md bg-teal-950 flex flex-col gap-2">
                   <Link
                     href="/about/studio"
                     className="hover:text-orange-500"
@@ -60,21 +60,26 @@ const NavBar = () => {
           }
         </nav>
 
-        <nav className="text-lg font-semibold">
-          <Link href="/media-gallery">Media Gallery</Link>
+        
+        <nav className="text-2xl">
+          <Link href="/media-gallery">Classes</Link>
+        </nav>
+
+        <nav className="text-2xl">
+          <Link href="/media-gallery">Awards / Gallery</Link>
         </nav>
         
-        <nav className="text-lg font-semibold">  
+        <nav className="text-2xl">  
           <Link href="/faq">FAQs</Link>{" "}
           {/* Duplicate Link. Ensure you update this */}
         </nav>
 
-        <nav className="text-lg font-semibold">
+        <nav className="text-2xl">
           <Link href="/services">Services</Link>
         </nav>
 
         {/* Contact Us */}
-        <nav className="text-lg font-semibold" onClick={() => setToggleModal(!toggleModal)}>
+        <nav className="text-2xl" onClick={() => setToggleModal(!toggleModal)}>
           <span className="cursor-pointer">Contact Us</span>
 
           {/* Contact Us Modal */}
@@ -86,7 +91,7 @@ const NavBar = () => {
         </nav>
 
         {/* Login / Sign Up */}
-        <nav onMouseEnter={() => setToggleMenu(true)} onClick={() => setToggleMenu(!toggleMenu)} className="text-lg font-semibold flex gap-2 cursor-pointer">
+        <nav onMouseEnter={() => setToggleMenu(true)} onClick={() => setToggleMenu(!toggleMenu)} className="text-2xl flex gap-2 cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           <span>Login / Sign Up</span>
           
@@ -95,10 +100,10 @@ const NavBar = () => {
             toggleMenu && (
               <div 
                 onMouseLeave={() => setToggleMenu(false)}
-                className="absolute z-10 top-16 mt-2 w-[180px] rounded-md shadow-lg bg-white"
+                className="absolute z-10 top-16 mt-2 w-[180px]  rounded-md shadow-lg "
               >
-                <div className="px-6 py-4 rounded-md bg-white flex flex-col gap-2">
-                  <Link href="/signup" className="hover:text-orange-500">Sign Up</Link>
+                <div className="px-6  py-4 rounded-md bg-teal-950 flex flex-col gap-2">
+                  <Link href="/signup" className=" hover:text-orange-500">Sign Up</Link>
                   <Link href="/login" className="hover:text-orange-500">Login</Link>
                 </div>
               </div>

@@ -22,3 +22,5 @@ SQLAlchemy==1.4.46
 Werkzeug==2.2.2
 WTForms==3.0.1
 zipp==3.17.0
+authlib==1.2.1
+requests==2.31.0
