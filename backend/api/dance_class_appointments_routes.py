@@ -52,7 +52,7 @@ def create_dance_apt():
                 phone_number=data['phone_number'],
                 email=data['email'],
                 level=data["level"],
-                date=data["date"],
+                # date=data["date"],
                 age=data['age'],
                 notes=data["notes"],
                 isApproved=False,
