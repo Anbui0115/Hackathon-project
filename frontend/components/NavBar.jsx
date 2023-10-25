@@ -30,6 +30,7 @@ const NavBar = () => {
           <Link href="/media-gallery">Awards / Gallery</Link>
         </nav>
         
+
         <nav className="text-2xl">
           <Link href="/services">Services</Link>
         </nav>
