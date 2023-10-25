@@ -18,9 +18,9 @@ class User(db.Model, UserMixin):
     free_user = db.Column(db.Boolean, default=True, nullable = False)
     payment_info = db.Column(db.String(255), nullable=True)
 
-    #relationships
-    # general_appointments = db.relationship("GeneralAppointment", back_populates='user', cascade="all, delete-orphan")
-    # dance_class_appointments = db.relationship("DanceClassAppointment", back_populates='user', cascade="all, delete-orphan")
+    # relationships
+    general_appointments = db.relationship("GeneralAppointment", back_populates='user', cascade="all, delete-orphan")
+    dance_class_appointments = db.relationship("DanceClassAppointment", back_populates='user', cascade="all, delete-orphan")
 
     media = db.relationship("Media", back_populates='user')
     testimonials = db.relationship("Testimonial", back_populates="user")

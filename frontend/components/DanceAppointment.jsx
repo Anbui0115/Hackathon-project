@@ -3,7 +3,12 @@ import React from 'react'
 
 const DanceAppointment = () => {
   return (
-    <div>Register for Dance Lessons</div>
+    <div>
+      <h1>Register For Dance Lessons</h1>
+      <form>
+
+      </form>
+    </div>
   )
 }
 
