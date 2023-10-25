@@ -13,8 +13,16 @@ from .api.general_appointments_routes import general_appointment_bp
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 import os
+from authlib.integrations.flask_client import OAuth
+from backend.oauth_config import configure_oauth
+from .api.google_routes import google_routes
 
 app = Flask(__name__)
+
+# Google OAuth
+app.config.from_object(Config)
+oauth = OAuth(app)
+configure_oauth(app)
 
 if __name__ == '__main__':
     app.run(debug=True)
@@ -27,6 +35,7 @@ app.register_blueprint(dance_class_appointment_bp, url_prefix='/api/dance_class_
 app.register_blueprint(general_appointment_bp, url_prefix='/api/general_appointments')
 app.register_blueprint(about_routes, url_prefix='/api/about')
 app.register_blueprint(billing_bp, url_prefix='/api/billing')
+app.register_blueprint(google_routes, url_prefix='/api/google')
 
 
 
