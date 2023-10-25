@@ -42,7 +42,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
         </label>
 
 
-        {/* add another radio button or select field for role: student, parent, collaborator, critic */}
+        {/* add another Select field for role: student, parent, collaborator, critic */}
 
 
 

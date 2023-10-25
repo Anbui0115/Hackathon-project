@@ -2,7 +2,7 @@ from .db import db
 
 
 class Testimonial(db.Model):
-    __tablename__ = 'testimonial'
+    __tablename__ = 'testimonials'
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
@@ -17,7 +17,7 @@ class Testimonial(db.Model):
     # star_rating = db.Column(db.Integer,nullable=False) # do we want star rating?
 
     #relationship
-    user = db.relationship('User',back_populates='reviews')
+    user = db.relationship('User',back_populates='testimonials')
 
 
     def to_dict(self):

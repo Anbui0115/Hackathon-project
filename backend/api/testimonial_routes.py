@@ -32,3 +32,6 @@ def create_testimonial():
         new_testimonial_obj = new_testimonial.to_dict()
         return new_testimonial_obj, 201
     return {"Error": "Validation Error"}, 401
+
+
+#  DELETE TESTIMONIAL
