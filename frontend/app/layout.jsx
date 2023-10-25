@@ -1,8 +1,19 @@
-import { Inter, Montserrat } from 'next/font/google'
+import { Inter, Montserrat, Laila, Work_Sans } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
+
 const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
+})
+
+const laila = Laila({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
+})
+
+const workSans = Work_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700']
 })
@@ -16,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       
-      <body className={`${inter.className} ${montserrat.className}`}>{children}</body>
+      <body className={`${inter.className} ${montserrat.className} ${laila.className} ${workSans.className}`}>{children}</body>
     </html>
   )
 }

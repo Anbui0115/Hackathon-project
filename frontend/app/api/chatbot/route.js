@@ -30,7 +30,6 @@ export async function POST(request) {
   console.log(input, "input")
 
   try {
-    // Test if this works
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
@@ -51,7 +50,7 @@ export async function POST(request) {
       ],
       n: 1,
       temperature: 0.8,
-      max_tokens: 200 // either use this or top_p with top_p utilizing the top probability inside the vector database of Open AI
+      max_tokens: 120 
     })
 
     console.log(completion)
