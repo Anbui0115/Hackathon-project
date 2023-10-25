@@ -1,3 +1,14 @@
+import os
+import sys
+
+# Get the current script's directory
+current_dir = os.path.dirname(__file__)
+
+# Append the project's root directory to the Python path
+project_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
+sys.path.append(project_root)
+
+# Now, you can import your modules
 from backend.models import db, environment, SCHEMA, Testimonial
 
 

@@ -23,3 +23,6 @@ flask --app backend db migrate
 
 6. Upgrade database
 flask --app backend db upgrade
+
+7. Seed database
+flask --app backend seed all

@@ -1,18 +1,20 @@
-from flask import Blueprint, render_template, url_for, redirect, request, jsonify
+from flask import Blueprint, request, jsonify
 from ..models import  User, db, Testimonial
-from flask_login import current_user, login_user, logout_user, login_required
+from flask_login import current_user, login_required
 from ..forms.create_testomonial import CreateTestimonialForm
 
 
 testimonial_bp = Blueprint(
     "testimonial_routes", __name__)
 
-# Create a testimonial
+# CREATE A TESTIMONIAL
 
 @testimonial_bp.route(methods=["POST"])
 @login_required
 def create_testimonial():
-
+    """
+    Create a new testimonial
+    """
     create_testimonial_form = CreateTestimonialForm()
     create_testimonial_form['csrf_token'].data = request.cookies['csrf_token']
 
@@ -34,4 +36,19 @@ def create_testimonial():
     return {"Error": "Validation Error"}, 401
 
 
-#  DELETE TESTIMONIAL
+#  DELETE A TESTIMONIAL
+@login_required
+def delete_testimonial(testimonial_id):
+    """
+    Delete a testimonial based on testimonial_id
+    """
+    user_auth = current_user.authorization
+    testimonial = Testimonial.query.get(testimonial_id)
+    if testimonial:
+        if user_auth != 'admin':
+            return {'errors': 'You do not have authorization to delete testimonials. '}, 400
+        db.session.delete(testimonial)
+        db.session.commit()
+        return {'testimonial': testimonial.to_dict()}, 201
+    else:
+        return {'errors': 'Testimonial does not exist.'}, 400

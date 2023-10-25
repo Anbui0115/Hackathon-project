@@ -1,3 +1,6 @@
+from .seeds import seed_commands 
+
+
 from flask import Flask, request, redirect
 from flask_cors import CORS
 from flask_migrate import Migrate
@@ -18,7 +21,7 @@ from backend.oauth_config import configure_oauth
 from .api.google_routes import google_routes
 
 app = Flask(__name__)
-
+app.cli.add_command(seed_commands)
 # Google OAuth
 app.config.from_object(Config)
 oauth = OAuth(app)

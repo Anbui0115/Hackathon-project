@@ -1,4 +1,4 @@
-# from flask_login import login_required
+# we won't need this route for now since we're using hardcoded info for about pages 
 
 from backend.models import db, User
 from flask import Blueprint , render_template,jsonify
@@ -17,12 +17,3 @@ def about_artist():
         # Add more data as needed
     }
     return jsonify(artist_data)
-
-
-# about_routes.route('/studio')
-# # @login_required ?
-# def about_page():
-#      page_data = {
-#         # Add  data as needed
-#     }
-#     return jsonify(artist_data)
