@@ -17,9 +17,9 @@ const NavBar = () => {
 
   return (
     
-    <div className={`bg-orange-100 h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
+    <div className={`bg-teal-950 text-orange-200 font-laila font-semibold  h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
       {/* Logo / Dance Studio Title */}
-      <div className="text-xl font-bold"><Link href="/">Priyada Arts Dance Studio</Link></div>
+      <div className="text-xl font-bold"><Link href="/">Priyada Arts</Link></div>
 
       {/* NavLinks */}
       <div className="flex space-x-8 items-center">
@@ -61,7 +61,7 @@ const NavBar = () => {
         </nav>
 
         <nav className="text-lg font-semibold">
-          <Link href="/media-gallery">Media Gallery</Link>
+          <Link href="/media-gallery">Gallery</Link>
         </nav>
         
         <nav className="text-lg font-semibold">  

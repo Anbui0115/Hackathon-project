@@ -12,7 +12,7 @@ const ContactUs = ({toggleModal, setToggleModal}) => {
 
 
   return (
-    <div onClick={(e) => e.stopPropagation()} className="z-10 absolute left-[30%] top-[15%] h-[auto] bg-white w-[40%] p-10 border-2 rounded-md shadow-2xl">
+    <div onClick={(e) => e.stopPropagation()} className="z-10 absolute left-[30%] mt-32 top-[15%] h-[auto]  bg-white w-[40%] p-10 border-2 rounded-md shadow-2xl text-black font-worksans">
 
       <div className="flex justify-between items-center"> 
         <h1 className="text-3xl font-bold">Contact Us</h1>
@@ -30,7 +30,7 @@ const ContactUs = ({toggleModal, setToggleModal}) => {
           <input 
             type="text"
             placeholder=""
-            className="border-2 border-gray-300 rounded-md p-2" 
+            className="border-2 border-gray-300 rounded-md p-2 font-laila" 
           />
         </label>
 
@@ -55,13 +55,13 @@ const ContactUs = ({toggleModal, setToggleModal}) => {
 
         <div className='py-6 flex gap-4 justify-center'>
           <button 
-            className="bg-orange-500 hover:bg-gray-600 text-white rounded-md p-2 transition duration-700"
+            className="bg-teal-700 hover:bg-orange-500 text-white rounded-md p-2 transition duration-700"
             type="submit"
           >
             Submit
           </button>
 
-          <button className="bg-orange-500 text-white rounded-md p-2 hover:bg-gray-600 transition duration-700">
+          <button className="bg-teal-700 text-white rounded-md p-2 hover:bg-orange-500 transition duration-700">
             Cancel
           </button>
         </div>
