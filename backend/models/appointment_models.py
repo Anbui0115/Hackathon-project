@@ -31,7 +31,7 @@ class DanceClassAppointment(db.Model):
 
 
 
-    user = db.relationship("User", back_populates="dance_class_appointments")
+    # user = db.relationship("User", back_populates="dance_class_appointments")
     dance_videos = db.relationship("Dance_Video", back_populates="dance_class_appointment")
 
     def to_dict(self):
@@ -84,8 +84,9 @@ class GeneralAppointment(db.Model):
     notes = db.Column(db.TEXT, nullable=False)
 
 
-    user = db.relationship("User", back_populates="general_appointments")
+    # user = db.relationship("User", back_populates="general_appointments")
     general_media = db.relationship("General_Media", back_populates="general_appointment")
+    
 
     def to_dict(self):
         return {
