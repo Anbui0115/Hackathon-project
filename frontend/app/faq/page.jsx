@@ -3,6 +3,7 @@ import './faq.css';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
+import Link from 'next/link';
 
 const FAQ = () => {
   return (
@@ -49,7 +50,7 @@ const FAQ = () => {
             <p>Annual Student Showcase, Summer Showcase, and Summer Camps are conducted for all students. Advanced learners are trained for performances during Shivaratri, Navaratri, and other occasions. Additional workshops for fitness and advanced learning from reputed artists are also organized.</p>
 
             <p>13. How do I contact Priyanka or book an appointment with her?</p>
-            <p>Please visit the Additional Services tab, create an account, and send an inquiry to contact her. Additionally, you can write to priyadaarts@gmail.com or priyankaraghuramandance@gmail.com</p>
+            <p>Please visit the Additional Services tab, create an account, and send an inquiry to contact her. Additionally, you can write to <Link href='mailto:priyadaarts@gmail.com'><strong>priyadaarts@gmail.com</strong></Link> or <Link href='mailto:priyankaraghuramandance@gmail.com'><strong>priyankaraghuramandance@gmail.com</strong></Link>.</p>
 
             <p>14. What additional services does Priyanka provide at Priyada Arts?</p>
             <p>Priyanka does Nattuvangam, Artist Makeup, and Event Emceeing as Professional Services. You can reach out with inquiries for booking.</p>
