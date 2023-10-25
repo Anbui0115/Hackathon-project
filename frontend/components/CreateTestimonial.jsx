@@ -16,7 +16,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
       {/* Modal content */}
       {/* <button className="" onClick={handleCloseModal}>X</button> */}
       <div className="flex justify-between items-center"> 
-        <h1 className="text-3xl font-bold">Leave a testimonial</h1>
+        <h1 className="text-3xl font-bold">Leave a Testimonial</h1>
         <button className="" onClick={() => handleCloseModal()} >X</button>
       </div>
      <form 
