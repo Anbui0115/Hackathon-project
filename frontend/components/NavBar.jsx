@@ -62,7 +62,7 @@ const NavBar = () => {
 
         
         <nav className="text-2xl">
-          <Link href="/media-gallery">Classes</Link>
+          <Link href="/classes">Classes</Link>
         </nav>
 
         <nav className="text-2xl">
