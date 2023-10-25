@@ -24,28 +24,28 @@ class DanceClassAppointment(db.Model):
 
     level = db.Column(db.String(100), nullable=False)
     age= db.Column(db.Integer(), nullable=False)
-    accepted = db.Column(db.Boolean, nullable=False)
+    isApproved = db.Column(db.Boolean, nullable=False)
     attendance = db.Column(db.Boolean, nullable=False, default=False)
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False,default=datetime.now())
     notes = db.Column(db.TEXT, nullable=False)
 
 
 
-    # user = db.relationship("User", back_populates="dance_class_appointments")
+    user = db.relationship("User", back_populates="dance_class_appointments")
     dance_videos = db.relationship("Dance_Video", back_populates="dance_class_appointment")
 
     def to_dict(self):
         return {
             'id': self.id,
-            # 'user_id': self.user_id,
-            # 'user': self.user.to_dict() if self.user else None,
+            'user_id': self.user_id,
+            'user': self.user.to_dict() if self.user else None,
             'first_name': self.first_name,
             'last_name': self.last_name,
             'phone_number': self.phone_number,
             'email':self.email,
             'level': self.level,
             'age':self.age,
-            'accepted': self.accepted,
+            'isApproved': self.isApproved,
             'attendance': self.attendance,
             'created_at': self.created_at,
             'notes': self.notes
@@ -54,7 +54,7 @@ class DanceClassAppointment(db.Model):
 
     def __repr__(self):
 
-        return f'<Dance_Class_Appointments, id={self.id}, user_id={self.user_id},level={self.level}, accepted={self.accepted}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
+        return f'<Dance_Class_Appointments, id={self.id}, user_id={self.user_id},level={self.level}, isApproved={self.isApproved}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
 
 # ________________________________________________________________________________________________________
 
@@ -80,19 +80,19 @@ class GeneralAppointment(db.Model):
 
     created_at = db.Column(db.DateTime, nullable=False,
                            unique=False, index=False, default=datetime.now())
-    accepted = db.Column(db.Boolean, nullable=False, default=False)
+    isApproved = db.Column(db.Boolean, nullable=False, default=False)
     notes = db.Column(db.TEXT, nullable=False)
 
 
-    # user = db.relationship("User", back_populates="general_appointments")
+    user = db.relationship("User", back_populates="general_appointments")
     general_media = db.relationship("General_Media", back_populates="general_appointment")
 
 
     def to_dict(self):
         return {
             'id': self.id,
-            # 'user_id': self.user_id,
-            # 'user': self.user.to_dict() if self.user else None,
+            'user_id': self.user_id,
+            'user': self.user.to_dict() if self.user else None,
             'first_name': self.first_name,
             'last_name': self.last_name,
             'phone_number': self.phone_number,
@@ -102,11 +102,11 @@ class GeneralAppointment(db.Model):
             'end_time': self.end_time,
             'location': self.location,
             'type': self.type,
-            'accepted': self.accepted,
+            'isApproved': self.isApproved,
             'created_at': self.created_at,
             'notes': self.notes
 
         }
 
     def __repr__(self):
-        return f'<General_Appointments, id={self.id},date={self.date}, accepted={self.accepted}, location={self.location}, type={self.type},start_time={self.start_time}, end_time={self.end_time},created_at={self.created_at},notes={self.notes}'
+        return f'<General_Appointments, id={self.id},date={self.date}, isApproved={self.isApproved}, location={self.location}, type={self.type},start_time={self.start_time}, end_time={self.end_time},created_at={self.created_at},notes={self.notes}'
