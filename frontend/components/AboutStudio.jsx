@@ -1,14 +1,11 @@
 import React from 'react';
 import './studio.css';
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
 
-const About = () => {
+const AboutStudio = () => {
     return (
         <>
             <div className='about-page'>
-                <NavBar className='navbar'/>
                 <div className='about-page-content'>
                     <h1 className='about-page-title'>About Us</h1>
                     <div className='about-page-text'>
@@ -17,11 +14,9 @@ const About = () => {
                         <p>The community offers in-person and online classes to learners of all ages and backgrounds, with a curated syllabus and learning resources that cover not only practical dance lessons but also theory, dance fitness, costuming, makeup, and stagecraft. Priyada Arts is more than just a studio or a lab; it is a safe and inspiring space where artists can come together to create and grow. Priyanka has received numerous testimonials from her students and collaborators, praising her exceptional skills, passion, and dedication. </p>
                     </div>
                 </div>
-                <Footer/>
             </div>
-            <ChatBot />
         </>
     )
 }
 
-export default About;
+export default AboutStudio;

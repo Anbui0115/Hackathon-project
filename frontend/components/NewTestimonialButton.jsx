@@ -17,7 +17,8 @@ function NewTestimonialButton({ onButtonClick }) {
     borderRadius: '5px',
     cursor: 'pointer',
     maxWidth: '300px',
-    textAlign: 'center'
+    textAlign: 'center',
+    margin: '20px'
   };
   return (
     <div style={containerStyle}>

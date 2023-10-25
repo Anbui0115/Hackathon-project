@@ -1,6 +1,4 @@
 import React from "react";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
 import "./artist.css";
 import ChatBot from "@/components/ChatBot";
 
@@ -8,7 +6,6 @@ const AboutArtist = () => {
     return (
         <div>
             <div className='artist-page'>
-                <NavBar/>
                 <div className='artist-page-content'>
                     <div className='artist-page-title'>
                         <div>About the Artist</div>
@@ -36,8 +33,6 @@ const AboutArtist = () => {
                         </div>
                     </div>
                 </div>
-            <Footer/>
-            <ChatBot/>
         </div>
     )
 }

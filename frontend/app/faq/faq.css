@@ -26,26 +26,29 @@
 }
 
 .faq-page-title {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
     color: white;
+    text-align: center;
+    font-family: work sans;
 }
 
 .faq-page-text {
     font-size: 20px;
+    font-family: work sans;
 }
 
 /* Style the FAQ questions (odd numbered paragraphs) */
 .faq-page-text p:nth-child(odd) {
     font-weight: bold;
-    color: white;
+    color: #fef3c7;
     /* margin-bottom: 16px; */
 }
 /* Style the FAQ answers (even numbered paragraphs) */
 .faq-page-text p:nth-child(even) {
     margin-left: 20px;
-    color: white;
+    color: #fef3c7;
     margin-bottom: 35px; 
 }
 

@@ -1,30 +1,22 @@
 /* studio.css */
-.about-page {
+.artist-page {
     background-color: black;
     display: flex;
     width: 100%;
     height: 100%;
     position: relative;
-    min-height: 100vh;
     flex-direction: column;
-    
-    justify-content: space-between;
+    min-height: 100vh;
 }
 
-::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    background-color: transparent;
-}
-
-
-.about-page-content {
+.artist-page-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
-.about-page-title {
+.artist-page-title {
+    font-family: work sans;
     font-size: 36px;
     font-weight: bold;
     margin-top: 40px;
@@ -32,23 +24,24 @@
     color: white;
 }
 
-.about-page-text {
+.artist-page-text {
+    color: #fef3c7;
     font-size: 18px;
     line-height: 1.5;
+    font-family: work sans;
 }
 
-.about-page-text p {
-    color: white;
+.artist-page-text p {
     margin-bottom: 30px;
     text-align: center;
 }
 
 @media (max-width: 767px) {
-.about-page-title {
+.artist-page-title {
     font-size: 28px;
 }
 
-.about-page-text {
+.artist-page-text {
     font-size: 16px;
 }
 }

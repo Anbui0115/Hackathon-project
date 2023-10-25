@@ -1,8 +1,15 @@
+"use client";
 import Link from 'next/link';
 import React from 'react';
+import ContactUs from './ContactUs';
+import { useState, useEffect } from "react";
 import './footer.css'; // Import the new CSS file
 
+
 const Footer = () => {
+
+  const [toggleModal, setToggleModal] = useState(false);
+
   return (
     <div id="footer">
         <div className="container column">
@@ -38,9 +45,25 @@ const Footer = () => {
             </div>
 
             <hr />
+            <nav className="text-2xl text-cream">  
+              <Link href="/faq">FAQs</Link>{" "}
+              {/* Duplicate Link. Ensure you update this */}
+            </nav>
+
+            {/* Contact Us */}
+            <nav className="text-2xl text-cream" onClick={() => setToggleModal(!toggleModal)}>
+              <span className="cursor-pointer">Contact Us</span>
+
+              {/* Contact Us Modal */}
+              {
+                toggleModal && (
+                  <ContactUs toggleModal={toggleModal} setToggleModal={setToggleModal} />
+                )
+              }
+            </nav>
 
             <div className="flex items-center justify-between"><svg width="25px" height="25px" viewBox="-1.5 0 15 15" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#000000" fill-rule="evenodd" d="M574,120 C575.324428,120 580,114.054994 580,110.833333 C580,107.611672 577.313708,105 574,105 C570.686292,105 568,107.611672 568,110.833333 C568,114.054994 572.675572,120 574,120 Z M574,113.333333 C575.420161,113.333333 576.571429,112.214045 576.571429,110.833333 C576.571429,109.452621 575.420161,108.333333 574,108.333333 C572.579839,108.333333 571.428571,109.452621 571.428571,110.833333 C571.428571,112.214045 572.579839,113.333333 574,113.333333 Z" transform="translate(-568 -105)"></path></g></svg>
-            <div>Address: Priyada Arts Studio, California</div></div>
+            <div>Address: Priyada Arts Studio, Newark, California</div></div>
 
           </div>
         </div>
