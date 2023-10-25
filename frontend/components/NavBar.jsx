@@ -17,7 +17,7 @@ const NavBar = () => {
 
   return (
     
-    <div className={`bg-orange-100 h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
+    <div className={`bg-orange-100 h-20 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
       {/* Logo / Dance Studio Title */}
       <div className="text-xl font-bold"><Link href="/">Priyada Arts Dance Studio</Link></div>
 
