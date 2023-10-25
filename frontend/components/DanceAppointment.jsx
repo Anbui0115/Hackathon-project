@@ -1,10 +1,9 @@
 import React from 'react'
 
+
 const DanceAppointment = () => {
   return (
-    <div>
-
-    </div>
+    <div>Register for Dance Lessons</div>
   )
 }
 
