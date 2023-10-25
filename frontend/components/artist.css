@@ -16,6 +16,7 @@
 }
 
 .artist-page-title {
+    font-family: work sans;
     font-size: 36px;
     font-weight: bold;
     margin-top: 40px;
@@ -27,6 +28,7 @@
     color: #fef3c7;
     font-size: 18px;
     line-height: 1.5;
+    font-family: work sans;
 }
 
 .artist-page-text p {

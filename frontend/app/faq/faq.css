@@ -31,10 +31,12 @@
     margin-bottom: 20px;
     color: white;
     text-align: center;
+    font-family: work sans;
 }
 
 .faq-page-text {
     font-size: 20px;
+    font-family: work sans;
 }
 
 /* Style the FAQ questions (odd numbered paragraphs) */

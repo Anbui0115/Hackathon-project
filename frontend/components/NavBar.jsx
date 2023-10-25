@@ -11,8 +11,6 @@ import ContactUs from "./ContactUs";
 //TODO Transition About Dropdown Menu Timer
 
 const NavBar = () => {
-  const [toggleAbout, setToggleAbout] = useState(false);
-  const [toggleModal, setToggleModal] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
@@ -32,25 +30,8 @@ const NavBar = () => {
           <Link href="/media-gallery">Awards / Gallery</Link>
         </nav>
         
-        <nav className="text-2xl">  
-          <Link href="/faq">FAQs</Link>{" "}
-          {/* Duplicate Link. Ensure you update this */}
-        </nav>
-
         <nav className="text-2xl">
           <Link href="/services">Services</Link>
-        </nav>
-
-        {/* Contact Us */}
-        <nav className="text-2xl" onClick={() => setToggleModal(!toggleModal)}>
-          <span className="cursor-pointer">Contact Us</span>
-
-          {/* Contact Us Modal */}
-          {
-            toggleModal && (
-              <ContactUs toggleModal={toggleModal} setToggleModal={setToggleModal} />
-            )
-          }
         </nav>
 
         {/* Login / Sign Up */}

@@ -8,6 +8,7 @@
     flex-direction: column;
     
     justify-content: space-between;
+    
 }
 
 ::-webkit-scrollbar {
@@ -24,6 +25,8 @@
 }
 
 .about-page-title {
+    
+    font-family: work sans;
     font-size: 36px;
     font-weight: bold;
     margin-top: 40px;
