@@ -20,17 +20,13 @@ export default function Home() {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-
-
     <main className="bg-black flex w-full h-full relative min-h-screen flex-col justify-between">
       <NavBar />
       <AboutArtist/>
       <AboutStudio/>
-
       <Testimonial />
       <NewTestimonialButton onButtonClick={openModal} />
       <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
-
       {/* <DanceRegistration /> */}
       {/* <CreateSpecialityEnquiry /> */}
       <Footer />

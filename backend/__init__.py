@@ -58,7 +58,9 @@ db.init_app(app)
 Migrate(app, db)
 
 # Application Security
-CORS(app)
+CORS(app, supports_credentials=True)
+
+
 
 @app.before_request
 def https_redirect():

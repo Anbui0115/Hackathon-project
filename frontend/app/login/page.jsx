@@ -1,6 +1,46 @@
+"use client"
 import Link from "next/link"
+import axios from "axios"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
 
-const Login = () => {
+  const Login = () => {
+
+    const [form, setForm] = useState({
+      email: "",
+      password: ""
+    })
+
+    const handleDemo = async (e) => {
+      e.preventDefault();
+    
+      const demoData = {
+        email: "ranbowWorrior@gmail.com",
+        password: "x813g00",
+
+      };
+
+    
+      const response = await axios.post('http://127.0.0.1:5000/api/auth/login', demoData, { withCredentials: true });
+    
+      console.log(response, 'response');
+    }
+    
+    const loginSubmit = async (e) => {
+      e.preventDefault();
+  
+
+    }
+    
+
+    useEffect(() => {
+      const authenticate = async () => {
+        const data = await axios.get("http://127.0.0.1:5000/api/auth")
+        console.log(data, "authenticate")
+      }
+      authenticate()
+    }, [])
+
   return (
     <div className="w-full h-screen bg-orange-50 flex items-center justify-center">
 
@@ -20,21 +60,29 @@ const Login = () => {
           </div>
 
 
-          <form className="flex flex-col gap-4" action="">
+          <form className="flex flex-col gap-4" onSubmit={loginSubmit} action="">
             <input 
               type="email" 
+              value={form.email}
               placeholder="Email address"
-              className="border-2 p-2 w-full rounded-md border-gray-300"  
+              className="border-2 p-2 w-full rounded-md border-gray-300"
+              onChange={(e) => setForm({...form, email: e.target.value})}  
             />
 
             <input 
               type="password" 
               placeholder="Password"
+              value={form.password}
+              onChange={(e) => setForm({...form, password: e.target.value})}
               className="border-2 p-2 w-full rounded-md border-gray-300"  
             />
 
             <button type="submit" className="w-full p-3 bg-cyan-700 text-white rounded-md font-semibold hover:bg-gray-600 transition duration-700">
-              Continue
+              Login
+            </button>
+
+            <button onClick={handleDemo} className="w-full p-3 bg-cyan-700 text-white rounded-md font-semibold hover:bg-gray-600 transition duration-700">
+              Demo Login
             </button>
 
             <div>
