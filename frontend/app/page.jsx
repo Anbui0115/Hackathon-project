@@ -27,7 +27,7 @@ export default function Home() {
       <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
 
       {/* <DanceRegistration /> */}
-      <CreateSpecialityEnquiry />
+      {/* <CreateSpecialityEnquiry /> */}
       <Footer />
       <ChatBot />
     </main>
