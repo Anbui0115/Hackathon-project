@@ -16,6 +16,7 @@ general_appointment_bp = Blueprint(
 
 
 @general_appointment_bp.route("/", methods=["GET"])
+@login_required
 def all_general_appointments():
     general_appointments = GeneralAppointment.query.all()
     response = []
@@ -40,7 +41,7 @@ def create_general_apt():
 
     create_general_apt_form = CreateGeneralAppointmentForm()
     create_general_apt_form['csrf_token'].data = request.cookies['csrf_token']
-    # print("current user is: **********************************", current_user)
+ # print("current user is: **********************************", current_user)
 
 
     if create_general_apt_form.validate_on_submit():
