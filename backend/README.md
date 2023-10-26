@@ -26,3 +26,6 @@ flask --app backend db upgrade
 
 7. Seed database
 flask --app backend seed all
+
+* Undo seed data (if needed)
+flask --app backend seed undo
