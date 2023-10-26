@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 
   const Login = () => {
-
+    const router = useRouter()
     const [form, setForm] = useState({
       email: "",
       password: ""
@@ -15,8 +15,8 @@ import { useRouter } from "next/router"
       e.preventDefault();
     
       const demoData = {
-        email: "ranbowWorrior@gmail.com",
-        password: "x813g00",
+        email: "priyankaraghuramandance@gmail.com",
+        password: "priyadaarts",
 
       };
 
@@ -24,6 +24,7 @@ import { useRouter } from "next/router"
       const response = await axios.post('http://127.0.0.1:5000/api/auth/login', demoData, { withCredentials: true });
     
       console.log(response, 'response');
+      router.push('/')
     }
     
     const loginSubmit = async (e) => {
