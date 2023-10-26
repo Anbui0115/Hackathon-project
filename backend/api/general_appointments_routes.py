@@ -48,16 +48,14 @@ def create_general_apt():
         new_general_apt = GeneralAppointment(
 
             #  Get user info from user model instead of form
-            first_name=data['first_name'],
-            last_name=data['last_name'],
-            phone_number=data['phone_number'],
-            email=data['email'],
-
+            user_id=current_user.id
+            first_name=current_user.first_name,
+            last_name=current_user.last_name,
+            email=current_user.email,
+            phone_number=current_user.phone_number,
 
             type=data["type"],
-            date=data["class"],
-            start_time=data["start_time"],
-            end_time=data["end_time"],
+            date=data["date"],
             location=data["location"],
             notes=data["notes"],
             isApproved=False
