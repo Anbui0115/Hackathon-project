@@ -1,16 +1,11 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
 import Datepicker from 'react-tailwindcss-datepicker';
 
-import {
-  Input,
-  Timepicker,
-  initTE,
-} from "tw-elements";
-import { useState } from 'react';
-
 const CreateSpecialityEnquiry = () => {
+
+
   const [value, setValue] = useState({
     startDate: new Date(),
     endDate: new Date().setMonth(11)
@@ -20,6 +15,7 @@ const CreateSpecialityEnquiry = () => {
     console.log("newValue:", newValue);
     setValue(newValue);
   }
+
 
   return (
     <div onClick={(e) => e.stopPropagation()} className="z-10 absolute left-[30%] top-[15%] text-2xl h-[auto] bg-lightcream w-[50%] p-10 border-2 rounded-md shadow-2xl font-worksans">
@@ -41,6 +37,11 @@ const CreateSpecialityEnquiry = () => {
             <option value="Emceeing/Hosting">Emcee/Hosting (Events, Shows, Television, etc)</option>
             <option value="Other">Other(Please specify in the notes section below)</option>
           </select>
+          <input
+            type="submit"
+            className=''
+
+          />
 
         </label>
 
@@ -52,9 +53,91 @@ const CreateSpecialityEnquiry = () => {
             value={value}
             onChange={handleValueChange}
           />
+        </label>
 
+
+        <label>
+          <div>What time do you need the service to start at?</div>
+
+          <div class="mt-2 p-5 w-40 bg-white rounded-lg shadow-xl">
+            <div class="flex">
+              <select name="hours" class="bg-transparent text-xl text-black appearance-none outline-none">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">10</option>
+                <option value="12">12</option>
+              </select>
+              <span class="text-xl mr-3">:</span>
+              <select name="minutes" class="bg-transparent text-xl text-black appearance-none outline-none mr-4">
+                <option value="0">00</option>
+                <option value="30">30</option>
+              </select>
+              <select name="ampm" class="bg-transparent text-xl text-black appearance-none outline-none">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+              </select>
+            </div>
+          </div>
+          <input
+            type="submit"
+            className=''
+
+          />
 
         </label>
+
+
+
+
+        <label>
+          <div>What time do you need the service to end at?</div>
+
+          <div class="mt-2 p-5 w-40 bg-white rounded-lg shadow-xl">
+            <div class="flex">
+              <select name="hours" class="bg-transparent text-xl text-black appearance-none outline-none">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">10</option>
+                <option value="12">12</option>
+              </select>
+              <span class="text-xl mr-3">:</span>
+              <select name="minutes" class="bg-transparent text-xl text-black appearance-none outline-none mr-4">
+                <option value="0">00</option>
+                <option value="30">30</option>
+              </select>
+              <select name="ampm" class="bg-transparent text-xl text-black appearance-none outline-none">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+              </select>
+            </div>
+          </div>
+          <input
+            type="submit"
+            className=''
+
+          />
+
+        </label>
+
+
+
+
 
         <label>
           <div> Where do you require this service? </div>

@@ -17,9 +17,11 @@
     "openai": "^4.12.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-ios-time-picker": "^0.2.2",
     "react-responsive-carousel": "^3.2.23",
     "react-spinners": "^0.13.8",
     "react-tailwindcss-datepicker": "^1.6.6",
+    "timepicker-ui": "^2.6.1",
     "tw-elements": "^1.0.0"
   },
   "devDependencies": {
