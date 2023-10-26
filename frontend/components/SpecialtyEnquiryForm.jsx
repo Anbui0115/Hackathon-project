@@ -72,7 +72,7 @@ const CreateSpecialityEnquiry = () => {
           <div> For events like an Arangetram, kindly provide additional relevant details. </div>
           <div>For makeup enquiries, please mention if you prefer to have your makeup done at the Priyada Arts studio, or at the venue.</div>
           <textarea
-            placeholder="Hello, I am looking for a makeup artist for my dance showcase next month. I am located in the Bay Area and would like to have my makeup done at the venue itself on December 18th at 3:00pm. I would like to request that you stay back for the duration of the event since I have a costume change that I may need help with along with some touch-ups."
+            placeholder="Hello, I am looking for a makeup artist for my dance showcase next month. I am located in the Bay Area and would like to have my makeup done at the venue itself on December 18th from 3:00pm - 6:00pm. I would like to request your service at 1pm to allow for enough time to get ready. I would like to request that you stay back for the duration of the event since I have a costume change that I may need help with along with some touch-ups."
             className="border-none bg-inherit border-gray-300 rounded-md p-3 text-white "
             rows="40"   // this sets the height of the textarea
             cols="40"  // this sets the width of the textarea
