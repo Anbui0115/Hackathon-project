@@ -3,71 +3,71 @@ import React from 'react'
 
 const DanceRegistration = () => {
   return (
-    <div className='z-20 absolute left-[30%] mt-32 h-auto bg-inherit w-[40%] p-10 border-none rounded-md shadow-2xl text-cream font-worksans'>
-      <div className='flex justify-between '>
-        <h1 className='text-3xl font-bold mb-2 '>Register For Dance Lessons</h1>
+    <div className=' text-lg z-20 flex flex-col justify-center mt-32 h-auto bg-inherit w-[70%] tracking-wider p-10 border-none rounded-md shadow-2xl text-lightcream font-worksans'>
+      <div className='flex justify-center '>
+        <h1 className='text-5xl font-laila mb-2 '>Register For Dance Lessons</h1>
       </div>
       <hr className='mx-[-2.5rem] my-[4rem]' />
-      <form>
-        <label >
-          <div>How Many Years of Dance Experience do you have?</div>
-          <select className='text-black'>
+      <form className='flex flex-col justify-center align-center items-start'>
+        <label className='mt-7 mb-7' >
+          <div className='mt-5 mb-5 font-bold '>How Many Years of Dance Experience do you have?</div>
+          <select className='text-lightcream mt-1 mb-1 border-2 rounded-md shadow-2xl p-2 bg-inherit'>
             <option value="Beginner">Beginner: 0-3 years of experience</option>
             <option value="Intermediate">Intermediate: 3-6 years of experience</option>
             <option value="Advanced">Advanced: 6-10 years of experience</option>
             <option value="Senior">Senior: 10+ years of experience</option>
           </select>
-
+{/*
           <input
             type="submit"
             className=''
 
-          />
+          /> */}
 
         </label>
 
-        <label>
-          <div>What is your age? </div>
-          <div>(Why we ask this: We want to place you in the most appropriate group for your age and skill level)</div>
-        <input
+        <label className='mt-5 mb-1'>
+          <div className='font-bold mb-1'>What is your age? </div>
+          <div className='mt-2 mb-2'>(Why we ask this: We want to place you in the most appropriate group for your age and skill level)</div>
+        <input className='mt-3 mb-1 w-[10%] text-lightcream border-0 border-b-2 border-lightcream outline-none mt-1 mb-1 shadow-2xl p-2 bg-inherit'
           placeholder="Ex. 6"/>
         </label>
 
-        <label>
-          <div>Where are you located? (We offer in-person and online classes)</div>
-          <input
+        <label className='mb-2 mt-4'>
+          <div className='font-bold'>Where are you located? (We offer in-person and online classes)</div>
+          <input className="mt-5 mb-2 w-[100%] text-lightcream outline-none border-0 border-b-2 border-lightcream shadow-2xl p-2 bg-inherit"
           placeholder='Fremont, CA'
           />
         </label>
 
-        <label>
-          <div>Please tell us more about your background, experience, dance aspirations or any specific requirements you have to help us get to know you better!</div>
+        <label className='mt-5 mb-1'>
+          <div className='mt-5 mb-5 font-bold'>Tell us more about your background, experience, dance aspirations or any specific requirements you have so we can get to know you better!</div>
 
-          <div>1. Do you practice any other dance styles or art forms? </div>
-          <div>2. How long have you been dancing?</div>
-          <div>3. What are you hoping to learn from your time at Priyada Arts?</div>
-          <div>4. When are you looking to start attending lessons?</div>
-          <div>Whether you're looking to join regular classes or have a special request, we look forward to working with you!</div>
+          <div className='mt-2 mb-2'>1. Do you practice any other dance styles or art forms? </div>
+          <div className='mt-2 mb-2'>2. How long have you been dancing?</div>
+          <div className='mt-2 mb-2'>3. What are you hoping to learn from your time at Priyada Arts?</div>
+          <div className='mt-2 mb-2'>4. When are you looking to start attending lessons?</div>
+          <div className='mt-5 mb-5 font-semibold'>Whether you're looking to join regular classes or have a special request, we look forward to working with you!</div>
           <textarea
-          className='bg-black text-white  border-none '
+          className='flex justify-center outline-none text-lightcream focus-none resize-none m-5 mt-3 mb-1 text-lightcream mt-1 mb-1 rounded-md shadow-2xl p-2 bg-inherit'
             placeholder='Ex. Hi! I have 10 years of experience in Bharathanatyam and have practiced a few other styles as well briefly. I am hoping to expand my peformance skills and technique nuances under your mentorship.'
-            rows="40"   // this sets the height of the textarea
-            cols="40"  // this sets the width of the textarea
+            rows="10"   // this sets the height of the textarea
+            cols="70"  // this sets the width of the textarea
             >
           </textarea>
 
 
         </label>
 
-        <div className='py-6 flex gap-4 justify-center'>
+        <div className='py-6 flex gap-4 justify-center items-center'>
           <button
-            className="bg-teal-700 font-semibold hover:bg-stone-500 text-white rounded-md p-2 transition duration-700"
+            className="bg-teal-700 tracking-wider hover:bg-stone-500 text-lightcream rounded-md p-2 transition duration-700"
             type="submit"
           >
             Submit
           </button>
 
-          <button className="bg-teal-700 font-semibold text-white rounded-md p-2 hover:bg-stone-500 transition duration-700">
+          <button className="bg-teal-700 tracking-wider text-lightcream rounded-md p-2 hover:bg-stone-500 transition duration-700">
             Cancel
           </button>
         </div>
