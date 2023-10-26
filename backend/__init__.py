@@ -20,6 +20,7 @@ import os
 from authlib.integrations.flask_client import OAuth
 from backend.oauth_config import configure_oauth
 from .api.google_routes import google_routes
+from .api.media_routes import media_routes
 
 app = Flask(__name__)
 app.cli.add_command(seed_commands)
@@ -42,6 +43,7 @@ app.register_blueprint(about_routes, url_prefix='/api/about')
 app.register_blueprint(billing_bp, url_prefix='/api/billing')
 app.register_blueprint(google_routes, url_prefix='/api/google')
 app.register_blueprint(testimonial_bp, url_prefix='/api/testimonials')
+app.register_blueprint(media_bp, url_prefix='/api/media')
 
 
 
