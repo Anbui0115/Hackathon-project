@@ -11,12 +11,13 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     authorization = db.Column(db.String(255), nullable = False)
+    level = db.Column(db.String(255))
     first_name = db.Column(db.String(40), nullable = False)
     last_name = db.Column(db.String(40), nullable = False)
     # birthdate = db.Column(db.DateTime, nullable=False)
     address = db.Column(db.String(255), nullable = False)
     phone_number = db.Column(db.Integer, nullable = False)
-    free_user = db.Column(db.Boolean, default=True, nullable = False)
+    free_user = db.Column(db.Boolean, default=True)
     payment_info = db.Column(db.String(255), nullable=True)
 
     # relationships

@@ -1,15 +1,76 @@
 "use client"
 
-import React from 'react';
+import React , {useState }from 'react';
 
 const CreateTestimonial = ({ isOpen, onRequestClose }) => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    testimonial: '',
+  });
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const { firstName, lastName, content, role } = formData;
+
   if (!isOpen) {
     return null; // Do not render the modal if isOpen is false
   }
 
   const handleCloseModal = () => {
     onRequestClose();
-  };
+  }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+    
+      fetch('/api/testimonials', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          content,
+          role
+        }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Handle success
+            console.log('Testimonial submitted successfully');
+          } else {
+            // Handle errors
+            console.error('Failed to submit testimonial');
+          }
+        })
+        .catch((error) => {
+          // Handle network errors
+          console.error('Network error:', error);
+        });
+    
+      // Reset the form or close the modal
+      setFormData({
+        firstName: '',
+        lastName: '',
+        testimonial: '',
+        role:'',
+      });
+      onRequestClose();
+    };
+    
+  }
 
   return (
     <div onClick={(e) => e.stopPropagation()} className="z-10 fixed left-[30%] top-[15%] text-2xl h-[auto] bg-lightcream w-[40%] p-10 border-2 rounded-md shadow-2xl font-worksans">
@@ -19,7 +80,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
         <h1 className="text-3xl font-bold">Leave a Testimonial</h1>
         <button className="" onClick={() => handleCloseModal()} >X</button>
       </div>
-     <form
+     <form onSubmit={handleSubmit}
         className=""
         action=""
       >
@@ -27,7 +88,10 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
           First Name
           <input
             type="text"
-            placeholder=""
+            name="firstName"
+            value={firstName}
+            onChange={handleChange}
+            placeholder="Your first name"
             className="border-2 border-gray-300 rounded-md p-2"
           />
         </label>
@@ -36,7 +100,10 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
           Last Name
           <input
             type="text"
-            placeholder=""
+            name="lastName"
+            value={lastName}
+            onChange={handleChange}
+            placeholder="Your last name"
             className="border-2 border-gray-300 rounded-md p-2"
           />
         </label>
