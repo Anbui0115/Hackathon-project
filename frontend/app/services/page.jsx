@@ -3,6 +3,7 @@ import './services.css';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
+import CreateSpecialityEnquiry from '@/components/SpecialtyEnquiryForm';
 
 const Services = () => {
     return (
@@ -11,6 +12,7 @@ const Services = () => {
             <div className='services-page'>
                 <div>
                     services page
+                      <CreateSpecialityEnquiry />
                 </div>
                 <Footer />
                 <ChatBot />

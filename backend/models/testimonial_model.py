@@ -11,10 +11,7 @@ class Testimonial(db.Model):
     content = db.Column(db.String(1000))
     role=db.Column(db.String(1000))
     isApproved=db.Column(db.Boolean, default=True)
-    # photo_url = db.Column(db.String(1000))
-    # review_type = db.Column(db.String(500))
-    # created_at = db.Column(db.DateTime)
-    # star_rating = db.Column(db.Integer,nullable=False) # do we want star rating?
+
 
     #relationship
     user = db.relationship('User',back_populates='testimonials')
@@ -29,8 +26,4 @@ class Testimonial(db.Model):
             'last_name': self.last_name,
             'role':self.role,
             'isApproved': self.isApproved
-            # 'photo_url': self.photo_url,
-            # 'review_type': self.review_type,
-            # 'created_at':self.created_at,
-        #    'star_rating': self.star_rating,
            }

@@ -17,7 +17,7 @@ def seed_testimonials():
 
     testimonial1 = Testimonial(
         id=1,
-        user_id=2,
+        user_id=1,
         first_name="Anjali",
         last_name="S.",
         role="Student at Priyada Arts",
@@ -28,7 +28,7 @@ def seed_testimonials():
 
     testimonial2 = Testimonial(
         id=2,
-        user_id=3,
+        user_id=2,
         first_name="Rohan",
         last_name="B.",
         role="Collaborator",
@@ -39,7 +39,7 @@ def seed_testimonials():
 
     testimonial3 = Testimonial(
         id=3,
-        user_id=4,
+        user_id=3,
         first_name="Aparna",
         last_name="K.",
         role="Student at Priyada Arts",
@@ -49,7 +49,7 @@ def seed_testimonials():
     )
     testimonial4 = Testimonial(
         id=4,
-        user_id=5,
+        user_id=4,
         first_name="Keerthana",
         last_name="Yellapragada",
         role="Student at Priyada Arts",
@@ -60,7 +60,7 @@ def seed_testimonials():
 
     testimonial5 = Testimonial(
         id=5,
-        user_id=6,
+        user_id=5,
         first_name="Pallab",
         last_name="Kar",
         role="Student at Priyada Arts",
@@ -70,7 +70,7 @@ def seed_testimonials():
     )
     testimonial6 = Testimonial(
         id=6,
-        user_id=7,
+        user_id=6,
         first_name="Priyanka",
         last_name="Subramanyam",
         role="Student at Priyada Arts",
@@ -80,7 +80,7 @@ def seed_testimonials():
     )
     testimonial7 = Testimonial(
         id=7,
-        user_id=8,
+        user_id=7,
         first_name="Vandana",
         last_name="",
         role="Parent at Priyada Arts",
@@ -91,7 +91,7 @@ def seed_testimonials():
 
     testimonial8 = Testimonial(
         id=8,
-        user_id=9,
+        user_id=8,
         first_name="Shubadra",
         last_name="",
         role="Student at Priyada Arts",
@@ -103,7 +103,7 @@ def seed_testimonials():
 
     testimonial9 = Testimonial(
         id=9,
-        user_id=10,
+        user_id=9,
         first_name="Charles",
         last_name="",
         role="Parent at Priyada Arts",
@@ -114,7 +114,7 @@ def seed_testimonials():
 
     testimonial10 = Testimonial(
         id=10,
-        user_id=11,
+        user_id=10,
         first_name="Karthik",
         last_name="",
         role="Parent at Priyada Arts",

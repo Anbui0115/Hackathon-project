@@ -3,6 +3,8 @@ import './classes.css';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
+import DanceRegistration
+ from '@/components/DanceRegistration';
 
 const Classes = () => {
     return (
@@ -13,8 +15,12 @@ const Classes = () => {
                     <h1 className='classes-page-title'>classes</h1>
                     <div className='classes-page-text'>
 
+
+
                     </div>
                 </div>
+
+                 <DanceRegistration />
                 <Footer/>
             </div>
             <ChatBot />

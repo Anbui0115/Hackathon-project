@@ -7,9 +7,19 @@ from ..forms.create_testomonial import CreateTestimonialForm
 testimonial_bp = Blueprint(
     "testimonial_routes", __name__)
 
+# GET ALL TESTIMONIAL
+@testimonial_bp.route('/',methods=["GET"])
+def get_all_testimonials():
+    """
+    Get all testimonials of the studio
+    """
+    user_id = current_user.id
+    testimonials = Testimonial.query.all()
+    return {'testimonials': [i.to_dict() for i in testimonials]}
+
 # CREATE A TESTIMONIAL
 
-@testimonial_bp.route(methods=["POST"])
+@testimonial_bp.route('/',methods=["POST"])
 @login_required
 def create_testimonial():
     """
@@ -37,6 +47,7 @@ def create_testimonial():
 
 
 #  DELETE A TESTIMONIAL
+@testimonial_bp.route('/',methods=["DELETE"])
 @login_required
 def delete_testimonial(testimonial_id):
     """
