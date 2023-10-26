@@ -9,22 +9,22 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 class CreateDanceClassAppointmentForm(FlaskForm):
 
-    first_name = StringField("first_name", validators=[DataRequired()])
+    # first_name = StringField("first_name", validators=[DataRequired()])
 
-    last_name = StringField("last_name", validators=[DataRequired()])
+    # last_name = StringField("last_name", validators=[DataRequired()])
 
-    email =  StringField("email", validators=[DataRequired()])
+    # email =  StringField("email", validators=[DataRequired()])
 
-    age= IntegerField("age", validators=[DataRequired()])
+    # age= IntegerField("age", validators=[DataRequired()])
 
-    phone_number = IntegerField("phone_number", validators=[DataRequired()])
+    # phone_number = IntegerField("phone_number", validators=[DataRequired()])
 
-    level = SelectField("level", choices=["Beginner: 0-3 years of experience", "Intermediate: 3-6 years of experience, Advanced: 6-10 years of experience, Senior: 10+ years of experience"], validators=[DataRequired()])
+    level = SelectField("level", choices=["Beginner","Intermediate","Advanced","Senior"], validators=[DataRequired()])
 
-    date = DateField('date',validators=[DataRequired()])
+    # date = DateField('date',validators=[DataRequired()])
 
     notes = TextAreaField("notes", validators=[DataRequired()])
 
-    submit = SubmitField("Send Enquiry")
-
     isApproved= BooleanField(default=False)
+
+    submit = SubmitField("Send Enquiry")

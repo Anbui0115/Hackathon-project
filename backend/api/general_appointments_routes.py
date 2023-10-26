@@ -42,13 +42,18 @@ def create_general_apt():
     create_general_apt_form['csrf_token'].data = request.cookies['csrf_token']
     # print("current user is: **********************************", current_user)
 
+
     if create_general_apt_form.validate_on_submit():
         data = create_general_apt_form.data
         new_general_apt = GeneralAppointment(
+
+            #  Get user info from user model instead of form
             first_name=data['first_name'],
             last_name=data['last_name'],
             phone_number=data['phone_number'],
             email=data['email'],
+
+
             type=data["type"],
             date=data["class"],
             start_time=data["start_time"],
