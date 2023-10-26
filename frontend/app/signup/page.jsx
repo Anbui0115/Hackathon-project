@@ -1,6 +1,28 @@
+"use client"
 import Link from "next/link";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 const SignUp = () => {
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+    authorization: "student",
+    first_name: "",
+    last_name: "",
+    address: "",
+    phone_number: "",
+  })
+
+  const signUpSubmit = async (e) => {
+    e.preventDefault()
+
+    const data = await axios.post("/api/signup", form)
+  }
+
+
   return (
     <div className="w-full h-screen bg-orange-50 flex items-center justify-center">
 
@@ -34,7 +56,7 @@ const SignUp = () => {
             />
 
             <button type="submit" className="w-full p-3 bg-cyan-700 text-white rounded-md font-semibold hover:bg-gray-600 transition duration-700">
-              Continue
+              Submit
             </button>
 
             <div>

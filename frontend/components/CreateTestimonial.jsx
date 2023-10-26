@@ -67,7 +67,6 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
         testimonial: '',
         role:'',
       });
-      onRequestClose();
     };
     
   }
@@ -114,7 +113,12 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
 
         <label >
           <div> Who are you?</div>
-          <select className='text-black mt-5 mb-5'>
+          <select 
+          className='text-black mt-5 mb-5' 
+          name="role"
+          value={role}
+          onChange={handleChange}>
+            
             <option value="Student at Priyada Arts">Student at Priyada Arts</option>
             <option value="Parent at Priyada Arts">Parent at Priyada Arts</option>
             <option value="Collaborator">Collaborator</option>
