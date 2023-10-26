@@ -33,7 +33,7 @@ setValue(newValue);
           <select className='text-black'>
             <option value="Makeup">Makeup (Shows, Arangetrams, Photoshoots, Workshops)</option>
             <option value="Emceeing/Hosting">Emcee/Hosting (Events, Shows, Television, etc)</option>
-            <option value="Emceeing/Hosting">Other(Please specify in the notes section below)</option>
+            <option value="Other">Other(Please specify in the notes section below)</option>
           </select>
 
           <input
@@ -51,6 +51,15 @@ setValue(newValue);
             value={value}
             onChange={handleValueChange}
           />
+
+        </label>
+
+        <label>
+          <div> Where do you require this service? </div>
+          <input
+          className='w-[100%]'
+          placeholder="Cubberly Theatre, Palo Alto, CA">
+          </input>
 
         </label>
 
