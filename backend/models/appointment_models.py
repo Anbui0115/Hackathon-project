@@ -20,14 +20,16 @@ class DanceClassAppointment(db.Model):
     last_name=db.Column(db.String(100), nullable=False)
     email=db.Column(db.String(100), nullable=False)
     phone_number=db.Column(db.Integer(), nullable=False)
-    # date = db.Column(db.DateTime, nullable=False, unique=False)
+
 
     level = db.Column(db.String(100), nullable=False)
     age= db.Column(db.Integer(), nullable=False)
+    location= db.Column(db.String(300), nullable=False)
+    notes = db.Column(db.TEXT, nullable=False)
     isApproved = db.Column(db.Boolean, nullable=False)
     attendance = db.Column(db.Boolean, nullable=False, default=False)
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False,default=datetime.now())
-    notes = db.Column(db.TEXT, nullable=False)
+
 
 
 
@@ -45,10 +47,11 @@ class DanceClassAppointment(db.Model):
             'email':self.email,
             'level': self.level,
             'age':self.age,
+            'location': self.location,
+            'notes': self.notes,
             'isApproved': self.isApproved,
             'attendance': self.attendance,
             'created_at': self.created_at,
-            'notes': self.notes
 
         }
 
@@ -67,17 +70,15 @@ class GeneralAppointment(db.Model):
     email=db.Column(db.String(100), nullable=False)
     phone_number=db.Column(db.String(20), nullable=False)
 
-
-    date = db.Column(db.DateTime, nullable=False, unique=False)
-
-    location = db.Column(db.String(200), nullable=False)
     type = db.Column(db.String(200), nullable=False)
-
-
+    date = db.Column(db.DateTime, nullable=False, unique=False)
+    location = db.Column(db.String(200), nullable=False)
+    notes = db.Column(db.TEXT, nullable=False)
+    isApproved = db.Column(db.Boolean, nullable=False, default=False)
     created_at = db.Column(db.DateTime, nullable=False,
                            unique=False, index=False, default=datetime.now())
-    isApproved = db.Column(db.Boolean, nullable=False, default=False)
-    notes = db.Column(db.TEXT, nullable=False)
+
+
 
 
     user = db.relationship("User", back_populates="general_appointments")
@@ -93,13 +94,12 @@ class GeneralAppointment(db.Model):
             'last_name': self.last_name,
             'phone_number': self.phone_number,
             'email':self.email,
-            'date': self.date,
-            # 'time': self.time,
-
-            'location': self.location,
             'type': self.type,
+            'date': self.date,
+            'location': self.location,
+            'notes': self.notes,
             'isApproved': self.isApproved,
             'created_at': self.created_at,
-            'notes': self.notes
+
 
         }

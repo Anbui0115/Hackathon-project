@@ -34,6 +34,13 @@ const DanceRegistration = () => {
         </label>
 
         <label>
+          <div>Where are you located? (We offer in-person and online classes)</div>
+          <input
+          placeholder='Fremont, CA'
+          />
+        </label>
+
+        <label>
           <div>Please tell us more about your background, experience, dance aspirations or any specific requirements you have to help us get to know you better!</div>
 
           <div>1. Do you practice any other dance styles or art forms? </div>

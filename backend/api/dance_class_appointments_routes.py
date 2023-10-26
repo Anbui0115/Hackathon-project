@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, url_for, redirect, request, jsonify
+from flask import Blueprint, request
 from ..models import DanceClassAppointment, User, db
 from flask_login import current_user, login_user, logout_user, login_required
 from ..forms.dance_class_appointment_form import CreateDanceClassAppointmentForm
@@ -49,12 +49,12 @@ def create_dance_apt():
                 user_id=current_user.id,
                 first_name=current_user.first_name,
                 last_name=current_user.last_name,
-                phone_number=current_user.phone_number,
                 email=current_user.email,
+                phone_number=current_user.phone_number,
 
-                age=data['age'],
                 level=data["level"],
-                # date=data["date"],
+                age=data['age'],
+                location=data['location'],
                 notes=data["notes"],
                 isApproved=False,
                 attendance=False,
