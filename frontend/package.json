@@ -19,7 +19,8 @@
     "react-dom": "^18",
     "react-responsive-carousel": "^3.2.23",
     "react-spinners": "^0.13.8",
-    "react-tailwindcss-datepicker": "^1.6.6"
+    "react-tailwindcss-datepicker": "^1.6.6",
+    "tw-elements": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10",

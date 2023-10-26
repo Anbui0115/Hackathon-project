@@ -31,8 +31,6 @@ export default function Home() {
       <NewTestimonialButton onButtonClick={openModal} />
       <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
 
-      {/* <DanceRegistration /> */}
-      {/* <CreateSpecialityEnquiry /> */}
       <Footer />
       <ChatBot />
     </main>

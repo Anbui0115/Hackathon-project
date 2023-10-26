@@ -45,11 +45,22 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
         {/* add another Select field for role: student, parent, collaborator, critic */}
 
 
+        <label >
+          <div> Who are you?</div>
+          <select className='text-black mt-5 mb-5'>
+            <option value="Student at Priyada Arts">Student at Priyada Arts</option>
+            <option value="Parent at Priyada Arts">Parent at Priyada Arts</option>
+            <option value="Collaborator">Collaborator</option>
+            <option value="Critic/Mentor">Critic/Mentor/Other</option>
+          </select>
+
+        </label>
+
 
         <label className="flex flex-col gap-2"  htmlFor="">
           Testimonial
           <textarea
-            placeholder="Type your testimonial here"
+            placeholder="Leave your testimonial here"
             className="border-2 border-gray-300 rounded-md p-3"
             rows="5"   // this sets the height of the textarea
             cols="50"  // this sets the width of the textarea
