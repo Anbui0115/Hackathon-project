@@ -48,7 +48,7 @@ def create_general_apt():
         new_general_apt = GeneralAppointment(
 
             #  Get user info from user model instead of form
-            user_id=current_user.id
+            user_id=current_user.id,
             first_name=current_user.first_name,
             last_name=current_user.last_name,
             email=current_user.email,
