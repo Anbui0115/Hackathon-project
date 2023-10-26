@@ -15,7 +15,7 @@ module.exports = {
       fontFamily: {
         'montserrat': ['Montserrat', 'sans-serif'],
         'laila': ['Laila', 'serif'],
-        'work-sans': ['"Work Sans"', 'sans']
+        'worksans': ['"Work Sans"', 'sans']
       },
       colors: {
         "cream": "#fef3c7",
