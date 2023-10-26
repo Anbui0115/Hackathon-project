@@ -13,7 +13,8 @@ class Media(db.Model):
   video_url = db.Column(db.String(255), nullable=True)
   description = db.Column(db.String(255), nullable=True)
   created_at = db.Column(db.DateTime, default=datetime.utcnow)
-  
+  authorization = db.Column(db.String(1000), default='Public', nullable=False)
+
 
   # relationship
   user = db.relationship('User', back_populates='media')
@@ -25,7 +26,6 @@ class Media(db.Model):
       'photo_url': self.photo_url,
       'video_url': self.video_url,
       'description': self.description,
+      'authorization':self.authorization,
       'created_at': self.created_at,
     }
-  
-  
