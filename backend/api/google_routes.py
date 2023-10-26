@@ -1,5 +1,8 @@
 from flask import Flask, session, redirect, url_for, Blueprint
 from ..oauth_config import oauth
+from ..models import db, User
+from flask_login import login_user, logout_user, login_required
+import requests
 
 google_routes = Blueprint('google', __name__)
 
@@ -13,16 +16,41 @@ def googleLogin():
 def googleCallback():
     token = oauth.dance_class_app.authorize_access_token()
     session['user'] = token
+    user = User.query.filter_by(email=token['userinfo']['email']).first()
+    if not user:
+        new_user = User(
+            email=token['userinfo']['email'],
+            first_name=token['userinfo']['given_name'],
+            last_name=token['userinfo']['family_name'],
+            password='defaultpassword',
+            username=token['userinfo']['name'],
+            address='defaultaddress',
+            phone_number='0000000000',
+            authorization='student'
+        )
+        db.session.add(new_user)
+        db.session.commit()
+        login_user(new_user)
+    else:
+        login_user(user)
+
 
     return redirect('/api/google/display_data')
 
 # Display Data
 @google_routes.route('/display_data')
+@login_required
 def display_data():
+    # if session.get('user') is None:
+    #     return redirect(url_for('google.googleLogin'))
     return session.get('user')
 
 # Logout
 @google_routes.route('/logout')
+@login_required
 def logout():
-    session.pop('user', None)
-    return redirect('/api/google/login')
+    requests.post('https://oauth2.googleapis.com/revoke',
+    params={'token': session['user']['access_token']},
+    headers = {'content-type': 'application/x-www-form-urlencoded'})
+    # logout_user()
+    return redirect(url_for('google.googleLogin'))

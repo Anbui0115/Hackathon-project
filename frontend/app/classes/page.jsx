@@ -4,6 +4,8 @@ import './classes.css';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
+import DanceRegistration
+ from '@/components/DanceRegistration';
 
 const Classes = () => {
     // Define state variables to manage user input
@@ -25,7 +27,7 @@ const Classes = () => {
                     </div>
                     <div className='right-col'></div>
                 </div>
-                <Footer />
+                <Footer/>
             </div>
             <ChatBot />
         </>
