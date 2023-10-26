@@ -1,5 +1,6 @@
 from backend.models import db, User, environment, SCHEMA
 from sqlalchemy.sql import text
+import datetime
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():

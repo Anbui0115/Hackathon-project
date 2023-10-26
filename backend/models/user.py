@@ -13,6 +13,7 @@ class User(db.Model, UserMixin):
     authorization = db.Column(db.String(255), nullable = False)
     first_name = db.Column(db.String(40), nullable = False)
     last_name = db.Column(db.String(40), nullable = False)
+    birthdate = db.Column(db.DateTime, nullable=False)
     address = db.Column(db.String(255), nullable = False)
     phone_number = db.Column(db.Integer, nullable = False)
     free_user = db.Column(db.Boolean, default=True, nullable = False)
@@ -45,6 +46,7 @@ class User(db.Model, UserMixin):
             'authorization': self.authorization,
             'first_name':self.first_name,
             'last_name': self.last_name,
+            'birthdate': self.birthdate,
             'address': self.address,
             'phone_number': self.phone_number,
             'free_user': self.free_user,

@@ -21,14 +21,9 @@ class CreateGeneralAppointmentForm(FlaskForm):
 
     date = DateField("date", validators=[DataRequired()])
 
-
-    start_time = TimeField('Start at',validators=[DataRequired()])
-
-    end_time = TimeField('End at', validators=[DataRequired()])
-
     location = StringField("location", validators=[DataRequired()])
 
-    # Specific details of the event: What kind of event is it? Duration that yourequire services for?
+    # Specific details of the event: What time is the event? What kind of event is it? Duration that yourequire services for?
     notes = TextAreaField("notes", validators=[DataRequired()])
 
     submit = SubmitField("Send Enquiry")

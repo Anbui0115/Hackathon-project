@@ -52,9 +52,6 @@ class DanceClassAppointment(db.Model):
 
         }
 
-    def __repr__(self):
-
-        return f'<Dance_Class_Appointments, id={self.id}, user_id={self.user_id},level={self.level}, isApproved={self.isApproved}, attendance={self.attendance},created_at={self.created_at},notes={self.notes}'
 
 # ________________________________________________________________________________________________________
 
@@ -72,8 +69,7 @@ class GeneralAppointment(db.Model):
 
 
     date = db.Column(db.DateTime, nullable=False, unique=False)
-    start_time = db.Column(db.DateTime, nullable=False)
-    end_time = db.Column(db.DateTime, nullable=False)
+
     location = db.Column(db.String(200), nullable=False)
     type = db.Column(db.String(200), nullable=False)
 
@@ -98,8 +94,8 @@ class GeneralAppointment(db.Model):
             'phone_number': self.phone_number,
             'email':self.email,
             'date': self.date,
-            'start_time': self.start_time,
-            'end_time': self.end_time,
+            # 'time': self.time,
+
             'location': self.location,
             'type': self.type,
             'isApproved': self.isApproved,
@@ -107,6 +103,3 @@ class GeneralAppointment(db.Model):
             'notes': self.notes
 
         }
-
-    def __repr__(self):
-        return f'<General_Appointments, id={self.id},date={self.date}, isApproved={self.isApproved}, location={self.location}, type={self.type},start_time={self.start_time}, end_time={self.end_time},created_at={self.created_at},notes={self.notes}'

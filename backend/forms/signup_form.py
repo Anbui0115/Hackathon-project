@@ -18,6 +18,7 @@ class SignUpForm(FlaskForm):
     first_name = StringField('first_name')
     last_name = StringField('last_name')
     address = StringField('address')
+    birthdate=StringField('birthdate')
     password = StringField('password', validators=[DataRequired()])
     phone_number = StringField('phone_number')
     payment_info = StringField('payment_info')

@@ -27,4 +27,6 @@ class CreateDanceClassAppointmentForm(FlaskForm):
 
     isApproved= BooleanField(default=False)
 
+    attendance = BooleanField(default=False)
+
     submit = SubmitField("Send Enquiry")
