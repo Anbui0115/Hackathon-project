@@ -4,8 +4,7 @@ import './schedule.css';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
-import DanceRegistration
- from '@/components/DanceRegistration';
+import DanceRegistrationButton from '@/components/DanceRegistrationButton';
 
 const Classes = () => {
     // Define state variables to manage user input
@@ -83,6 +82,9 @@ const Classes = () => {
                             </div>
 
                         </div>
+
+                        
+                        <DanceRegistrationButton/>
                     </div>
                     <div className='right-col'></div>
                 </div>

@@ -27,7 +27,7 @@
     background-color: black;
     color: #fef3c7;
     box-sizing: border-box;
-    padding: 137px 100px;
+    padding: 80px 200px;
     display:flex;
     flex-direction: column;
     /* max-width: 1600px; */
@@ -72,8 +72,28 @@
 }
 
 .level, .time {
-    width: 200px;
+    width: 150px;
     font-size: 25px;
     text-align: left;
     /* width: 30px; */
 }
+
+@media (max-width: 576px) {
+    .classes-page-title h1 {
+      font-size: 1.5rem;
+    }
+  
+    .center-col h2 {
+      font-size: 1.5rem;
+    }
+  
+    .day {
+      margin-left: 2%;
+    }
+  
+    .level,
+
+    .time {
+      font-size: 1.5rem;
+    }
+  }
