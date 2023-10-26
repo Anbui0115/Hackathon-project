@@ -27,13 +27,20 @@ const DanceRegistration = () => {
         </label>
 
         <label>
-          <div>What is your age? (We want to place you in most appropriate group for your age and skill level)</div>
+          <div>What is your age? </div>
+          <div>(Why we ask this: We want to place you in the most appropriate group for your age and skill level)</div>
         <input
           placeholder="Ex. 6"/>
         </label>
 
         <label>
-          <div>Tell us more about your background, dance aspirations or any specific requirements you have. Do you practice any other styles or artforms? How long have you been dancing? What are you hoping to learn from your time at Priyada Arts? When are you looking to join classes? Whether you're looking to join a regular class or have a special request, we're here to assist you.</div>
+          <div>Tell us more about your background, dance aspirations or any specific requirements you have.</div>
+          <div> Please answer the following questions to help us get to know you better!</div>
+          <div>1. Do you practice any other styles or artforms? </div>
+          <div>2. How much experience do you have with dancing?</div>
+          <div>3. What are you hoping to learn from your time at Priyada Arts?</div>
+          <div>4. When are you looking to start attending lessons?</div>
+          <div>Whether you're looking to join regular classes or have a special request, we look forward to working with you!</div>
           <textarea
             placeholder='Ex. Hi! I have 10 years of experience in Bharathanatyam and have practiced a few other styles as well briefly. I am hoping to expand my peformance skills and technique nuances under your mentorship.'>
 
