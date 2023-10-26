@@ -3,7 +3,7 @@ import React from 'react'
 
 const DanceRegistration = () => {
   return (
-    <div className='z-20 absolute left-[30%] mt-32 h-auto bg-lightcream w-[40%] p-10 border-2 rounded-md shadow-2xl text-black font-worksans'>
+    <div className='z-20 absolute left-[30%] mt-32 h-auto bg-inherit w-[40%] p-10 border-none rounded-md shadow-2xl text-cream font-worksans'>
       <div className='flex justify-between '>
         <h1 className='text-3xl font-bold mb-2 '>Register For Dance Lessons</h1>
       </div>
@@ -11,7 +11,7 @@ const DanceRegistration = () => {
       <form>
         <label >
           <div>How Many Years of Dance Experience do you have?</div>
-          <select>
+          <select className='text-black'>
             <option value="Beginner">Beginner: 0-3 years of experience</option>
             <option value="Intermediate">Intermediate: 3-6 years of experience</option>
             <option value="Advanced">Advanced: 6-10 years of experience</option>
@@ -34,16 +34,19 @@ const DanceRegistration = () => {
         </label>
 
         <label>
-          <div>Please tell us more about your background, dance aspirations or any specific requirements you have to help us get to know you better!</div>
+          <div>Please tell us more about your background, experience, dance aspirations or any specific requirements you have to help us get to know you better!</div>
 
-          <div>1. Do you practice any other styles or artforms? </div>
-          <div>2. How much experience do you have with dancing?</div>
+          <div>1. Do you practice any other dance styles or art forms? </div>
+          <div>2. How long have you been dancing?</div>
           <div>3. What are you hoping to learn from your time at Priyada Arts?</div>
           <div>4. When are you looking to start attending lessons?</div>
           <div>Whether you're looking to join regular classes or have a special request, we look forward to working with you!</div>
           <textarea
-            placeholder='Ex. Hi! I have 10 years of experience in Bharathanatyam and have practiced a few other styles as well briefly. I am hoping to expand my peformance skills and technique nuances under your mentorship.'>
-
+          className='bg-black text-white  border-none '
+            placeholder='Ex. Hi! I have 10 years of experience in Bharathanatyam and have practiced a few other styles as well briefly. I am hoping to expand my peformance skills and technique nuances under your mentorship.'
+            rows="40"   // this sets the height of the textarea
+            cols="40"  // this sets the width of the textarea
+            >
           </textarea>
 
 
