@@ -1,4 +1,4 @@
-from .seeds import seed_commands 
+from .seeds import seed_commands
 
 
 from flask import Flask, request, redirect
@@ -23,6 +23,7 @@ from .api.google_routes import google_routes
 
 app = Flask(__name__)
 app.cli.add_command(seed_commands)
+app.secret_key = os.environ.get('SECRET_KEY')
 # Google OAuth
 app.config.from_object(Config)
 oauth = OAuth(app)

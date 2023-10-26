@@ -1,18 +1,19 @@
 from backend.models import db, User, environment, SCHEMA
 from sqlalchemy.sql import text
+import datetime
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
 
     user1 = User(
-        username='RanbowWorrior',
-        email='ranbowWorrior@gmail.com',
-        password='x813g00',
+        username='PriyankaRaghuraman',
+        email='priyankaraghuramandance@gmail.com',
+        password='priyadaarts',
         authorization='admin',
-        first_name='Ranbow',
-        last_name='Worrior',
-        address='1234 Rainbow Road',
-        phone_number=3336899725,
+        first_name='Priyanka',
+        last_name='Raghuraman',
+        address='35994 Burning Tree Dr, Newark, CA, 94560',
+        phone_number=5108158473,
     )
 
     user2 = User(
