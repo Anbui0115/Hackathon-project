@@ -40,3 +40,7 @@
 .center-col {
     width: 83.3333%;
 }
+
+.center-col h2{
+    font-size: 40px;
+}
