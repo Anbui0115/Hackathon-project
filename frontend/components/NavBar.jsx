@@ -12,6 +12,7 @@ import ContactUs from "./ContactUs";
 
 const NavBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleClassMenu, setToggleClassMenu] = useState(false);
 
   return (
     
@@ -22,14 +23,32 @@ const NavBar = () => {
       {/* NavLinks */}
       <div className="flex space-x-8 items-center">
         
-        <nav className="text-2xl">
+        {/* <nav className="text-2xl">
           <Link href="/classes">Classes</Link>
+        </nav> */}
+
+        
+        {/* Class Schedule / Registration Drop Down Menu */}
+        <nav onMouseEnter={() => setToggleClassMenu(true)} onClick={() => setToggleClassMenu(!setToggleClassMenu)} className="text-2xl flex gap-2 cursor-pointer">
+        <span>Classes</span>
+        {
+            toggleClassMenu && (
+              <div 
+                onMouseLeave={() => setToggleClassMenu(false)}
+                className="absolute z-10 top-16 mt-2 w-[180px]  rounded-md shadow-lg "
+              >
+                <div className="px-6  py-4 rounded-md bg-teal-950 flex flex-col gap-2">
+                  <Link href="/schedule" className=" hover:text-orange-500">Schedule</Link>
+                  <Link href="/registration" className="hover:text-orange-500">Registration</Link>
+                </div>
+              </div>
+            )
+          }
         </nav>
 
         <nav className="text-2xl">
           <Link href="/media-gallery">Awards / Gallery</Link>
         </nav>
-        
 
         <nav className="text-2xl">
           <Link href="/services">Services</Link>
