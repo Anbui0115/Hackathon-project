@@ -9,6 +9,7 @@ import CreateTestimonial from '@/components/CreateTestimonial'
 import NewTestimonialButton from '@/components/NewTestimonialButton'
 import './homepage.css'
 import DanceRegistration from '@/components/DanceRegistration'
+import CreateSpecialityEnquiry from '@/components/SpecialtyEnquiryForm'
 export default function Home() {
   const [dark, setDark] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -24,9 +25,11 @@ export default function Home() {
       <Testimonial />
       <NewTestimonialButton onButtonClick={openModal} />
       <CreateTestimonial isOpen={isModalOpen} onRequestClose={closeModal} />
-       {/* <DanceRegistration /> */}
+
+      {/* <DanceRegistration /> */}
+      <CreateSpecialityEnquiry />
       <Footer />
       <ChatBot />
-      </main>
+    </main>
   )
 }
