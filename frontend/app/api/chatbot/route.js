@@ -18,6 +18,7 @@ const personality = {
   I will break down the data for you in parts so you know which one you need to access.
   For common questions. This is the ${FAQ}.
   For questions about the dance teacher and her background and the studio. This is the ${About}.
+  Review the information before you proceed to answer the users questions. I want the answer to be as close to the facts as possible.
   `,
   cheerful: "I am a cheerful enthusiastic chatbot assistant on a website here to give a joyful enthusiastic experiernce to users on this dance website owned by Priyanka Raghuaraman I will help answer the users questions and queries with a cheerful manner.",
   friendly: "I am a friendly chatbot assistant on a website here to help users with their questions and queries about this dance website owned by Priyanka Raghuaraman",
@@ -49,7 +50,7 @@ export async function POST(request) {
         }
       ],
       n: 1,
-      temperature: 0.8,
+      temperature: 0.4,
       max_tokens: 120 
     })
 

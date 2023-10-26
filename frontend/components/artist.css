@@ -13,6 +13,7 @@
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    
 }
 
 .artist-page-title {
@@ -28,7 +29,7 @@
     color: #fef3c7;
     font-size: 18px;
     line-height: 1.5;
-    font-family: work sans;
+    font-family: work-sans;
 }
 
 .artist-page-text p {
