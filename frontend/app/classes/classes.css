@@ -1,0 +1,42 @@
+.classes-page {
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.classes-page-title {
+    background-color: black;
+    color: #fef3c7;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding-top: 40px;
+    padding-bottom: 120px;
+}
+
+.classes-page-title h1 {
+    font-size: 60px;
+    margin-left: -17px;
+    margin-right: -17px;
+}
+
+.classes-page-container{
+    background-color: black;
+    color: #fef3c7;
+    box-sizing: border-box;
+    padding: 137px 100px;
+}
+
+.left-col {
+    width:8.3333%;
+}
+
+.right-col {
+    width:8.3333%;
+}
+
+.center-col {
+    width: 83.3333%;
+}
