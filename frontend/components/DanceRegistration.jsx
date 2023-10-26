@@ -34,8 +34,8 @@ const DanceRegistration = () => {
         </label>
 
         <label>
-          <div>Tell us more about your background, dance aspirations or any specific requirements you have.</div>
-          <div> Please answer the following questions to help us get to know you better!</div>
+          <div>Please tell us more about your background, dance aspirations or any specific requirements you have to help us get to know you better!</div>
+
           <div>1. Do you practice any other styles or artforms? </div>
           <div>2. How much experience do you have with dancing?</div>
           <div>3. What are you hoping to learn from your time at Priyada Arts?</div>
