@@ -7,8 +7,8 @@ const DanceRegistration = () => {
   return (
     <>
       <NavBar />
-      <section className='bg-black'>
-        <div className= 'text-lg z-20 flex flex-col justify-center mt-32 h-auto bg-inherit w-[70%] tracking-wider p-10 border-none rounded-md shadow-2xl text-lightcream font-worksans'>
+      <section className='bg-black flex justify-center'>
+        <div className= 'text-lg z-20 flex flex-col justify-center h-auto bg-inherit w-[70%] tracking-wider p-10 border-none rounded-md shadow-2xl text-lightcream font-worksans'>
             <div className='flex justify-center '>
             <h1 className='text-5xl font-laila mb-2 '>Register For Dance Lessons</h1>
             </div>
@@ -16,7 +16,7 @@ const DanceRegistration = () => {
             <form className='flex flex-col justify-center align-center items-start'>
             <label className='mt-7 mb-7' >
                 <div className='mt-5 mb-5 font-bold '>How Many Years of Dance Experience do you have?</div>
-                <select className='text-lightcream mt-1 mb-1 border-2 rounded-md shadow-2xl p-2 bg-inherit'>
+                <select className='text-lightcream mt-1 mb-1 border-2 rounded-md shadow-2xl p-2 bg-inherit focus:bg-black'>
                 <option value="Beginner">Beginner: 0-3 years of experience</option>
                 <option value="Intermediate">Intermediate: 3-6 years of experience</option>
                 <option value="Advanced">Advanced: 6-10 years of experience</option>
