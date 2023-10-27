@@ -2,10 +2,13 @@
 import Link from "next/link"
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
+import { UserGlobalState } from "@/context/UserContext";
 
   const Login = () => {
+    const {isAuthenticated, setIsAuthenticated, user, setUser} = UserGlobalState()
     const router = useRouter()
+    
     const [form, setForm] = useState({
       email: "",
       password: ""
@@ -19,11 +22,8 @@ import { useRouter } from "next/router"
         password: "priyadaarts",
 
       };
-
-    
       const response = await axios.post('http://127.0.0.1:5000/api/auth/login', demoData, { withCredentials: true });
-    
-      console.log(response, 'response');
+  
       router.push('/')
     }
     

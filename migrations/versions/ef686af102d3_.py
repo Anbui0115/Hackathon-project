@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: be8018e4639f
-Revises:
-Create Date: 2023-10-24 13:46:02.844694
+Revision ID: ef686af102d3
+Revises: 
+Create Date: 2023-10-26 18:27:03.184471
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'be8018e4639f'
+revision = 'ef686af102d3'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -24,11 +24,12 @@ def upgrade():
     sa.Column('email', sa.String(length=255), nullable=False),
     sa.Column('hashed_password', sa.String(length=255), nullable=False),
     sa.Column('authorization', sa.String(length=255), nullable=False),
+    sa.Column('level', sa.String(length=255), nullable=True),
     sa.Column('first_name', sa.String(length=40), nullable=False),
     sa.Column('last_name', sa.String(length=40), nullable=False),
     sa.Column('address', sa.String(length=255), nullable=False),
     sa.Column('phone_number', sa.Integer(), nullable=False),
-    sa.Column('free_user', sa.Boolean(), nullable=False),
+    sa.Column('free_user', sa.Boolean(), nullable=True),
     sa.Column('payment_info', sa.String(length=255), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email'),
@@ -52,13 +53,13 @@ def upgrade():
     sa.Column('last_name', sa.String(length=100), nullable=False),
     sa.Column('email', sa.String(length=100), nullable=False),
     sa.Column('phone_number', sa.Integer(), nullable=False),
-    sa.Column('date', sa.DateTime(), nullable=False),
     sa.Column('level', sa.String(length=100), nullable=False),
     sa.Column('age', sa.Integer(), nullable=False),
-    sa.Column('accepted', sa.Boolean(), nullable=False),
+    sa.Column('location', sa.String(length=300), nullable=False),
+    sa.Column('notes', sa.TEXT(), nullable=False),
+    sa.Column('isApproved', sa.Boolean(), nullable=False),
     sa.Column('attendance', sa.Boolean(), nullable=False),
     sa.Column('created_at', sa.DateTime(), nullable=False),
-    sa.Column('notes', sa.TEXT(), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -69,14 +70,12 @@ def upgrade():
     sa.Column('last_name', sa.String(length=100), nullable=False),
     sa.Column('email', sa.String(length=100), nullable=False),
     sa.Column('phone_number', sa.String(length=20), nullable=False),
-    sa.Column('date', sa.DateTime(), nullable=False),
-    sa.Column('start_time', sa.DateTime(), nullable=False),
-    sa.Column('end_time', sa.DateTime(), nullable=False),
-    sa.Column('location', sa.String(length=200), nullable=False),
     sa.Column('type', sa.String(length=200), nullable=False),
-    sa.Column('created_at', sa.DateTime(), nullable=False),
-    sa.Column('accepted', sa.Boolean(), nullable=False),
+    sa.Column('date', sa.DateTime(), nullable=False),
+    sa.Column('location', sa.String(length=200), nullable=False),
     sa.Column('notes', sa.TEXT(), nullable=False),
+    sa.Column('isApproved', sa.Boolean(), nullable=False),
+    sa.Column('created_at', sa.DateTime(), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -87,34 +86,27 @@ def upgrade():
     sa.Column('video_url', sa.String(length=255), nullable=True),
     sa.Column('description', sa.String(length=255), nullable=True),
     sa.Column('created_at', sa.DateTime(), nullable=True),
+    sa.Column('authorization', sa.String(length=1000), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('reviews',
+    op.create_table('testimonials',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
+    sa.Column('first_name', sa.String(length=100), nullable=True),
+    sa.Column('last_name', sa.String(length=100), nullable=True),
     sa.Column('content', sa.String(length=1000), nullable=True),
-    sa.Column('photo_url', sa.String(length=1000), nullable=True),
-    sa.Column('review_type', sa.String(length=500), nullable=True),
-    sa.Column('created_at', sa.DateTime(), nullable=True),
+    sa.Column('role', sa.String(length=1000), nullable=True),
+    sa.Column('isApproved', sa.Boolean(), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ondelete='CASCADE'),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('dance_videos',
     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('video_url', sa.String(length=200), nullable=False),
-    sa.Column('dance_class_appintment_id', sa.Integer(), nullable=False),
+    sa.Column('dance_class_appointment_id', sa.Integer(), nullable=False),
     sa.Column('authorization', sa.String(length=255), nullable=False),
-    sa.ForeignKeyConstraint(['dance_class_appintment_id'], ['dance_class_appointments.id'], ),
-    sa.PrimaryKeyConstraint('id')
-    )
-    op.create_table('media',
-    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
-    sa.Column('general_appointment_id', sa.Integer(), nullable=False),
-    sa.Column('video_url', sa.String(length=200), nullable=True),
-    sa.Column('photo_url', sa.String(length=200), nullable=True),
-    sa.Column('description', sa.String(length=1000), nullable=True),
-    sa.ForeignKeyConstraint(['general_appointment_id'], ['general_appointments.id'], ),
+    sa.ForeignKeyConstraint(['dance_class_appointment_id'], ['dance_class_appointments.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
@@ -122,9 +114,8 @@ def upgrade():
 
 def downgrade():
     # ### commands auto generated by Alembic - please adjust! ###
-    op.drop_table('media')
     op.drop_table('dance_videos')
-    op.drop_table('reviews')
+    op.drop_table('testimonials')
     op.drop_table('media')
     op.drop_table('general_appointments')
     op.drop_table('dance_class_appointments')
