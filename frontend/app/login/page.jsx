@@ -5,58 +5,67 @@ import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { UserGlobalState } from "@/context/UserContext";
 
-  const Login = () => {
-    const { sessionUser, setSessionUser} = UserGlobalState()
-    const router = useRouter()
+const Login = () => {
+  const { sessionUser, setSessionUser, session, setSession } = UserGlobalState();
+  const router = useRouter();
 
-    const [form, setForm] = useState({
-      email: "",
-      password: ""
-    })
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  });
 
-    const handleDemo = async (e) => {
-      e.preventDefault();
-    
-      const demoData = {
-        email: "priyankaraghuramandance@gmail.com",
-        password: "priyadaarts",
+  const handleDemo = async (e) => {
+    e.preventDefault();
 
-      };
+    const demoData = {
+      email: "priyankaraghuramandance@gmail.com",
+      password: "priyadaarts"
+    };
 
-      try {
-        const response = await axios.post('http://127.0.0.1:5000/api/auth/login', demoData, { withCredentials: true });
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/auth/login', demoData, { withCredentials: true });
 
-        setSessionUser(response.data)
-
-        if (response) {
-          alert("Login Successful")
-          // setIsAuthenticated(true)
-          router.push("/")
-        }
-
-      } catch (error) {
-        console.log(error)
-        alert("Login Failed Try Again")
-      }
-    }
-    
-    const loginSubmit = async (e) => {
-      e.preventDefault();
+      if (response) {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("user", JSON.stringify(response.data));
+        setSessionUser(response.data);
+        alert("Login Successful");
+        router.push("/");
       
-      try {
-        const response = await axios.post('http://127.0.0.1:5000/api/auth/login', form, { withCredentials: true });
-        
-        if (response) {
-          alert("Login Successful")
-          router.push("/")
-        }
-
-      } catch (error) {
-
       }
-
+    } catch (error) {
+      console.error(error);
+      alert("Login Failed Try Again");
     }
-    
+  };
+
+  const loginSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/auth/login', form, { withCredentials: true });
+
+      if (response) {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("user", JSON.stringify(response.data));
+        setSessionUser(response.data);
+        alert("Login Successful");
+        router.push("/");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Login Failed Try Again");
+    }
+  };
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (isLoggedIn === "true") {
+      setSessionUser(user);
+      router.push("/");
+    }
+  }, []);
 
   return (
     <div className="w-full h-screen bg-orange-50 flex items-center justify-center">
