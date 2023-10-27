@@ -13,7 +13,7 @@ def seed_users():
         first_name='Priyanka',
         last_name='Raghuraman',
         address='35994 Burning Tree Dr, Newark, CA, 94560',
-        phone_number=5108158473,
+        phone_number="5108158473",
     )
 
     user2 = User(
@@ -24,7 +24,7 @@ def seed_users():
         first_name="Anjali",
         last_name="S.",
         address='22 Queen Street',
-        phone_number=8006667577,
+        phone_number="8006667577",
         payment_info='need an update'
     )
 
@@ -36,7 +36,7 @@ def seed_users():
         first_name="Rohan",
         last_name="B.",
         address='153 Faith Avenue',
-        phone_number=6266667727,
+        phone_number="6266667727",
     )
 
     user4 = User(
@@ -47,7 +47,7 @@ def seed_users():
         first_name="Aparna",
         last_name="K.",
         address='3296 Disney Road',
-        phone_number=7777777777,
+        phone_number="7777777777",
     )
 
     user5 = User(
@@ -58,7 +58,7 @@ def seed_users():
         first_name="Keerthana",
         last_name="Yellapragada",
         address='888 Happy Street',
-        phone_number=7971211113,
+        phone_number="7971211113",
     )
 
     user6 = User(
@@ -69,7 +69,7 @@ def seed_users():
         first_name="Pallab",
         last_name="Kar",
         address='2945 Green Street',
-        phone_number=2123334442,
+        phone_number="2123334442",
     )
 
     user7 = User(
@@ -80,7 +80,7 @@ def seed_users():
         first_name="Priyanka",
         last_name="Subramanyam",
         address='645 University Street',
-        phone_number=6266667774,
+        phone_number="6266667774",
     )
 
     user8 = User(
@@ -91,7 +91,7 @@ def seed_users():
         first_name="Vandana",
         last_name="A",
         address='399 Elysian Street',
-        phone_number=6266667771,
+        phone_number="6266667771",
     )
 
     user9 = User(
@@ -102,7 +102,7 @@ def seed_users():
         first_name="Shubadra",
         last_name="J",
         address='888 Kite Street',
-        phone_number=6266667772,
+        phone_number="6266667772",
     )
 
     user10 = User(
@@ -113,7 +113,7 @@ def seed_users():
         first_name="Charles",
         last_name="D.",
         address='999 Pine Street',
-        phone_number=3236861346,
+        phone_number="3236861346",
     )
 
     user11 = User(
@@ -124,7 +124,7 @@ def seed_users():
         first_name="Karthik",
         last_name="G.",
         address='222 Dodger Street',
-        phone_number=6267995823,
+        phone_number="6267995823",
     )
 
 

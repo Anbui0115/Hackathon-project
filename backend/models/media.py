@@ -18,6 +18,7 @@ class Media(db.Model):
 
   # relationship
   user = db.relationship('User', back_populates='media')
+  general_appointment = db.relationship("GeneralAppointment", back_populates="media")
 
   def to_dict(self):
     return {
