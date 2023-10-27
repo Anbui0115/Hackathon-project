@@ -18,11 +18,14 @@ const NavBar = () => {
   const { sessionUser, setSessionUser} = UserGlobalState()
 
   const handleLogout = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    setSessionUser(null)
-    alert("You have successfully logged out!")
+    localStorage.removeItem('user');
+    setSessionUser(null);
+
+    alert("You have successfully logged out!");
   }
+
 
   return (
     
