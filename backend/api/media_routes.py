@@ -9,6 +9,24 @@ from flask_login import current_user, login_user, logout_user, login_required
 media_routes = Blueprint('media_bp', __name__)
 
 # _______________________________________________________________________________
+#  Get all Media
+
+@media_routes.route("/", methods=["GET"])
+def get_all_media():
+    all_media = Media.query.all()
+    response = []
+
+    if all_media:
+        for media in all_media:
+            media_obj = media.to_dict()
+            response.append(media_obj)
+        print("THIS IS MEDIA FROM BACKEND", response)
+        return {
+            "media": response
+        }, 200
+    return {"Error": "Media Not Found"}, 404
+
+# _______________________________________________________________________________
 
 # Create a New Media
 
