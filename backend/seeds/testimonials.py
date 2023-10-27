@@ -32,7 +32,7 @@ def seed_testimonials():
         first_name="Rohan",
         last_name="B.",
         role="Collaborator",
-        content= "Working with Priyanka has been a transformative experience. She has a rare combination of technical brialliance and emotional depth that makes her performances truly unforgettable.",
+        content= "Working with Priyanka has been a transformative experience. She has a rare combination of technical brilliance and emotional depth that makes her performances truly unforgettable.",
         isApproved=True
 
     )
