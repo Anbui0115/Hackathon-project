@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(40), nullable = False)
     # birthdate = db.Column(db.DateTime, nullable=False)
     address = db.Column(db.String(255), nullable = False)
-    phone_number = db.Column(db.Integer, nullable = False)
+    phone_number = db.Column(db.String, nullable = False)
     free_user = db.Column(db.Boolean, default=True)
     payment_info = db.Column(db.String(255), nullable=True)
 
