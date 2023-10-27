@@ -8,9 +8,9 @@ import { useRouter } from "next/navigation";
 import { UserGlobalState } from "@/context/UserContext";
 
 const DanceRegistration = () => {
-  const {sessionuser, setSessionUser} = UserGlobalState()
+  const {sessionUser, setSessionUser} = UserGlobalState()
   const router = useRouter()
-  if (!sessionuser) {
+  if (!sessionUser) {
     router.push('/login')
   }
   else {
