@@ -7,7 +7,7 @@ export const UserGlobalState = () => useContext(UserContext)
 
 const UserContextProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(null);
+  const [sessionUser, setSessionUser] = useState(null);
 
 
   return (
@@ -15,8 +15,8 @@ const UserContextProvider = ({ children }) => {
       value={{ 
         isAuthenticated, 
         setIsAuthenticated,
-        user,
-        setUser
+        sessionUser,
+        setSessionUser
       }}
     >
       {children}

@@ -6,3 +6,5 @@ __pycache__/
 .vscode/
 # Ignore database
 *.db
+instance/dev.db
+migration/
