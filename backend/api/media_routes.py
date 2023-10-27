@@ -54,7 +54,7 @@ def get_media(id):
 
 @media_routes.route('/<int:id>', methods=['PUT'])
 @login_required
-def update_general_media(id):
+def update_media(id):
     media =Media.query.get(id)
     if not media:
         return jsonify({'message': 'Media not found'}), 404
@@ -78,7 +78,7 @@ def update_general_media(id):
 
 @media_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
-def delete_general_media(id):
+def delete_media(id):
     media = Media.query.get(id)
     if media:
         db.session.delete(media)
