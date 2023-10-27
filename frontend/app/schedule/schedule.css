@@ -80,20 +80,20 @@
 
 @media (max-width: 576px) {
     .classes-page-title h1 {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     .center-col h2 {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     .day {
-      margin-left: 2%;
+        margin-left: 2%;
     }
-  
+
     .level,
 
     .time {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  }
+}
