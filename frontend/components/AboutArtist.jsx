@@ -10,7 +10,7 @@ const AboutArtist = () => {
                     <div className='font-laila text-2xl font-bold mt-10 mb-10 text-cream sm:text-3xl capitalize'>
                         <div>About the Artist</div>
                     </div>
-                        <div className="mb-8 text-center text-xl text-cream leading-relaxed">
+                        <div className="mb-8 text-center text-lg text-cream leading-relaxed flex flex-col gap-4">
                             <p>
                                 Priyanka Raghuraman is a passionate and talented multidisciplinary artist who is constantly exploring new creative territories. She is the founder and artistic director of <strong>Priyada Arts</strong>, a vibrant community in the Bay Area that welcomes and nurtures aspiring Bharatanatyam dancers from all backgrounds. Priyanka is also known for her original works that merge contemporary themes with the traditional art form, creating a mirror of our times that is both insightful and thought-provoking. As a trailblazing performer, choreographer, and teacher, Priyanka has earned a reputation for her exceptional skills in both “Nirtta” (pure dance movements) and “Abhinaya” (facial expressions used in storytelling).
                             </p>

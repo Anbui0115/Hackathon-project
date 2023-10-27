@@ -2,10 +2,13 @@
 import Link from "next/link"
 import axios from "axios"
 import { useState, useEffect } from "react"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
+import { UserGlobalState } from "@/context/UserContext";
 
   const Login = () => {
+    const { sessionUser, setSessionUser} = UserGlobalState()
     const router = useRouter()
+
     const [form, setForm] = useState({
       email: "",
       password: ""
@@ -20,27 +23,40 @@ import { useRouter } from "next/router"
 
       };
 
-    
-      const response = await axios.post('http://127.0.0.1:5000/api/auth/login', demoData, { withCredentials: true });
-    
-      console.log(response, 'response');
-      router.push('/')
+      try {
+        const response = await axios.post('http://127.0.0.1:5000/api/auth/login', demoData, { withCredentials: true });
+
+        setSessionUser(response.data)
+
+        if (response) {
+          alert("Login Successful")
+          // setIsAuthenticated(true)
+          router.push("/")
+        }
+
+      } catch (error) {
+        console.log(error)
+        alert("Login Failed Try Again")
+      }
     }
     
     const loginSubmit = async (e) => {
       e.preventDefault();
-  
+      
+      try {
+        const response = await axios.post('http://127.0.0.1:5000/api/auth/login', form, { withCredentials: true });
+        
+        if (response) {
+          alert("Login Successful")
+          router.push("/")
+        }
+
+      } catch (error) {
+
+      }
 
     }
     
-
-    useEffect(() => {
-      const authenticate = async () => {
-        const data = await axios.get("http://127.0.0.1:5000/api/auth")
-        console.log(data, "authenticate")
-      }
-      authenticate()
-    }, [])
 
   return (
     <div className="w-full h-screen bg-orange-50 flex items-center justify-center">
