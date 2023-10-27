@@ -3,29 +3,10 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 function DanceRegistrationButton({ onButtonClick }) {
-    const containerStyle = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        maxHeight: '300px'
-    };
 
-    const buttonStyle = {
-        backgroundColor: '#fef3c7',
-        color: 'black',
-        padding: '10px 20px',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        maxWidth: '300px',
-        textAlign: 'center',
-        fontSize: '30px',
-        fontFamily: 'work sans',
-        fontWeight: 'bold'
-    };
     return (
-        <div style={containerStyle}>
-        <button onClick={onButtonClick} style={buttonStyle}>
+        <div className='flex justify-center items-center max-h-72'>
+        <button onClick={onButtonClick} className='bg-cream hover:bg-white text-black py-2 px-4 rounded-full cursor-pointer max-w-xs text-center text-3xl font-worksans font-bold'>
             <Link href="/registration">Register a Class</Link>
         </button>
         </div>
