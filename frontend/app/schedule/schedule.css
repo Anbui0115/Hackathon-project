@@ -83,6 +83,7 @@
     /* width: 30px; */
 }
 
+
 @media (max-width: 576px) {
     .classes-page-title h1 {
         font-size: 1.5rem;

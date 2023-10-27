@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
+import Link from 'next/link';
 
 const DanceRegistration = () => {
   return (
@@ -73,7 +74,7 @@ const DanceRegistration = () => {
                 </button>
 
                 <button className="bg-teal-700 tracking-wider text-lightcream rounded-md p-2 hover:bg-stone-500 transition duration-700">
-                Cancel
+                  <Link href='/'>Cancel</Link>
                 </button>
             </div>
 
