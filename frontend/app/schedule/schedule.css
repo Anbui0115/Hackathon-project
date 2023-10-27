@@ -30,11 +30,17 @@
     padding: 80px 200px;
     display:flex;
     flex-direction: column;
-    /* max-width: 1600px; */
+    background-image: url('../../assets/images/Splash\ Page\ Background\ Image.jpg');
+    background-size: 33%, 33%; 
+    background-repeat: no-repeat;
+    background-position: left center; 
+    z-index: 2;
+
 }
 
 .left-col {
     width:15%;
+
 }
 
 .right-col {
@@ -42,9 +48,7 @@
 }
 
 .center-col {
-    /* width: 83.3333%; */
-    /* display: flex;
-    flex-direction: column; */
+    /* width: 83.3333%;  */
 }
 
 .center-col h2{
@@ -53,7 +57,7 @@
 
 .class-schedule {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 60px;
 }
 
@@ -66,15 +70,16 @@
 
 .day {
     font-size: 40px;
-    margin-left: 300px;
+    margin-left: 30%;
     /* display: flex; */
     /* justify-content: space-between; */
 }
 
 .level, .time {
-    width: 150px;
+    min-width: 150px;
     font-size: 25px;
     text-align: left;
+    margin-right:20%;
     /* width: 30px; */
 }
 
