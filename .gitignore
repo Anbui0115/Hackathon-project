@@ -7,4 +7,4 @@ __pycache__/
 # Ignore database
 *.db
 instance/dev.db
-migration/
+migrations/

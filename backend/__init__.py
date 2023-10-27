@@ -49,6 +49,7 @@ app.register_blueprint(media_routes, url_prefix='/api/media')
 
 # Login Manager
 login = LoginManager(app)
+login.init_app(app)
 login.login_view = 'auth.unauthorized'
 
 @login.user_loader
