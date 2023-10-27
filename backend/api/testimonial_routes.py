@@ -8,19 +8,20 @@ testimonial_bp = Blueprint(
     "testimonial_routes", __name__)
 
 # GET ALL TESTIMONIAL
+#need to add @login_required once log in is complete and working
 @testimonial_bp.route('/',methods=["GET"])
 def get_all_testimonials():
     """
     Get all testimonials of the studio
     """
-    user_id = current_user.id
+    # user_id = current_user.id
     testimonials = Testimonial.query.all()
     return {'testimonials': [i.to_dict() for i in testimonials]}
 
 # CREATE A TESTIMONIAL
 
 @testimonial_bp.route('/',methods=["POST"])
-@login_required
+# @login_required
 def create_testimonial():
     """
     Create a new testimonial
@@ -31,7 +32,7 @@ def create_testimonial():
     if  create_testimonial_form.validate_on_submit():
         data =  create_testimonial_form.data
         new_testimonial = Testimonial(
-                user_id= current_user.id,
+                # user_id= current_user.id,
                 content= data["content"],
                 first_name=data["first_name"],
                 last_name=data["last_name"],
@@ -43,7 +44,7 @@ def create_testimonial():
 
         new_testimonial_obj = new_testimonial.to_dict()
         return new_testimonial_obj, 201
-    return {"Error": "Validation Error"}, 401
+    return {"Error": "Validation Error"}, 401,  print(create_testimonial_form.errors)
 
 
 #  DELETE A TESTIMONIAL

@@ -1,14 +1,12 @@
-"use client"
-
-import React , {useState }from 'react';
+import React, { useEffect, useState } from 'react';
 
 const CreateTestimonial = ({ isOpen, onRequestClose }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     testimonial: '',
+    role: '', // Added 'role' to the initial state
   });
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,72 +16,53 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     });
   };
 
-  const { firstName, lastName, content, role } = formData;
+  const { firstName, lastName, testimonial, role } = formData; // Changed 'content' to 'testimonial'
+
+  const handleCloseModal = () => {
+    onRequestClose();
+  };
+
+    const handleSubmit = async (e) => {
+      // e.preventDefault();
+      try {
+        const response = await fetch(`/api/testimonials`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            testimonial,
+            role,
+          }),
+        });
+        if (!response.ok) {
+          throw new Error(`This is an HTTP error: The status is ${response.status}`);
+        }
+        console.log('Testimonial submitted successfully');
+      } catch (err) {
+        console.error('Failed to submit testimonial:', err);
+      }
+    };
+    handleSubmit();
 
   if (!isOpen) {
     return null; // Do not render the modal if isOpen is false
   }
 
-  const handleCloseModal = () => {
-    onRequestClose();
-  }
-
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-
-    const handleSubmit = (e) => {
-      e.preventDefault();
-    
-      fetch('/api/testimonials', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          content,
-          role
-        }),
-      })
-        .then((response) => {
-          if (response.ok) {
-            // Handle success
-            console.log('Testimonial submitted successfully');
-          } else {
-            // Handle errors
-            console.error('Failed to submit testimonial');
-          }
-        })
-        .catch((error) => {
-          // Handle network errors
-          console.error('Network error:', error);
-        });
-    
-      // Reset the form or close the modal
-      setFormData({
-        firstName: '',
-        lastName: '',
-        testimonial: '',
-        role:'',
-      });
-    };
-    
-  }
-
   return (
     <div onClick={(e) => e.stopPropagation()} className="z-10 fixed left-[30%] top-[15%] text-2xl h-[auto] bg-lightcream w-[40%] p-10 border-2 rounded-md shadow-2xl font-worksans">
-      {/* Modal content */}
-      {/* <button className="" onClick={handleCloseModal}>X</button> */}
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold">Leave a Testimonial</h1>
-        <button className="" onClick={() => handleCloseModal()} >X</button>
+        <button className="" onClick={() => handleCloseModal()}>X</button>
       </div>
-     <form onSubmit={handleSubmit}
+      <form
+        onSubmit={handleSubmit}
         className=""
         action=""
       >
-        <label className="flex flex-col gap-2 my-2"  htmlFor="">
+        <label className="flex flex-col gap-2 my-2" htmlFor="firstName">
           First Name
           <input
             type="text"
@@ -95,7 +74,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
           />
         </label>
 
-        <label className="flex flex-col gap-2 my-2"  htmlFor="">
+        <label className="flex flex-col gap-2 my-2" htmlFor="lastName">
           Last Name
           <input
             type="text"
@@ -107,34 +86,31 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
           />
         </label>
 
-
-        {/* add another Select field for role: student, parent, collaborator, critic */}
-
-
-        <label >
-          <div> Who are you?</div>
-          <select 
-          className='text-black mt-5 mb-5' 
-          name="role"
-          value={role}
-          onChange={handleChange}>
-            
+        <label>
+          <div>Who are you?</div>
+          <select
+            className="text-black mt-5 mb-5"
+            name="role"
+            value={role}
+            onChange={handleChange}
+          >
             <option value="Student at Priyada Arts">Student at Priyada Arts</option>
             <option value="Parent at Priyada Arts">Parent at Priyada Arts</option>
             <option value="Collaborator">Collaborator</option>
-            <option value="Critic/Mentor">Critic/Mentor/Other</option>
+            <option value="Critic/Mentor/Other">Critic/Mentor/Other</option>
           </select>
-
         </label>
 
-
-        <label className="flex flex-col gap-2"  htmlFor="">
+        <label className="flex flex-col gap-2" htmlFor="testimonial">
           Testimonial
           <textarea
+            name="testimonial"
+            value={testimonial}
+            onChange={handleChange}
             placeholder="Leave your testimonial here"
             className="border-2 border-gray-300 rounded-md p-3"
-            rows="5"   // this sets the height of the textarea
-            cols="50"  // this sets the width of the textarea
+            rows="5"
+            cols="50"
           ></textarea>
         </label>
 
@@ -150,7 +126,6 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
             Cancel
           </button>
         </div>
-
       </form>
     </div>
   );
