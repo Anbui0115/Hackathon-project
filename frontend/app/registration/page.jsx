@@ -1,12 +1,21 @@
+"use client"
 import React from 'react'
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
 import Link from 'next/link';
+import { useRouter } from "next/navigation";
+import { UserGlobalState } from "@/context/UserContext";
 
 const DanceRegistration = () => {
-  return (
-    <>
+  const {sessionuser, setSessionUser} = UserGlobalState()
+  const router = useRouter()
+  if (!sessionuser) {
+    router.push('/login')
+  }
+  else {
+    return (
+      <>
       <NavBar />
       <section className='bg-black flex justify-center'>
         <div className= 'text-lg z-20 flex flex-col justify-center h-auto bg-inherit w-[70%] tracking-wider p-10 border-none rounded-md shadow-2xl text-lightcream font-worksans'>
@@ -86,6 +95,7 @@ const DanceRegistration = () => {
       <ChatBot />
     </>
   )
+  }
 }
 
 export default DanceRegistration
