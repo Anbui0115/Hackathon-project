@@ -12,10 +12,11 @@ dance_class_appointment_bp = Blueprint(
 
 # ____________________________________________________________________________________________________________________
 
-# GET ALL DANCE CLASS ENQUIRIES
+# GET ALL DANCE CLASS ENQUIRIES -- WORKS
 
 
 @dance_class_appointment_bp.route("/", methods=["GET"])
+@login_required
 def all_dance_class_appointments():
     dance_class_appointments = DanceClassAppointment.query.all()
     response = []
@@ -30,10 +31,25 @@ def all_dance_class_appointments():
         }, 200
     return {"Error": "Appointment Not Found"}, 404
 
+# ____________________________________________________________________________________________________
+#  GET DANCE ENQUIRY BY ID -- WORKS
+
+
+@dance_class_appointment_bp.route("/<int:dance_apt_id>/", methods=["GET"])
+@login_required
+def get_dance_apt(dance_apt_id):
+    dance_apt = DanceClassAppointment.query.get(dance_apt_id)
+
+    if dance_apt:
+        dance_apt_obj = dance_apt.to_dict()
+        return dance_apt_obj, 201
+
+    return {"Error": "Appointment Not Found"}, 404
+
 
 # ____________________________________________________________________________________________________
 
-# CREATE A DANCE CLASS ENQUIRY
+# CREATE A DANCE CLASS ENQUIRY -- WORKS
 
 @dance_class_appointment_bp.route("/new/", methods=["POST"])
 @login_required
@@ -41,6 +57,7 @@ def create_dance_apt():
 
     create_dance_apt_form = CreateDanceClassAppointmentForm()
     create_dance_apt_form['csrf_token'].data = request.cookies['csrf_token']
+
     # print("current user is: **********************************", current_user)
 
     if create_dance_apt_form.validate_on_submit():
@@ -72,10 +89,11 @@ def create_dance_apt():
 
 
 
-# DELETE A DANCE CLASS ENQUIRY
+# DELETE A DANCE CLASS ENQUIRY -- WORKS
 
 
-@dance_class_appointment_bp.route("/<int:dance_apt_id_id>/", methods=["DELETE"])
+@dance_class_appointment_bp.route("/<int:dance_apt_id>/", methods=["DELETE"])
+@login_required
 def delete_dance_apt(dance_apt_id):
 
     current_dance_apt = DanceClassAppointment.query.get(dance_apt_id)
@@ -85,7 +103,7 @@ def delete_dance_apt(dance_apt_id):
         db.session.commit()
         return "enquiry was succesfully deleted"
 
-    return "404 appointment not found"
+    return {"Error": "Appointment Not Found"}, 404
 
 
 # function to convert datetime obj to integer value so we can compare

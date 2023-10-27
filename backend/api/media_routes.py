@@ -9,7 +9,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 media_routes = Blueprint('media_bp', __name__)
 
 # _______________________________________________________________________________
-#  Get all Media
+#  Get all Media -- WORKS
 
 @media_routes.route("/", methods=["GET"])
 def get_all_media():
@@ -28,7 +28,7 @@ def get_all_media():
 
 # _______________________________________________________________________________
 
-# Create a New Media
+# Create a New Media --- WORKS
 
 
 @media_routes.route('/create', methods=['POST'])
@@ -55,7 +55,7 @@ def create_media():
 # _______________________________________________________________________________
 
 
-# Get General Media by ID
+# Get General Media by ID -- WORKS
 
 
 @media_routes.route('/<int:id>', methods=['GET'])
@@ -67,7 +67,7 @@ def get_media(id):
 
 # _______________________________________________________________________________
 
-# Update General Media by ID
+# Update General Media by ID -- WORKS
 
 
 @media_routes.route('/<int:id>', methods=['PUT'])
@@ -88,10 +88,12 @@ def update_media(id):
     return jsonify(media.to_dict())
 
 
+
+
 # _______________________________________________________________________________
 
 
-# Delete General Media by ID
+# Delete General Media by ID -- WORKS
 
 
 @media_routes.route('/<int:id>', methods=['DELETE'])
