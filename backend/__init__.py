@@ -20,7 +20,7 @@ import os
 from authlib.integrations.flask_client import OAuth
 from backend.oauth_config import configure_oauth
 from .api.google_routes import google_routes
-from .api.media_routes import media_routes
+from .api.media_routes import media_bp
 
 app = Flask(__name__)
 app.cli.add_command(seed_commands)
