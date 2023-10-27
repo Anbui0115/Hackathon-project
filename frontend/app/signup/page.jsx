@@ -6,12 +6,11 @@ import { useRouter } from "next/navigation";
 import { UserGlobalState } from "@/context/UserContext";
 
 //TODO authentication in global state
-//TODO user set in global state
-//TODO Redirect tested
 //TODO Find what I need from authenticate
+// UseEffect Error Handling or Error Handling from the backend returned 
 
 const SignUp = () => {
-  const {isAuthenticated, setIsAuthenticated, user, setUser} = UserGlobalState()
+  const {sessionuser, setSessionUser} = UserGlobalState()
   const router = useRouter()
 
   const [form, setForm] = useState({
@@ -32,20 +31,15 @@ const SignUp = () => {
       const response = await axios.post("http://127.0.0.1:5000/api/auth/signup", form)
 
       if (response) {
-        alert("Sign Up Successful").then(router.push("/"))
+        setSessionUser(response.data)
+        alert("Sign Up Successful")
+        router.push("/")
       }
     } catch (error) {
       console.log(error)
-      alert("Sign Up Failed")
+      alert(response.errors)
     }
   }
-
-  // useEffect(() => {
-  //   const fetch = async () => {
-  //     const authenticate = await axios.get("http://127.0.0.1:5000/api/auth")
-
-  //   }
-  // }, [])
 
 
   return (
@@ -110,7 +104,7 @@ const SignUp = () => {
             />
 
             <input 
-              type="number" 
+              type="text" 
               value={form.phone_number}
               onChange={(e) => setForm({...form, phone_number: e.target.value})}
               placeholder="Phone Number"
@@ -119,6 +113,8 @@ const SignUp = () => {
 
             <input 
               type="password" 
+              value={form.password}
+              onChange={(e) => setForm({...form, password: e.target.value})}
               placeholder="Password"
               className="border-2 p-2 w-full rounded-md border-gray-300"  
             />

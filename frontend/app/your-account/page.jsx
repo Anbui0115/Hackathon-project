@@ -4,10 +4,10 @@ import React from 'react'
 // Billing
 // Registered Classes Information
 
-const Profile = () => {
+const YourAccount = () => {
   return (
     <div>page</div>
   )
 }
 
-export default Profile
+export default YourAccount
