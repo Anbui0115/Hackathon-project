@@ -2,6 +2,7 @@ from flask_login import login_required, current_user, logout_user
 from backend.models import db, User
 from backend.forms import UpdateForm
 from flask import Blueprint,request
+from flask_wtf.csrf import generate_csrf
 
 user_routes = Blueprint('users', __name__)
 
@@ -26,7 +27,9 @@ def update_user():
     if not user:
         return {"errors": "User not found"}
     form = UpdateForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
+    csrf_token = generate_csrf()
+    form['csrf_token'].data = csrf_token
+    # form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         if 'username' in form.data and form.data['username']:
             user.username = form.data['username']
