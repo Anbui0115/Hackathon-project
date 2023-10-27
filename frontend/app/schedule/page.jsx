@@ -14,8 +14,8 @@ const Classes = () => {
 
     return (
         <>
+            <NavBar/>
             <div className='classes-page'>
-                <NavBar/>
                 <div className='classes-page-title'>
                     <h1>CLASSES</h1>
                 </div>
