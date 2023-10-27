@@ -43,7 +43,7 @@ app.register_blueprint(about_routes, url_prefix='/api/about')
 app.register_blueprint(billing_bp, url_prefix='/api/billing')
 app.register_blueprint(google_routes, url_prefix='/api/google')
 app.register_blueprint(testimonial_bp, url_prefix='/api/testimonials')
-app.register_blueprint(media_bp, url_prefix='/api/media')
+app.register_blueprint(media_routes, url_prefix='/api/media')
 
 
 
