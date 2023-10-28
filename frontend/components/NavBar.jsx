@@ -18,15 +18,18 @@ const NavBar = () => {
   const { sessionUser, setSessionUser} = UserGlobalState()
 
   const handleLogout = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    setSessionUser(null)
-    alert("You have successfully logged out!")
+    localStorage.removeItem('user');
+    setSessionUser(null);
+
+    alert("You have successfully logged out!");
   }
+
 
   return (
     
-    <div className={`bg-[#FFFFF0] text-black font-semibold h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
+    <div className={`bg-black text-cream font-semibold h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
       {/* Logo / Dance Studio Title */}
       <div className="text-2xl"><Link href="/">Priyada Arts</Link></div>
 
@@ -67,7 +70,7 @@ const NavBar = () => {
           (
             <nav onMouseEnter={() => setToggleProfile(true)} onClick={() => setToggleProfile(!toggleProfile)} className="text-2xl flex gap-2 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span>Profile</span>
+              <span className="text-xl">Profile</span>
 
               {
                 toggleProfile && (
@@ -76,8 +79,8 @@ const NavBar = () => {
                     className="absolute z-10 top-16 mt-2 w-[180px]  rounded-md shadow-lg "
                   >
                     <div className="px-6  py-4 rounded-md bg-teal-950 flex flex-col gap-2 justify-start items-start">
-                      <Link href="/your-account" className="text-xl hover:text-orange-500">Account</Link>
-                      <button onClick={handleLogout} className="text-xl hover:text-orange-500">Logout</button>
+                      <Link href="/your-account" className="text-xl text-white hover:text-orange-500">Account</Link>
+                      <button onClick={handleLogout} className="text-xl text-white hover:text-orange-500">Logout</button>
                     </div>
                   </div>
                 )
