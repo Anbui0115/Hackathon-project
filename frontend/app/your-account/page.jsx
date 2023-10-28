@@ -85,10 +85,16 @@ const YourAccount = () => {
             <div className="font-semibold text-lg mb-2">Phone Number</div>
             <div>{sessionUser?.phone_number}</div>
           </div>
-
-          
         </div>
       </div>
+
+
+      <div className="mx-24 flex">
+        <div className="border-2 p-8 m-4 shadow-xl rounded-md w-full">
+          <h2 className="text-2xl font-semibold underline mb-4">Registered Classes / Classes</h2>
+        </div>
+      </div>
+
       <Footer />
 
     </div>
