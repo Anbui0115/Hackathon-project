@@ -5,7 +5,7 @@ import ChatBot from "@/components/ChatBot";
 const AboutArtist = () => {
     return (
         <div>
-            <div className='bg-black px-40 font-semibold flex w-full h-auto relative flex-col py-32'>
+            <div className='bg-black px-48  font-semibold flex w-full h-auto relative flex-col py-32'>
                 <div className='mx-auto text-center'>
                     <div className='font-poiretOne text-2xl font-bold mt-10 mb-10 text-cream sm:text-3xl capitalize'>
                         <div>About the Artist</div>

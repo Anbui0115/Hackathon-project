@@ -17,19 +17,20 @@ const CreateSpecialityEnquiry = () => {
 
 
   return (
-    <div onClick={(e) => e.stopPropagation()} className="z-10 absolute left-[30%] top-[15%] text-2xl h-[auto] bg-lightcream w-[50%] p-10 border-2 rounded-md shadow-2xl font-worksans">
+    <div className="text-xl h-auto px-40 bg-black text-cream w-[full] tracking-wider p-10 border-2 rounded-md font-worksans">
 
-      <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Send an Enquiry for Speciality Services</h1>
-
+      <div className="text-center">
+        <h1 className="text-5xl font-laila ">Send an Enquiry for Speciality Services</h1>
       </div>
+      <hr className='mx-[-2.5rem] my-[4rem]' />
+
+
       <form
-        className=""
+        className="border-4 p-10 rounded-md border-cream flex flex-col"
         action=""
       >
-
-        <label >
-          <div >Please select the type of appointment you are interested in.</div>
+        <label className="my-4">
+          <div className="text-xl font-semibold" >Please select the type of appointment you are interested in.</div>
           <select className='text-black'>
             <option value="Makeup">Makeup (Shows, Arangetrams, Photoshoots, Workshops)</option>
             <option value="Emceeing/Hosting">Emcee/Hosting (Events, Shows, Television, etc)</option>

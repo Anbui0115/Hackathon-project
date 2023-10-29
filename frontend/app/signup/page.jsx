@@ -30,16 +30,30 @@ const SignUp = () => {
     try {
       const response = await axios.post("http://127.0.0.1:5000/api/auth/signup", form)
 
+    
       if (response) {
-        setSessionUser(response.data)
-        alert("Sign Up Successful")
-        router.push("/")
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("user", JSON.stringify(response.data));
+        setSessionUser(response.data);
+        alert("Login Successful");
+        router.push("/");
+      
       }
     } catch (error) {
-      console.log(error)
-      alert(response.errors)
+      console.log(error);
+      alert(error.response?.data?.message || "Sign Up Failed. Please try again.");
     }
   }
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (isLoggedIn === "true") {
+      setSessionUser(user);
+      router.push("/");
+    }
+  }, []);
+
 
 
   return (

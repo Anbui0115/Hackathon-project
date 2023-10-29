@@ -21,8 +21,10 @@ from authlib.integrations.flask_client import OAuth
 from backend.oauth_config import configure_oauth
 from .api.google_routes import google_routes
 from .api.media_routes import media_routes
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+load_dotenv()
 app.cli.add_command(seed_commands)
 app.secret_key = os.environ.get('SECRET_KEY')
 # Google OAuth
