@@ -21,6 +21,7 @@ const NavBar = () => {
     e.preventDefault();
 
     localStorage.removeItem('user');
+    localStorage.removeItem('isLoggedIn');
     setSessionUser(null);
 
     alert("You have successfully logged out!");
@@ -70,7 +71,7 @@ const NavBar = () => {
           (
             <nav onMouseEnter={() => setToggleProfile(true)} onClick={() => setToggleProfile(!toggleProfile)} className="text-2xl flex gap-2 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span className="text-xl">Profile</span>
+              <span className="text-xl">{sessionUser.first_name} {sessionUser.last_name}</span>
 
               {
                 toggleProfile && (
