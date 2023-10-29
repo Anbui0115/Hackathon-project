@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, url_for, redirect, request, jsonif
 from ..models import GeneralAppointment, User, db
 from flask_login import current_user, login_user, logout_user, login_required
 from ..forms.general_appointment_form import CreateGeneralAppointmentForm
-
+from datetime import datetime
 
 # ____________________________________________________________________________________________________________________
 
@@ -16,7 +16,7 @@ general_appointment_bp = Blueprint(
 
 
 @general_appointment_bp.route("/", methods=["GET"])
-@login_required
+# @login_required
 def all_general_appointments():
     general_appointments = GeneralAppointment.query.all()
     response = []
@@ -36,7 +36,7 @@ def all_general_appointments():
 # CREATE A GENERAL APPOINTMENT
 
 @general_appointment_bp.route("/new/", methods=["POST"])
-@login_required
+# @login_required
 def create_general_apt():
 
     create_general_apt_form = CreateGeneralAppointmentForm()
@@ -49,11 +49,17 @@ def create_general_apt():
         new_general_apt = GeneralAppointment(
 
             #  Get user info from user model instead of form
-            user_id=current_user.id,
-            first_name=current_user.first_name,
-            last_name=current_user.last_name,
-            email=current_user.email,
-            phone_number=current_user.phone_number,
+            # user_id=current_user.id,
+            # first_name=current_user.first_name,
+            # last_name=current_user.last_name,
+            # email=current_user.email,
+            # phone_number=current_user.phone_number,
+            user_id=1,
+            first_nane="kee",
+            last_name="yell",
+            email="kee@gmail",
+            phone_number="12345678890",
+
 
             type=data["type"],
             date=data["date"],
@@ -68,6 +74,8 @@ def create_general_apt():
         new_general_apt_obj = new_general_apt.to_dict()
         return new_general_apt_obj, 201
 
+    return {"Error": "Validation Error"}, 401
+
 
 # __________________________________________________________________________________________________
 
@@ -76,6 +84,7 @@ def create_general_apt():
 
 
 @general_appointment_bp.route("/<int:general_apt_id_id>/", methods=["DELETE"])
+# @login_required
 def delete_general_apt(general_apt_id):
 
     current_general_apt = GeneralAppointment.query.get(general_apt_id)
