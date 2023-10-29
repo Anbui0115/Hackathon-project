@@ -25,7 +25,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     const handleSubmit = async (e) => {
       // e.preventDefault();
       try {
-        const response = await fetch(`/api/testimonials`, {
+        const response = await fetch(`http://127.0.0.1:5000/api/testimonials`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
         console.error('Failed to submit testimonial:', err);
       }
     };
-    handleSubmit();
+    
 
   if (!isOpen) {
     return null; // Do not render the modal if isOpen is false
