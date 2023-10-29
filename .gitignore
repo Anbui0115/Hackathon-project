@@ -8,3 +8,5 @@ __pycache__/
 *.db
 instance/dev.db
 migrations/
+
+*node_modules

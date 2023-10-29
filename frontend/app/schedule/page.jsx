@@ -35,13 +35,13 @@ const Classes = () => {
                                 </div>
 
                                 <div className='class' >
-                                    <div className='level'>Intermedia</div>
+                                    <div className='level'>Intermediate</div>
                                     <div className='w-20'></div>
                                     <div className='time'>6:00 pm</div>
                                 </div>
 
                                 <div className='class' >
-                                    <div className='level'>Adults(Seniors)</div>
+                                    <div className='level'>Advanced/Seniors</div>
                                     <div className='w-20'></div>
                                     <div className='time'>7:00 pm</div>
                                 </div>
@@ -66,7 +66,7 @@ const Classes = () => {
 
                             <div></div>
                             <div className='class' >
-                                <div className='level'>Intermedia</div>
+                                <div className='level'>Intermediate</div>
                                 <div className='w-20'></div>
                                 <div className='time'>6:00 pm</div>
                             </div>
@@ -76,17 +76,17 @@ const Classes = () => {
 
                         <div className='class-schedule'>
                             <div className='day'>Saturday</div>
-                            
+
                             <div></div>
                             <div className='class' >
-                                <div className='level'>Adults(Seniors)</div>
+                                <div className='level'>Advanced/Seniors</div>
                                 <div className='w-20'></div>
                                 <div className='time'>9:30 am</div>
                             </div>
 
                             <div></div>
                         </div>
-                        
+
                         <DanceRegistrationButton/>
                     </div>
                 </div>
