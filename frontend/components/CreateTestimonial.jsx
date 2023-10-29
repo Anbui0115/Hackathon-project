@@ -22,29 +22,29 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     onRequestClose();
   };
 
-    // const handleSubmit = async (e) => {
-    //   // e.preventDefault();
-    //   try {
-    //     const response = await fetch(`http://127.0.0.1:5000/api/testimonials`, {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify({
-    //         firstName,
-    //         lastName,
-    //         testimonial,
-    //         role,
-    //       }),
-    //     });
-    //     if (!response.ok) {
-    //       throw new Error(`This is an HTTP error: The status is ${response.status}`);
-    //     }
-    //     console.log('Testimonial submitted successfully');
-    //   } catch (err) {
-    //     console.error('Failed to submit testimonial:', err);
-    //   }
-    // };
+    const handleSubmit = async (e) => {
+      // e.preventDefault();
+      try {
+        const response = await fetch(`http://127.0.0.1:5000/api/testimonials`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            testimonial,
+            role,
+          }),
+        });
+        if (!response.ok) {
+          throw new Error(`This is an HTTP error: The status is ${response.status}`);
+        }
+        console.log('Testimonial submitted successfully');
+      } catch (err) {
+        console.error('Failed to submit testimonial:', err);
+      }
+    };
     
 
   if (!isOpen) {

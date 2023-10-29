@@ -76,7 +76,7 @@ const Testimonial = () => {
           centerSlidePercentage={100} // Adjust this as needed
           autoPlay={true}
           infiniteLoop={true}
-          interval={8000}
+          interval={6000}
           transitionTime={1000}
       >
 
