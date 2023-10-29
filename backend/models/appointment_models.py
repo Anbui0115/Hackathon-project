@@ -77,7 +77,7 @@ class GeneralAppointment(db.Model):
     isApproved = db.Column(db.Boolean, nullable=False, default=False)
     created_at = db.Column(db.DateTime, nullable=False,
                            unique=False, index=False, default=datetime.now())
-    media_id = db.Column(db.Integer, db.ForeignKey('media.id'))
+    # media_id = db.Column(db.Integer, db.ForeignKey('media.id'))
 
 
 
