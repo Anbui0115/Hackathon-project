@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ContactUs from "./ContactUs";
 import { UserGlobalState } from "@/context/UserContext";
+import Logo from '../public/Logo.PNG';
 
 //TODO #1 - Add Profile Icon
 //TODO #2 - Add Logo
@@ -32,7 +33,12 @@ const NavBar = () => {
     
     <div className={`bg-black text-cream font-semibold h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
       {/* Logo / Dance Studio Title */}
-      <div className="text-2xl"><Link href="/">Priyada Arts</Link></div>
+      <div className="flex items-center">
+        <div className="flex items-center mr-2">
+          <Image src={Logo} alt="Priyada Arts Logo" width={50} height={50} />
+        </div>
+        <div className="text-2xl"><Link href="/">Priyada Arts</Link></div>
+      </div>
 
       {/* NavLinks */}
       <div className="flex space-x-8 items-center">
@@ -81,7 +87,7 @@ const NavBar = () => {
                   >
                     <div className="px-6  py-4 rounded-md bg-teal-950 flex flex-col gap-2 justify-start items-start">
                       <Link href="/your-account" className="text-xl text-white hover:text-orange-500">Account</Link>
-                      <button onClick={handleLogout} className="text-xl text-white hover:text-orange-500">Logout</button>
+                      <button onClick={handleLogout} className="text-xl text-white hover:text-orange-500"><Link href='/'>Logout</Link></button>
                     </div>
                   </div>
                 )
