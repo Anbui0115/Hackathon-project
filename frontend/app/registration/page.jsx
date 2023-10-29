@@ -1,14 +1,24 @@
 
+"use client"
+
 import React from 'react'
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
-import CustomDropdown from '@/components/CustomDropdown';
+
+import Link from 'next/link';
+import { useRouter } from "next/navigation";
+import { UserGlobalState } from "@/context/UserContext";
 
 const DanceRegistration = () => {
-
-  return (
-    <>
+  const {sessionUser, setSessionUser} = UserGlobalState()
+  const router = useRouter()
+  if (!sessionUser) {
+    router.push('/login')
+  }
+  else {
+    return (
+      <>
       <NavBar />
       <section className='bg-black flex justify-center'>
         <div className= 'flex flex-col justify-center h-auto bg-inherit w-[70%] tracking-wider border-none rounded-md shadow-2xl text-lightcream font-worksans'>
@@ -72,8 +82,10 @@ const DanceRegistration = () => {
                 Submit
                 </button>
 
-                <button className="bg-teal-700 tracking-wider text-lightcream rounded-md p-3 hover:bg-stone-500 transition duration-700">
-                Cancel
+
+                <button className="bg-teal-700 tracking-wider text-lightcream rounded-md p-2 hover:bg-stone-500 transition duration-700">
+                  <Link href='/'>Cancel</Link>
+
                 </button>
             </div>
 
@@ -85,6 +97,7 @@ const DanceRegistration = () => {
       <ChatBot />
     </>
   )
+  }
 }
 
 export default DanceRegistration
