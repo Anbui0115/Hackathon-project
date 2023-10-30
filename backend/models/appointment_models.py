@@ -20,7 +20,7 @@ class DanceClassRegistration(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     dance_class_id=db.Column(db.Integer, db.ForeignKey("dance_classes.id"), nullable=False)
     age= db.Column(db.Integer, nullable=False)
-    location = db.column(db.String(200), nullable=False)
+    location = db.Column(db.String(200), nullable=False)
     notes = db.Column(db.TEXT, nullable=False)
     is_approved = db.Column(db.Boolean, nullable=False)
     attendance = db.Column(db.Boolean, nullable=False, default=False)
@@ -55,7 +55,7 @@ class ServiceAppointment(db.Model):
 
     id=db.Column(db.Integer, primary_key=True)
     user_id=db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    service_id=db.Column(db.Integer, db.ForeignKey("services.type"), nullable=False)
+    service_id=db.Column(db.Integer, db.ForeignKey("services.id"), nullable=False)
     date= db.Column(db.DateTime, nullable=False, unique=False)
     location=db.Column(db.String(200), nullable=False)
     notes=db.Column(db.TEXT, nullable=False)

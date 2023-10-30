@@ -12,7 +12,7 @@ from .api.billing_routes import billing_bp
 from .api.about_routes import about_routes
 # from .api.chatbot_routes import chatbot_routes
 from .api.dance_class_registration_routes import dance_class_registration_bp
-from .api.service_appointments_routes import general_appointment_bp
+from .api.service_appointments_routes import service_appointment_bp
 from .api.testimonial_routes import testimonial_bp
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect, generate_csrf
@@ -40,7 +40,7 @@ app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 # app.register_blueprint(chatbot_routes, url_prefix='/api/chatbot')
 app.register_blueprint(dance_class_registration_bp, url_prefix='/api/danceclassregistrations')
-app.register_blueprint(general_appointment_bp, url_prefix='/api/generalappointments')
+app.register_blueprint(service_appointment_bp, url_prefix='/api/serviceappointments')
 app.register_blueprint(about_routes, url_prefix='/api/about')
 app.register_blueprint(billing_bp, url_prefix='/api/billing')
 app.register_blueprint(google_routes, url_prefix='/api/google')

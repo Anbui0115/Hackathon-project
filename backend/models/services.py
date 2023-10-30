@@ -20,7 +20,7 @@ class Service(db.Model):
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False,default=datetime.now())
 
 
-    services = db.relationship("User", back_populates="services")
+    # services = db.relationship("User", back_populates="services")
 
 
     def to_dict(self):
