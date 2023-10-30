@@ -30,10 +30,10 @@ const DanceRegistration = () => {
             <label className='my-4' >
                 <div className='my-5 font-semibold text-xl'>How Many Years of Dance Experience do you have?</div>
                 <select className='text-black text-xl font-semibold rounded-md bg-cream p-4 border-2  shadow-2xl bg-inherit '>
-                  <option className="text-xl " value="Beginner">Beginner: 0-3 years of experience</option>
-                  <option className="text-xl" value="Intermediate">Intermediate: 3-6 years of experience</option>
-                  <option className="text-xl" value="Advanced">Advanced: 6-10 years of experience</option>
-                  <option className="text-xl" value="Senior">Senior: 10+ years of experience</option>
+                  <option className="text-xl " value="1">Beginner: 0-3 years of experience</option>
+                  <option className="text-xl" value="2">Intermediate: 3-6 years of experience</option>
+                  <option className="text-xl" value="3">Advanced: 6-10 years of experience</option>
+                  <option className="text-xl" value="4">Senior: 10+ years of experience</option>
                 </select>
 
 
@@ -60,7 +60,7 @@ const DanceRegistration = () => {
                 <div className='my-2 font-semibold'>2. How long have you been dancing?</div>
                 <div className='my-2 font-semibold'>3. What are you hoping to learn from your time at Priyada Arts?</div>
                 <div className='my-2 font-semibold'>4. When are you looking to start attending lessons?</div>
-                
+
                 <textarea
                 className='flex justify-center outline-none text-cream border-2 border-cream p-6 focus-none resize-none mt-3 mb-1 rounded-md shadow-2xl w-full bg-inherit'
                 placeholder='Ex. Hi! I have 10 years of experience in Bharathanatyam and have practiced a few other styles as well briefly. I am hoping to expand my peformance skills and technique nuances under your mentorship.'
