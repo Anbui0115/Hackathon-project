@@ -19,7 +19,8 @@ class DanceClassRegistration(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     dance_class_id=db.Column(db.Integer, db.ForeignKey("dance_classes.id"), nullable=False)
-    age= db.Column(db.Integer(), nullable=False)
+    age= db.Column(db.Integer, nullable=False)
+    location = db.column(db.String(200), nullable=False)
     notes = db.Column(db.TEXT, nullable=False)
     is_approved = db.Column(db.Boolean, nullable=False)
     attendance = db.Column(db.Boolean, nullable=False, default=False)
@@ -36,6 +37,7 @@ class DanceClassRegistration(db.Model):
             'user': self.user.to_dict() if self.user else None,
             'dance_class_id':self.dance_class_id,
             'age':self.age,
+            'location':self.location,
             'notes': self.notes,
             'is_approved': self.is_approved,
             'attendance': self.attendance,

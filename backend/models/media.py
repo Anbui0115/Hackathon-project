@@ -18,7 +18,7 @@ class Media(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     video_url = db.Column(db.String(200), nullable=True)
     photo_url=db.Column(db.String(200), nullable=True)
-    authorization = db.Column(db.String(255), default="public", nullable = False)
+    authorization = db.Column(db.String(255), default="Public", nullable = False)
     description=db.Column(db.TEXT, nullable=True)
     type= db.Column(db.String(200), nullable=True)
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False,default=datetime.now())

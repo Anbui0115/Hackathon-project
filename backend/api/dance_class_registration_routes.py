@@ -1,79 +1,73 @@
 from flask import Blueprint, request
-from ..models import DanceClassAppointment, User, db
+from ..models import DanceClassRegistration, User, db
 from flask_login import current_user, login_user, logout_user, login_required
-from ..forms.dance_class_appointment_form import CreateDanceClassAppointmentForm
+from ..forms.dance_class_registration_form import CreateDanceClassRegistrationForm
 
 
 # ____________________________________________________________________________________________________________________
 
-dance_class_appointment_bp = Blueprint(
-    "dance_class_appointments_routes", __name__, url_prefix="/api/danceclassappointments")
-
+dance_class_registration_bp = Blueprint(
+    "dance_class_registration_routes", __name__, url_prefix="/api/danceclassregistrations")
 
 # ____________________________________________________________________________________________________________________
 
-# GET ALL DANCE CLASS ENQUIRIES -- WORKS
+# GET ALL DANCE CLASS REGISTRATIONS -- WORKS
 
 
-@dance_class_appointment_bp.route("/", methods=["GET"])
+@dance_class_registration_bp.route("/", methods=["GET"])
 @login_required
-def all_dance_class_appointments():
-    dance_class_appointments = DanceClassAppointment.query.all()
+def all_dance_class_registrations():
+    dance_class_registrations = DanceClassRegistration.query.all()
     response = []
 
-    if dance_class_appointments:
-        for apt in dance_class_appointments:
+    if dance_class_registrations:
+        for apt in dance_class_registrations:
             apt_obj = apt.to_dict()
             response.append(apt_obj)
-        print("THIS IS dance_class_appointments FROM BACKEND", response)
+        print("THIS IS dance_class_registrations FROM BACKEND", response)
         return {
-            "dance_class_appointments": response
+            "dance_class_registrations": response
         }, 200
-    return {"Error": "Appointment Not Found"}, 404
+    return {"Error": "Registration Not Found"}, 404
 
 # ____________________________________________________________________________________________________
 #  GET DANCE ENQUIRY BY ID -- WORKS
 
 
-@dance_class_appointment_bp.route("/<int:dance_apt_id>/", methods=["GET"])
+@dance_class_registration_bp.route("/<int:dance_apt_id>/", methods=["GET"])
 @login_required
-def get_dance_apt(dance_apt_id):
-    dance_apt = DanceClassAppointment.query.get(dance_apt_id)
+def get_dance_registration(dance_apt_id):
+    dance_apt = DanceClassRegistration.query.get(dance_apt_id)
 
     if dance_apt:
         dance_apt_obj = dance_apt.to_dict()
         return dance_apt_obj, 201
 
-    return {"Error": "Appointment Not Found"}, 404
+    return {"Error": "Registration Not Found"}, 404
 
 
 # ____________________________________________________________________________________________________
 
-# CREATE A DANCE CLASS ENQUIRY -- WORKS
+# CREATE A DANCE CLASS REGISTRATION -- WORKS
 
-@dance_class_appointment_bp.route("/new/", methods=["POST"])
+@dance_class_registration_bp.route("/new/", methods=["POST"])
 @login_required
-def create_dance_apt():
+def create_dance_registration():
 
-    create_dance_apt_form = CreateDanceClassAppointmentForm()
+    create_dance_apt_form = CreateDanceClassRegistrationForm()
     create_dance_apt_form['csrf_token'].data = request.cookies['csrf_token']
 
     # print("current user is: **********************************", current_user)
 
     if create_dance_apt_form.validate_on_submit():
         data = create_dance_apt_form.data
-        new_dance_apt = DanceClassAppointment(
+        new_dance_apt = DanceClassRegistration(
                 user_id=current_user.id,
-                first_name=current_user.first_name,
-                last_name=current_user.last_name,
-                email=current_user.email,
-                phone_number=current_user.phone_number,
-
                 level=data["level"],
                 age=data['age'],
                 location=data['location'],
                 notes=data["notes"],
-                isApproved=False,
+                is_approved=False,
                 attendance=False,
             )
 
@@ -89,21 +83,21 @@ def create_dance_apt():
 
 
 
-# DELETE A DANCE CLASS ENQUIRY -- WORKS
+# DELETE A DANCE CLASS REGISTRATION -- WORKS
 
 
-@dance_class_appointment_bp.route("/<int:dance_apt_id>/", methods=["DELETE"])
+@dance_class_registration_bp.route("/<int:dance_apt_id>/", methods=["DELETE"])
 @login_required
-def delete_dance_apt(dance_apt_id):
+def delete_dance_registration(dance_apt_id):
 
-    current_dance_apt = DanceClassAppointment.query.get(dance_apt_id)
+    current_dance_apt = DanceClassRegistration.query.get(dance_apt_id)
 
     if current_dance_apt:
         db.session.delete(current_dance_apt)
         db.session.commit()
-        return "enquiry was succesfully deleted"
+        return "Registration was succesfully deleted"
 
-    return {"Error": "Appointment Not Found"}, 404
+    return {"Error": "Registration Not Found"}, 404
 
 
 # function to convert datetime obj to integer value so we can compare

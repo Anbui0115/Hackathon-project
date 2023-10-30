@@ -7,7 +7,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 
 
-class CreateDanceClassAppointmentForm(FlaskForm):
+class CreateDanceClassRegistrationForm(FlaskForm):
 
     level = SelectField("level", choices=["Beginner","Intermediate","Advanced","Senior"], validators=[DataRequired()])
 
@@ -15,23 +15,6 @@ class CreateDanceClassAppointmentForm(FlaskForm):
 
     location=StringField("location", validators=[DataRequired()])
 
-    # isApproved= BooleanField(default=False)
-
-    attendance = BooleanField(default=False)
-
     notes = TextAreaField("notes", validators=[DataRequired()])
 
-    submit = SubmitField("Send Enquiry")
-
-
-    # first_name = StringField("first_name", validators=[DataRequired()])
-
-    # last_name = StringField("last_name", validators=[DataRequired()])
-
-    # email =  StringField("email", validators=[DataRequired()])
-
-    # age= IntegerField("age", validators=[DataRequired()])
-
-    # phone_number = IntegerField("phone_number", validators=[DataRequired()])
-
-    # date = DateField('date',validators=[DataRequired()])
+    submit = SubmitField("Register")
