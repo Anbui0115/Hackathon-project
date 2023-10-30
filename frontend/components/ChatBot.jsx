@@ -17,13 +17,28 @@ const ChatBot = () => {
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#7FFFD4");
 
+  const [showWhiteCloudMessage, setShowWhiteCloudMessage] = useState(true); 
+
+
   const messagesEndRef = useRef(null);  // Create a ref
+
+
+  // Function to hide the white cloud message after 5 seconds
+  const hideWhiteCloudMessage = () => {
+    setTimeout(() => {
+      setShowWhiteCloudMessage(false);
+    }, 5000); 
+  };
+
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(scrollToBottom, [messages]);
+  useEffect(() => {
+    scrollToBottom();
+    hideWhiteCloudMessage(); 
+  }, [messages]);
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -122,7 +137,7 @@ const ChatBot = () => {
       )}
 
       {/* White Cloud Message */}
-      {!toggleChat && (  
+      {!toggleChat && showWhiteCloudMessage  && (  
         <div className="relative p-4 m-2 tracking-wider bg-white font-semibold text-black rounded-3xl shadow-md w-[240px] h-auto">
           <AnimatedText timer={15} message="Hi! PriyadaGPT at your service click me if you have any questions about the school, artists, classes, or about the website and I'd be glad to help." />
         </div>
