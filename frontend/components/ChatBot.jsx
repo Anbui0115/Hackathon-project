@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Chat from '../public/chat.png';
+import Chat from '../public/chatbot.jpg';
 import Image from "next/image";
 import axios from "axios";
 import { PulseLoader } from "react-spinners";
-
+import AnimatedText from "./AnimatedText";
 
 //TODO Loading
 //TODO Different chat bubble
@@ -58,7 +58,7 @@ const ChatBot = () => {
 
 
   return (
-    <div className="bottom-16 right-16 z-20 fixed flex items-end">
+    <div className="bottom-16 right-16 z-20 fixed flex flex-col items-end">
 
       {/* Chat Screen */}
       {toggleChat && (
@@ -121,12 +121,20 @@ const ChatBot = () => {
         </div>
       )}
 
+      {/* White Cloud Message */}
+      {!toggleChat && (  
+        <div className="relative p-4 m-2 tracking-wider bg-white font-semibold text-black rounded-3xl shadow-md w-[240px] h-auto">
+          <AnimatedText timer={15} message="Hi! PriyadaGPT at your service click me if you have any questions about the school, artists, classes, or about the website and I'd be glad to help." />
+        </div>
+      )}
+
       {/* Chat Icon */}
       <div className="cursor-pointer" onClick={() => setToggleChat(!toggleChat)}>
         <Image
           src={Chat}
-          height={60}
-          width={60}
+          height={100}
+          width={100}
+          className="rounded-full"
         />
       </div>
 
