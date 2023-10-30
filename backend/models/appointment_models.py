@@ -16,7 +16,7 @@ class DanceClassAppointment(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
-    dance_class_id=db.Column(db.Integer, db.ForeignKey("danceclasses.id"), nullable=False)
+    dance_class_id=db.Column(db.Integer, db.ForeignKey("dance_classes.id"), nullable=False)
 
     first_name=db.Column(db.String(100), nullable=False)
     last_name=db.Column(db.String(100), nullable=False)

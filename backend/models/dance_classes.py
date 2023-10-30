@@ -12,7 +12,7 @@ Base=declarative_base()
 
 class Dance_Class(db.Model):
 
-    __tablename__ = "dance_class"
+    __tablename__ = "dance_classes"
 
     id = db.Column(db.Integer, primary_key=True)
     start_time=db.Column(db.String(100), nullable=False)
