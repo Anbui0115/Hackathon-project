@@ -1,6 +1,3 @@
-"use client"
-import Link from "next/link"
-import axios from "axios"
 import React, { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation"
 import { UserGlobalState } from "@/context/UserContext";
@@ -29,30 +26,47 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     onRequestClose();
   };
 
-    const handleSubmit = async (e) => {
-      // e.preventDefault();
-      try {
-        const response = await fetch(`http://127.0.0.1:5000/api/testimonials`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            firstName,
-            lastName,
-            testimonial,
-            role,
-          }),
-        });
-        if (!response.ok) {
-          throw new Error(`This is an HTTP error: The status is ${response.status}`);
-        }
-        console.log('Testimonial submitted successfully');
-      } catch (err) {
-        console.error('Failed to submit testimonial:', err);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // try {
+    //   const response = await fetch(`http://127.0.0.1:5000/api/testimonials`, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Origin': 'http://localhost:3000', // Add the origin of your frontend
+    //     },
+    //     body: JSON.stringify({
+    //       firstName,
+    //       lastName,
+    //       testimonial,
+    //       role,
+    //     }),
+    //   });
+    //   if (!response.ok) {
+    //     throw new Error(`This is an HTTP error: The status is ${response.status}`);
+    //   }
+    //   console.log('Testimonial submitted successfully');
+    // } catch (err) {
+    //   console.error('Failed to submit testimonial:', err);
+    // } 
+    // router.push("/")
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', { 
+        first_name: firstName,
+        last_name: lastName,
+        content: testimonial,
+        role,});
+      console.log("THIS IS RESPONSE",response)
+      if (response) {
+        alert("Login Successful");
+        router.push("/");
       }
-    };
-    
+    } catch (error) {
+      console.error(error);
+      alert("FAIL TO CREATE A TESTIMONIAL_____________________");
+    }
+  };
+
 
   if (!isOpen) {
     return null; // Do not render the modal if isOpen is false
