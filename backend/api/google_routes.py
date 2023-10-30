@@ -1,7 +1,7 @@
 from flask import Flask, session, redirect, url_for, Blueprint
 from ..oauth_config import oauth
 from ..models import db, User
-from flask_login import login_user, login_required
+from flask_login import login_user, login_required, current_user, logout_user
 import requests
 
 google_routes = Blueprint('google', __name__)
@@ -9,6 +9,9 @@ google_routes = Blueprint('google', __name__)
 # Login
 @google_routes.route('/login')
 def googleLogin():
+    if current_user.is_authenticated:
+        logout_user()
+
     return oauth.dance_class_app.authorize_redirect("http://127.0.0.1:5000/api/google/callback")
 
 # Callback

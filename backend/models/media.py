@@ -14,6 +14,7 @@ class Media(db.Model):
   description = db.Column(db.String(255), nullable=True)
   created_at = db.Column(db.DateTime, default=datetime.utcnow)
   authorization = db.Column(db.String(1000), default='Public', nullable=False)
+  type = db.Column(db.String(100), default='Dance School Pictures', nullable=False)
 
 
   # relationship
@@ -28,5 +29,6 @@ class Media(db.Model):
       'video_url': self.video_url,
       'description': self.description,
       'authorization':self.authorization,
+      'type': self.type,
       'created_at': self.created_at,
     }
