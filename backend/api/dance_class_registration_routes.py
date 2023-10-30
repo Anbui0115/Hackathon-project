@@ -63,7 +63,8 @@ def create_dance_registration():
         data = create_dance_apt_form.data
         new_dance_apt = DanceClassRegistration(
                 user_id=current_user.id,
-                level=data["level"],
+                # type cast level into an integer --> dance_class_id
+                dance_class_id=int(data["level"]),
                 age=data['age'],
                 location=data['location'],
                 notes=data["notes"],

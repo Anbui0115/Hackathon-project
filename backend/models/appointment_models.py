@@ -55,8 +55,8 @@ class ServiceAppointment(db.Model):
 
     id=db.Column(db.Integer, primary_key=True)
     user_id=db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    service_id=db.Column(db.Integer, db.ForeignKey("services.type"), nullable=False)
     date= db.Column(db.DateTime, nullable=False, unique=False)
-    type=db.Column(db.String(200), nullable=False)
     location=db.Column(db.String(200), nullable=False)
     notes=db.Column(db.TEXT, nullable=False)
     is_approved= db.Column(db.Boolean, nullable=False, default=False)
@@ -72,7 +72,7 @@ class ServiceAppointment(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'user': self.user.to_dict() if self.user else None,
-            'type': self.type,
+            'service_id': self.service_id,
             'date': self.date,
             'location': self.location,
             'notes': self.notes,

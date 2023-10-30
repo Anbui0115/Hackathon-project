@@ -2,6 +2,7 @@ from flask.cli import AppGroup
 from .testimonials import seed_testimonials, undo_testimonials
 from .users import seed_users, undo_users
 from .medias import seed_medias, undo_medias
+from .dance_classes import seed_dance_classes, undo_dance_classes
 
 from backend.models.db import db, environment, SCHEMA
 

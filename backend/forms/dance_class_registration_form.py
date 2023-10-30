@@ -9,7 +9,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 class CreateDanceClassRegistrationForm(FlaskForm):
 
-    level = SelectField("level", choices=["Beginner","Intermediate","Advanced","Senior"], validators=[DataRequired()])
+    dance_class_id = SelectField("level", choices=["1","2","3","4"], validators=[DataRequired()])
 
     age=IntegerField("age", validators=[DataRequired()] )
 

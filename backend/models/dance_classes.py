@@ -22,7 +22,6 @@ class Dance_Class(db.Model):
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False,default=datetime.now())
 
 
-
     dance_videos = db.relationship("Dance_Video", back_populates="dance_class")
 
     def to_dict(self):
