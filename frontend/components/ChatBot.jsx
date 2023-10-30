@@ -73,7 +73,7 @@ const ChatBot = () => {
 
 
   return (
-    <div className="bottom-16 right-16 z-20 fixed flex flex-col items-end">
+    <div className="bottom-16 right-16 z-1 fixed flex flex-col items-end">
 
       {/* Chat Screen */}
       {toggleChat && (
