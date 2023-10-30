@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 from ..models import User, db
 from flask_login import current_user, login_user, logout_user, login_required
+from ..models import Media
 
 
 # _______________________________________________________________________________
