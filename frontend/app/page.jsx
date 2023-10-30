@@ -12,6 +12,7 @@ import AboutStudio from '@/components/AboutStudio'
 import './homepage.css'
 import CreateSpecialityEnquiry from '@/components/SpecialtyEnquiryForm'
 import { UserGlobalState } from '@/context/UserContext'
+import SplashPagePicture from '@/components/SplashPagePicture'
 
 
 
@@ -37,6 +38,7 @@ export default function Home() {
   return (
     <main className="bg-black flex w-full h-full relative min-h-screen flex-col justify-between">
       <NavBar />
+      <SplashPagePicture />
       <AboutArtist/>
       <AboutStudio/>
       <Testimonial />
