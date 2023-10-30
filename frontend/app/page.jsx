@@ -12,13 +12,14 @@ import AboutStudio from '@/components/AboutStudio'
 import './homepage.css'
 import CreateSpecialityEnquiry from '@/components/SpecialtyEnquiryForm'
 import { UserGlobalState } from '@/context/UserContext'
+import SplashPagePicture from '@/components/SplashPagePicture'
 
 
 
 export default function Home() {
   const [dark, setDark] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { sessionUser, setSessionUser, session, setSession} = UserGlobalState()
+  const { sessionUser, setSessionUser} = UserGlobalState()
 
   const openModal = () => setIsModalOpen(!isModalOpen);
   const closeModal = () => setIsModalOpen(false);
@@ -27,15 +28,17 @@ export default function Home() {
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const user = JSON.parse(localStorage.getItem("user"));
-    if (isLoggedIn === "true") {
+    if (isLoggedIn === "true" && user) {
       setSessionUser(user);
       
     }
+    console.log(user, 'user')
   }, []);
 
   return (
     <main className="bg-black flex w-full h-full relative min-h-screen flex-col justify-between">
       <NavBar />
+      <SplashPagePicture />
       <AboutArtist/>
       <AboutStudio/>
       <Testimonial />

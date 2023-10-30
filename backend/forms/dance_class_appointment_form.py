@@ -15,7 +15,7 @@ class CreateDanceClassAppointmentForm(FlaskForm):
 
     location=StringField("location", validators=[DataRequired()])
 
-    isApproved= BooleanField(default=False)
+    # isApproved= BooleanField(default=False)
 
     attendance = BooleanField(default=False)
 

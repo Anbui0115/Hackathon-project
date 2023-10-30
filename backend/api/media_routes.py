@@ -9,8 +9,26 @@ from flask_login import current_user, login_user, logout_user, login_required
 media_routes = Blueprint('media_bp', __name__)
 
 # _______________________________________________________________________________
+#  Get all Media -- WORKS
 
-# Create a New Media
+@media_routes.route("/", methods=["GET"])
+def get_all_media():
+    all_media = Media.query.all()
+    response = []
+
+    if all_media:
+        for media in all_media:
+            media_obj = media.to_dict()
+            response.append(media_obj)
+        print("THIS IS MEDIA FROM BACKEND", response)
+        return {
+            "media": response
+        }, 200
+    return {"Error": "Media Not Found"}, 404
+
+# _______________________________________________________________________________
+
+# Create a New Media --- WORKS
 
 
 @media_routes.route('/create', methods=['POST'])
@@ -26,7 +44,8 @@ def create_media():
         video_url=data['video_url'],
         photo_url=data['photo_url'],
         description=data['description'],
-        authorization=data['authorization']
+        authorization=data['authorization'],
+        type=data['type']
     )
     db.session.add(new_media)
     db.session.commit()
@@ -37,7 +56,7 @@ def create_media():
 # _______________________________________________________________________________
 
 
-# Get General Media by ID
+# Get General Media by ID -- WORKS
 
 
 @media_routes.route('/<int:id>', methods=['GET'])
@@ -49,7 +68,7 @@ def get_media(id):
 
 # _______________________________________________________________________________
 
-# Update General Media by ID
+# Update General Media by ID -- WORKS
 
 
 @media_routes.route('/<int:id>', methods=['PUT'])
@@ -70,10 +89,12 @@ def update_media(id):
     return jsonify(media.to_dict())
 
 
+
+
 # _______________________________________________________________________________
 
 
-# Delete General Media by ID
+# Delete General Media by ID -- WORKS
 
 
 @media_routes.route('/<int:id>', methods=['DELETE'])
