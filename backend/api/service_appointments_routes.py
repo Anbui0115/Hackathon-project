@@ -88,7 +88,7 @@ def create_service_apt():
 
 @service_appointment_bp.route("/<int:service_apt_id_id>/", methods=["DELETE"])
 @login_required
-def delete_general_apt(service_apt_id):
+def delete_service_apt(service_apt_id):
 
     current_service_apt = ServiceAppointment.query.get(service_apt_id)
 
