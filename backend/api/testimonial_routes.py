@@ -15,7 +15,8 @@ def get_all_testimonials():
     """
     Get all testimonials of the studio
     """
-    user_id = current_user.id
+    # user_id = current_user.id
+    # print('this is current_user,',current_user)
     testimonials = Testimonial.query.all()
     return {'testimonials': [i.to_dict() for i in testimonials]}
 
