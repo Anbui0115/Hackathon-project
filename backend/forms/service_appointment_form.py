@@ -8,8 +8,8 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 class CreateServiceAppointmentForm(FlaskForm):
 
-
-    type = SelectField("type", choices=["Makeup", "Emceeing/Hosting", "Other"], validators=[DataRequired()])
+    #  type: 1-Makeup, 2-Emcee/hosting, 3-Other
+    type = SelectField("type", choices=["1","2","3"], validators=[DataRequired()])
 
     date = DateField("date", validators=[DataRequired()])
 
