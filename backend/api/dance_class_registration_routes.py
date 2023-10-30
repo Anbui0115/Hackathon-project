@@ -31,7 +31,7 @@ def all_dance_class_registrations():
     return {"Error": "Registration Not Found"}, 404
 
 # ____________________________________________________________________________________________________
-#  GET DANCE ENQUIRY BY ID -- WORKS
+#  GET DANCE REGISTRATION BY ID -- WORKS
 
 
 @dance_class_registration_bp.route("/<int:dance_apt_id>/", methods=["GET"])

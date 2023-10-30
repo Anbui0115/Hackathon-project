@@ -12,7 +12,7 @@ from .api.billing_routes import billing_bp
 from .api.about_routes import about_routes
 # from .api.chatbot_routes import chatbot_routes
 from .api.dance_class_registration_routes import dance_class_registration_bp
-from .api.general_appointments_routes import general_appointment_bp
+from .api.service_appointments_routes import general_appointment_bp
 from .api.testimonial_routes import testimonial_bp
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect, generate_csrf
