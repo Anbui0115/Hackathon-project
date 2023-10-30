@@ -11,5 +11,6 @@ class CreateMedia(FlaskForm):
     video_url = StringField("video_url", validators=[DataRequired()])
     photo_url= StringField("photo_url", validators=[DataRequired()])
     description = StringField("description")
-    authorization = SelectField("authorization", choices=["public", "all students", "beginner", "intermediate", "advanced", "senior", "admin"])
+    authorization = SelectField("authorization", choices=["Public", "All Students", "Beginner", "Intermediate", "Advanced", "Senior", "Admin"])
+    type = StringField("type", validators=[DataRequired()])
     submit = SubmitField("Upload Media")

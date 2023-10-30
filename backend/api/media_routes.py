@@ -44,7 +44,8 @@ def create_media():
         video_url=data['video_url'],
         photo_url=data['photo_url'],
         description=data['description'],
-        authorization=data['authorization']
+        authorization=data['authorization'],
+        type=data['type']
     )
     db.session.add(new_media)
     db.session.commit()
