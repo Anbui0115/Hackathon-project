@@ -110,3 +110,25 @@ def delete_media(id):
 
 
 # _______________________________________________________________________________
+
+# Get Media by Type
+
+@media_routes.route('/type/<string:type>', methods=['GET'])
+def get_media_by_type(type):
+    media = Media.query.filter(Media.type == type).all()
+
+    media_list = []
+
+    for media_item in media:
+        media_dict = {
+            'id': media_item.id,
+            'type': media_item.type,
+            'url': media_item.photo_url
+            }
+
+        media_list.append(media_dict)
+
+    if media_list:
+        return jsonify(media_list)
+    else:
+        return jsonify({'message': 'Media not found'}), 404
