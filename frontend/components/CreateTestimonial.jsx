@@ -11,7 +11,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    testimonial: '',
+    content: '',
     role: '', // Added 'role' to the initial state
   });
 
@@ -30,26 +30,21 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
   };
 
     const handleSubmit = async (e) => {
-      // e.preventDefault();
+      e.preventDefault();
       try {
-        const response = await fetch(`http://127.0.0.1:5000/api/testimonials`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            firstName,
-            lastName,
-            testimonial,
-            role,
-          }),
-        });
-        if (!response.ok) {
-          throw new Error(`This is an HTTP error: The status is ${response.status}`);
+        const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', { 
+          first_name: firstName,
+          last_name: lastName,
+          content: testimonial,
+          role: role,});
+        console.log("THIS IS RESPONSE",response)
+        if (response) {
+          alert("Testimonial Created Successfully");
+          router.push("/");
         }
-        console.log('Testimonial submitted successfully');
-      } catch (err) {
-        console.error('Failed to submit testimonial:', err);
+      } catch (error) {
+        console.error(error);
+        alert("FAIL TO CREATE A TESTIMONIAL_____________________");
       }
     };
     
