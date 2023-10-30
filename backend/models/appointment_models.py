@@ -16,17 +16,16 @@ class DanceClassAppointment(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    dance_class_id=db.Column(db.Integer, db.ForeignKey("danceclasses.id"), nullable=False)
+
     first_name=db.Column(db.String(100), nullable=False)
     last_name=db.Column(db.String(100), nullable=False)
     email=db.Column(db.String(100), nullable=False)
     phone_number=db.Column(db.Integer(), nullable=False)
 
-
-    level = db.Column(db.String(100), nullable=False)
     age= db.Column(db.Integer(), nullable=False)
-    location= db.Column(db.String(300), nullable=False)
     notes = db.Column(db.TEXT, nullable=False)
-    isApproved = db.Column(db.Boolean, nullable=False)
+    is_approved = db.Column(db.Boolean, nullable=False)
     attendance = db.Column(db.Boolean, nullable=False, default=False)
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False,default=datetime.now())
 
@@ -34,7 +33,6 @@ class DanceClassAppointment(db.Model):
 
 
     user = db.relationship("User", back_populates="dance_class_appointments")
-    dance_videos = db.relationship("Dance_Video", back_populates="dance_class_appointment")
 
     def to_dict(self):
         return {
@@ -45,11 +43,10 @@ class DanceClassAppointment(db.Model):
             'last_name': self.last_name,
             'phone_number': self.phone_number,
             'email':self.email,
-            'level': self.level,
+            'dance_class_id':self.dance_class_id,
             'age':self.age,
-            'location': self.location,
             'notes': self.notes,
-            'isApproved': self.isApproved,
+            'is_approved': self.is_approved,
             'attendance': self.attendance,
             'created_at': self.created_at,
 
