@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from "next/navigation"
 
 const CreateTestimonial = ({ isOpen, onRequestClose }) => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     testimonial: '',
     role: '', // Added 'role' to the initial state
   });
+  const router = useRouter()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +31,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Origin': 'http://localhost:3000', // Add the origin of your frontend
           },
           body: JSON.stringify({
             firstName,
@@ -43,9 +46,10 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
         console.log('Testimonial submitted successfully');
       } catch (err) {
         console.error('Failed to submit testimonial:', err);
-      }
+      } 
+      router.push("/")
     };
-    
+
 
   if (!isOpen) {
     return null; // Do not render the modal if isOpen is false
