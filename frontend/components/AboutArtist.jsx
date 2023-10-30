@@ -1,6 +1,29 @@
+"use client"
 import React from "react";
 import "./artist.css";
 import ChatBot from "@/components/ChatBot";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Image from "next/image";
+
+
+const CarouselHashMap = [
+    {
+        src: "/About_Artist1.jpg",
+        alt: "Artist 1",
+        content: "Priyanka Raghuraman is a passionate and talented multidisciplinary artist who is constantly exploring new creative territories. She is the founder and artistic director of Priyada Arts, a vibrant community in the Bay Area that welcomes and nurtures aspiring Bharatanatyam dancers from all backgrounds. Priyanka is also known for her original works that merge contemporary themes with the traditional art form, creating a mirror of our times that is both insightful and thought-provoking. As a trailblazing performer, choreographer, and teacher, Priyanka has earned a reputation for her exceptional skills in both “Nirtta” (pure dance movements) and “Abhinaya” (facial expressions used in storytelling)."
+    },
+    {
+        src: "/About_Artist2.jpg",
+        alt: "Artist 2",
+        content: "She is a senior performer and faculty member of Anitha Guha's Bharathanjali and is currently pursuing Kuchipudi under the tutelage of Sr. Kasi Aysola. Priyanka has collaborated with some of the most reputable names in the US dance scene, including Nava Dance Theatre, Navatman, Abhinaya Dance Company, Prakriti Dance, and Bharata Dance Company."
+    },
+    {
+        src: "/About_Artist3.jpg",
+        alt: "Artist 3",
+         
+    }
+]
 
 const AboutArtist = () => {
     return (
