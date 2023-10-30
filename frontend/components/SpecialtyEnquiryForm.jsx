@@ -58,7 +58,7 @@ const CreateSpecialityEnquiry = () => {
           <label>
             <div> Where do you require this service? </div>
             <input
-              className='w-[100%]'
+              className='w-[27.5%]'
               placeholder="Cubberly Theatre, Palo Alto, CA">
             </input>
 

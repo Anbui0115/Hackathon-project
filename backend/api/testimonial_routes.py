@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from ..models import  User, db, Testimonial
 from flask_login import current_user, login_required
 from ..forms.create_testomonial import CreateTestimonialForm
-
+from flask_wtf.csrf import generate_csrf
 
 testimonial_bp = Blueprint(
     "testimonial_routes", __name__)
@@ -27,7 +27,11 @@ def create_testimonial():
     Create a new testimonial
     """
     create_testimonial_form = CreateTestimonialForm()
-    create_testimonial_form['csrf_token'].data = request.cookies['csrf_token']
+    # create_testimonial_form['csrf_token'].data = request.cookies['csrf_token']
+
+    csrf_token = generate_csrf()
+    create_testimonial_form['csrf_token'].data = csrf_token
+
 
     if  create_testimonial_form.validate_on_submit():
         data =  create_testimonial_form.data
