@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import { UserGlobalState } from '@/context/UserContext';
 
-const CreateSpecialityEnquiry = () => {
+const CreateServiceEnquiry = () => {
   const { sessionUser, setSessionUser } = UserGlobalState()
   const router = useRouter()
 
@@ -99,4 +99,4 @@ const CreateSpecialityEnquiry = () => {
   }
 };
 
-export default CreateSpecialityEnquiry;
+export default CreateServiceEnquiry;

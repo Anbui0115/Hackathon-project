@@ -10,7 +10,7 @@ import NewTestimonialButton from '@/components/NewTestimonialButton'
 import AboutArtist from '@/components/AboutArtist'
 import AboutStudio from '@/components/AboutStudio'
 import './homepage.css'
-import CreateSpecialityEnquiry from '@/components/SpecialtyEnquiryForm'
+import CreateSpecialityEnquiry from '@/components/ServiceEnquiryForm'
 import { UserGlobalState } from '@/context/UserContext'
 import SplashPagePicture from '@/components/SplashPagePicture'
 
@@ -23,14 +23,14 @@ export default function Home() {
 
   const openModal = () => setIsModalOpen(!isModalOpen);
   const closeModal = () => setIsModalOpen(false);
-  
+
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const user = JSON.parse(localStorage.getItem("user"));
     if (isLoggedIn === "true" && user) {
       setSessionUser(user);
-      
+
     }
     console.log(user, 'user')
   }, []);

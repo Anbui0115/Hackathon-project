@@ -18,7 +18,7 @@ const SplashPagePicture = () => {
       </div>
 
       <div className="flex-1 h-screen">
-        <Image 
+        <Image
           src="/splash_pic.JPG"
           alt="Splash Page Picture"
           // objectFit="cover"
