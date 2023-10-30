@@ -51,7 +51,7 @@ def get_service_apt(service_apt_id):
 # CREATE A GENERAL APPOINTMENT
 
 @ service_appointment_bp.route("/new/", methods=["POST"])
-# @login_required
+@login_required
 def create_service_apt():
 
     create_service_apt_form = CreateServiceAppointmentForm()
@@ -86,7 +86,7 @@ def create_service_apt():
 
 
 @service_appointment_bp.route("/<int:service_apt_id_id>/", methods=["DELETE"])
-# @login_required
+@login_required
 def delete_general_apt(service_apt_id):
 
     current_service_apt = ServiceAppointment.query.get(service_apt_id)
@@ -94,7 +94,7 @@ def delete_general_apt(service_apt_id):
     if current_service_apt:
         db.session.delete(current_service_apt)
         db.session.commit()
-        return "Your service appointment was succesfully deleted"
+        return "Your Service Appointment was succesfully deleted"
 
     return "404 Service Appointment Not Found"
 
