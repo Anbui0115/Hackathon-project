@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
-from ..models import Media, User, db
+from ..models import User, db
 from flask_login import current_user, login_user, logout_user, login_required
+from ..models import Media
 
 
 # _______________________________________________________________________________
@@ -14,17 +15,21 @@ media_routes = Blueprint('media_bp', __name__)
 @media_routes.route("/", methods=["GET"])
 def get_all_media():
     all_media = Media.query.all()
-    response = []
+    all_media_list = []
 
-    if all_media:
-        for media in all_media:
-            media_obj = media.to_dict()
-            response.append(media_obj)
-        print("THIS IS MEDIA FROM BACKEND", response)
-        return {
-            "media": response
-        }, 200
-    return {"Error": "Media Not Found"}, 404
+    for media_item in all_media:
+        media_dict = {
+            'id': media_item.id,
+            'type': media_item.type,
+            'url': media_item.photo_url
+            }
+
+        all_media_list.append(media_dict)
+
+    if all_media_list:
+        return jsonify(all_media_list)
+    else:
+        return jsonify({'message': 'Media not found'}), 404
 
 # _______________________________________________________________________________
 
@@ -110,3 +115,25 @@ def delete_media(id):
 
 
 # _______________________________________________________________________________
+
+# Get Media by Type
+
+@media_routes.route('/type/<string:type>', methods=['GET'])
+def get_media_by_type(type):
+    media = Media.query.filter(Media.type == type).all()
+
+    media_list = []
+
+    for media_item in media:
+        media_dict = {
+            'id': media_item.id,
+            'type': media_item.type,
+            'url': media_item.photo_url
+            }
+
+        media_list.append(media_dict)
+
+    if media_list:
+        return jsonify(media_list)
+    else:
+        return jsonify({'message': 'Media not found'}), 404
