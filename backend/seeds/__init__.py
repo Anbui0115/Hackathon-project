@@ -2,6 +2,8 @@ from flask.cli import AppGroup
 from .testimonials import seed_testimonials, undo_testimonials
 from .users import seed_users, undo_users
 from .medias import seed_medias, undo_medias
+from .dance_classes import seed_dance_classes, undo_dance_classes
+from .services import seed_services, undo_services
 
 from backend.models.db import db, environment, SCHEMA
 
@@ -25,6 +27,8 @@ def seed():
     seed_users()
     seed_testimonials()
     seed_medias()
+    seed_services()
+    seed_dance_classes()
 
 
 # Creates the `flask seed undo` command
@@ -33,3 +37,5 @@ def undo():
     undo_medias()
     undo_testimonials()
     undo_users()
+    undo_dance_classes()
+    undo_services()
