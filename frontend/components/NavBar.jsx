@@ -35,7 +35,7 @@ const NavBar = () => {
       {/* Logo / Dance Studio Title */}
       <div className="flex items-center">
         <div className="flex items-center mr-2">
-          <Image src={Logo} alt="Priyada Arts Logo" width={50} height={50} />
+          <Image className="rounded-lg" src={Logo} alt="Priyada Arts Logo" width={50} height={50} />
         </div>
         <div className="text-2xl"><Link href="/">Priyada Arts</Link></div>
       </div>
