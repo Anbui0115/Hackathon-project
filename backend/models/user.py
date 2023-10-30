@@ -20,9 +20,10 @@ class User(db.Model, UserMixin):
     free_user = db.Column(db.Boolean, default=True)
     payment_info = db.Column(db.String(255), nullable=True)
 
+
     # relationships
-    general_appointments = db.relationship("GeneralAppointment", back_populates='user', cascade="all, delete-orphan")
-    dance_class_appointments = db.relationship("DanceClassAppointment", back_populates='user', cascade="all, delete-orphan")
+    service_appointments = db.relationship("ServiceAppointment", back_populates='user', cascade="all, delete-orphan")
+    dance_class_registrations = db.relationship("DanceClassRegistration", back_populates='user', cascade="all, delete-orphan")
 
     media = db.relationship("Media", back_populates='user')
     testimonials = db.relationship("Testimonial", back_populates="user")
@@ -47,7 +48,6 @@ class User(db.Model, UserMixin):
             'authorization': self.authorization,
             'first_name':self.first_name,
             'last_name': self.last_name,
-            # 'birthdate': self.birthdate,
             'address': self.address,
             'phone_number': self.phone_number,
             'free_user': self.free_user,

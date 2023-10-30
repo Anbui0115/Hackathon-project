@@ -1,15 +1,15 @@
 from flask_wtf import FlaskForm
-from ..models import db, User, GeneralAppointment
+from ..models import db, User, ServiceAppointment
 from wtforms import StringField, SubmitField,DateField, SelectField, TextAreaField
 from wtforms.validators import DataRequired
 from flask_login import current_user, login_user, logout_user, login_required
 
 
 
-class CreateGeneralAppointmentForm(FlaskForm):
+class CreateServiceAppointmentForm(FlaskForm):
 
-
-    type = SelectField("type", choices=["Makeup", "Emceeing/Hosting", "Other"], validators=[DataRequired()])
+    #  type: 1-Makeup, 2-Emcee/hosting, 3-Other
+    service_id = SelectField("type", choices=["1","2","3"], validators=[DataRequired()])
 
     date = DateField("date", validators=[DataRequired()])
 
