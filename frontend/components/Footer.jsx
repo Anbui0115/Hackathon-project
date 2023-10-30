@@ -11,7 +11,7 @@ const Footer = () => {
   const [toggleModal, setToggleModal] = useState(false);
 
   return (
-    <div className="bg-black text-cream h-[auto] py-4 w-full flex justify-between">
+    <div className="bg-black text-cream h-[auto] py-4 w-full flex justify-between z-10">
 
         
         <div className="flex flex-col gap-4 items-start justify-between align-start px-10 py-6">
