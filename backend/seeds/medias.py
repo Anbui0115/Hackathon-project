@@ -1,4 +1,4 @@
-from backend.models import db, Media, environment, SCHEMA
+# from backend.models import db, Media, environment, SCHEMA
 from sqlalchemy.sql import text
 
 def seed_medias():
