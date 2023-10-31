@@ -30,7 +30,7 @@ const CreateServiceEnquiry = () => {
   };
 
   const [formData, setFormData] = useState({
-    serviceId: '1',
+    serviceId: 1,
     date: '',
     location: '',
     notes: '',
@@ -77,10 +77,10 @@ const CreateServiceEnquiry = () => {
         >
           <label className="my-2">
             <div className="text-xl font-semibold" >Please select the type of appointment you are interested in.</div>
-            <select className='text-black' value={serviceId}>
-              <option value="1">Makeup (Shows, Arangetrams, Photoshoots, Workshops)</option>
-              <option value="2">Emcee/Hosting (Events, Shows, Television, etc)</option>
-              <option value="3">Other(Modeling, Acting, etc: Please specify in the notes section below)</option>
+            <select className='text-black' value={serviceId} onChange={handleChange} name='serviceId'>
+              <option value={1}>Makeup (Shows, Arangetrams, Photoshoots, Workshops)</option>
+              <option value={2}>Emcee/Hosting (Events, Shows, Television, etc)</option>
+              <option value={3}>Other(Modeling, Acting, etc: Please specify in the notes section below)</option>
             </select>
 
           </label>

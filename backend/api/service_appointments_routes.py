@@ -64,11 +64,12 @@ def create_service_apt():
         data = create_service_apt_form.data
         new_service_apt = ServiceAppointment(
             user_id=1,
-            service_id=int(data["type"]),
+            service_id = data["service_id"],
+            # service_id=int(data["type"]),
             date=data["date"],
             location=data["location"],
             notes=data["notes"],
-            isApproved=False
+            # isApproved=False
         )
 
         db.session.add(new_service_apt)
