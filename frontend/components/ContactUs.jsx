@@ -12,7 +12,7 @@ const ContactUs = ({toggleModal, setToggleModal}) => {
 
 
   return (
-    <div onClick={(e) => e.stopPropagation()} className="z-2 fixed left-[30%] mb-40 bottom-[-16%] h-[auto] bg-white text-sm w-[30%] p-7 border-2 rounded-sm shadow-2xl text-black font-didactGothic">
+    <div onClick={(e) => e.stopPropagation()} className="z-100 fixed left-[30%] mb-40 bottom-[-16%] h-[auto] bg-white text-sm w-[30%] p-7 border-2 rounded-sm shadow-2xl text-black font-didactGothic">
 
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-bold mb-2">Contact Us</h1>
