@@ -12,6 +12,8 @@ let classId= danceclass?.dance_class_id
      text-m transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
     `}>
       <div className="text-lightcream text-center" >{danceclass.dance_class_id===1? "Beginner": danceclass.dance_class_id === 2? "Intermediate": danceclass.dance_class_id===3? "Advanced/Senior" :null}</div>
+      {danceclass.dance_class_id===1?(<div></div>):danceclass.dance_class_id === 2?(<div></div>): null}
+
       <div className="text-center my-10">
         {/* dance classes */}
         {/* [pic of class and timings] */}

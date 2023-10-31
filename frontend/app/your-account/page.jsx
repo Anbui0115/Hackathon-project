@@ -113,14 +113,19 @@ const YourAccount = () => {
         <div className="border-2 p-8 m-4 shadow-xl rounded-md w-full">
           <h2 className="text-2xl text-lightcream font-semibold underline mb-4">Registered Classes / Classes</h2>
         </div>
-        <div>
+    <div className='text-white'>You are Registered for the {sessionUser.authorization} level classes</div>
+
+        {/* <div>
            {danceClasses.map((danceclass, index) => (
             <div key={index} className="p-4 z-1">
               <DanceClassCard danceclass={danceclass} />
+
             </div>
           ))}
 
-        </div>
+        </div> */}
+
+
       </div>
 
       <Footer />
