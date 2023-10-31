@@ -17,8 +17,24 @@ const CreateServiceEnquiry = () => {
 
   const [date, setDate] = useState(null);
 
+  
+  const [formData, setFormData] = useState({
+    serviceId: 1,
+    date: '',
+    location: '',
+    notes: '',
+  });
+
+  const { serviceId, appointmentDate, location, notes } = formData; 
+
+  
   const handleDateChange = (newDate) => {
-    setDate(newDate);
+   let newFormattedDate= setDate(convertToYYYYMMDD(newDate));
+    setFormData({
+      ...formData,
+      date: newFormattedDate
+    
+    });
   }
 
   const handleChange = (e) => {
@@ -29,27 +45,37 @@ const CreateServiceEnquiry = () => {
     });
   };
 
-  const [formData, setFormData] = useState({
-    serviceId: 1,
-    date: '',
-    location: '',
-    notes: '',
-  });
-  const { serviceId, location, notes } = formData; 
+  function convertToYYYYMMDD(dateString) {
+    const inputDate = new Date(dateString);
+    const year = inputDate.getFullYear();
+    const month = String(inputDate.getMonth() + 1).padStart(2, '0');
+    const day = String(inputDate.getDate()).padStart(2, '0');
+  
+    return `${year}-${month}-${day}`;
+  }
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formattedDate = convertToYYYYMMDD(date); 
+    setFormData({
+      ...formData,
+      date: formattedDate, 
+    });
     try {
       const response = await axios.post('http://127.0.0.1:5000/api/serviceappointments/new/', {
         service_id: serviceId,
-        date: date,
+        date: formattedDate,
         location: location,
         notes: notes,
-      });
+      },
+      { withCredentials: true },
+      );
+
       console.log("THIS IS RESPONSE", response)
       if (response) {
         alert("Services Appointment Created Successfully");
-        // router.push("/");
+        router.push("/");
       }
     } catch (error) {
       console.error(error);
@@ -57,10 +83,10 @@ const CreateServiceEnquiry = () => {
     }
   };
 
-  // if (!sessionUser) {
-  //   router.push('/login')
-  // }
-  // else {
+  if (!sessionUser) {
+    router.push('/login')
+  }
+  else {
     return (
       <div className="text-xl h-auto px-40 bg-black text-cream w-[full] tracking-wider p-10 border-2 rounded-md font-worksans">
 
@@ -82,16 +108,14 @@ const CreateServiceEnquiry = () => {
               <option value={2}>Emcee/Hosting (Events, Shows, Television, etc)</option>
               <option value={3}>Other(Modeling, Acting, etc: Please specify in the notes section below)</option>
             </select>
-
           </label>
 
           <label className='text-black my-2 '>
             <div className='text-cream'> When do you require our services?</div>
-            <DatePicker className = 'bg-white' onChange={handleDateChange} value={date} />
+            <DatePicker className = 'bg-white' onChange={handleDateChange} value={date} name="date" />
+            
             <div>
-
             </div>
-
           </label>
 
           <label className='my-2'>
@@ -103,10 +127,7 @@ const CreateServiceEnquiry = () => {
               onChange={handleChange}
               value={location}>
             </input>
-
           </label>
-
-
 
           <label >
             <div>Please provide any particular details or preferences regarding your appointment or event. This may include your desired makeup style, allergies, specific requirements, workshop requests, and hosting/emceeing needs.</div>
@@ -134,8 +155,8 @@ const CreateServiceEnquiry = () => {
             </button>
 
             <button className="bg-teal-700 font-semibold text-white rounded-md p-2 hover:bg-stone-500 transition duration-700">
-              {/* <Link href='/'>Cancel</Link> */}
-              Cancel
+              <Link href='/'>Cancel</Link>
+              {/* Cancel */}
             </button>
           </div>
 
@@ -143,6 +164,6 @@ const CreateServiceEnquiry = () => {
       </div>
     );
   }
-// };
+};
 
 export default CreateServiceEnquiry;

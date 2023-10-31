@@ -83,9 +83,11 @@ const DanceRegistration = () => {
                 </button>
 
 
-                <button className="bg-teal-700 tracking-wider text-lightcream rounded-md p-2 hover:bg-stone-500 transition duration-700">
-                  <Link href='/'>Cancel</Link>
-
+                <button
+                  className="bg-teal-700 font-semibold text-white rounded-md p-2 hover:bg-stone-500 transition duration-700"
+                  onClick={() => router.push('/')}
+                >
+                  Cancel
                 </button>
             </div>
 
