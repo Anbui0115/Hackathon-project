@@ -12,7 +12,7 @@ def googleLogin():
     if current_user.is_authenticated:
         logout_user()
 
-    return oauth.dance_class_app.authorize_redirect("http://127.0.0.1:5000/api/google/callback")
+    return oauth.dance_class_app.authorize_redirect(url_for('google.googleCallback', _external=True))
 
 # Callback
 @google_routes.route('/callback')
