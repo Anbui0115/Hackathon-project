@@ -25,7 +25,7 @@ const YourAccount = () => {
   return (
     <div>
       <NavBar/>
-      <div className="mx-24 flex">
+      <div className="text-lightcream mx-24 flex">
 
         <div className="flex-1 flex-col border-2 p-8 m-4 shadow-xl rounded-md">
           <h2 className="text-2xl font-semibold underline mb-4">Account Information</h2>
@@ -55,7 +55,7 @@ const YourAccount = () => {
             <div>{sessionUser?.phone_number}</div>
           </div>
 
-          
+
         </div>
 
         <div className="flex-1 flex-col border-2 p-8 m-4 shadow-xl rounded-md">

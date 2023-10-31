@@ -9,7 +9,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     firstName: '',
     lastName: '',
     content: '',
-    role: 'Student at Priyada Arts', 
+    role: 'Student at Priyada Arts',
   });
 
   const handleChange = (e) => {
@@ -29,7 +29,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', { 
+      const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', {
         first_name: firstName,
         last_name: lastName,
         content: testimonial,
@@ -45,24 +45,25 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
       alert("FAIL TO CREATE A TESTIMONIAL_____________________");
     }
   };
-    
+
 
   if (!isOpen) {
     return null; // Do not render the modal if isOpen is false
   }
 
   return (
-    <div onClick={(e) => e.stopPropagation()} className="z-10 fixed left-[30%] top-[15%] text-2xl h-[auto] bg-lightcream w-[40%] p-10 border-2 rounded-md shadow-2xl font-worksans">
+    <div onClick={(e) => e.stopPropagation()} className="z-[5] fixed left-[30%] top-[15%] text-m  h-[auto] bg-white w-[36%] p-10 border-2 rounded-md shadow-2xl font-didactgothic">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Leave a Testimonial</h1>
+        <h1 className="text-xl font-bold">Leave Your Testimonial</h1>
         <button className="" onClick={() => handleCloseModal()}>X</button>
       </div>
+
       <form
         onSubmit={handleSubmit}
         className=""
         action=""
       >
-        <label className="flex flex-col gap-2 my-2" htmlFor="firstName">
+        <label className=" text-m flex flex-col gap-2 my-2" htmlFor="firstName">
           First Name
           <input
             type="text"
@@ -70,11 +71,11 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
             value={firstName}
             onChange={handleChange}
             placeholder="Your first name"
-            className="border-2 border-gray-300 rounded-md p-2"
+            className="border-none focus-none outline-none text-m bg-teal-50 border-2 border-gray-300 rounded-md p-2"
           />
         </label>
 
-        <label className="flex flex-col gap-2 my-2" htmlFor="lastName">
+        <label className="text-m flex flex-col gap-2 my-2" htmlFor="lastName">
           Last Name
           <input
             type="text"
@@ -82,14 +83,14 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
             value={lastName}
             onChange={handleChange}
             placeholder="Your last name"
-            className="border-2 border-gray-300 rounded-md p-2"
+            className="border-none outline-none focus-none text-m bg-teal-50 border-2 border-gray-300 rounded-md p-2"
           />
         </label>
 
-        <label>
+        <label className='text-m'>
           <div>Who are you?</div>
           <select
-            className="text-black mt-5 mb-5"
+            className="border-none outline-none focus-none text-m bg-teal-50 text-black mt-5 mb-5 p-3"
             name="role"
             value={role}
             onChange={handleChange}
@@ -101,14 +102,14 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
           </select>
         </label>
 
-        <label className="flex flex-col gap-2" htmlFor="testimonial">
+        <label className="text-m flex flex-col gap-2" htmlFor="testimonial">
           Testimonial
           <textarea
             name="testimonial"
             value={testimonial}
             onChange={handleChange}
             placeholder="Leave your testimonial here"
-            className="border-2 border-gray-300 rounded-md p-3"
+            className="text-m bg-teal-50 border-none focus-none outline-none resize-none rounded-sm p-3"
             rows="5"
             cols="50"
           ></textarea>
