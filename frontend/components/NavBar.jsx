@@ -31,8 +31,8 @@ const NavBar = () => {
 
   return (
 
-    <div className={` bg-black
-                 bg-opacity-0 text-cream h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
+    <div className={`bg-black
+                 bg-opacity-30 text-cream h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-[100]`}>
       {/* Logo / Dance Studio Title */}
       <div className=" flex items-center">
         <div className="flex items-center mr-2">
@@ -52,11 +52,11 @@ const NavBar = () => {
             toggleClassMenu && (
               <div
                 onMouseLeave={() => setToggleClassMenu(false)}
-                className="absolute z-10 top-16 mt-2 w-[180px] rounded-md shadow-lg "
+                className="absolute z-30 top-16 mt-2 w-[180px] rounded-md shadow-lg "
               >
-                <div className="px-6 text-white py-4 rounded-md bg-grey flex flex-col gap-2">
-                  <Link href="/schedule" className="text-xl hover:white">Schedule</Link>
-                  <Link href="/registration" className="text-xl hover:white">Registration</Link>
+                <div className="px-6 text-white py-4 rounded-md flex flex-col gap-2  bg-black bg-opacity-60">
+                  <Link href="/schedule" className="text-xl hover:white ">Schedule</Link>
+                  <Link href="/registration" className="text-xl hover:white ">Registration</Link>
                 </div>
               </div>
             )
