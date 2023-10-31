@@ -38,7 +38,7 @@ const CarouselHashMap = [
 const AboutArtist = () => {
     return (
         <div>
-            <div className='bg-transparent flex h-auto relative flex-col py-20'>
+            <div className='bg-black flex h-auto relative flex-col py-20 mb-50'>
                 <div className='mx-auto text-center'>
                     <div className='font-poiretOne text-2xl  my-10 text-cream sm:text-3xl capitalize'>
                         <div>About the Artist</div>

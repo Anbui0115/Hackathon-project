@@ -7,7 +7,7 @@ const SplashPagePicture = () => {
     <div className="flex items-center justify-center">
       {/* w-[100%] h-[100vh] bg-cover bg-[url('/splash_pic.JPG')] */}
 
-      <div className="text-white mb-32 flex-1 text-center flex flex-col gap-4">
+      <div className="z-20 text-white mb-32 flex-1 text-center flex flex-col gap-4">
         <div className="text-5xl flex flex-row">
           {/* <AnimatedText timer={100}  message={"PRIYANKA RAGHURAMAN"} /> */}
           <div className='font-bold ml-20 mr-3'>Priyanka</div>
@@ -24,11 +24,11 @@ const SplashPagePicture = () => {
           src="/splash_pic.JPG"
           alt="Splash Page Picture"
           // objectFit="cover"
-          height={5000}
-          width={1000}
+          height={1000}
+          width={600}
 
           // layout="fill"
-          className="mt-10 rounded-sm fixedtop-0 left-0 right-0 bg-center top"
+          className="mt-10 rounded-sm fixed top-0 left-50 right-50 bg-center top"
         />
       </div>
     </div>
