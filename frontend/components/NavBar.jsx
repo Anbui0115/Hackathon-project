@@ -32,7 +32,7 @@ const NavBar = () => {
   return (
 
     <div className={`bg-black
-                 bg-opacity-30 text-cream h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-[100]`}>
+                 bg-opacity-30 text-cream h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-[20]`}>
       {/* Logo / Dance Studio Title */}
       <div className=" flex items-center">
         <div className="flex items-center mr-2">
