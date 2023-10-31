@@ -138,7 +138,7 @@ const ChatBot = () => {
 
       {/* White Cloud Message */}
       {!toggleChat && showWhiteCloudMessage  && (
-        <div className="relative p-4 m-2 text-sm tracking-wider bg-white text-black rounded-3xl shadow-md w-[240px] h-auto">
+        <div className="relative p-4 m-1 text-sm tracking-wider bg-white text-black rounded-3xl shadow-md w-[230px] h-auto">
           <AnimatedText timer={15} message="Hi! PriyadaGPT at your service click me if you have any questions about the school, artists, classes, or about the website and I'd be glad to help." />
         </div>
       )}
@@ -147,8 +147,8 @@ const ChatBot = () => {
       <div className="cursor-pointer" onClick={() => setToggleChat(!toggleChat)}>
         <Image
           src={Chat}
-          height={100}
-          width={100}
+          height={70}
+          width={70}
           className="rounded-full"
         />
       </div>
