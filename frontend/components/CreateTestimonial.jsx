@@ -36,10 +36,10 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
           first_name: firstName,
           last_name: lastName,
           content: testimonial,
-          role,});
+          role: role,});
         console.log("THIS IS RESPONSE",response)
         if (response) {
-          alert("Thank You For Leaving a Testimonial");
+          alert("Thank You For Leaving a Testimonial!");
           handleCloseModal();
           router.push("/");
         }
@@ -54,6 +54,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     return null; // Do not render the modal if isOpen is false
   }
   else if (!sessionUser) {
+    alert("Please Login First.");
     router.push('/login')
   }
   else {

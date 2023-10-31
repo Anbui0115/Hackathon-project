@@ -84,6 +84,7 @@ const CreateServiceEnquiry = () => {
   };
 
   if (!sessionUser) {
+    alert("Please Login First.");
     router.push('/login')
   }
   else {
