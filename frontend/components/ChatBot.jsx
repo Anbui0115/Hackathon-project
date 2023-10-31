@@ -17,7 +17,7 @@ const ChatBot = () => {
   const [loading, setLoading] = useState(false)
   const [color, setColor] = useState("#7FFFD4");
 
-  const [showWhiteCloudMessage, setShowWhiteCloudMessage] = useState(true); 
+  const [showWhiteCloudMessage, setShowWhiteCloudMessage] = useState(true);
 
 
   const messagesEndRef = useRef(null);  // Create a ref
@@ -27,7 +27,7 @@ const ChatBot = () => {
   const hideWhiteCloudMessage = () => {
     setTimeout(() => {
       setShowWhiteCloudMessage(false);
-    }, 5000); 
+    }, 5000);
   };
 
 
@@ -36,8 +36,10 @@ const ChatBot = () => {
   };
 
   useEffect(() => {
-    scrollToBottom();
-    hideWhiteCloudMessage(); 
+    if (scrollToBottom()) {
+      hideWhiteCloudMessage(); 
+    };
+    
   }, [messages]);
 
   const sendMessage = async (e) => {
@@ -73,11 +75,11 @@ const ChatBot = () => {
 
 
   return (
-    <div className="bottom-16 right-16 z-1 fixed flex flex-col items-end">
+    <div className="bottom-10 right-10 z-5 fixed flex flex-col items-end">
 
       {/* Chat Screen */}
       {toggleChat && (
-        <div className="relative left-24 bottom-24 z-30 bg-lightcream p-4 px-8 rounded-md shadow-lg border w-[600px] h-[700px] mx-2 overflow-y-auto">
+        <div className="relative left-20 bottom-20 z-2 bg-lightcream p-4 px-8 rounded-md shadow-lg border w-[600px] h-[700px] mx-2 overflow-y-auto">
 
           {/* Chat Header */}
           <div className="my-2 text-xl font-semibold">Chat with PriyadaGPT</div>
@@ -121,7 +123,7 @@ const ChatBot = () => {
 
 
          {/* Input area */}
-         <div className="mt-2">
+         <div className="z-5 mt-2">
             <form onSubmit={sendMessage}>
               <input
                 type="text"
@@ -137,9 +139,10 @@ const ChatBot = () => {
       )}
 
       {/* White Cloud Message */}
+
       {!toggleChat && showWhiteCloudMessage  && (  
         <div className="relative p-4 m-2 tracking-wider bg-white font-semibold text-black rounded-3xl shadow-md w-[240px] h-auto">
-          <AnimatedText timer={15} message="Hi! PriyadaGPT at your service click me if you have any questions about the school, artists, classes, or about the website and I'd be glad to help." />
+          <AnimatedText timer={15} message="Hi! PriyadaGPT here. Click me if you need help or have any questions." />
         </div>
       )}
 
@@ -147,9 +150,10 @@ const ChatBot = () => {
       <div className="cursor-pointer" onClick={() => setToggleChat(!toggleChat)}>
         <Image
           src={Chat}
-          height={100}
-          width={100}
+          height={70}
+          width={70}
           className="rounded-full"
+
         />
       </div>
 
