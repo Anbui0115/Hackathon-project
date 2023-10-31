@@ -9,7 +9,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     firstName: '',
     lastName: '',
     content: '',
-    role: '', // Added 'role' to the initial state
+    role: 'Student at Priyada Arts', // Added 'role' to the initial state
   });
 
   const handleChange = (e) => {
