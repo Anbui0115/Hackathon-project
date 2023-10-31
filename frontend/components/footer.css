@@ -1,12 +1,13 @@
 /* footer.css */
 
 #footer {
-  background-color: #333;
-  color: #fff;
+  background-color: black;
+  /* opacity: 50%; */
+  color: ivory;
   height:60px;
   width: 100%;
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -19,9 +20,9 @@
 }
 
 .social-icon {
-  fill: #fff; 
+  fill: #fff;
   padding: 10;
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 
@@ -33,8 +34,8 @@
 
 
 .social-icon {
-  fill: #fff; 
-  margin-right: 10px; 
+  fill: #fff;
+  margin-right: 10px;
 }
 
 .container {

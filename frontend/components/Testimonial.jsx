@@ -23,9 +23,9 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center my-4">
-      <div className="text-stone-300 font-poiretOne text-3xl font-semibold my-8 uppercase">Testimonials</div>
-      <div className="w-4/5 mx-auto">
+    <div className=" bg-black bg-opacity-70 flex flex-col items-center z-5 my-4">
+      <div className="bg-black z-10 text-cream font-poiretOne text-2xl my-8 ">Testimonials</div>
+      <div className="bg-black z-5 w-4/5 mx-auto">
         <Carousel
           centerMode
           showThumbs={false}
@@ -37,7 +37,7 @@ const Testimonial = () => {
           transitionTime={1000}
         >
           {testimonies.map((testimony, index) => (
-            <div key={index} className="p-4">
+            <div key={index} className="p-4 z-1">
               <TestimonialCard testimony={testimony} />
             </div>
           ))}

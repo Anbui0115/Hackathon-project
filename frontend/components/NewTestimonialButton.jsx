@@ -21,8 +21,8 @@ function NewTestimonialButton({ onButtonClick }) {
     margin: '20px'
   };
   return (
-    <div className="flex justify-center items-center max-h-[200px]">
-      <button onClick={onButtonClick} className="bg-teal-950 text-white hover:bg-stone-500 transition delay-100 ease-in-out text-xl px-5 py-2.5 border-none rounded-md cursor-pointer max-w-[300px] text-center m-5">
+    <div className="z-10 flex justify-center items-center max-h-[200px]">
+      <button onClick={onButtonClick} className="bg-inherit text-white hover:bg-stone-500 text-decoration-line: underline transition delay-100 ease-in-out text-xl px-5 py-2.5 border-none rounded-md cursor-pointer max-w-[300px] text-center m-5">
         Leave Your Testimonial
       </button>
     </div>
