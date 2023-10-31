@@ -36,8 +36,10 @@ const ChatBot = () => {
   };
 
   useEffect(() => {
-    scrollToBottom();
-    hideWhiteCloudMessage();
+    if (scrollToBottom()) {
+      hideWhiteCloudMessage(); 
+    };
+    
   }, [messages]);
 
   const sendMessage = async (e) => {
@@ -137,9 +139,10 @@ const ChatBot = () => {
       )}
 
       {/* White Cloud Message */}
-      {!toggleChat && showWhiteCloudMessage  && (
-        <div className="relative p-4 m-1 text-sm tracking-wider bg-white text-black rounded-3xl shadow-md w-[230px] h-auto">
-          <AnimatedText timer={15} message="Hi! PriyadaGPT at your service click me if you have any questions about the school, artists, classes, or about the website and I'd be glad to help." />
+
+      {!toggleChat && showWhiteCloudMessage  && (  
+        <div className="relative p-4 m-2 tracking-wider bg-white font-semibold text-black rounded-3xl shadow-md w-[240px] h-auto">
+          <AnimatedText timer={15} message="Hi! PriyadaGPT here. Click me if you need help or have any questions." />
         </div>
       )}
 
@@ -150,6 +153,7 @@ const ChatBot = () => {
           height={70}
           width={70}
           className="rounded-full"
+
         />
       </div>
 
