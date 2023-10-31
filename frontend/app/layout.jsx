@@ -45,7 +45,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${montserrat.className} ${laila.className} ${workSans.className} ${poiretOne.className} ${didactGothic.className} ${elsie.className}`}>
+      <body className={`${inter.className} ${montserrat.className} ${laila.className} ${workSans.className} ${poiretOne.className} ${didactGothic.className}  ${elsie.className} `}>
         <Providers>{children}</Providers>
       </body>
     </html>

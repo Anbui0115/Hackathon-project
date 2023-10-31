@@ -40,8 +40,8 @@ const AboutArtist = () => {
         <div>
             <div className='bg-black flex h-auto relative flex-col py-20 mb-50'>
                 <div className='mx-auto text-center'>
-                    <div className='font-poiretOne text-2xl  my-10 text-cream sm:text-3xl capitalize'>
-                        <div>About the Artist</div>
+                    <div className='font-elsie text-2xl  my-10 text-cream sm:text-3xl capitalize'>
+                        <div> About the Artist</div>
                     </div>
                         <div className="font-didactGothic text-lg text-cream leading-relaxed w-4/5 mx-auto">
                          <Carousel

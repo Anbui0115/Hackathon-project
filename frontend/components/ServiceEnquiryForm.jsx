@@ -24,20 +24,20 @@ const CreateServiceEnquiry = () => {
   }
   else {
     return (
-      <div className="text-xl h-auto px-40 bg-black text-cream w-[full] tracking-wider p-10 border-2 rounded-md font-worksans">
+      <div className="text-m h-auto px-40 bg-black text-cream w-[full] tracking-wider p-30 rounded-md font-didactGothiic">
 
         <div className="text-center">
-          <h1 className="text-5xl font-laila ">Send an Enquiry for Speciality Services</h1>
+          <h1 className="text-2xl font-elsie ">Get In Touch</h1>
         </div>
         <hr className='mx-[-2.5rem] my-[4rem]' />
 
 
         <form
-          className="border-4 p-10 rounded-md border-cream flex flex-col"
+          className=" p-10 rounded-md border-cream flex flex-col"
           action=""
         >
           <label className="my-4">
-            <div className="text-xl font-semibold" >Please select the type of appointment you are interested in.</div>
+            <div className="text-xl font-poiretone" >Please select the type of appointment you are interested in.</div>
             <select className='text-black'>
               <option value="1">Makeup (Shows, Arangetrams, Photoshoots, Workshops)</option>
               <option value="2">Emcee/Hosting (Events, Shows, Television, etc)</option>

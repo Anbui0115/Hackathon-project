@@ -8,6 +8,6 @@
     flex-direction: column;
     justify-content: space-between;
    /* object-fit:cover; */
-     background: url('/frontend/public/splash_pic.JPG') no-repeat center center fixed
+     font-family: didactGothic;
 
 }

@@ -4,7 +4,7 @@ import AnimatedText from './AnimatedText'
 
 const SplashPagePicture = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center z-[0]">
       {/* w-[100%] h-[100vh] bg-cover bg-[url('/splash_pic.JPG')] */}
 
       <div className="z-20 text-white mb-32 flex-1 text-center flex flex-col gap-4">
