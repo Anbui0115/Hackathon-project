@@ -32,14 +32,14 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', { 
+        const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', {
           first_name: firstName,
           last_name: lastName,
           content: testimonial,
-          role,});
+          role: role,});
         console.log("THIS IS RESPONSE",response)
         if (response) {
-          alert("Thank You For Leaving a Testimonial");
+          alert("Thank You For Leaving a Testimonial!");
           handleCloseModal();
           router.push("/");
         }
@@ -48,12 +48,13 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
         alert("FAIL TO CREATE A TESTIMONIAL");
       }
     };
-    
+
 
   if (!isOpen) {
     return null; // Do not render the modal if isOpen is false
   }
   else if (!sessionUser) {
+    alert("Please Login First.");
     router.push('/login')
   }
   else {

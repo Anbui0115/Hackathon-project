@@ -10,7 +10,7 @@ const Services = () => {
     return (
         <>
             <NavBar />
-            <div className='speciality-page-container'>
+            <div className='bg-black speciality-page-container'>
                 <div className='speciality-section-container'>
                     <div className='speciality-card'>
                         <ServiceCard />
