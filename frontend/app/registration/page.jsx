@@ -21,9 +21,10 @@ const DanceRegistration = () => {
       <>
       <NavBar />
       <section className='bg-black flex justify-center'>
-        <div className= 'flex flex-col justify-center h-auto bg-inherit w-[70%] tracking-wider border-none rounded-md shadow-2xl text-lightcream font-didactGothic'>
+
+        <div className= 'flex flex-col justify-center h-auto bg-black w-[70%] tracking-wider border-none rounded-md shadow-2xl text-lightcream font-didactGothic'>
             <div className='flex justify-center '>
-            <h1 className='text-2xl font-elsie mb-2 '>Register For Dance Lessons</h1>
+            <h1 className='text-2xl font-elsie mb-2 text-lightcream'>Register For Dance Lessons</h1>
             </div>
             <hr className='mx-[-2.5rem] my-[4rem]' />
             <form className='flex flex-col text-didactgothic justify-center align-center items-start border-cream p-8 rounded-md'>
