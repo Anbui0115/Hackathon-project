@@ -73,7 +73,7 @@ const ChatBot = () => {
 
 
   return (
-    <div className="bottom-16 right-16 z-1 fixed flex flex-col items-end">
+    <div className="bottom-16 right-16 z-5 fixed flex flex-col items-end">
 
       {/* Chat Screen */}
       {toggleChat && (
@@ -121,7 +121,7 @@ const ChatBot = () => {
 
 
          {/* Input area */}
-         <div className="mt-2">
+         <div className="z-5 mt-2">
             <form onSubmit={sendMessage}>
               <input
                 type="text"
