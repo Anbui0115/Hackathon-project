@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import { UserGlobalState } from '@/context/UserContext';
 
-const CreateSpecialityEnquiry = () => {
+const CreateServiceEnquiry = () => {
   const { sessionUser, setSessionUser } = UserGlobalState()
   const router = useRouter()
 
@@ -43,17 +43,12 @@ const CreateSpecialityEnquiry = () => {
               <option value="2">Emcee/Hosting (Events, Shows, Television, etc)</option>
               <option value="3">Other(Modeling, Acting, etc: Please specify in the notes section below)</option>
             </select>
-            <input
-              type="submit"
-              className=''
-
-            />
 
           </label>
 
           <label className='text-black '>
-            <div className='text-black'> When do you require our services?</div>
-            <DatePicker onChange={handleDateChange} value={date} />
+            <div className='text-cream'> When do you require our services?</div>
+            <DatePicker className = 'bg-white' onChange={handleDateChange} value={date} />
             <div>
 
             </div>
@@ -63,7 +58,7 @@ const CreateSpecialityEnquiry = () => {
           <label>
             <div> Where do you require this service? </div>
             <input
-              className='w-[100%]'
+              className='w-[27.5%]'
               placeholder="Cubberly Theatre, Palo Alto, CA">
             </input>
 
@@ -104,4 +99,4 @@ const CreateSpecialityEnquiry = () => {
   }
 };
 
-export default CreateSpecialityEnquiry;
+export default CreateServiceEnquiry;

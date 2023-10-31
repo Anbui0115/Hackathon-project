@@ -1,9 +1,8 @@
-from flask_wtf.csrf import generate_csrf
 from flask import Blueprint, request, jsonify
 from ..models import  User, db, Testimonial
 from flask_login import current_user, login_required
 from ..forms.create_testomonial import CreateTestimonialForm
-
+from flask_wtf.csrf import generate_csrf
 
 testimonial_bp = Blueprint(
     "testimonial_routes", __name__)
@@ -16,7 +15,6 @@ def get_all_testimonials():
     Get all testimonials of the studio
     """
     # user_id = current_user.id
-    # print('this is current_user,',current_user)
     testimonials = Testimonial.query.all()
     return {'testimonials': [i.to_dict() for i in testimonials]}
 
@@ -29,13 +27,16 @@ def create_testimonial():
     Create a new testimonial
     """
     create_testimonial_form = CreateTestimonialForm()
+    # create_testimonial_form['csrf_token'].data = request.cookies['csrf_token']
+
     csrf_token = generate_csrf()
     create_testimonial_form['csrf_token'].data = csrf_token
+
 
     if  create_testimonial_form.validate_on_submit():
         data =  create_testimonial_form.data
         new_testimonial = Testimonial(
-                user_id= current_user.id,
+                # user_id= current_user.id,
                 content= data["content"],
                 first_name=data["first_name"],
                 last_name=data["last_name"],
@@ -51,7 +52,7 @@ def create_testimonial():
 
 
 #  DELETE A TESTIMONIAL
-@testimonial_bp.route('/testimonial_id',methods=["DELETE"])
+@testimonial_bp.route('/',methods=["DELETE"])
 @login_required
 def delete_testimonial(testimonial_id):
     """

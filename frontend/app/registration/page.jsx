@@ -29,7 +29,7 @@ const DanceRegistration = () => {
             <form className='flex flex-col justify-center align-center items-start border-4 border-cream p-8 rounded-md'>
             <label className='my-4' >
                 <div className='my-5 font-semibold text-xl'>How Many Years of Dance Experience do you have?</div>
-                <select className='text-black text-xl font-semibold rounded-md bg-cream p-4 border-2  shadow-2xl bg-inherit '>
+                <select className='text-black text-xl font-semibold rounded-md p-4 border-2  shadow-2xl bg-white '>
                   <option className="text-xl " value="1">Beginner: 0-3 years of experience</option>
                   <option className="text-xl" value="2">Intermediate: 3-6 years of experience</option>
                   <option className="text-xl" value="3">Advanced: 6-10 years of experience</option>

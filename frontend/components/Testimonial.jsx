@@ -20,7 +20,7 @@ const Testimonial = () => {
       .catch((error) => {
         console.error('Error fetching testimonials:', error);
       });
-  }, [testimonies]);
+  }, []);
 
   return (
     <div className="flex flex-col items-center my-4">
