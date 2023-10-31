@@ -29,25 +29,25 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     onRequestClose();
   };
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', { 
-          first_name: firstName,
-          last_name: lastName,
-          content: testimonial,
-          role: role,});
-        console.log("THIS IS RESPONSE",response)
-        if (response) {
-          alert("Testimonial Created Successfully");
-          router.push("/");
-          handleCloseModal();
-        }
-      } catch (error) {
-        console.error(error);
-        alert("FAIL TO CREATE A TESTIMONIAL_____________________");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', { 
+        first_name: firstName,
+        last_name: lastName,
+        content: testimonial,
+        role: role,});
+      console.log("THIS IS RESPONSE",response)
+      if (response) {
+        alert("Testimonial Created Successfully");
+        router.push("/");
+        handleCloseModal();
       }
-    };
+    } catch (error) {
+      console.error(error);
+      alert("FAIL TO CREATE A TESTIMONIAL_____________________");
+    }
+  };
     
 
   if (!isOpen) {
