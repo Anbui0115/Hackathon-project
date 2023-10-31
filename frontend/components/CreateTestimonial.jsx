@@ -1,6 +1,3 @@
-"use client"
-import Link from "next/link"
-import axios from "axios"
 import React, { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation"
 import { UserGlobalState } from "@/context/UserContext";

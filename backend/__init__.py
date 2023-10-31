@@ -33,7 +33,7 @@ oauth = OAuth(app)
 configure_oauth(app)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
 # Blueprints
 app.register_blueprint(user_routes, url_prefix='/api/users')
