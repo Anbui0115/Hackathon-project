@@ -12,7 +12,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     firstName: '',
     lastName: '',
     content: '',
-    role: '', // Added 'role' to the initial state
+    role: 'Student at Priyada Arts', 
   });
 
   const handleChange = (e) => {
@@ -41,6 +41,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
         if (response) {
           alert("Testimonial Created Successfully");
           router.push("/");
+          handleCloseModal();
         }
       } catch (error) {
         console.error(error);
