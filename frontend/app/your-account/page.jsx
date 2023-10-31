@@ -1,9 +1,11 @@
 "use client"
 import React, {useState, useEffect} from 'react'
+import DanceClassCard from "@/components/DanceClassCard"
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import { UserGlobalState } from '@/context/UserContext'
 import { useRouter } from 'next/navigation'
+import axios from 'axios'; // Import Axios or another HTTP library
 
 // Account Info
 // Billing
@@ -15,6 +17,24 @@ const YourAccount = () => {
   const { sessionUser, setSessionUser} = UserGlobalState()
 
   console.log(sessionUser)
+
+  const [danceClasses, setDanceClasses] = useState([])
+
+
+  useEffect(() => {
+    // Make an HTTP request to get registrations from the backend
+    axios.get('http://127.0.0.1:5000/api/danceclassregistrations')
+      .then((response) => {
+        const fetchedClasses = response.data.dance_class_registrations;
+        setDanceClasses(fetchedClasses);
+        console.log('this is fetchedClasses',fetchedClasses)
+      })
+      .catch((error) => {
+        console.error('Error fetching classes:', error);
+      });
+  }, []);
+
+
 
   useEffect(() => {
     if (!sessionUser) {
@@ -91,7 +111,15 @@ const YourAccount = () => {
 
       <div className="mx-24 flex">
         <div className="border-2 p-8 m-4 shadow-xl rounded-md w-full">
-          <h2 className="text-2xl font-semibold underline mb-4">Registered Classes / Classes</h2>
+          <h2 className="text-2xl text-lightcream font-semibold underline mb-4">Registered Classes / Classes</h2>
+        </div>
+        <div>
+           {danceClasses.map((danceclass, index) => (
+            <div key={index} className="p-4 z-1">
+              <DanceClassCard danceclass={danceclass} />
+            </div>
+          ))}
+
         </div>
       </div>
 

@@ -57,16 +57,13 @@ def create_dance_registration():
     create_dance_apt_form = CreateDanceClassRegistrationForm()
     create_dance_apt_form['csrf_token'].data = request.cookies['csrf_token']
 
-    # print("current user is: **********************************", current_user)
+    print("current user is: **********************************", current_user)
 
     if create_dance_apt_form.validate_on_submit():
         data = create_dance_apt_form.data
         new_dance_apt = DanceClassRegistration(
                 user_id=current_user.id,
-
-                # type cast level into an integer --> dance_class_id
-                dance_class_id=int(data["level"]),
-
+                dance_class_id=data['dance_class_id'],
                 age=data['age'],
                 location=data['location'],
                 notes=data["notes"],
