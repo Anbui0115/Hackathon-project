@@ -138,7 +138,7 @@ const ChatBot = () => {
 
       {/* White Cloud Message */}
       {!toggleChat && showWhiteCloudMessage  && (
-        <div className="relative p-4 m-2 tracking-wider bg-white font-semibold text-black rounded-3xl shadow-md w-[240px] h-auto">
+        <div className="relative p-4 m-2 text-sm tracking-wider bg-white text-black rounded-3xl shadow-md w-[240px] h-auto">
           <AnimatedText timer={15} message="Hi! PriyadaGPT at your service click me if you have any questions about the school, artists, classes, or about the website and I'd be glad to help." />
         </div>
       )}
