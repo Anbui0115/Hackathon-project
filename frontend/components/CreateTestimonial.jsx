@@ -1,6 +1,3 @@
-"use client"
-import Link from "next/link"
-import axios from "axios"
 import React, { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation"
 import { UserGlobalState } from "@/context/UserContext";
@@ -12,7 +9,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     firstName: '',
     lastName: '',
     content: '',
-    role: '', // Added 'role' to the initial state
+    role: 'Student at Priyada Arts', // Added 'role' to the initial state
   });
 
   const handleChange = (e) => {
