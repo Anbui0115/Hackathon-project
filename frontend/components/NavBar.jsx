@@ -31,11 +31,12 @@ const NavBar = () => {
 
   return (
 
-    <div className={`bg-black text-cream font-semibold h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
+    <div className={` bg-black
+                 bg-opacity-25 text-cream h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
       {/* Logo / Dance Studio Title */}
-      <div className="flex items-center">
+      <div className=" flex items-center">
         <div className="flex items-center mr-2">
-          <Image className="rounded-lg" src={Logo} alt="Priyada Arts Logo" width={50} height={50} />
+          <Image className=" rounded-lg" src={Logo} alt="Priyada Arts Logo" width={50} height={50} />
         </div>
         <div className="text-2xl"><Link href="/">Priyada Arts</Link></div>
       </div>
@@ -45,17 +46,17 @@ const NavBar = () => {
 
 
         {/* Class Schedule / Registration Drop Down Menu */}
-        <nav onMouseEnter={() => setToggleClassMenu(true)} onClick={() => setToggleClassMenu(!setToggleClassMenu)} className="text-2xl flex gap-2 cursor-pointer">
-        <span className="text-xl">Classes</span>
+        <nav onMouseEnter={() => setToggleClassMenu(true)} onClick={() => setToggleClassMenu(!setToggleClassMenu)} className=" bg-inherit text-2xl flex gap-2 cursor-pointer">
+        <span className="text-xl ">Classes</span>
         {
             toggleClassMenu && (
               <div
                 onMouseLeave={() => setToggleClassMenu(false)}
                 className="absolute z-10 top-16 mt-2 w-[180px] rounded-md shadow-lg "
               >
-                <div className="px-6 text-white py-4 rounded-md bg-teal-950 flex flex-col gap-2">
-                  <Link href="/schedule" className="text-xl hover:text-orange-500">Schedule</Link>
-                  <Link href="/registration" className="text-xl hover:text-orange-500">Registration</Link>
+                <div className="px-6 text-white py-4 rounded-md bg-grey flex flex-col gap-2">
+                  <Link href="/schedule" className="text-xl hover:white">Schedule</Link>
+                  <Link href="/registration" className="text-xl hover:white">Registration</Link>
                 </div>
               </div>
             )

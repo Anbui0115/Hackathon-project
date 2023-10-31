@@ -31,12 +31,12 @@
     margin-bottom: 20px;
     color: white;
     text-align: center;
-    font-family: work sans;
+    font-family: didactgothic;
 }
 
 .faq-page-text {
     font-size: 20px;
-    font-family: work sans;
+    font-family: didactgothic;
 }
 
 /* Style the FAQ questions (odd numbered paragraphs) */
@@ -49,10 +49,5 @@
 .faq-page-text p:nth-child(even) {
     margin-left: 20px;
     color: #fef3c7;
-    margin-bottom: 35px; 
+    margin-bottom: 35px;
 }
-
-
-
-
-

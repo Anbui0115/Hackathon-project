@@ -4,16 +4,18 @@ import AnimatedText from './AnimatedText'
 
 const SplashPagePicture = () => {
   return (
-    <div className="flex items-center justify-center h-full w-full">
+    <div className="flex items-center justify-center">
+      {/* w-[100%] h-[100vh] bg-cover bg-[url('/splash_pic.JPG')] */}
 
-      <div className="text-white mb-32 flex-1 text-center font-semibold flex flex-col gap-4">
-        <div className="text-5xl">
+      <div className="text-white mb-32 flex-1 text-center flex flex-col gap-4">
+        <div className="text-5xl flex flex-row">
           {/* <AnimatedText timer={100}  message={"PRIYANKA RAGHURAMAN"} /> */}
-          PRIYANKA RAGHURAMAN
+          <div className='font-bold ml-20 mr-3'>Priyanka</div>
+          <div className=''>Raghuraman</div>
         </div>
         <div className="text-3xl">
           {/* BHARATHANATYAM EXPONENT */}
-          <AnimatedText timer={50}  message={"BHARATHANATYAM EXPONENT"} />
+          <AnimatedText timer={50}  message={"Bharathanatyam Artist"} />
         </div>
       </div>
 
@@ -22,11 +24,11 @@ const SplashPagePicture = () => {
           src="/splash_pic.JPG"
           alt="Splash Page Picture"
           // objectFit="cover"
-          height={10000}
-          width={5000}
+          height={5000}
+          width={1000}
 
           // layout="fill"
-          className="mt-10 rounded-sm"
+          className="mt-10 rounded-sm fixedtop-0 left-0 right-0 bg-center top"
         />
       </div>
     </div>
