@@ -4,6 +4,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from ..forms.service_appointment_form import CreateServiceAppointmentForm
 from datetime import datetime
 
+from flask_wtf.csrf import generate_csrf
 # ____________________________________________________________________________________________________________________
 
 service_appointment_bp = Blueprint(
@@ -48,27 +49,35 @@ def get_service_apt(service_apt_id):
 
 # ____________________________________________________________________________________________________
 
-# CREATE A GENERAL APPOINTMENT
+# CREATE A SERVICE APPOINTMENT
 
 @ service_appointment_bp.route("/new/", methods=["POST"])
-@login_required
+# @login_required
 def create_service_apt():
 
+    print("DID IT HIT THE BACKEND CREATE SERVICE APT ROUTE")
+
     create_service_apt_form = CreateServiceAppointmentForm()
-    create_service_apt_form['csrf_token'].data = request.cookies['csrf_token']
+    csrf_token = generate_csrf()
+    create_service_apt_form['csrf_token'].data = csrf_token
+    # create_service_apt_form['csrf_token'].data = request.cookies['csrf_token']
+
 
  # print("current user is: **********************************", current_user)
 
 
     if create_service_apt_form.validate_on_submit():
+        print("FORM HAS VALIDATED!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
         data = create_service_apt_form.data
         new_service_apt = ServiceAppointment(
             user_id=1,
-            service_id=int(data["type"]),
+            service_id = int(data["service_id"]),
+            # service_id=int(data["type"]),
             date=data["date"],
             location=data["location"],
             notes=data["notes"],
-            isApproved=False
+            # isApproved=False
         )
 
         db.session.add(new_service_apt)

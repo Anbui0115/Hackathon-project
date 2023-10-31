@@ -1,6 +1,3 @@
-"use client"
-import Link from "next/link"
-import axios from "axios"
 import React, { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation"
 import { UserGlobalState } from "@/context/UserContext";
@@ -12,7 +9,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     firstName: '',
     lastName: '',
     content: '',
-    role: '', // Added 'role' to the initial state
+    role: 'Student at Priyada Arts', 
   });
 
   const handleChange = (e) => {
@@ -29,24 +26,25 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     onRequestClose();
   };
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', { 
-          first_name: firstName,
-          last_name: lastName,
-          content: testimonial,
-          role: role,});
-        console.log("THIS IS RESPONSE",response)
-        if (response) {
-          alert("Testimonial Created Successfully");
-          router.push("/");
-        }
-      } catch (error) {
-        console.error(error);
-        alert("FAIL TO CREATE A TESTIMONIAL_____________________");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', { 
+        first_name: firstName,
+        last_name: lastName,
+        content: testimonial,
+        role: role,});
+      console.log("THIS IS RESPONSE",response)
+      if (response) {
+        alert("Testimonial Created Successfully");
+        router.push("/");
+        handleCloseModal();
       }
-    };
+    } catch (error) {
+      console.error(error);
+      alert("FAIL TO CREATE A TESTIMONIAL_____________________");
+    }
+  };
     
 
   if (!isOpen) {

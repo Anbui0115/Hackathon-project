@@ -21,7 +21,7 @@ def get_all_testimonials():
 # CREATE A TESTIMONIAL
 
 @testimonial_bp.route('/',methods=["POST"])
-# @login_required
+@login_required
 def create_testimonial():
     """
     Create a new testimonial
@@ -31,8 +31,7 @@ def create_testimonial():
 
     csrf_token = generate_csrf()
     create_testimonial_form['csrf_token'].data = csrf_token
-
-
+    print('FRONTEND FETCHING ___________')
     if  create_testimonial_form.validate_on_submit():
         data =  create_testimonial_form.data
         new_testimonial = Testimonial(
@@ -42,10 +41,11 @@ def create_testimonial():
                 last_name=data["last_name"],
                 role=data["role"]
             )
+        print("VALIDATE ON SUBMIT WORK<>>>>>>>>>>>>>>>>")
 
         db.session.add(new_testimonial)
         db.session.commit()
-
+        
         new_testimonial_obj = new_testimonial.to_dict()
         return new_testimonial_obj, 201
     return {"Error": "Validation Error"}, 401,  print(create_testimonial_form.errors)
