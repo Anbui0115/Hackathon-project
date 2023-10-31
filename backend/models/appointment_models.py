@@ -58,7 +58,7 @@ class ServiceAppointment(db.Model):
     service_id=db.Column(db.Integer, db.ForeignKey("services.id"), nullable=False)
     date= db.Column(db.DateTime, nullable=False, unique=False)
     location=db.Column(db.String(200), nullable=False)
-    notes=db.Column(db.TEXT, nullable=False)
+    notes=db.Column(db.Text, nullable=False)
     is_approved= db.Column(db.Boolean, nullable=False, default=False)
     created_at = db.Column(db.DateTime, nullable=False,
                            unique=False, index=False, default=datetime.now())

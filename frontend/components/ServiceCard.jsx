@@ -8,7 +8,7 @@ const ServiceCard = () => {
   return (
 
 <div>
-    <div className="text-lightcream text- 3xl text-center " >Speciality Services</div>
+    <div className="text-lightcream text-6xl text-center bg-black" >Speciality Services</div>
     <div className={`bg-black flex flex-row justify-center items-center gap-2 p-6 mx-auto w-full
     `}>
 
