@@ -21,15 +21,16 @@ const DanceRegistration = () => {
       <>
       <NavBar />
       <section className='bg-black flex justify-center'>
-        <div className= 'flex flex-col justify-center h-auto bg-inherit w-[70%] tracking-wider border-none rounded-md shadow-2xl text-lightcream font-worksans'>
+        <div className= 'flex flex-col justify-center h-auto bg-inherit w-[70%] tracking-wider border-none rounded-md shadow-2xl text-lightcream font-didactGothic'>
             <div className='flex justify-center '>
             <h1 className='text-2xl font-elsie mb-2 '>Register For Dance Lessons</h1>
             </div>
             <hr className='mx-[-2.5rem] my-[4rem]' />
             <form className='flex flex-col text-didactgothic justify-center align-center items-start border-cream p-8 rounded-md'>
+
             <label className='my-4' >
                 <div className='my-5 font-bold text-l'>How Many Years of Dance Experience do you have?</div>
-                <select className='text-black text-l rounded-md p-4 border-2  shadow-2xl bg-white '>
+                <select className='rounded-md text-black text-l rounded-md p-2 border-2  shadow-2xl bg-lightcream '>
                   <option className="text-m " value="1">Beginner: 0-3 years of experience</option>
                   <option className="text-m" value="2">Intermediate: 3-6 years of experience</option>
                   <option className="text-m" value="3">Advanced: 6-10 years of experience</option>
@@ -42,13 +43,13 @@ const DanceRegistration = () => {
             <label className='mt-5 mb-1'>
                 <div className='font-bold mb-1 text-l'>What is your age? </div>
                 <div className='mt-2 mb-2'>(Why we ask this: We want to place you in the most appropriate group for your age and skill level)</div>
-            <input className='mt-3 mb-1 w-[10%] text-lightcream border-0 border-b-2 border-lightcream outline-none shadow-2xl p-2 bg-inherit text-m'
+            <input className='rounded-md mt-3 mb-1 w-[10%] bg-lightcream border-0 border-b-2 border-lightcream outline-none shadow-2xl p-2 text-black text-m'
                 placeholder="Ex. 6"/>
             </label>
 
             <label className='mb-2 mt-4'>
                 <div className='font-semibold text-l'>Where are you located? (We offer in-person and online classes)</div>
-                <input className="mt-5 mb-2 w-[100%] text-lightcream font-semibold outline-none text-m border-0 border-b-2 border-lightcream shadow-2xl p-2 bg-inherit"
+                <input className="rounded-md mt-5 mb-2 w-[100%] text-black  font-semibold outline-none text-m border-0 border-b-2 border-lightcream shadow-2xl p-2 bg-lightcream"
                 placeholder='Fremont, CA'
                 />
             </label>

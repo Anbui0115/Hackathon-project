@@ -17,7 +17,7 @@ module.exports = {
         'laila': ['Laila', 'serif'],
         'worksans': ['"Work Sans"', 'sans'],
         'poiretone': ["Poiret One"],
-        'didactgothic':["Didact Gothic"],
+        'didactGothic':["Didact Gothic"],
         'elsie':["Elsie"]
 
       },
