@@ -64,7 +64,7 @@ const AboutArtist = () => {
                                             className="rounded-full"
                                         />
                                     </div>
-                                    <div className="text-center text-cream sm:text-lg lg:text-xl leading-relaxed flex-1">
+                                    <div className="text-left text-cream sm:text-lg lg:text-xl leading-relaxed flex-1">
                                         {item.content}
                                     </div>
                                 </div>
