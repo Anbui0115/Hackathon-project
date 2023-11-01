@@ -13,27 +13,41 @@ import './homepage.css'
 import CreateSpecialityEnquiry from '@/components/ServiceEnquiryForm'
 import { UserGlobalState } from '@/context/UserContext'
 import SplashPagePicture from '@/components/SplashPagePicture'
-
+import axios from "axios"
 
 
 export default function Home() {
   const [dark, setDark] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { sessionUser, setSessionUser} = UserGlobalState()
+  const { sessionUser, setSessionUser, authenticated, setAuthenticated} = UserGlobalState()
+  const [isLoading, setIsLoading] = useState(true);  // Add a loading state
 
   const openModal = () => setIsModalOpen(!isModalOpen);
   const closeModal = () => setIsModalOpen(false);
 
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (isLoggedIn === "true" && user) {
-      setSessionUser(user);
+    const userJson = localStorage.getItem("user");
+    const user = userJson ? JSON.parse(userJson) : null;
 
+    if (user) {
+      setSessionUser(user); 
+      setAuthenticated(true);
+    } else {
+      setAuthenticated(false);
+      setSessionUser(null);
     }
-    console.log(user, 'user')
-  }, []);
+    
+    setIsLoading(false);  // Set loading to false after checking user
+  }, [setSessionUser, setAuthenticated]);
+
+  if (isLoading) {
+    // Render a loading indicator or return null to render nothing
+    return <div>Loading...</div>; // Or a custom loader/spinner
+  }
+  
+
+  
 
   return (
     <main className="bg-black flex w-full h-full relative min-h-screen flex-col justify-between">
