@@ -36,9 +36,9 @@ const ChatBot = () => {
   };
 
   useEffect(() => {
-    if (scrollToBottom()) {
-      hideWhiteCloudMessage(); 
-    };
+    scrollToBottom() 
+    hideWhiteCloudMessage(); 
+    
     
   }, [messages]);
 

@@ -12,7 +12,7 @@ const ContactUs = ({toggleModal, setToggleModal}) => {
 
 
   return (
-    <div onClick={(e) => e.stopPropagation()} className="z-100 fixed left-[30%] mb-40 bottom-[-16%] h-[auto] bg-white text-sm w-[30%] p-7 border-2 rounded-sm shadow-2xl text-black font-didactGothic">
+    <div onClick={(e) => e.stopPropagation()} className="z-200 fixed left-[35%] mb-40 top-[25%] h-[auto] bg-gray-700 text-white sm:text-md lg:text-lg w-[30%] p-7  rounded-md">
 
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-bold mb-2">Contact Us</h1>
@@ -21,7 +21,7 @@ const ContactUs = ({toggleModal, setToggleModal}) => {
       <span className="">We would love to hear from you!</span>
 
 
-      <hr className="mx-[-2.5rem] my-4" />
+      <hr className="mx-[-1.75rem] my-4" />
       <form
         className=""
         action=""
@@ -32,7 +32,7 @@ const ContactUs = ({toggleModal, setToggleModal}) => {
           <input
             type="text"
             placeholder=""
-            className="outline-none focus-none bg-teal-50 border-2 border-none rounded-md p-2 "
+            className="outline-none text-black border-2 border-none rounded-md p-2 "
           />
         </label>
 
@@ -41,17 +41,17 @@ const ContactUs = ({toggleModal, setToggleModal}) => {
           <input
             type="email"
             placeholder=""
-            className="outline-none focus-none bg-teal-50 border-2 border-none rounded-md p-2"
+            className="outline-none text-black border-2 border-none rounded-md p-2"
           />
         </label>
 
 
-        <label className="flex flex-col gap-2 my-2"  htmlFor="">
+        <label className="flex text-white flex-col gap-2 my-2"  htmlFor="">
           Subject Line
           <input
             type="text"
             placeholder=""
-            className="outline-none focus-none bg-teal-50 border-2 border-none rounded-md p-2 font-laila"
+            className="outline-none border-2 text-black border-none rounded-md p-2"
           />
         </label>
 
@@ -59,7 +59,7 @@ const ContactUs = ({toggleModal, setToggleModal}) => {
           Message to Priyada
           <textarea
             placeholder="Type your message to the Priyada here"
-            className="outline-none focus-none bg-teal-50 border-2 border-none resize-none  rounded-md p-3"
+            className="outline-none border-2 text-black border-none resize-none  rounded-md p-3"
             rows="5"   // this sets the height of the textarea
             cols="50"  // this sets the width of the textarea
           ></textarea>
