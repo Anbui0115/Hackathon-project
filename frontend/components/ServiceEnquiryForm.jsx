@@ -93,7 +93,7 @@ const CreateServiceEnquiry = () => {
     }}
   >
     <div className="flex justify-center items-center h-full">
-      <div className="max-w-lg w-full p-8 rounded-xl bg-inherit bg-opacity-0 shadow-lg ">
+      <div className="max-w-lg w-full p-8 rounded-xl bg-black bg-opacity-20 shadow-lg ">
         <h1 className="text-3xl font-bold text-white mb-6 text-center ">Get In Touch</h1>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-6" action="">
           <label>
