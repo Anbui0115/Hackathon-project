@@ -52,7 +52,7 @@ def create_testimonial():
 
 
 #  DELETE A TESTIMONIAL
-@testimonial_bp.route('/',methods=["DELETE"])
+@testimonial_bp.route('/<int:testimonial_id>/',methods=["DELETE"])
 @login_required
 def delete_testimonial(testimonial_id):
     """
