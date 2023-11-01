@@ -35,7 +35,7 @@ const SignUp = () => {
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("user", JSON.stringify(response.data));
         setSessionUser(response.data);
-        alert("Login Successful");
+        alert("Sign Up Successful");
         router.push("/");
       
       }
