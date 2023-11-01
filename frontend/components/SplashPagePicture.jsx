@@ -4,13 +4,13 @@ import AnimatedText from './AnimatedText'
 
 const SplashPagePicture = () => {
   return (
-    <div className="flex items-center justify-center z-[0]">
+    <div className="flex items-center justify-center">
       {/* w-[100%] h-[100vh] bg-cover bg-[url('/splash_pic.JPG')] */}
 
-      <div className="z-20 text-white mb-32 flex-1 text-center flex flex-col gap-4">
+      <div className=" text-white mb-32 flex-1 text-center flex flex-col gap-4">
         <div className="text-5xl flex flex-row">
           {/* <AnimatedText timer={100}  message={"PRIYANKA RAGHURAMAN"} /> */}
-          <div className='font-bold ml-20 mr-3'>Priyanka</div>
+          <div className='font-bold ml-20 lg:ml-40 mr-3'>Priyanka</div>
           <div className=''>Raghuraman</div>
         </div>
         <div className="text-3xl">

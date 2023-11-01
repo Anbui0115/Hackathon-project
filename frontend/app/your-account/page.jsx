@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import { UserGlobalState } from '@/context/UserContext'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'; // Import Axios or another HTTP library
+import ChatBot from '@/components/ChatBot'
 
 // Account Info
 // Billing
@@ -173,7 +174,7 @@ const YourAccount = () => {
     </div>
 
       <Footer />
-
+      <ChatBot />
     </div>
   )
 }
