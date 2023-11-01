@@ -1,4 +1,4 @@
-import { Inter, Montserrat, Laila, Work_Sans,Poiret_One, Didact_Gothic} from 'next/font/google'
+import { Inter, Montserrat, Laila, Work_Sans,Poiret_One, Didact_Gothic, Elsie} from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/context/Providers'
 
@@ -25,11 +25,19 @@ const poiretOne = Poiret_One({
 
 })
 
+const elsie = Elsie({
+  subsets: ['latin'],
+  weight: ['400', '900']
+
+})
+
+
 const didactGothic = Didact_Gothic({
   subsets: ['latin'],
   weight: ['400']
 
 })
+
 
 export const metadata = {
   title: 'Priyada Arts',
@@ -39,7 +47,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${montserrat.className} ${laila.className} ${workSans.className} ${poiretOne.className} ${didactGothic.className}`}>
+      <body className={`${inter.className} ${montserrat.className} ${laila.className} ${workSans.className} ${poiretOne.className} ${didactGothic.className}  ${elsie.className} `}>
         <Providers>{children}</Providers>
       </body>
     </html>

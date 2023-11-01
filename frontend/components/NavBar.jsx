@@ -18,6 +18,8 @@ const NavBar = () => {
   const [toggleProfile, setToggleProfile] = useState(false);
   const { sessionUser, setSessionUser} = UserGlobalState()
 
+  const [active, setActive] = useState("")
+
   const handleLogout = (e) => {
     e.preventDefault();
 
@@ -28,14 +30,22 @@ const NavBar = () => {
     alert("You have successfully logged out!");
   }
 
+  const ActiveNav = {
+    Classes: "Classes",
+    Awards: "Awards",
+    Services: "Services",
+    Profile: "Profile"
+  }
+
 
   return (
 
-    <div className={`bg-black text-cream font-semibold h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-50`}>
+    <div className={`bg-black
+                 bg-opacity-30 text-cream h-28 flex items-center justify-between px-8 m-0 p-0 sticky top-0 z-[20]`}>
       {/* Logo / Dance Studio Title */}
-      <div className="flex items-center">
+      <div className=" flex items-center">
         <div className="flex items-center mr-2">
-          <Image className="rounded-lg" src={Logo} alt="Priyada Arts Logo" width={50} height={50} />
+          <Image className=" rounded-lg" src={Logo} alt="Priyada Arts Logo" width={50} height={50} />
         </div>
         <div className="text-2xl"><Link href="/">Priyada Arts</Link></div>
       </div>
@@ -45,17 +55,17 @@ const NavBar = () => {
 
 
         {/* Class Schedule / Registration Drop Down Menu */}
-        <nav onMouseEnter={() => setToggleClassMenu(true)} onClick={() => setToggleClassMenu(!setToggleClassMenu)} className="text-2xl flex gap-2 cursor-pointer">
-        <span className="text-xl">Classes</span>
+        <nav onMouseEnter={() => setToggleClassMenu(true)} onClick={() => setToggleClassMenu(!setToggleClassMenu)} className=" bg-inherit text-2xl flex gap-2 cursor-pointer">
+        <span className="text-xl ">Classes</span>
         {
             toggleClassMenu && (
               <div
                 onMouseLeave={() => setToggleClassMenu(false)}
-                className="absolute z-10 top-16 mt-2 w-[180px] rounded-md shadow-lg "
+                className="absolute z-30 top-16 mt-2 w-[160px] mx-auto rounded-md shadow-lg "
               >
-                <div className="px-6 text-white py-4 rounded-md bg-teal-950 flex flex-col gap-2">
-                  <Link href="/schedule" className="text-xl hover:text-orange-500">Schedule</Link>
-                  <Link href="/registration" className="text-xl hover:text-orange-500">Registration</Link>
+                <div className="px-6 text-white py-4 rounded-md flex flex-col gap-2 bg-gray-800">
+                  <Link href="/schedule" className="sm:text-md lg:text-xl hover:text-emerald-400 ">Schedule</Link>
+                  <Link href="/registration" className="sm:text-md lg:text-xl hover:text-emerald-400  ">Registration</Link>
                 </div>
               </div>
             )
@@ -75,9 +85,9 @@ const NavBar = () => {
           (sessionUser)
           ?
           (
-            <nav onMouseEnter={() => setToggleProfile(true)} onClick={() => setToggleProfile(!toggleProfile)} className="text-2xl flex gap-2 cursor-pointer">
+            <nav onMouseEnter={() => setToggleProfile(true)} onClick={() => setToggleProfile(!toggleProfile)} className="text-xl flex gap-2 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span className="text-xl">{sessionUser.first_name} {sessionUser.last_name}</span>
+              <span className="text-l">{sessionUser.first_name} {sessionUser.last_name}</span>
 
               {
                 toggleProfile && (
@@ -85,9 +95,9 @@ const NavBar = () => {
                     onMouseLeave={() => setToggleProfile(false)}
                     className="absolute z-10 top-16 mt-2 w-[180px]  rounded-md shadow-lg "
                   >
-                    <div className="px-6  py-4 rounded-md bg-teal-950 flex flex-col gap-2 justify-start items-start">
-                      <Link href="/your-account" className="text-xl text-white hover:text-orange-500">Account</Link>
-                      <button onClick={handleLogout} className="text-xl text-white hover:text-orange-500"><Link href='/'>Logout</Link></button>
+                    <div className="px-6  py-4 rounded-md bg-black flex flex-col gap-2 justify-start items-start">
+                      <Link href="/your-account" className="text-xl text-cream hover:text-white">Account</Link>
+                      <button onClick={handleLogout} className="text-xl text-cream hover:text-white"><Link href='/'>Logout</Link></button>
                     </div>
                   </div>
                 )
@@ -106,9 +116,9 @@ const NavBar = () => {
                     onMouseLeave={() => setToggleMenu(false)}
                     className="absolute z-10 top-16 mt-2 w-[180px]  rounded-md shadow-lg "
                   >
-                    <div className="px-6  py-4 rounded-md bg-teal-950 flex flex-col gap-2">
-                      <Link href="/signup" className="text-xl text-white orange-hover">Sign Up</Link>
-                      <Link href="/login" className=" text-xl text-white orange-hover">Login</Link>
+                    <div className="px-6  py-4 rounded-md bg-gray-800 flex flex-col gap-2">
+                      <Link href="/signup" className="text-xl text-white hover:text-emerald-400">Sign Up</Link>
+                      <Link href="/login" className=" text-xl text-white hover:text-emerald-400">Login</Link>
                     </div>
                   </div>
                 )

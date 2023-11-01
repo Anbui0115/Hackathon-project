@@ -32,7 +32,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', { 
+        const response = await axios.post('http://127.0.0.1:5000/api/testimonials/', {
           first_name: firstName,
           last_name: lastName,
           content: testimonial,
@@ -48,7 +48,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
         alert("FAIL TO CREATE A TESTIMONIAL");
       }
     };
-    
+
 
   if (!isOpen) {
     return null; // Do not render the modal if isOpen is false

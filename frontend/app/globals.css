@@ -21,3 +21,7 @@
     @apply hover:text-orange-500;
   }
 }
+
+html{
+  background-color: black;
+}

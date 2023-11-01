@@ -13,12 +13,12 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
+        'didactGothic':["Didact Gothic"],
         'montserrat': ['Montserrat', 'sans-serif'],
         'laila': ['Laila', 'serif'],
         'worksans': ['"Work Sans"', 'sans'],
         'poiretone': ["Poiret One"],
-        'didactgothic':["Didact Gothic"]
-
+        'elsie':["Elsie"]
       },
       colors: {
         "cream": "#fef3c7",
@@ -27,5 +27,6 @@ module.exports = {
       }
     },
   },
+  mode: "jit",
   plugins: [],
 }

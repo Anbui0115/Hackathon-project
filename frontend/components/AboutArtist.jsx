@@ -38,12 +38,12 @@ const CarouselHashMap = [
 const AboutArtist = () => {
     return (
         <div>
-            <div className='bg-black font-semibold flex h-auto relative flex-col py-20'>
+            <div className='bg-black flex h-auto relative flex-col py-20 mb-50'>
                 <div className='mx-auto text-center'>
-                    <div className='font-poiretOne text-2xl font-bold my-10 text-cream sm:text-3xl capitalize'>
-                        <div>About the Artist</div>
+                    <div className='text-2xl  my-10 text-cream sm:text-3xl capitalize'>
+                        <div> About the Artist</div>
                     </div>
-                        <div className="font-didactGothic text-lg text-cream leading-relaxed w-4/5 mx-auto">
+                        <div className="text-xl text-cream leading-relaxed w-4/5 mx-auto">
                          <Carousel
                             showThumbs={false}
                             showStatus={false}
@@ -55,7 +55,7 @@ const AboutArtist = () => {
                          >
                             {CarouselHashMap.map((item, index) => (
                                 <div key={index} className="flex gap-20 items-center justify-center">
-                                    <div className="flex flex-col items-center justify-center flex-1 ">
+                                    <div className="flex flex-col items-center justify-center flex-1">
                                         <Image
                                             src={item.src}
                                             alt={item.alt}
@@ -64,7 +64,7 @@ const AboutArtist = () => {
                                             className="rounded-full"
                                         />
                                     </div>
-                                    <div className="text-center text-cream text-lg font-didactGothic flex-1">
+                                    <div className="text-center text-cream sm:text-lg lg:text-xl leading-relaxed flex-1">
                                         {item.content}
                                     </div>
                                 </div>

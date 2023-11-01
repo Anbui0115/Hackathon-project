@@ -26,8 +26,8 @@ def seed_services():
     )
 
     Other = Service(
-    category= "Other",
-    description="Acting, Modeling, dance theory workshops, speeches, etc"
+    category= "Other/Nattuvangam",
+    description="Priyanka offers nattuvangam servies for concerts, productions, and private audio recordings."
     )
 
     db.session.add(Makeup)
