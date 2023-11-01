@@ -15,7 +15,7 @@ dance_class_registration_bp = Blueprint(
 
 
 @dance_class_registration_bp.route("/", methods=["GET"])
-@login_required
+# @login_required
 def all_dance_class_registrations():
     dance_class_registrations = DanceClassRegistration.query.all()
     response = []

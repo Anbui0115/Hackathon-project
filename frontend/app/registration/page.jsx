@@ -5,6 +5,7 @@ import React from 'react'
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
+import DanceClassCard from '@/components/DanceClassCard';
 
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
@@ -13,6 +14,56 @@ import { UserGlobalState } from "@/context/UserContext";
 const DanceRegistration = () => {
   const {sessionUser, setSessionUser} = UserGlobalState()
   const router = useRouter()
+
+   const danceLevels = {
+    "Beginner": {
+      "id": 1,
+      "class_one": "Monday at 5:00 pm",
+      "class_two": "Thursday at 6:00 pm",
+      "level": "Beginner",
+      "description": "Fundamentals & Basics: Adavus, Jathis, Mudras, Padha Bhedas and Theory"
+    },
+    "Intermediate": {
+      "id": 2,
+      "class_one": "Monday at 6:00 pm",
+      "class_two": "Friday at 6:00 pm",
+      "level": "Intermediate",
+      "description": "Fundamentals & Items: Pushpanjalis, Alarippus, Jathiswarams, Dance Theory, etc"
+    },
+    "Advanced": {
+      "id": 3,
+      "class_one": "Monday at 7:00 pm",
+      "class_two": "Saturday 9:30 am",
+      "level": "Advanced",
+      "description": "Advanced Dance items: Padhams, Varnams, Javalis, etc"
+    },
+    "Senior": {
+      "id": 4,
+      "class_one": "Available on request",
+      "class_two": "Available on request",
+      "level": "Senior",
+      "description": "One-on-One mentorship and training available for senior artists looking to sharpen their performance skills"
+    }
+  };
+
+
+   const renderDanceCards = () => {
+    return Object.keys(danceLevels).map((level) => {
+      const { id, class_one, class_two, level: danceLevel, description } = danceLevels[level];
+
+      return (
+        <DanceClassCard
+          key={id}
+          level={danceLevel}
+          classOne={class_one}
+          classTwo={class_two}
+          description={description}
+        />
+      );
+    });
+  };
+
+
   if (!sessionUser) {
     router.push('/login')
   }
@@ -21,6 +72,9 @@ const DanceRegistration = () => {
       <>
       <NavBar />
       <section className='bg-black flex justify-center'>
+         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
+          {renderDanceCards()}
+        </div>
 
         <div className= 'flex flex-col justify-center h-auto bg-black w-[70%] tracking-wider border-none rounded-md shadow-2xl text-lightcream font-didactGothic'>
             <div className='flex justify-center '>
