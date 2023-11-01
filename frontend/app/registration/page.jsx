@@ -44,7 +44,7 @@ const DanceRegistration = () => {
       "class_one": "Available on request",
       "class_two": "Available on request",
       "level": "Senior",
-      "description": "One-on-One mentorship and training available for senior artists looking to sharpen their performance skills",
+      "description": "One-on-One mentorship and training available for senior artists looking to sharpen their technique and performance skills",
       "imageUrl": "/dance_school/Photo from Priyanka Raghuraman(1).jpg"
     }
   };
