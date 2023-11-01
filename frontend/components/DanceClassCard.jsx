@@ -11,7 +11,7 @@ const DanceClassCard = ({ level, classOne, classTwo, description, imageUrl }) =>
 
   return (
     <div className="flex flex-row flex-wrap w-25%">
-      <div className="bg-white rounded-lg p-4 my-4 shadow-md text-black w-80 h-80 mr-5 ml-5 p-5">
+      <div className="bg-white rounded-lg p-4 my-4 shadow-xl text-black w-80 h-80 mr-5 ml-5 p-5">
         {imageUrl && <img src={imageUrl} alt={`Image for ${level}`} className="rounded-md mb-2 w-full h-32 object-cover" />}
         <div className="mb-3">
           {renderLevel(level)}
