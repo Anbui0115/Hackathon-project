@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { UserGlobalState } from "@/context/UserContext";
 
 const Login = () => {
-  const { sessionUser, setSessionUser, session, setSession } = UserGlobalState();
+  const { sessionUser, setSessionUser, authenticated, setAuthenticated } = UserGlobalState();
   const router = useRouter();
 
   const [form, setForm] = useState({
@@ -26,7 +26,7 @@ const Login = () => {
       const response = await axios.post('http://127.0.0.1:5000/api/auth/login', demoData, { withCredentials: true });
 
       if (response) {
-        localStorage.setItem("isLoggedIn", "true");
+        setAuthenticated(true)
         localStorage.setItem("user", JSON.stringify(response.data));
         setSessionUser(response.data);
         alert("Login Successful");
@@ -46,7 +46,7 @@ const Login = () => {
       const response = await axios.post('http://127.0.0.1:5000/api/auth/login', form, { withCredentials: true });
 
       if (response) {
-        localStorage.setItem("isLoggedIn", "true");
+        setAuthenticated(true)
         localStorage.setItem("user", JSON.stringify(response.data));
         setSessionUser(response.data);
         alert("Login Successful");
@@ -59,11 +59,12 @@ const Login = () => {
   };
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
     const user = JSON.parse(localStorage.getItem("user"));
-    if (isLoggedIn === "true") {
+    if (user) {
       setSessionUser(user);
       router.push("/");
+    } else {
+      setAuthenticated(false);
     }
   }, []);
 

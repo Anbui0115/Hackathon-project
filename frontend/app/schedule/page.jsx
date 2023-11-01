@@ -21,7 +21,7 @@ const Classes = () => {
                     </div>
 
                     <div className="text-[#fef3c7] flex justify-center mx-20">
-                        <div className="flex-1 flex flex-col items-center gap-32">
+                        <div className="flex-1 flex flex-col items-center font-semibold gap-32">
                             <div className="sm:text-xl lg:text-2xl">Monday</div>
                             <div className="sm:text-xl lg:text-2xl">Tuesday</div>
                             <div className="sm:text-xl lg:text-2xl">Wednesday</div>

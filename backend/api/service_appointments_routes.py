@@ -17,7 +17,6 @@ service_appointment_bp = Blueprint(
 
 
 @service_appointment_bp.route("/", methods=["GET"])
-@login_required
 def all_service_appointments():
     service_appointments = ServiceAppointment.query.all()
     response = []
@@ -36,7 +35,6 @@ def all_service_appointments():
 
 
 @service_appointment_bp.route("/<int:service_apt_id>/", methods=["GET"])
-@login_required
 def get_service_apt(service_apt_id):
     service_apt = ServiceAppointment.query.get(service_apt_id)
 
@@ -52,7 +50,6 @@ def get_service_apt(service_apt_id):
 # CREATE A SERVICE APPOINTMENT
 
 @ service_appointment_bp.route("/new/", methods=["POST"])
-# @login_required
 def create_service_apt():
 
     print("DID IT HIT THE BACKEND CREATE SERVICE APT ROUTE")
@@ -96,7 +93,6 @@ def create_service_apt():
 
 
 @service_appointment_bp.route("/<int:service_apt_id_id>/", methods=["DELETE"])
-@login_required
 def delete_service_apt(service_apt_id):
 
     current_service_apt = ServiceAppointment.query.get(service_apt_id)

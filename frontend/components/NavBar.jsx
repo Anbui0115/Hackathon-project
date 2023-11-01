@@ -18,24 +18,17 @@ const NavBar = () => {
   const [toggleProfile, setToggleProfile] = useState(false);
   const { sessionUser, setSessionUser} = UserGlobalState()
 
-  const [active, setActive] = useState("")
 
   const handleLogout = (e) => {
     e.preventDefault();
 
     localStorage.removeItem('user');
-    localStorage.removeItem('isLoggedIn');
     setSessionUser(null);
 
     alert("You have successfully logged out!");
   }
 
-  const ActiveNav = {
-    Classes: "Classes",
-    Awards: "Awards",
-    Services: "Services",
-    Profile: "Profile"
-  }
+  console.log(sessionUser)
 
 
   return (
@@ -95,9 +88,9 @@ const NavBar = () => {
                     onMouseLeave={() => setToggleProfile(false)}
                     className="absolute z-10 top-16 mt-2 w-[180px]  rounded-md shadow-lg "
                   >
-                    <div className="px-6  py-4 rounded-md bg-black flex flex-col gap-2 justify-start items-start">
-                      <Link href="/your-account" className="text-xl text-cream hover:text-white">Account</Link>
-                      <button onClick={handleLogout} className="text-xl text-cream hover:text-white"><Link href='/'>Logout</Link></button>
+                    <div className="px-6  py-4 rounded-md bg-gray-800 flex flex-col gap-2 justify-start items-start">
+                      <Link href="/your-account" className="sm:text-lg lg:text-xl text-white hover:text-emerald-400">Account</Link>
+                      <button onClick={handleLogout} className="sm:text-xl lg:text-xl text-white hover:text-emerald-400"><Link href='/'>Logout</Link></button>
                     </div>
                   </div>
                 )
