@@ -3,6 +3,7 @@ from ..models import DanceClassRegistration, User, db
 from flask_login import current_user, login_user, logout_user, login_required
 from ..forms.dance_class_registration_form import CreateDanceClassRegistrationForm
 
+from flask_wtf.csrf import generate_csrf
 
 # ____________________________________________________________________________________________________________________
 
@@ -51,11 +52,14 @@ def get_dance_registration(dance_apt_id):
 # CREATE A DANCE CLASS REGISTRATION -- WORKS
 
 @dance_class_registration_bp.route("/new/", methods=["POST"])
-@login_required
+# @login_required
 def create_dance_registration():
 
     create_dance_apt_form = CreateDanceClassRegistrationForm()
-    create_dance_apt_form['csrf_token'].data = request.cookies['csrf_token']
+    # create_dance_apt_form['csrf_token'].data = request.cookies['csrf_token']
+
+    csrf_token = generate_csrf()
+    create_dance_apt_form['csrf_token'].data = csrf_token
 
     # print("current user is: **********************************", current_user)
 
@@ -65,9 +69,9 @@ def create_dance_registration():
                 user_id=current_user.id,
 
                 # type cast level into an integer --> dance_class_id
-                dance_class_id=int(data["level"]),
+                dance_class_id=int(data["dance_class_id"]),
 
-                age=data['age'],
+                age=int(data['age']),
                 location=data['location'],
                 notes=data["notes"],
                 is_approved=False,
