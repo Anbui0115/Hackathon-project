@@ -4,6 +4,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import { UserGlobalState } from '@/context/UserContext'
 import { useRouter } from 'next/navigation'
+import ChatBot from '@/components/ChatBot'
 
 // Account Info
 // Billing
@@ -96,7 +97,7 @@ const YourAccount = () => {
       </div>
 
       <Footer />
-
+      <ChatBot />
     </div>
   )
 }

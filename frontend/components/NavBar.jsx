@@ -18,6 +18,8 @@ const NavBar = () => {
   const [toggleProfile, setToggleProfile] = useState(false);
   const { sessionUser, setSessionUser} = UserGlobalState()
 
+  const [active, setActive] = useState("")
+
   const handleLogout = (e) => {
     e.preventDefault();
 
@@ -26,6 +28,13 @@ const NavBar = () => {
     setSessionUser(null);
 
     alert("You have successfully logged out!");
+  }
+
+  const ActiveNav = {
+    Classes: "Classes",
+    Awards: "Awards",
+    Services: "Services",
+    Profile: "Profile"
   }
 
 
@@ -52,11 +61,11 @@ const NavBar = () => {
             toggleClassMenu && (
               <div
                 onMouseLeave={() => setToggleClassMenu(false)}
-                className="absolute z-30 top-16 mt-2 w-[180px] rounded-md shadow-lg "
+                className="absolute z-30 top-16 mt-2 w-[160px] mx-auto rounded-md shadow-lg "
               >
-                <div className="px-6 text-white py-4 rounded-md flex flex-col gap-2  bg-black 0">
-                  <Link href="/schedule" className="text-xl hover:white ">Schedule</Link>
-                  <Link href="/registration" className="text-xl hover:white ">Registration</Link>
+                <div className="px-6 text-white py-4 rounded-md flex flex-col gap-2 bg-gray-800">
+                  <Link href="/schedule" className="sm:text-md lg:text-xl hover:text-emerald-400 ">Schedule</Link>
+                  <Link href="/registration" className="sm:text-md lg:text-xl hover:text-emerald-400  ">Registration</Link>
                 </div>
               </div>
             )
@@ -107,9 +116,9 @@ const NavBar = () => {
                     onMouseLeave={() => setToggleMenu(false)}
                     className="absolute z-10 top-16 mt-2 w-[180px]  rounded-md shadow-lg "
                   >
-                    <div className="px-6  py-4 rounded-md bg-teal-950 flex flex-col gap-2">
-                      <Link href="/signup" className="text-xl text-white orange-hover">Sign Up</Link>
-                      <Link href="/login" className=" text-xl text-white orange-hover">Login</Link>
+                    <div className="px-6  py-4 rounded-md bg-gray-800 flex flex-col gap-2">
+                      <Link href="/signup" className="text-xl text-white hover:text-emerald-400">Sign Up</Link>
+                      <Link href="/login" className=" text-xl text-white hover:text-emerald-400">Login</Link>
                     </div>
                   </div>
                 )

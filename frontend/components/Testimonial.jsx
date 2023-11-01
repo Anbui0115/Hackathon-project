@@ -30,9 +30,9 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <div className=" bg-black bg-opacity-70 flex flex-col items-center z-5 my-4">
-      <div className="bg-black z-10 text-cream font-poiretOne text-2xl my-8 ">Testimonials</div>
-      <div className="bg-black z-5 w-4/5 mx-auto">
+    <div className="bg-black flex flex-col items-center my-4">
+      <div className="bg-black text-cream text-2xl my-8 ">Testimonials</div>
+      <div className="bg-black w-4/5 mx-auto">
         <Carousel
           centerMode
           showThumbs={false}
