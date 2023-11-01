@@ -1,78 +1,86 @@
-import { useState } from "react";
+"use client"
 
-const ContactUs = ({ toggleModal, setToggleModal }) => {
+
+import { useState, useEffect } from "react"
+
+const ContactUs = ({toggleModal, setToggleModal}) => {
+
   const handleCloseModal = () => {
-    setToggleModal(false);
-  };
+    setToggleModal(false)
+  }
+
+
 
   return (
-    <div onClick={(e) => e.stopPropagation()} className="z-50 fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 text-white">
-      <div className="bg-white max-w-md w-full mx-6 sm:mx-auto p-8 rounded-lg shadow-lg">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold mb-4 text-black">Contact Us</h1>
-          <button className="text-black" onClick={handleCloseModal}>
-            X
+    <div onClick={(e) => e.stopPropagation()} className="z-200 fixed left-[35%] mb-40 top-[25%] h-[auto] bg-gray-700 text-white sm:text-md lg:text-lg w-[30%] p-7  rounded-md">
+
+      <div className="flex justify-between items-center">
+        <h1 className="text-xl font-bold mb-2">Contact Us</h1>
+        <button className="" onClick={() => handleCloseModal()} >X</button>
+      </div>
+      <span className="">We would love to hear from you!</span>
+
+
+      <hr className="mx-[-1.75rem] my-4" />
+      <form
+        className=""
+        action=""
+      >
+
+        <label className="flex flex-col gap-2 my-2"  htmlFor="">
+          Name
+          <input
+            type="text"
+            placeholder=""
+            className="outline-none text-black border-2 border-none rounded-md p-2 "
+          />
+        </label>
+
+        <label className="flex flex-col gap-2 my-2"  htmlFor="">
+          Email
+          <input
+            type="email"
+            placeholder=""
+            className="outline-none text-black border-2 border-none rounded-md p-2"
+          />
+        </label>
+
+
+        <label className="flex text-white flex-col gap-2 my-2"  htmlFor="">
+          Subject Line
+          <input
+            type="text"
+            placeholder=""
+            className="outline-none border-2 text-black border-none rounded-md p-2"
+          />
+        </label>
+
+        <label className="flex flex-col gap-2"  htmlFor="">
+          Message to Priyada
+          <textarea
+            placeholder="Type your message to the Priyada here"
+            className="outline-none border-2 text-black border-none resize-none  rounded-md p-3"
+            rows="5"   // this sets the height of the textarea
+            cols="50"  // this sets the width of the textarea
+          ></textarea>
+        </label>
+
+        <div className='py-6 flex gap-4 justify-center'>
+          <button
+            className="bg-teal-700 font-semibold hover:bg-stone-500 text-white rounded-md p-2 transition duration-700"
+            type="submit"
+          >
+            Submit
+          </button>
+
+          <button className="bg-teal-700 font-semibold text-white rounded-md p-2 hover:bg-stone-500 transition duration-500">
+            Cancel
           </button>
         </div>
-        <p className="text-gray-600 mb-4">We would love to hear from you!</p>
-        <hr className="my-4" />
-        <form action="">
-          <div className="mb-4">
-            <label className="block text-gray-600 text-sm font-semibold mb-2" htmlFor="name">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Your Name"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-black"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-600 text-sm font-semibold mb-2" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Your Email"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-black"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-600 text-sm font-semibold mb-2" htmlFor="subject">
-              Subject Line
-            </label>
-            <input
-              type="text"
-              id="subject"
-              placeholder="Subject"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-black"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-600 text-sm font-semibold mb-2" htmlFor="message">
-              Message to Priyada
-            </label>
-            <textarea
-              id="message"
-              placeholder="Type your message to Priyada here"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-black resize-none"
-              rows="5"
-            ></textarea>
-          </div>
-          <div className="flex justify-center">
-            <button className="bg-black text-white font-semibold rounded-md px-4 py-2 mr-4 hover:bg-gray-900 transition duration-300" type="submit">
-              Submit
-            </button>
-            <button className="bg-gray-300 text-black font-semibold rounded-md px-4 py-2 hover:bg-gray-400 transition duration-300" onClick={handleCloseModal}>
-              Cancel
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
-};
 
-export default ContactUs;
+      </form>
+    </div>
+  )
+}
+
+export default ContactUs

@@ -13,6 +13,7 @@ import './homepage.css'
 import CreateSpecialityEnquiry from '@/components/ServiceEnquiryForm'
 import { UserGlobalState } from '@/context/UserContext'
 import SplashPagePicture from '@/components/SplashPagePicture'
+import BackgroundCarousel from '@/components/BackgroundCarousel'
 
 
 
@@ -20,6 +21,9 @@ export default function Home() {
   const [dark, setDark] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { sessionUser, setSessionUser} = UserGlobalState()
+
+   const images = [ "/splash_pic.JPG","/splash_page/Splash page.jpg", "/artist_pictures/Artist_Picture (39).jpg", "/splash_page/Splash page.jpg", "/splash_page/Splash Page(3).jpg"];
+
 
   const openModal = () => setIsModalOpen(!isModalOpen);
   const closeModal = () => setIsModalOpen(false);
@@ -38,6 +42,7 @@ export default function Home() {
   return (
     <main className="bg-black flex w-full h-full relative min-h-screen flex-col justify-between">
       <NavBar />
+
       <SplashPagePicture />
       <AboutArtist/>
       <AboutStudio/>

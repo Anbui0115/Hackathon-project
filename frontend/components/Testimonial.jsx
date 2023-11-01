@@ -21,15 +21,14 @@ const Testimonial = () => {
         console.error('Error fetching testimonials:', error);
       });
   }, []);
-
-  return (
-    <div className="bg-black flex flex-col items-center my-4">
-      <div className="bg-black text-cream text-2xl my-8 ">Testimonials</div>
-      <div className="bg-black w-4/5 mx-auto">
+ return (
+    <div className="bg-black text-lightcream p-4 rounded-lg shadow-md my-4">
+      <h2 className="text-3xl text-center mb-4 relative z-10">Testimonials</h2>
+      <div className="mx-auto w-full max-w-screen-lg">
         <Carousel
-          centerMode
           showThumbs={false}
           showStatus={false}
+          centerMode
           centerSlidePercentage={100}
           autoPlay={true}
           infiniteLoop={true}
@@ -37,7 +36,7 @@ const Testimonial = () => {
           transitionTime={1000}
         >
           {testimonies.map((testimony, index) => (
-            <div key={index} className="p-4 z-1">
+            <div key={index} className="p-4">
               <TestimonialCard testimony={testimony} />
             </div>
           ))}
