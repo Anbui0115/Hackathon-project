@@ -5,10 +5,15 @@ import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
 import axios from "axios"
 import Image from "next/image";
+import { UserGlobalState } from '@/context/UserContext';
+import {useRouter} from 'next/navigation';
 
 const MediaGallery = () => {
+    const router = useRouter()
     const [media, setMedia] = useState([])
     const [active, setActive] = useState("All Pictures")
+    const { sessionUser, setSessionUser, authenticated, setAuthenticated} = UserGlobalState()
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         const fetchMedia = async () => {
@@ -18,6 +23,13 @@ const MediaGallery = () => {
         fetchMedia()
     }, [])
 
+
+    useEffect(() => {
+        if (!sessionUser) {
+            alert("You are not authorized to view this page. Please login.")
+            router.push("/")
+        }
+    }, [sessionUser])
     
     const ArtistPictures = media?.filter(item => {
         return item.type === "Artist Pictures"
