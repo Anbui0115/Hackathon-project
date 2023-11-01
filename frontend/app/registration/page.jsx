@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react'
@@ -12,71 +11,76 @@ import { useRouter } from "next/navigation";
 import { UserGlobalState } from "@/context/UserContext";
 
 const DanceRegistration = () => {
-  const {sessionUser, setSessionUser} = UserGlobalState()
-  const router = useRouter()
+  const { sessionUser, setSessionUser } = UserGlobalState();
+  const router = useRouter();
 
-   const danceLevels = {
+  const danceLevels = {
     "Beginner": {
       "id": 1,
       "class_one": "Monday at 5:00 pm",
       "class_two": "Thursday at 6:00 pm",
       "level": "Beginner",
-      "description": "Fundamentals & Basics: Adavus, Jathis, Mudras, Padha Bhedas and Theory"
+      "description": "Fundamentals & Basics: Adavus, Jathis, Mudras, Padha Bhedas and Theory",
+      "imageUrl": "/dance_school/PXL_20231025_012124652.MP.jpg"
     },
     "Intermediate": {
       "id": 2,
       "class_one": "Monday at 6:00 pm",
       "class_two": "Friday at 6:00 pm",
       "level": "Intermediate",
-      "description": "Fundamentals & Items: Pushpanjalis, Alarippus, Jathiswarams, Dance Theory, etc"
+      "description": "Fundamentals & Items: Pushpanjalis, Alarippus, Jathiswarams, Dance Theory, etc",
+      "imageUrl": "/dance_school/Photo from Priyanka Raghuraman(7).jpg"
     },
     "Advanced": {
       "id": 3,
       "class_one": "Monday at 7:00 pm",
       "class_two": "Saturday 9:30 am",
       "level": "Advanced",
-      "description": "Advanced Dance items: Padhams, Varnams, Javalis, etc"
+      "description": "Advanced Dance items: Padhams, Varnams, Javalis, etc",
+      "imageUrl": "/dance_school/Photo from Priyanka Raghuraman(9).jpg"
     },
     "Senior": {
       "id": 4,
       "class_one": "Available on request",
       "class_two": "Available on request",
       "level": "Senior",
-      "description": "One-on-One mentorship and training available for senior artists looking to sharpen their performance skills"
+      "description": "One-on-One mentorship and training available for senior artists looking to sharpen their performance skills",
+      "imageUrl": "/dance_school/Photo from Priyanka Raghuraman(1).jpg"
     }
   };
 
-
-   const renderDanceCards = () => {
+const renderDanceCards = () => {
     return Object.keys(danceLevels).map((level) => {
-      const { id, class_one, class_two, level: danceLevel, description } = danceLevels[level];
+      const { class_one, class_two, description, imageUrl } = danceLevels[level];
 
       return (
         <DanceClassCard
-          key={id}
-          level={danceLevel}
+          key={level}
+          level={level}
           classOne={class_one}
           classTwo={class_two}
           description={description}
+          imageUrl={imageUrl}
         />
       );
     });
   };
 
-
   if (!sessionUser) {
-    router.push('/login')
+    router.push('/login');
   }
   else {
     return (
       <>
       <NavBar />
-      <section className='bg-black flex justify-center'>
-         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
-          {renderDanceCards()}
+      <section className='flex flex-col items-center h-screen'>
+
+        <div className='flex justify-center w-full h-1/2'>
+                {renderDanceCards()}
         </div>
 
-        <div className= 'flex flex-col justify-center h-auto bg-black w-[70%] tracking-wider border-none rounded-md shadow-2xl text-lightcream font-didactGothic'>
+
+        <div className= 'flex flex-col justify-center h-auto bg-black w-[70%] tracking-wider border-none rounded-md shadow-2xl text-lightcream font-didactGothic m-20'>
             <div className='flex justify-center '>
             <h1 className='text-2xl font-elsie mb-2 text-lightcream'>Register For Dance Lessons</h1>
             </div>
