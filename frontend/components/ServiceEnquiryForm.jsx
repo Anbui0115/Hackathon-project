@@ -87,7 +87,7 @@ const CreateServiceEnquiry = () => {
   else {
      return (
   <div
-    className="h-screen bg-black bg-fill bg-center relative"
+    className="h-screen bg-black h-full w-screen bg-fill bg-center relative"
     style={{
       backgroundImage: `url('/artist_pictures/Artist_Picture (38).jpg')`, // Replace 'path_to_your_image.jpg' with the actual path to your image
     }}
@@ -97,7 +97,7 @@ const CreateServiceEnquiry = () => {
         <h1 className="text-3xl font-bold text-white mb-6 text-center ">Get In Touch</h1>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-6" action="">
           <label>
-            <div className="text-white text-bold bg-black bg-opacity-20">Please select the type of appointment you are interested in.</div>
+            <div className="text-white text-bold bg-black bg-opacity-5 p-1">Please select the type of appointment you are interested in.</div>
             <select
               className="rounded-md text-black p-2 border bg-white shadow-md"
               value={serviceId}
@@ -110,7 +110,7 @@ const CreateServiceEnquiry = () => {
             </select>
           </label>
           <label>
-            <div className="text-white text-bold bg-black bg-opacity-20">When do you require our services?</div>
+            <div className="text-white text-bold bg-black bg-opacity-5 p-1">When do you require our services?</div>
             <DatePicker
               className="rounded-md text-black p-2 border bg-white shadow-md"
               onChange={handleDateChange}
@@ -119,7 +119,7 @@ const CreateServiceEnquiry = () => {
             />
           </label>
           <label>
-            <div className="text-white text-bold bg-black bg-opacity-20">Where do you require this service?</div>
+            <div className="text-white text-bold bg-black bg-opacity-5 p-1">Where do you require this service?</div>
             <input
               name="location"
               className="w-full text-black bg-white border rounded-md shadow-md p-2"
@@ -129,7 +129,7 @@ const CreateServiceEnquiry = () => {
             />
           </label>
           <label>
-            <div className="text-white text-bold bg-black bg-opacity-20">Please provide any particular details or preferences regarding your appointment or event.</div>
+            <div className="text-white text-bold bg-black bg-opacity-5">Please provide any particular details or preferences regarding your appointment or event.</div>
             <textarea
               placeholder="Hello, I am looking for a makeup artist for my dance showcase next month..."
               className="w-full h-40 text-black bg-white border rounded-md shadow-md p-3 resize-none"

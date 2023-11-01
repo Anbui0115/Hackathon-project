@@ -8,13 +8,15 @@ const ServiceCard = () => {
         <h1 className="text-4xl font-extrabold text-lightcream my-8">Artistic Beyond Dance</h1>
 
         <div className="flex flex-col gap-8">
-          <div className="flex items-center">
+          <div className="flex items-center bg-black bg-opacity-20">
             <div className="rounded-full overflow-hidden bg-gray-200 w-40 h-40 flex-shrink-0 mr-4">
               <img src="/Services/Makeup/Makeup-Main.jpg" alt="Makeup" className="w-full h-full object-cover" />
             </div>
-            <div className="text-left text-lightcream">
+            <div className="text-left text-lightcream bg-black bg-opacity-25 p-3">
               <h2 className="text-2xl font-semibold mb-2">Makeup</h2>
-              <p className="text-sm">Indulge in the art of makeup! From Arangetrams to workshops and photoshoots, Priyanka specializes in dance & theatre makeup.</p>
+              <p className="text-sm">Indulge in the art of makeup!</p>
+            <p className="text-sm">From Arangetrams to workshops and photoshoots, Priyanka specializes in dance & theatre makeup.</p>
+
             </div>
           </div>
 
@@ -22,9 +24,10 @@ const ServiceCard = () => {
             <div className="rounded-full overflow-hidden bg-gray-200 w-40 h-40 flex-shrink-0 mr-4">
               <img src="/dance_school/ABOUT US MAIN TEACHER PIC.jpg" alt="Nattuvangam" className="w-full h-full object-cover" />
             </div>
-            <div className="text-left text-lightcream">
+            <div className="text-left text-lightcream bg-black bg-opacity-25 p-3">
               <h2 className="text-2xl font-semibold mb-2">Nattuvangam</h2>
-              <p className="text-sm">Experience the rhythmic magic! Priyanka offers Nattuvangam services for live performances and audio recordings.</p>
+              <p className="text-sm">Experience the rhythmic magic!</p>
+                       <p className="text-sm">Priyanka offers Nattuvangam services for live performances and audio recordings.</p>
             </div>
           </div>
 
@@ -32,9 +35,11 @@ const ServiceCard = () => {
             <div className="rounded-full overflow-hidden bg-gray-200 w-40 h-40 flex-shrink-0 mr-4">
               <img src="/Services/Hosting/Hosting.jpg" alt="Emcee/Hosting" className="w-full h-full object-cover" />
             </div>
-            <div className="text-left text-lightcream">
+            <div className="text-left text-lightcream bg-black bg-opacity-25 p-3">
               <h2 className="text-2xl font-semibold mb-2">Emcee/Hosting</h2>
-              <p className="text-sm">Priyanka engages and captivates! She provides hosting and emceeing for various shows and events.</p>
+              <p className="text-sm">Priyanka engages and captivates!</p>
+            <p className="text-sm">She provides hosting and emceeing for various shows and events.</p>
+
             </div>
           </div>
         </div>
