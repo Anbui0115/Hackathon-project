@@ -96,7 +96,7 @@ const CreateServiceEnquiry = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-center p-10 rounded-md flex flex-col"
+          className="flex flex-col justify-center p-10 rounded-md"
           action=""
         >
           <label className="my-15">

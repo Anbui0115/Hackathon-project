@@ -6,8 +6,8 @@ function DanceRegistrationButton({ onButtonClick }) {
 
     return (
         <div className='flex justify-center items-center max-h-72'>
-        <button onClick={onButtonClick} className='bg-cream hover:bg-white text-black py-2 px-4 rounded-full cursor-pointer max-w-xs text-center text-3xl font-worksans font-bold'>
-            <Link href="/registration">Register a Class</Link>
+        <button onClick={onButtonClick} className='bg-teal-600 text-white hover:bg-stone-500 transition delay-200 ease-in  py-2 px-4 rounded-md cursor-pointer max-w-xs text-center sm:text-xl lg:text-2xl'>
+            <Link href="/registration">Register for a Class</Link>
         </button>
         </div>
     );

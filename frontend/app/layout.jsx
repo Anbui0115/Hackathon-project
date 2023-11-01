@@ -25,17 +25,19 @@ const poiretOne = Poiret_One({
 
 })
 
+const elsie = Elsie({
+  subsets: ['latin'],
+  weight: ['400', '900']
+
+})
+
+
 const didactGothic = Didact_Gothic({
   subsets: ['latin'],
   weight: ['400']
 
 })
 
-const elsie = Elsie({
-  subsets: ['latin'],
-  weight: ['400', '900']
-
-})
 
 export const metadata = {
   title: 'Priyada Arts',

@@ -11,7 +11,7 @@ const Footer = () => {
   const [toggleModal, setToggleModal] = useState(false);
 
   return (
-    <div className="text-sm bg-black bg-opacity-60  text-lightcream h-[auto] py-4 w-full flex justify-between z-0">
+    <div className="sm:text-md lg:text-xl bg-black bg-opacity-60  text-lightcream h-[auto] py-4 w-full flex justify-between z-0">
 
 
         <div className="flex flex-col gap-4 items-start justify-between align-start px-10 py-6">
@@ -55,13 +55,13 @@ const Footer = () => {
 
 
 
-        <div className="flex flex-col px-10 py-6 gap-4 items-end">
-            <nav className="text-xl font-medium text-cream">
+        <div className="flex flex-col px-10 py-6 gap-4 items-end sm:text-lg lg:text-xl">
+            <nav className="sm:text-lg lg:text-xl font-medium text-cream">
               <Link href="/faq">FAQs</Link>{" "}
             </nav>
 
             {/* Contact Us */}
-            <nav className="text-xl text-cream font-medium" onClick={() => setToggleModal(!toggleModal)}>
+            <nav className="sm:text-lg lg:text-xl text-cream font-medium" onClick={() => setToggleModal(!toggleModal)}>
               <span className="cursor-pointer">Contact Us</span>
 
               {/* Contact Us Modal */}
@@ -74,7 +74,7 @@ const Footer = () => {
 
               <div className="flex gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-locate-fixed"><line x1="2" x2="5" y1="12" y2="12"/><line x1="19" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="5"/><line x1="12" x2="12" y1="19" y2="22"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>
-                <div className="text-cream text-sm font-medium">Priyada Arts Studio, Newark, CA</div>
+                <div className="text-cream sm:text-md lg:text-xl font-medium">Priyada Arts Studio, Newark, CA</div>
               </div>
         </div>
 

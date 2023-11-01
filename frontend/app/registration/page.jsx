@@ -31,7 +31,7 @@ const DanceRegistration = () => {
 
             <label className='my-4' >
                 <div className='my-5 font-bold text-l'>How Many Years of Dance Experience do you have?</div>
-                <select className='rounded-md text-black text-l rounded-md p-2 border-2  shadow-2xl bg-lightcream '>
+                <select className='rounded-md text-black text-l p-2 border-2  shadow-2xl bg-lightcream '>
                   <option className="text-m " value="1">Beginner: 0-3 years of experience</option>
                   <option className="text-m" value="2">Intermediate: 3-6 years of experience</option>
                   <option className="text-m" value="3">Advanced: 6-10 years of experience</option>
