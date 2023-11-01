@@ -5,7 +5,9 @@ import { motion } from 'framer-motion';
 const DanceClassCard = ({danceclass}) => {
 // console.log('THIS IS CLASS!!!!!!!',class)
 
-let classId= danceclass?.dance_class_id
+
+
+
 
   return (
     <div className={`z-5 bg-black bg-opacity-80 text-didactGothic bg-inherit  flex flex-col justify-center items-center gap-2 p-6 mx-auto w-full md:max-w-xl border-stone-300 rounded-md shadow-lg
@@ -19,6 +21,7 @@ let classId= danceclass?.dance_class_id
         {/* [pic of class and timings] */}
         {/* status- approved */}
         {/* description */}
+
 
       </div>
     </div>
