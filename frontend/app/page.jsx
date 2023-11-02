@@ -16,6 +16,7 @@ import SplashPagePicture from '@/components/SplashPagePicture'
 import BackgroundCarousel from '@/components/BackgroundCarousel'
 
 import axios from "axios"
+import DanceRegistrationButton from '@/components/DanceRegistrationButton'
 
 
 export default function Home() {
