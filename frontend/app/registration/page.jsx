@@ -1,12 +1,14 @@
 "use client"
 
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react';
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
 import DanceClassCard from '@/components/DanceClassCard';
 
 import Link from 'next/link';
+
 import { useRouter } from "next/navigation";
 import { UserGlobalState } from "@/context/UserContext";
 
@@ -66,10 +68,52 @@ const DanceRegistration = () => {
     });
   };
 
-  if (!sessionUser) {
-    router.push('/login');
-  }
-  else {
+
+  const [formData, setFormData] = useState({
+    danceClassId: 1,
+    age: '',
+    location: '',
+    notes: '',
+  });
+
+  const { danceClassId, age, location, notes } = formData; 
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("THIS IS FORM DATA", formData)
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/api/danceclassregistrations/new', {
+        dance_class_id: danceClassId,
+        age: age,
+        location: location,
+        notes: notes,
+      },
+      { withCredentials: true },
+      );
+
+      console.log("THIS IS RESPONSE", response)
+      if (response) {
+        alert("Class Register Successfully");
+        router.push("/");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("FAIL TO SUBMIT FORM");
+    }
+  };
+
+  // if (!sessionUser) {
+  //   router.push('/login');
+  // }
+  // else {
     return (
       <>
         <NavBar />
@@ -88,28 +132,33 @@ const DanceRegistration = () => {
               <h1 className='text-3xl font-bold mb-4 text-white'>Register For Dance Lessons</h1>
             </div>
             <hr className='mx-[-2.5rem] my-[4rem]' />
-            <form className='flex flex-col justify-center items-start'>
+
+            <form onSubmit={handleSubmit} 
+              action=''
+              className='flex flex-col justify-center items-start'>
+
 
               <label className='my-4'>
                 <div className='my-5 font-bold text-lg'>How Many Years of Dance Experience do you have?</div>
-                <select className='rounded-md text-black text-lg p-2 bg-white shadow-xl'>
-                  <option className="text-m" value="1">Beginner: 0-3 years of experience</option>
-                  <option className="text-m" value="2">Intermediate: 3-6 years of experience</option>
-                  <option className="text-m" value="3">Advanced: 6-10 years of experience</option>
-                  <option className="text-m" value="4">Senior: 10+ years of experience</option>
+
+                <select value={danceClassId} onChange={handleChange} name='danceClassId' className='rounded-md text-black text-lg p-2 bg-white shadow-xl'>
+                  <option className="text-m" value={1}>Beginner: 0-3 years of experience</option>
+                  <option className="text-m" value={2}>Intermediate: 3-6 years of experience</option>
+                  <option className="text-m" value={3}>Advanced: 6-10 years of experience</option>
+                  <option className="text-m" value={4}>Senior: 10+ years of experience</option>
                 </select>
-              </label>
+            </label>
 
               <label className='mt-5 mb-4'>
                 <div className='font-bold mb-2 text-lg'>What is your age?</div>
                 <div className='text-sm mb-2'>(Why we ask this: We want to place you in the most appropriate group for your age and skill level)</div>
-                <input className='rounded-md mt-2 mb-4 w-20 bg-white border-b-2 border-black outline-none shadow-xl p-2 text-black text-lg'
+                <input value={age} name='age' onChange={handleChange} className='rounded-md mt-2 mb-4 w-20 bg-white border-b-2 border-black outline-none shadow-xl p-2 text-black text-lg'
                   placeholder="Ex. 6" />
               </label>
 
               <label className='mb-4 mt-5'>
                 <div className='font-semibold text-lg'>Where are you located? (We offer in-person and online classes)</div>
-                <input className="rounded-md mt-2 mb-4 w-full text-black font-semibold outline-none text-lg border-b-2 border-black shadow-xl p-2 bg-white"
+                <input value={location} name='location' onChange={handleChange} className="rounded-md mt-2 mb-4 w-full text-black font-semibold outline-none text-lg border-b-2 border-black shadow-xl p-2 bg-white"
                   placeholder='Fremont, CA'
                 />
               </label>
@@ -123,6 +172,7 @@ const DanceRegistration = () => {
                 <div className='font-semibold mb-4 text-lg'>4. When are you looking to start attending lessons?</div>
 
                 <textarea
+                value={notes} name='notes' onChange={handleChange}
                   className='flex justify-center outline-none text-black text-lg border-2 border-black p-4 focus-none resize-none mt-4 mb-4 rounded-md shadow-xl w-full bg-white'
                   placeholder='Ex. Hi! I have 10 years of experience in Bharathanatyam and have practiced a few other styles as well briefly. I am hoping to expand my performance skills and technique nuances under your mentorship.'
                   rows="10"
@@ -144,7 +194,7 @@ const DanceRegistration = () => {
                   className="bg-teal-800 hover:bg-stone-500 text-white rounded-md p-3 transition duration-700"
                   onClick={() => router.push('/')}
                 >
-                  Cancel
+                  <Link href='/'>Cancel</Link>
                 </button>
               </div>
             </form>
@@ -155,6 +205,6 @@ const DanceRegistration = () => {
       </>
     )
   }
-}
+// }
 
 export default DanceRegistration
