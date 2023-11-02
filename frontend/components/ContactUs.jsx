@@ -8,7 +8,7 @@ const ContactUs = ({ toggleModal, setToggleModal }) => {
   return (
     <div onClick={(e) => e.stopPropagation()} className="z-200 fixed left-1/3 mb-40 top-1/4 bg-white text-black w-full sm:w-1/2 md:w-1/3 p-7 rounded-md shadow-lg">
       <div className="flex justify-between items-center">
-        <h1 className="text-xl sm:text-2xl font-bold mb-2">Contact Us</h1>
+        <h1 className="sm:text-2xl font-bold mb-2">Contact Us</h1>
         <button className="text-black" onClick={() => handleCloseModal()}>
           X
         </button>
@@ -61,7 +61,7 @@ const ContactUs = ({ toggleModal, setToggleModal }) => {
           </button>
 
           <button className="w-full sm:w-auto bg-gray-700 font-semibold text-white rounded-md p-2 transition duration-500 hover:bg-gray-400 mt-2 sm:mt-0">
-            Cancel
+            Close
           </button>
         </div>
       </form>
