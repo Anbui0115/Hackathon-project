@@ -15,28 +15,46 @@ const AdminDashboard = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const inquiriesResponse = await axios.get('inquiriesEndpoint');
-        setInquiries(inquiriesResponse.data);
+  // Create separate useEffect for each data fetch
+useEffect(() => {
+  const fetchInquiries = async () => {
+    try {
+      const inquiriesResponse = await axios.get('http://127.0.0.1:5000/api/serviceappointments/');
+      setInquiries(inquiriesResponse.data);
+    } catch (error) {
+      console.error('Error fetching inquiries:', error);
+    }
+  };
 
-        const registrationsResponse = await axios.get('registrationsEndpoint');
-        setClassRegistrations(registrationsResponse.data);
+  fetchInquiries();
+}, []);
 
-        const testimonialsResponse = await axios.get('http://127.0.0.1:5000/api/testimonials/');
-        const fetchedTestimonials = testimonialsResponse.data.testimonials;
-        setTestimonials(fetchedTestimonials);
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setIsLoading(false);
-      }
-    };
+useEffect(() => {
+  const fetchClassRegistrations = async () => {
+    try {
+      const registrationsResponse = await axios.get('http://127.0.0.1:5000/api/danceclassregistrations/');
+      setClassRegistrations(registrationsResponse.data);
+    } catch (error) {
+      console.error('Error fetching class registrations:', error);
+    }
+  };
 
-    fetchData();
-  }, []);
+  fetchClassRegistrations();
+}, []);
 
+useEffect(() => {
+  const fetchTestimonials = async () => {
+    try {
+      const testimonialsResponse = await axios.get('http://127.0.0.1:5000/api/testimonials/');
+      const fetchedTestimonials = testimonialsResponse.data.testimonials;
+      setTestimonials(fetchedTestimonials);
+    } catch (error) {
+      console.error('Error fetching testimonials:', error);
+    }
+  };
+
+  fetchTestimonials();
+}, []);
   const testimonialInfoCard = (testimonial) => {
     return (
       <div className="rounded-lg shadow p-4 mb-4 bg-lightcream">
