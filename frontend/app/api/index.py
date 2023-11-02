@@ -94,3 +94,8 @@ def inject_csrf_token(response):
 @app.route('/test')
 def test():
     return {'message': 'Test Route'}
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    return "Server is up and running!", 200
+
