@@ -63,14 +63,15 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
   }
   else {
     return (
-      <div onClick={(e) => e.stopPropagation()} className="z-10 fixed left-[30%] top-[15%] text-2xl h-[auto] bg-lightcream w-[40%] p-10 border-2 rounded-md shadow-2xl font-worksans">
+      <div onClick={(e) => e.stopPropagation()} className="z-200 fixed left-1/3 mb-40 top-1/4 bg-white text-black w-full sm:w-1/2 md:w-1/3 p-7 rounded-md shadow-lg">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Leave a Testimonial</h1>
+          <h1 className="sm:text-2xl lg:text-2xl font-bold">Leave a Testimonial</h1>
+          
           <button className="" onClick={() => handleCloseModal()}>X</button>
         </div>
         <form
           onSubmit={handleSubmit}
-          className=""
+          className="sm:text-lg lg:text-xl"
           action=""
         >
           <label className="flex flex-col gap-2 my-2" htmlFor="firstName">
@@ -81,7 +82,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
               value={firstName}
               onChange={handleChange}
               placeholder="Your first name"
-              className="border-2 border-gray-300 rounded-md p-2"
+              className="text-black border rounded-md p-2 border-gray-300 focus:border-gray-400"
             />
           </label>
 
@@ -93,7 +94,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
               value={lastName}
               onChange={handleChange}
               placeholder="Your last name"
-              className="border-2 border-gray-300 rounded-md p-2"
+              className="text-black border rounded-md p-2 border-gray-300 focus:border-gray-400"
             />
           </label>
 
@@ -127,14 +128,14 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
 
           <div className='py-6 flex gap-4 justify-center'>
             <button
-              className="bg-teal-700 font-semibold hover:bg-stone-500 text-white rounded-md p-2 transition duration-700"
+              className="w-full sm:w-auto bg-gray-700 font-semibold text-white rounded-md p-2 transition duration-700 hover:bg-gray-400"
               type="submit"
             >
               Submit
             </button>
 
-            <button className="bg-teal-700 font-semibold text-white rounded-md p-2 hover:bg-stone-500 transition duration-700" onClick={handleCloseModal}>
-              Cancle
+            <button className="w-full sm:w-auto bg-gray-700 font-semibold text-white rounded-md p-2 transition duration-500 hover:bg-gray-400 mt-2 sm:mt-0" onClick={handleCloseModal}>
+              Close
             </button>
           </div>
         </form>

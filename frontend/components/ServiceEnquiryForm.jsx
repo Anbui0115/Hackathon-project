@@ -87,7 +87,7 @@ const CreateServiceEnquiry = () => {
   else {
      return (
   <div
-    className="h-screen bg-black h-full w-screen bg-fill bg-center relative"
+    className="h-screen bg-black w-screen bg-fill bg-center relative"
     style={{
       backgroundImage: `url('/artist_pictures/Artist_Picture (38).jpg')`, // Replace 'path_to_your_image.jpg' with the actual path to your image
     }}
@@ -146,7 +146,7 @@ const CreateServiceEnquiry = () => {
               Submit
             </button>
             <button className="bg-teal-700 font-semibold text-white rounded-sm p-2 hover:bg-stone-500 transition duration-700">
-              <Link href="/">Cancel</Link>
+              <Link href="/">Return to Home Page</Link>
             </button>
           </div>
         </form>

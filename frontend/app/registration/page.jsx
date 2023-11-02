@@ -79,7 +79,7 @@ const DanceRegistration = () => {
 
             {/* <section className='flex flex-col items-center w-full h-auto bg-cover bg-center bg-opacity-50' style={{ backgroundImage: "url('/splash_page/093cbe78fdb53572a37e5ef20242660f.jpg')" }}> */}
 
-          <div className='flex justify-center w-full h-1/2'>
+          <div className='flex justify-center w-full h-1/2 '>
             {renderDanceCards()}
           </div>
 
@@ -134,14 +134,14 @@ const DanceRegistration = () => {
 
               <div className='py-6 flex gap-4 w-full justify-center items-center text-lg font-semibold'>
                 <button
-                  className="bg-teal-800 hover:bg-teal-700 text-white rounded-md p-3 transition duration-700"
+                  className="bg-teal-800 hover:bg-stone-500 text-white rounded-md p-3 transition duration-700"
                   type="submit"
                 >
                   Submit
                 </button>
 
                 <button
-                  className="bg-teal-800 hover:bg-teal-700 text-white rounded-md p-3 transition duration-700"
+                  className="bg-teal-800 hover:bg-stone-500 text-white rounded-md p-3 transition duration-700"
                   onClick={() => router.push('/')}
                 >
                   Cancel
