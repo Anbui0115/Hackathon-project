@@ -72,53 +72,86 @@ const NavBar = () => {
         <nav className="text-xl">
           <Link href="/services">Services</Link>
         </nav>
+{/* Profile or Login/Signup */}
+        {sessionUser ? (
+          <div
+            onMouseEnter={() => setToggleProfile(true)}
+            onMouseLeave={() => setToggleProfile(false)}
+            onClick={() => setToggleProfile(!toggleProfile)}
+            className="text-xl flex gap-2 cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span className="text-l">
+              {sessionUser.first_name} {sessionUser.last_name}
+            </span>
 
-        {/* Login / Sign up or Profile if Logged In */}
-        {
-          (sessionUser)
-          ?
-          (
-            <nav onMouseEnter={() => setToggleProfile(true)} onClick={() => setToggleProfile(!toggleProfile)} className="text-xl flex gap-2 cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span className="text-l">{sessionUser.first_name} {sessionUser.last_name}</span>
-
-              {
-                toggleProfile && (
-                  <div
-                    onMouseLeave={() => setToggleProfile(false)}
-                    className="absolute z-10 top-16 mt-2 w-[180px]  rounded-md shadow-lg "
+            {toggleProfile && (
+              <div className="absolute z-10 top-16 mt-2 w-[180px] rounded-md shadow-lg">
+                <div className="px-6 py-4 rounded-md bg-gray-800 flex flex-col gap-2 justify-start items-start">
+                  {sessionUser.authorization === "admin" ? (
+                    <Link href="/admin">Admin Portal</Link>
+                  ) : (
+                    <Link href="/your-account">Account</Link>
+                  )}
+                  <button
+                    onClick={handleLogout}
+                    className="text-white hover:text-emerald-400"
                   >
-                    <div className="px-6  py-4 rounded-md bg-gray-800 flex flex-col gap-2 justify-start items-start">
-                      <Link href="/your-account" className="sm:text-lg lg:text-xl text-white hover:text-emerald-400">Account</Link>
-                      <button onClick={handleLogout} className="sm:text-xl lg:text-xl text-white hover:text-emerald-400"><Link href='/'>Logout</Link></button>
-                    </div>
-                  </div>
-                )
-              }
-            </nav>
-            )
-            :
-            (
-          <nav onMouseEnter={() => setToggleMenu(true)} onClick={() => setToggleMenu(!toggleMenu)} className="text-2xl flex gap-2 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Logout
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div
+            onMouseEnter={() => setToggleMenu(true)}
+            onMouseLeave={() => setToggleMenu(false)}
+            onClick={() => setToggleMenu(!toggleMenu)}
+            className="text-2xl flex gap-2 cursor-pointer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
             <span className="text-xl">Login / Sign Up</span>
-              {
-                toggleMenu &&
-                (
-                  <div
-                    onMouseLeave={() => setToggleMenu(false)}
-                    className="absolute z-10 top-16 mt-2 w-[180px]  rounded-md shadow-lg "
-                  >
-                    <div className="px-6  py-4 rounded-md bg-gray-800 flex flex-col gap-2">
-                      <Link href="/signup" className="text-xl text-white hover:text-emerald-400">Sign Up</Link>
-                      <Link href="/login" className=" text-xl text-white hover:text-emerald-400">Login</Link>
-                    </div>
-                  </div>
-                )
-              }
-            </nav>
-            )
-        }
+            {toggleMenu && (
+              <div className="absolute z-10 top-16 mt-2 w-[180px] rounded-md shadow-lg">
+                <div className="px-6 py-4 rounded-md bg-gray-800 flex flex-col gap-2">
+                  <Link href="/signup" className="text-white hover:text-emerald-400">
+                    Sign Up
+                  </Link>
+                  <Link href="/login" className="text-white hover:text-emerald-400">
+                    Login
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

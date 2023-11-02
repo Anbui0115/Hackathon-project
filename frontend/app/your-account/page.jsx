@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import ChatBot from '@/components/ChatBot';
 import DanceClassCard from '@/components/DanceClassCard';
-import Tabs from './Tabs';
+
 
 const YourAccount = () => {
   const router = useRouter();
@@ -20,7 +20,7 @@ const YourAccount = () => {
 
   const renderAccountInfo = () => (
     <div className="p-6 m-3 border rounded-md bg-white shadow-2xl">
-      <h2 className="text-2xl font-semibold underline mb-4">Account Information</h2>
+      <h2 className="text-2xl font-semibold mb-4">Account Information</h2>
       <div className="mb-6">
         <div className="font-semibold text-lg mb-2">Username</div>
         <div>{sessionUser?.username}</div>
@@ -46,7 +46,7 @@ const YourAccount = () => {
 
   const renderBillingInfo = () => (
     <div className="p-6 m-3 border rounded-md bg-white shadow-2xl">
-      <h2 className="text-2xl font-semibold underline mb-4">Billing Information</h2>
+      <h2 className="text-2xl font-semibold  mb-4">Billing Information</h2>
       <div className="mb-6">
         <div className="font-semibold text-lg mb-2">Username</div>
         <div>{sessionUser?.username}</div>
@@ -72,7 +72,7 @@ const YourAccount = () => {
 
   const renderClassInfo = () => (
     <div className="p-6 m-3 border rounded-md bg-white shadow-2xl">
-      <h2 className="text-2xl font-semibold underline mb-4">Registered Classes & Class Schedules</h2>
+      <h2 className="text-2xl font-semibold mb-4">Registered Classes & Class Schedules</h2>
 
       <div className="text-lightcream flex flex-row mb-4">
         {renderDanceCards()}
