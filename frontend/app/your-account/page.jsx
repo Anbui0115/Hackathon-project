@@ -44,7 +44,7 @@ const YourAccount = () => {
     </div>
   );
 
-const renderBillingInfo = () => (
+  const renderBillingInfo = () => (
     <div className="p-6 m-3 border rounded-md bg-white shadow-2xl">
       <h2 className="text-2xl font-semibold underline mb-4">Billing Information</h2>
       <div className="mb-6">
@@ -70,28 +70,28 @@ const renderBillingInfo = () => (
     </div>
   );
 
-const renderClassInfo = () => (
-  <div className="p-6 m-3 border rounded-md bg-white shadow-2xl">
+  const renderClassInfo = () => (
+    <div className="p-6 m-3 border rounded-md bg-white shadow-2xl">
       <h2 className="text-2xl font-semibold underline mb-4">Registered Classes & Class Schedules</h2>
 
-    <div className="text-lightcream mb-4">
-      {renderDanceCards()}
+      <div className="text-lightcream flex flex-row mb-4">
+        {renderDanceCards()}
+      </div>
+      <div>
+        {currentReg?.length > 0 ? (
+          currentReg?.map((danceReg, index) => (
+            <div key={index} className="text-lightcream p-4 z-1">
+              <h3>Classes You Are Currently Registered For</h3>
+              <p>{danceLevels[danceReg.dance_class_id]?.level}</p>
+              <p>Class One: {danceLevels[danceReg.dance_class_id]?.class_one}</p>
+              <p>Class Two: {danceLevels[danceReg.dance_class_id]?.class_two}</p>
+              <p>Your registration is {danceReg?.is_approved ? "Approved" : "Not Approved"}</p>
+            </div>
+          ))
+        ) : null}
+      </div>
     </div>
-    <div>
-      {currentReg?.length > 0 ? (
-        currentReg?.map((danceReg, index) => (
-          <div key={index} className="text-lightcream p-4 z-1">
-            <h3>Classes You Are Currently Registered For</h3>
-            <p>{danceLevels[danceReg.dance_class_id].level}</p>
-            <p>Class One: {danceLevels[danceReg.dance_class_id].class_one}</p>
-            <p>Class Two: {danceLevels[danceReg.dance_class_id].class_two}</p>
-            <p>Your registration is {danceReg.is_approved ? "Approved" : "Not Approved"}</p>
-          </div>
-        ))
-      ) : null}
-    </div>
-  </div>
-);
+  );
 
   const danceLevels = {
     "Beginner": {
@@ -128,7 +128,7 @@ const renderClassInfo = () => (
     }
   };
 
-const renderDanceCards = () => {
+  const renderDanceCards = () => {
     return Object.keys(danceLevels).map((level) => {
       const { class_one, class_two, description, imageUrl } = danceLevels[level];
 
@@ -175,18 +175,13 @@ const renderDanceCards = () => {
   return (
     <div>
       <NavBar />
-      {/* <div className='text-white mx-4 sm:mx-8 lg:mx-12 xl:mx-20'>
-        <Tabs activeTab={activeTab} setActiveTab={setActiveTab}>
-        <div label="Account Information">{renderAccountInfo()}</div>
-        <div label="Billing Information">{renderBillingInfo()}</div>
-        <div label="Classes & Schedules">{renderClassInfo()}</div>
-      </Tabs>
-</div> */}
- <div className='text-black mx-4 sm:mx-8 lg:mx-12 xl:mx-20'>
+
+      <div className='text-black mx-4 sm:mx-8 lg:mx-12 xl:mx-20'>
         {renderAccountInfo()}
         {renderBillingInfo()}
         {renderClassInfo()}
       </div>
+
       <Footer />
       <ChatBot />
     </div>
