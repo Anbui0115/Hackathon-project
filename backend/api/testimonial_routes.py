@@ -21,6 +21,9 @@ def get_all_testimonials():
 # CREATE A TESTIMONIAL
 
 @testimonial_bp.route('/',methods=["POST"])
+
+# @login_required
+
 def create_testimonial():
     """
     Create a new testimonial
@@ -34,7 +37,7 @@ def create_testimonial():
     if  create_testimonial_form.validate_on_submit():
         data =  create_testimonial_form.data
         new_testimonial = Testimonial(
-                # user_id= current_user.id,
+                user_id= current_user.id,
                 content= data["content"],
                 first_name=data["first_name"],
                 last_name=data["last_name"],
@@ -44,19 +47,23 @@ def create_testimonial():
 
         db.session.add(new_testimonial)
         db.session.commit()
-        
+
         new_testimonial_obj = new_testimonial.to_dict()
         return new_testimonial_obj, 201
     return {"Error": "Validation Error"}, 401,  print(create_testimonial_form.errors)
 
 
 #  DELETE A TESTIMONIAL
-@testimonial_bp.route('/',methods=["DELETE"])
+
+@testimonial_bp.route('/<int:testimonial_id>/',methods=["DELETE"])
+# @login_required
+
 def delete_testimonial(testimonial_id):
     """
     Delete a testimonial based on testimonial_id
     """
-    user_auth = current_user.authorization
+    # user_auth = current_user.authorization
+    user_auth = "admin"
     testimonial = Testimonial.query.get(testimonial_id)
     if testimonial:
         if user_auth != 'admin':

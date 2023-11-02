@@ -7,6 +7,10 @@ import { UserGlobalState } from "@/context/UserContext";
 
 const CreateTestimonial = ({ isOpen, onRequestClose }) => {
   const { sessionUser, setSessionUser, session, setSession } = UserGlobalState();
+
+  console.log("SESSION USER IS", sessionUser)
+    console.log("SESSION USER ID IS", sessionUser?.id)
+
   const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: '',
@@ -36,7 +40,7 @@ const CreateTestimonial = ({ isOpen, onRequestClose }) => {
           first_name: firstName,
           last_name: lastName,
           content: testimonial,
-          role: role,});
+          role: role,},{ withCredentials: true });
         console.log("THIS IS RESPONSE",response)
         if (response) {
           alert("Thank You For Leaving a Testimonial!");

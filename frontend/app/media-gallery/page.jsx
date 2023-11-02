@@ -30,7 +30,7 @@ const MediaGallery = () => {
             router.push("/")
         }
     }, [sessionUser])
-    
+
     const ArtistPictures = media?.filter(item => {
         return item.type === "Artist Pictures"
     })
@@ -50,7 +50,7 @@ const MediaGallery = () => {
     const Theatre_ActingPictures = media?.filter(item => {
         return item.type === "Theatre/Acting"
     })
-    
+
 
     const hashtable = {
         "All Pictures": media,
@@ -65,54 +65,54 @@ const MediaGallery = () => {
 
     }, [active])
 
-    
 
-    // filter 
+
+    // filter
     // state management of which ones active
     // delete state management
     // delete button on each picture?
 
-    
+
     // className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-[300px] rounded-sm"
     return (
         <>
             <NavBar />
             <div className=''>
                 <div className="bg-black px-32">
-            
-                  {/* Dashboard for Media Gallery */} 
+
+                  {/* Dashboard for Media Gallery */}
                   <div className="fixed top-[35%] flex flex-col justify-center items-center self-center text-cream gap-3 py-10">
                     {/* <button className="p-4 bg-teal-950 rounded-md font-semibold text-xl flex items-center gap-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-to-line"><path d="M5 3h14"/><path d="m18 13-6-6-6 6"/><path d="M12 7v14"/></svg>Upload Picture</button>
                     <button className="p-4 bg-teal-950 rounded-md font-semibold text-xl flex items-center gap-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>Delete Picture</button> */}
-                    <button 
-                        onClick={() => setActive("All Pictures")} 
+                    <button
+                        onClick={() => setActive("All Pictures")}
                         className={`p-4 text-xl font-semibold border-b-2 ${active === "All Pictures" ? "border-cream" : "border-transparent"} hover:border-cream transition-border duration-500 ease-in-out`}
                     >
                         All Pictures
                     </button>
-                    <button 
-                        onClick={() => setActive("Artist Pictures")} 
+                    <button
+                        onClick={() => setActive("Artist Pictures")}
                         className={`p-4 text-xl font-semibold border-b-2 ${active === "Artist Pictures" ? "border-cream" : "border-transparent"} hover:border-cream transition-border duration-500 ease-in-out`}
                     >
                         Artist Gallery
                     </button>
 
-                    <button 
-                        onClick={() => setActive("Dance School Pictures")} 
+                    <button
+                        onClick={() => setActive("Dance School Pictures")}
                         className={`p-4 text-xl font-semibold border-b-2 ${active === "Dance School Pictures" ? "border-cream" : "border-transparent"} hover:border-cream transition-border duration-500 ease-in-out`}
                     >
                         Dance School Gallery
                     </button>
 
-                    <button 
-                        onClick={() => setActive("Makeup")} 
+                    <button
+                        onClick={() => setActive("Makeup")}
                         className={`p-4 text-xl font-semibold border-b-2 ${active === "Makeup" ? "border-cream" : "border-transparent"} hover:border-cream transition-border duration-500 ease-in-out`}
                     >
                         Makeup Gallery
                     </button>
 
-                    <button 
-                        onClick={() => setActive("Collaboration")} 
+                    <button
+                        onClick={() => setActive("Collaboration")}
                         className={`p-4 text-xl font-semibold border-b-2 ${active === "Collaboration" ? "border-cream" : "border-transparent"} hover:border-cream transition-border duration-500 ease-in-out`}
                     >
                         Collaborating Gallery
@@ -120,11 +120,11 @@ const MediaGallery = () => {
                   </div>
 
                     {/* Dynamic Gallery */}
-                    
+
                     <div className="flex flex-col items-center ">
                         <div className="text-cream text-4xl my-10 font-semibold ml-40">{active}</div>
                         <div className="flex flex-wrap gap-4 space-y-2 space-x-2 justify-end">
-                        
+
                             {hashtable[active]?.map((item, index) => {
                                 return (
                                     <div key={index} className="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-[auto]">

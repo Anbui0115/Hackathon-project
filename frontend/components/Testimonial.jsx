@@ -9,6 +9,13 @@ import axios from 'axios'; // Import Axios or another HTTP library
 const Testimonial = () => {
   const [testimonies, setTestimonies] = useState([]);
 
+  const handleTestimonialDelete = (deletedTestId) => {
+    // Update the testimonies state by filtering out the deleted testimonial
+    setTestimonies((prevTestimonies) =>
+      prevTestimonies.filter((testimony) => testimony.id !== deletedTestId)
+    );
+  };
+
   useEffect(() => {
     // Make an HTTP request to get testimonials from the backend
     axios.get('http://127.0.0.1:5000/api/testimonials/')
@@ -21,15 +28,14 @@ const Testimonial = () => {
         console.error('Error fetching testimonials:', error);
       });
   }, []);
-
-  return (
-    <div className="bg-black flex flex-col items-center my-4">
-      <div className="bg-black text-cream text-2xl my-8 ">Testimonials</div>
-      <div className="bg-black w-4/5 mx-auto">
+ return (
+    <div className="bg-black text-lightcream p-4 rounded-lg shadow-md my-4">
+      <h2 className="text-3xl text-center mb-4 relative z-10">Testimonials</h2>
+      <div className="mx-auto w-full max-w-screen-lg">
         <Carousel
-          centerMode
           showThumbs={false}
           showStatus={false}
+          centerMode
           centerSlidePercentage={100}
           autoPlay={true}
           infiniteLoop={true}
@@ -38,7 +44,7 @@ const Testimonial = () => {
         >
           {testimonies.map((testimony, index) => (
             <div key={index} className="p-4 z-1">
-              <TestimonialCard testimony={testimony} />
+              <TestimonialCard testimony={testimony} onTestimonialDelete={handleTestimonialDelete} />
             </div>
           ))}
         </Carousel>
