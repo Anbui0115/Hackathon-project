@@ -15,7 +15,6 @@ dance_class_registration_bp = Blueprint(
 
 
 @dance_class_registration_bp.route("/", methods=["GET"])
-# @login_required
 def all_dance_class_registrations():
     dance_class_registrations = DanceClassRegistration.query.all()
     response = []
@@ -35,7 +34,6 @@ def all_dance_class_registrations():
 
 
 @dance_class_registration_bp.route("/<int:dance_apt_id>/", methods=["GET"])
-@login_required
 def get_dance_registration(dance_apt_id):
     dance_apt = DanceClassRegistration.query.get(dance_apt_id)
 

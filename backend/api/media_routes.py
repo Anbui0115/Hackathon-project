@@ -37,7 +37,6 @@ def get_all_media():
 
 
 @media_routes.route('/create', methods=['POST'])
-@login_required
 def create_media():
     data = request.get_json()
 
@@ -77,7 +76,6 @@ def get_media(id):
 
 
 @media_routes.route('/<int:id>', methods=['PUT'])
-@login_required
 def update_media(id):
     media =Media.query.get(id)
     if not media:
@@ -103,7 +101,6 @@ def update_media(id):
 
 
 @media_routes.route('/<int:id>', methods=['DELETE'])
-@login_required
 def delete_media(id):
     media = Media.query.get(id)
     if media:

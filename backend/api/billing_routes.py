@@ -14,7 +14,6 @@ billing_bp = Blueprint(
 # CREATE BILLING SUBSCRIPTION
 
 @billing_bp.route("/new/", methods=["POST"])
-@login_required
 def create_billing():
 
     create_billing_form = CreateBillingForm()
@@ -45,7 +44,6 @@ def create_billing():
 # EDIT BILLING SUBSCRIPTION BY BILLING ID
 
 @billing_bp.route('/<int:billing_id>/', methods=["PUT"])
-@login_required
 def edit_billing(billing_id):
     edit_billing_form = CreateBillingForm()
 
@@ -71,7 +69,6 @@ def edit_billing(billing_id):
 
 #  DELETE BILLING SUBSCRIPTION
 @billing_bp.route("/<int:billing_id>/", methods=["DELETE"])
-# @login_required
 def delete_billing(billing_id):
 
     curr_billing =Billing.query.get(billing_id)

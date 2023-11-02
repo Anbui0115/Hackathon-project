@@ -9,6 +9,13 @@ import axios from 'axios'; // Import Axios or another HTTP library
 const Testimonial = () => {
   const [testimonies, setTestimonies] = useState([]);
 
+  const handleTestimonialDelete = (deletedTestId) => {
+    // Update the testimonies state by filtering out the deleted testimonial
+    setTestimonies((prevTestimonies) =>
+      prevTestimonies.filter((testimony) => testimony.id !== deletedTestId)
+    );
+  };
+
   useEffect(() => {
     // Make an HTTP request to get testimonials from the backend
     axios.get('http://127.0.0.1:5000/api/testimonials/')
@@ -36,8 +43,8 @@ const Testimonial = () => {
           transitionTime={1000}
         >
           {testimonies.map((testimony, index) => (
-            <div key={index} className="p-4">
-              <TestimonialCard testimony={testimony} />
+            <div key={index} className="p-4 z-1">
+              <TestimonialCard testimony={testimony} onTestimonialDelete={handleTestimonialDelete} />
             </div>
           ))}
         </Carousel>
