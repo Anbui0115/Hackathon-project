@@ -2,6 +2,13 @@
 
 Welcome to Priyada Arts, a full-stack web application designed for a dance school, developed using Flask, Tailwind, React, and Next.js. This platform serves as an interactive portal for both students and administrators, offering features to manage class schedules, registrations, services, media, and more.
 
+## Copyright
+
+The "Priyada Arts" web application is protected under copyright law. All rights reserved. Unauthorized use, distribution, or reproduction is strictly prohibited. For inquiries or licensing, please contact Priyanka Raghuraman at PriyankaRaghuramandance@gmail.com.
+
+&copy; 2023 [Priyanka Raghuraman]
+
+
 ## Features
 
 ### For Users (Students):
