@@ -54,7 +54,7 @@ const NavBar = () => {
             toggleClassMenu && (
               <div
                 onMouseLeave={() => setToggleClassMenu(false)}
-                className="absolute z-30 top-16 mt-2 w-[160px] mx-auto rounded-md shadow-lg "
+                className="absolute transition ease-in-out delay-500 z-30 top-16 mt-2 w-[160px] mx-auto rounded-md shadow-lg "
               >
                 <div className="px-6 text-white py-4 rounded-md flex flex-col gap-2 bg-gray-800">
                   <Link href="/schedule" className="sm:text-md lg:text-xl hover:text-emerald-400 ">Schedule</Link>
@@ -99,10 +99,14 @@ const NavBar = () => {
             </span>
 
             {toggleProfile && (
-              <div className="absolute z-10 top-16 mt-2 w-[180px] rounded-md shadow-lg">
+              <div 
+                onMouseEnter={() => setToggleProfile(true)}
+                onMouseLeave={() => setToggleProfile(false)}
+                className="absolute z-10 top-16 w-[180px] rounded-md shadow-lg delay-200"
+                >
                 <div className="px-6 py-4 rounded-md bg-gray-800 flex flex-col gap-2 justify-start items-start">
                   {sessionUser.authorization === "admin" ? (
-                    <Link href="/admin">Admin Portal</Link>
+                    <Link className="text-white hover:text-emerald-400" href="/admin">Admin Portal</Link>
                   ) : (
                     <Link href="/your-account">Account</Link>
                   )}
