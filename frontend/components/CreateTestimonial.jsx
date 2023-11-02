@@ -7,6 +7,10 @@ import { UserGlobalState } from "@/context/UserContext";
 
 const CreateTestimonial = ({ isOpen, onRequestClose }) => {
   const { sessionUser, setSessionUser, session, setSession } = UserGlobalState();
+
+  console.log("SESSION USER IS", sessionUser)
+    console.log("SESSION USER ID IS", sessionUser?.id)
+
   const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: '',
