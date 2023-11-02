@@ -10,14 +10,14 @@ const Services = () => {
     return (
         <>
             <NavBar />
-            <div className='bg-black speciality-page-container'>
-                <div className='speciality-section-container'>
-                    <div className='speciality-card'>
+            <div className='bg-black'>
+                <div className=''>
+                    <div className=''>
                         <ServiceCard />
                     </div>
                 </div>
 
-                 <div className="speciality-enquiry-form-container">
+                 <div className="">
                       <CreateServiceEnquiry />
                 </div>
 

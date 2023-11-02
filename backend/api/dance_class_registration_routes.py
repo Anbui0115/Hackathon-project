@@ -59,7 +59,7 @@ def create_dance_registration():
     csrf_token = generate_csrf()
     create_dance_apt_form['csrf_token'].data = csrf_token
 
-    # print("current user is: **********************************", current_user)
+    print("current user is: **********************************", current_user)
 
     if create_dance_apt_form.validate_on_submit():
         data = create_dance_apt_form.data

@@ -6,14 +6,14 @@ import datetime
 def seed_users():
 
     user1 = User(
-        username='PriyankaRaghuraman',
-        email='priyankaraghuramandance@gmail.com',
-        password='priyadaarts',
+        username='DemoUser',
+        email='demouser@gmail.com',
+        password='demopassword',
         authorization='admin',
-        first_name='Priyanka',
-        last_name='Raghuraman',
-        address='35994 Burning Tree Dr, Newark, CA, 94560',
-        phone_number="5108158473",
+        first_name='Demo',
+        last_name='User',
+        address='12345 Waterfront Street, San Francisco, CA',
+        phone_number="1234567890",
     )
 
     user2 = User(

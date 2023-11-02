@@ -18,8 +18,8 @@ const Login = () => {
     e.preventDefault();
 
     const demoData = {
-      email: "priyankaraghuramandance@gmail.com",
-      password: "priyadaarts"
+      email: "demouser@gmail.com",
+      password: "demopassword"
     };
 
     try {
@@ -31,7 +31,7 @@ const Login = () => {
         setSessionUser(response.data);
         alert("Login Successful");
         router.push("/");
-      
+
       }
     } catch (error) {
       console.error(error);
@@ -88,20 +88,20 @@ const Login = () => {
 
 
           <form className="flex flex-col gap-4" onSubmit={loginSubmit} action="">
-            <input 
-              type="email" 
+            <input
+              type="email"
               value={form.email}
               placeholder="Email address"
               className="border-2 p-2 w-full rounded-md border-gray-300"
-              onChange={(e) => setForm({...form, email: e.target.value})}  
+              onChange={(e) => setForm({...form, email: e.target.value})}
             />
 
-            <input 
-              type="password" 
+            <input
+              type="password"
               placeholder="Password"
               value={form.password}
               onChange={(e) => setForm({...form, password: e.target.value})}
-              className="border-2 p-2 w-full rounded-md border-gray-300"  
+              className="border-2 p-2 w-full rounded-md border-gray-300"
             />
 
             <button type="submit" className="w-full p-3 bg-cyan-700 text-white rounded-md font-semibold hover:bg-gray-600 transition duration-700">

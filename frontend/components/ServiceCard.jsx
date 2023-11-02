@@ -1,48 +1,51 @@
 "use client"
-import React from 'react'
-import { motion } from 'framer-motion';
-import Image from 'next/image'
+import React from 'react';
 
 const ServiceCard = () => {
-
   return (
+    <div className="container mx-auto p-6 flex justify-end items-center h-full bg-cover bg-center" style={{ backgroundImage: 'url("/splash_page/Splash page.jpg")' }}>
+      <div className="flex flex-col items-start">
+        <h1 className="text-4xl font-extrabold text-lightcream my-8">Artistic Beyond Dance</h1>
 
-<div>
-    <div className="text-lightcream text-2xl text-center bg-black" >Speciality Services</div>
-    <div className={`bg-black flex flex-row justify-center items-center gap-2 p-6 mx-auto w-full
-    `}>
+        <div className="flex flex-col gap-8">
+          <div className="flex items-center bg-black bg-opacity-20 hover:scale-105 transition delay-100 ease-in">
+            <div className="rounded-full overflow-hidden bg-gray-200 w-40 h-40 flex-shrink-0 mr-4">
+              <img src="/Services/Makeup/Makeup-Main.jpg" alt="Makeup" className="w-full h-full object-cover" />
+            </div>
+            <div className="text-left text-lightcream bg-black bg-opacity-25 p-3">
+              <h2 className="sm:text-2xl lg:text-3xl font-semibold mb-2">Makeup</h2>
+              <p className="sm:text-md lg:text-lg">Indulge in the art of makeup!</p>
+            <p className="sm:text-md lg:text-lg">From Arangetrams to workshops and photoshoots, Priyanka specializes in dance & theatre makeup.</p>
 
-      <div className="text-center my-10 md:max-w-l border-stone-300 rounded-md shadow-lg
-     text-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-        <div className="text-rose-200 text-l text-center">Makeup</div>
-         {/* <img
-          src="/Makeup.JPG"
-          alt="service-pic"
-          // objectFit="cover"
-          height={50}
-          width={50}
-          className="mt-10 rounded-sm"
-        /> */}
-        <div className="text-lightcream text-m text-center">Priyanka offers makeup services for Arengetrams, shows, and photoshoots. Makeup workshops are available on request.</div>
-        {/* <div className="text-lightcream  text-center  italic">Dance makeup workshops available on request</div> */}
-      </div>
+            </div>
+          </div>
 
-         <div className="text-center my-10 md:max-w-l border-stone-300 rounded-md shadow-lg
-     text-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-        <div className="text-rose-200 text-m text-center">Emcee/Hosting</div>
-        <div className="text-lightcream text-m text-center">Priyanka anchors in Television as a hostess, emcees for shows, productions, and more</div>
-        {/* <div className="text-lightcream  text-center  italic">Get in touch with Priyanka for special requests</div> */}
-      </div>
+          <div className="flex items-center hover:scale-105 transition delay-100 ease-in">
+            <div className="rounded-full overflow-hidden bg-gray-200 w-40 h-40 flex-shrink-0 mr-4">
+              <img src="/dance_school/ABOUT US MAIN TEACHER PIC.jpg" alt="Nattuvangam" className="w-full h-full object-cover" />
+            </div>
+            <div className="text-left text-lightcream bg-black bg-opacity-25 p-3">
+              <h2 className="sm:text-2xl lg:text-3xl font-semibold mb-2">Nattuvangam</h2>
+              <p className="sm:text-md lg:text-lg">Experience the rhythmic magic!</p>
+                       <p className="sm:text-md lg:text-lg">Priyanka offers Nattuvangam services for live performances and audio recordings.</p>
+            </div>
+          </div>
 
-         <div className="text-center my-10 md:max-w-l border-stone-300 rounded-md shadow-lg
-     text-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-        <div className="text-rose-200 text-m text-center">Nattuvangam</div>
-        <div className="text-lightcream  text-m text-center">Priyanka offers nattuvangam servies for concerts, productions, and private audio recordings.</div>
-        {/* <div className="text-lightcream  text-center  italic">Get in touch with Priyanka for more details</div> */}
+          <div className="flex items-center hover:scale-105 transition delay-100 ease-in">
+            <div className="rounded-full overflow-hidden bg-gray-200 w-40 h-40 flex-shrink-0 mr-4">
+              <img src="/Services/Hosting/Hosting.jpg" alt="Emcee/Hosting" className="w-full h-full object-cover" />
+            </div>
+            <div className="text-left text-lightcream bg-black bg-opacity-25 p-3">
+              <h2 className="sm:text-2xl lg:text-3xl font-semibold mb-2">Emcee/Hosting</h2>
+              <p className="sm:text-md lg:text-lg">Priyanka engages and captivates!</p>
+            <p className="sm:text-md lg:text-lg">She provides hosting and emceeing for various shows and events.</p>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default ServiceCard
+export default ServiceCard;
