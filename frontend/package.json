@@ -3,18 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm run next-dev\" \"npm run flask-dev\"",
+    "next-dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "flask-dev": "pip3 install -r requirements.txt && python -m flask --app app/api:index.py run -p 5000"
   },
   "dependencies": {
     "autofit.js": "^3.0.4",
     "autofit.js-react": "^0.0.2",
     "axios": "^1.6.0",
+    "concurrently": "^8.2.2",
     "dayjs": "^1.11.10",
     "encoding": "^0.1.13",
     "framer-motion": "^10.16.4",
+    "http-proxy-middleware": "^2.0.6",
     "next": "13.5.5",
     "next-router-mock": "^0.9.10",
     "openai": "^4.12.4",
