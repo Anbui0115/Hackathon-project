@@ -1,6 +1,6 @@
 from flask import Blueprint, session, request, redirect
-from backend.models import User, db
-from backend.forms import LoginForm, SignUpForm
+from app.models import User, db
+from app.forms import LoginForm, SignUpForm
 from flask_login import current_user, login_user, logout_user
 from flask_wtf.csrf import generate_csrf
 auth_routes = Blueprint('auth', __name__)
@@ -38,7 +38,7 @@ def login():
     # form['csrf_token'].data = request.cookies['csrf_token']
     csrf_token = generate_csrf()
     form['csrf_token'].data = csrf_token
-    
+
     if form.validate_on_submit():
         # Add the user to the session, we are logged in!
         user = User.query.filter(User.email == form.data['email']).first()

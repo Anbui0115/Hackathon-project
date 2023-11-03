@@ -9,7 +9,7 @@ project_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
 sys.path.append(project_root)
 
 # Now, you can import your modules
-from backend.models import db, environment, SCHEMA, Service
+from app.models import db, environment, SCHEMA, Service
 
 
 
