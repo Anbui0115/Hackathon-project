@@ -24,6 +24,7 @@ from .api.media_routes import media_routes
 from dotenv import load_dotenv
 
 app = Flask(__name__)
+
 load_dotenv()
 app.cli.add_command(seed_commands)
 app.secret_key = os.environ.get('SECRET_KEY')
