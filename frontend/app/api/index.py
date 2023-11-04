@@ -48,6 +48,9 @@ if __name__ == '__main__':
 
 
 
+
+
+
 # Login Manager
 login = LoginManager(app)
 login.init_app(app)
@@ -67,6 +70,14 @@ login.login_view = 'auth.unauthorized'
 # Application Security
 CORS(app, supports_credentials=True)
 
+
+# @app.route('/test')
+# def test():
+#     return {'message': 'Test Route'}
+
+@app.route("/api/python")
+def hello_world():
+    return "<p>Hello, Flask!</p>"
 
 
 @app.before_request
