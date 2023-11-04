@@ -1,5 +1,5 @@
 from flask import Blueprint, session, request, redirect
-from app.models import User, db
+from backend.models import User, db
 from app.forms import LoginForm, SignUpForm
 from flask_login import current_user, login_user, logout_user
 from flask_wtf.csrf import generate_csrf

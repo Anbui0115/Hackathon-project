@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField
 from wtforms.validators import DataRequired, Email, ValidationError
-from app.models import User
+from backend.models import User
 
 
 # Checking if user exists

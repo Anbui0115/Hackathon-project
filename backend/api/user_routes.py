@@ -1,5 +1,5 @@
 from flask_login import login_required, current_user, logout_user
-from app.models import db, User
+from backend.models import db, User
 from app.forms import UpdateForm
 from flask import Blueprint,request
 from flask_wtf.csrf import generate_csrf

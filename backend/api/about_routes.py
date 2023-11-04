@@ -1,8 +1,8 @@
 # we won't need this route for now since we're using hardcoded info for about pages
 
-from app.models import db, User
+from backend.models import db, User
 from flask import Blueprint , render_template,jsonify
-from app.models import User
+from backend.models import User
 
 about_routes = Blueprint('about', __name__)
 

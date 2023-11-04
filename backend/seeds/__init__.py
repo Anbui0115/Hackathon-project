@@ -5,7 +5,7 @@ from .medias import seed_medias, undo_medias
 from .dance_classes import seed_dance_classes, undo_dance_classes
 from .services import seed_services, undo_services
 
-from app.models.db import db, environment, SCHEMA
+from backend.models.db import db, environment, SCHEMA
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`

@@ -18,7 +18,7 @@ from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect, generate_csrf
 import os
 from authlib.integrations.flask_client import OAuth
-from app.oauth_config import configure_oauth
+from backend.oauth_config import configure_oauth
 from .api.google_routes import google_routes
 from .api.media_routes import media_routes
 from dotenv import load_dotenv
