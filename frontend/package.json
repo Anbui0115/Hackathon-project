@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "flask-dev": "pip3 install -r requirements.txt && python -m flask --app app/api:index.py run -p 5000"
+    "flask-dev": "pip3 install -r requirements.txt && python -m flask run -p 5000"
+
   },
   "dependencies": {
     "autofit.js": "^3.0.4",
